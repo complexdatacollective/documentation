@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-// import { remark } from "remark";
-// import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "docs/fresco");
 
@@ -10,7 +8,7 @@ export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
+    // Remove ".mdx" from file name to get id
     const id = fileName.replace(/\.mdx$/, "");
 
     // Read markdown file as string
@@ -43,5 +41,6 @@ export async function getPostData(id: string) {
     title: matterResult.data.title,
     date: matterResult.data.date,
     content: matterResult.content,
+    markdownFile,
   };
 }

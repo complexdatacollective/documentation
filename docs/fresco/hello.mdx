@@ -1,0 +1,22 @@
+export const meta = {
+  title: " Hello mdx",
+  date: "27th September 2023",
+  description: "Some description about hello",
+};
+
+# Hello, Next.js!
+
+You can import and use React components in MDX files.
+
+```js showLineNumbers
+function sayHello(params) {
+  console.log("Hello");
+
+  return params;
+}
+```
+
+```js /age/#v /name/#v /setAge/#s /setName/#s /50/#i /'Taylor'/#i
+const [age, setAge] = useState(50);
+const [name, setName] = useState("Taylor");
+```
