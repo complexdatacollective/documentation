@@ -1,7 +1,9 @@
 import { getPostData, getSortedPostsData } from "@/lib/docs";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Link from "next/link";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import rehypePrettyCode from "rehype-pretty-code";
+import { StepBack } from "lucide-react";
 
 const components = {
   h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
@@ -39,6 +41,9 @@ const DocPage = async ({ params }: { params: { docId: string } }) => {
         source={post.content}
       ></MDXRemote>
       <p className="text-sm text-red-400">{post.date}</p>
+      <Link className="flex gap-0 items-center" href={"/fresco"}>
+        <StepBack /> Back
+      </Link>
     </article>
   );
 };

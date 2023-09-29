@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar";
+import Sidebar from "./_components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <div className="container grid grid-cols-5">
+            <Sidebar />
+            <div className="col-span-3">{children}</div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
