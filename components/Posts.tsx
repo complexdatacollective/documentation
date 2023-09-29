@@ -1,8 +1,8 @@
-import { getSortedPostsData } from "@/lib/docs";
+import { getSortedDocsData } from "@/lib/docs";
 import ListItem from "./ListItem";
 
 const Posts = () => {
-  const posts = getSortedPostsData();
+  const posts = getSortedDocsData("docs/fresco");
   return (
     <section>
       <h2 className="text-3xl">List of docs</h2>

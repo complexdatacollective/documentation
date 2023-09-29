@@ -1,16 +1,5 @@
-import Posts from "@/components/Posts";
-import MDXFile, { getMdxMetaData } from "@/lib/MDXFile";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  const data = getMdxMetaData("hello");
-
-  console.log("DATACHA", data);
-
-  return (
-    <main className="flex justify-center flex-col items-center gap-2">
-      <div className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert mx-auto">
-        <MDXFile name="hello" />
-      </div>
-    </main>
-  );
+  return redirect("/desktop");
 }

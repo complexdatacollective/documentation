@@ -1,4 +1,4 @@
-import { getPostData, getSortedPostsData } from "@/lib/docs";
+import { getDocData, getSortedDocsData } from "@/lib/docs";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
@@ -12,7 +12,7 @@ const components = {
 };
 
 export async function generateMetadata({ params }: { params: { docId: string } }) {
-  const posts = getSortedPostsData(); //deduped
+  const posts = getSortedDocsData("docs/fresco");
   const post = posts.find((post) => post.id === params.docId);
 
   if (!post) return { title: "Doc Not Found" };
@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: { params: { docId: string } }
 }
 
 export async function generateStaticParams() {
-  const posts = getSortedPostsData(); //deduped
+  const posts = getSortedDocsData("docs/fresco");
 
   return posts.map((post) => ({ postId: post.id }));
 }
 
 const DocPage = async ({ params }: { params: { docId: string } }) => {
-  const post = await getPostData(params.docId);
+  const post = await getDocData("docs/fresco", params.docId);
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert mx-auto">

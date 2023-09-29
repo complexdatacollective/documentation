@@ -15,15 +15,15 @@ export const getMdxMetaData = (name: string) => {
   const fullPath = path.join(fileDirectory, `${name}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  // Use gray-matter to parse the post metadata section
+  // Use gray-matter to parse the doc metadata section
   const matterResult = matter(fileContents);
 
-  const blogPost: DocArticle = {
+  const docData: DocArticle = {
     id: name,
     title: matterResult.data.title,
     date: matterResult.data.date,
   };
 
   // Combine the data with the id
-  return blogPost;
+  return docData;
 };
