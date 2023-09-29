@@ -18,7 +18,7 @@ const DesktopMenus = () => {
               key={doc.id}
               className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              <Link href={`/desktop/${doc.id}`}>{doc.title}</Link>
+              <Link href={"#"}>{doc.title}</Link>
             </li>
           ))}
         </ul>
@@ -31,7 +31,7 @@ const DesktopMenus = () => {
               key={doc.id}
               className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              <Link href={`/desktop/${doc.id}`}>{doc.title}</Link>
+              <Link href={"#"}>{doc.title}</Link>
             </li>
           ))}
         </ul>
@@ -44,7 +44,7 @@ const DesktopMenus = () => {
               key={doc.id}
               className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              <Link href={`/desktop/${doc.id}`}>{doc.title}</Link>
+              <Link href={"#"}>{doc.title}</Link>
             </li>
           ))}
         </ul>
@@ -57,7 +57,7 @@ const DesktopMenus = () => {
               key={doc.id}
               className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              <Link href={`/desktop/${doc.id}`}>{doc.title}</Link>
+              <Link href={"#"}>{doc.title}</Link>
             </li>
           ))}
         </ul>
@@ -70,7 +70,7 @@ const DesktopMenus = () => {
               key={doc.id}
               className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              <Link href={`/desktop/${doc.id}`}>{doc.title}</Link>
+              <Link href={"#"}>{doc.title}</Link>
             </li>
           ))}
         </ul>
