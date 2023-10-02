@@ -4,7 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 
 export default function MDXFile({ name }: { name: string }) {
-  const ServerComponent = dynamic(() => import(`@/docs/fresco/${name}.mdx`));
+  const ServerComponent = dynamic(() => import(`@/docs/${name}.mdx`));
   return <ServerComponent />;
 }
 
@@ -22,6 +22,7 @@ export const getMdxMetaData = (name: string) => {
     id: name,
     title: matterResult.data.title,
     date: matterResult.data.date,
+    dir: "",
   };
 
   // Combine the data with the id

@@ -18,7 +18,7 @@ const components = {
 };
 
 export async function generateMetadata({ params }: { params: { docId: string[] } }) {
-  const docs = await getSortedDocsData(`docs/desktop/${params.docId[0]}`);
+  const docs = await getSortedDocsData(`docs/fresco/${params.docId[0]}`);
   const doc = docs.find((post) => post.id === params.docId[1]);
 
   if (!doc) return { title: "Doc Not Found" };
@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: { params: { docId: string[] }
 }
 
 export async function generateStaticParams() {
-  const docs = getDocNamesWithFolders("docs/desktop");
+  const docs = getDocNamesWithFolders("docs/fresco");
 
   return docs.map((doc) => ({ docId: [doc.folderName, doc.filename] }));
 }
 
 const DocPage = async ({ params }: { params: { docId: string[] } }) => {
-  const doc = await getDocData(`docs/desktop/${params.docId.join("/")}`);
+  const doc = await getDocData(`docs/fresco/${params.docId.join("/")}`);
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
@@ -47,7 +47,7 @@ const DocPage = async ({ params }: { params: { docId: string[] } }) => {
         source={doc.content}
       ></MDXRemote>
       <p className="text-sm text-red-400">{doc.date}</p>
-      <Link className="flex gap-0 items-center" href={"/desktop"}>
+      <Link className="flex gap-0 items-center" href={"/fresco"}>
         <StepBack /> Back
       </Link>
     </article>
