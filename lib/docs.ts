@@ -35,7 +35,7 @@ export function getSortedDocsData(dir: string) {
   const fileNames = fs.readdirSync(docsDirectory);
   const allDocsData = fileNames.map((fileName) => {
     // Remove ".mdx" from file name to get id
-    const id = fileName.replace(/\.mdx$/, "");
+    const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
     const fullPath = path.join(docsDirectory, fileName);
@@ -48,6 +48,7 @@ export function getSortedDocsData(dir: string) {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date ?? "",
+      dir,
     };
 
     // Combine the data with the id
@@ -58,13 +59,11 @@ export function getSortedDocsData(dir: string) {
 }
 // allDocsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 
-export async function getDocData(dir: string, id: string) {
-  const fullPath = path.join(dir, `${id}.mdx`);
-  const markdownFile = fs.readFileSync(fullPath, "utf-8");
+export async function getDocData(filePath: string) {
+  const markdownFile = fs.readFileSync(filePath + ".md", "utf-8");
   const matterResult = matter(markdownFile);
 
   return {
-    id,
     title: matterResult.data.title,
     date: matterResult.data.date ?? "",
     content: matterResult.content,

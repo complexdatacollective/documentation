@@ -9,7 +9,7 @@ const ListItem = ({ post }: Props) => {
 
   return (
     <li>
-      <Link className="underline text-lg text-blue-400" href={`fresco/${id}`}>
+      <Link className="underline text-lg text-blue-400" href={`#`}>
         {title}
       </Link>
       <br />

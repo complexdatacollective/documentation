@@ -2,7 +2,7 @@ import { ThemeToggle } from "@/components/themeToggle";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/img/logo.svg";
+import logo from "@/public/assets/img/logo.svg";
 
 const Navbar = () => {
   return (

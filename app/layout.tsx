@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="container grid grid-cols-5">
+          <div className="container grid grid-cols-5 items-start">
             <Sidebar />
             <div className="col-span-3">{children}</div>
           </div>

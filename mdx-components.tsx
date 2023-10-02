@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import "@/assets/styles/style.css";
+// import "@/assets/styles/style.css";
 import { MyH1 } from "./components/Headings";
 
 // This file allows you to provide custom React components

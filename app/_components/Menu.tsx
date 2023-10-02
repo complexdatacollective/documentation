@@ -15,7 +15,7 @@ type MenuProps = {
 export default function Menu({ title, children }: MenuProps) {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="item-1">
+      <AccordionItem value={title}>
         <AccordionTrigger>{title}</AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
