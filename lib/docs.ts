@@ -7,26 +7,23 @@ export type SubfoldersType = {
   files: DocArticle[];
 };
 
-// export const getdocsDataWithFolders = (
-//   directoryPath: string,
-//   callback: (subfolders: SubfoldersType[]) => void
-// ) => {
-//   fs.readdir(directoryPath, { withFileTypes: true }, (err, files) => {
-//     if (err) {
-//       console.error("Error reading directory:", err);
-//       return;
-//     }
+export const getdocsDataWithFolders = (directoryPath: string = "docs/desktop") => {
+  fs.readdir(directoryPath, { withFileTypes: true }, (err, files) => {
+    if (err) {
+      console.error("Error reading directory:", err);
+      return;
+    }
 
-//     const subfolders = files
-//       .filter((file) => file.isDirectory())
-//       .map((file) => ({
-//         folder: file.name,
-//         files: getSortedDocsData(`docs/desktop/${file.name}`),
-//       }));
+    const subfolders = files
+      .filter((file) => file.isDirectory())
+      .map((file) => ({
+        folder: file.name,
+        files: getSortedDocsData(`docs/desktop/${file.name}`),
+      }));
 
-//     callback(subfolders);
-//   });
-// };
+    return subfolders;
+  });
+};
 
 export function getSortedDocsData(dir: string) {
   const docsDirectory = path.join(process.cwd(), dir);
