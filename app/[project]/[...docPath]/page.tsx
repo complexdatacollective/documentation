@@ -37,7 +37,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const docs = getSortedDocsData("docs/desktop");
+  const docs = getSortedDocsData();
 
   return docs;
 }

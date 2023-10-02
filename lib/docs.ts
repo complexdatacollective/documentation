@@ -2,6 +2,8 @@ import fs, { PathLike } from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
+const DOCS_PATH = "docs"; // <- hard coded 'docs' - should be part of env?
+
 export type DocRouteParams = {
   params: {
     docPath: string;
@@ -35,15 +37,15 @@ export const getAllFiles = function (
 
 // JRM - I wasn't sure what you intended with 'sorting' so I left it for you to implement.
 // If you don't need this, just return getAllFiles directly.
-export function getSortedDocsData(dir: string) {
-  const allFiles = getAllFiles(dir);
+export function getSortedDocsData() {
+  const allFiles = getAllFiles(DOCS_PATH);
   return allFiles;
 }
 
 // Take a nextjs route segment and convert it to a path, adding the .md extension.
 const segmentToPath = (segment: string[]) => {
   const path = segment.join("/");
-  return join(process.cwd(), "docs", `${path}.md`); // <- hard coded 'docs' - should be part of env?
+  return join(process.cwd(), DOCS_PATH, `${path}.md`);
 };
 
 // Takes a path segment and returns an object containing parsed markdown for the
