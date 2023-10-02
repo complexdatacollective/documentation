@@ -1,4 +1,4 @@
-import { getDoc, getSortedDocsData } from "@/lib/docs";
+import { getAllFiles, getDoc } from "@/lib/docs";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -6,18 +6,12 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 import rehypePrettyCode from "rehype-pretty-code";
 
 const components = {
-  h1: (
-    props: DetailedHTMLProps<
-      HTMLAttributes<HTMLHeadingElement>,
-      HTMLHeadingElement
-    >
-  ) => <h1 className="dark:text-green-400">{props.children}</h1>,
-  h2: (
-    props: DetailedHTMLProps<
-      HTMLAttributes<HTMLHeadingElement>,
-      HTMLHeadingElement
-    >
-  ) => <h2 className="dark:text-green-400">{props.children}</h2>,
+  h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
+    <h1 className="dark:text-green-400">{props.children}</h1>
+  ),
+  h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
+    <h2 className="dark:text-green-400">{props.children}</h2>
+  ),
 };
 
 export async function generateMetadata({
@@ -37,7 +31,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const docs = getSortedDocsData();
+  const docs = getAllFiles("docs");
 
   return docs;
 }

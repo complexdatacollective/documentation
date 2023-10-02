@@ -13,10 +13,7 @@ export type DocRouteParams = {
 const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
 
 // Given a path, return an array of all filenames in that directory and all subdirectories.
-export const getAllFiles = function (
-  dirPath: string,
-  arrayOfFiles: DocRouteParams[] = []
-) {
+export const getAllFiles = function (dirPath: string, arrayOfFiles: DocRouteParams[] = []) {
   const relativePath = join(process.cwd(), dirPath);
   const files = fs.readdirSync(relativePath);
 
@@ -34,13 +31,6 @@ export const getAllFiles = function (
 
   return arrayOfFiles;
 };
-
-// JRM - I wasn't sure what you intended with 'sorting' so I left it for you to implement.
-// If you don't need this, just return getAllFiles directly.
-export function getSortedDocsData() {
-  const allFiles = getAllFiles(DOCS_PATH);
-  return allFiles;
-}
 
 // Take a nextjs route segment and convert it to a path, adding the .md extension.
 const segmentToPath = (segment: string[]) => {

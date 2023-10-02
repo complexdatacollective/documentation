@@ -1,5 +1,5 @@
 import Menu from "@/app/_components/Menu";
-import { getSortedDocsData } from "@/lib/docs";
+import { getAllFiles } from "@/lib/docs";
 import Link from "next/link";
 
 /**
@@ -9,104 +9,42 @@ import Link from "next/link";
  */
 
 const DesktopMenus = () => {
-  // const tutorialsData = getSortedDocsData("docs/desktop/_tutorials");
-  // const how_toData = getSortedDocsData("docs/desktop/_how-to-guides");
-  // const interfaceDocumentationData = getSortedDocsData(
-  //   "docs/desktop/_interface-documentation"
-  // );
-  // const keyConceptsData = getSortedDocsData("docs/desktop/_key-concepts");
-  // const referenceData = getSortedDocsData("docs/desktop/_reference");
-
-  return null;
+  const files = getAllFiles("docs");
+  const filePaths = files
+    .filter((file) => !file.params.docPath.includes("docs/fresco"))
+    .map((file) => ({
+      docPath: file.params.docPath.split("/").filter((p) => p !== "docs" && p !== "desktop"),
+    }));
 
   return (
     <div className="h-screen overflow-auto px-2">
-      <Menu title={"Tutorials"}>
-        <ul className="flex gap-2 flex-col">
-          {tutorialsData.map((doc) => (
-            <li
-              key={doc.id}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              <Link
-                href={`/desktop/${doc?.path.split("/").slice(-1)}/${doc.id}`}
-              >
-                {doc.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Menu>
-
-      <Menu title={"How-to Guides"}>
-        <ul className="flex gap-2 flex-col">
-          {how_toData.map((doc) => (
-            <li
-              key={doc.id}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              <Link
-                href={`/desktop/${doc?.path.split("/").slice(-1)}/${doc.id}`}
-              >
-                {doc.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Menu>
-
-      <Menu title={"Interface Documentation"}>
-        <ul className="flex gap-2 flex-col">
-          {interfaceDocumentationData.map((doc) => (
-            <li
-              key={doc.id}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              <Link
-                href={`/desktop/${doc?.dir.split("/").slice(-1)}/${doc.id}`}
-              >
-                {doc.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Menu>
-
-      <Menu title={"Key Concepts"}>
-        <ul className="flex gap-2 flex-col">
-          {keyConceptsData.map((doc) => (
-            <li
-              key={doc.id}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              <Link
-                href={`/desktop/${doc?.dir.split("/").slice(-1)}/${doc.id}`}
-              >
-                {doc.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Menu>
-
-      <Menu title={"Technical Reference"}>
-        <ul className="flex gap-2 flex-col">
-          {referenceData.map((doc) => (
-            <li
-              key={doc.id}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              <Link
-                href={`/desktop/${doc?.dir.split("/").slice(-1)}/${doc.id}`}
-              >
-                {doc.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Menu>
+      {filePaths.map((item, index) => (
+        <RenderMenu key={index} arr={item.docPath} />
+      ))}
     </div>
   );
 };
 
 export default DesktopMenus;
+
+function RenderMenu({ arr }: { arr: string[] }) {
+  // const arr = ["_interface-documentation", "interface", "name-generator-using-forms.md"];
+
+  if (!arr[0].includes(".md")) {
+    let newArray = arr.filter((_, index) => index !== 0);
+
+    return (
+      <Menu title={arr[0]}>
+        <RenderMenu arr={newArray} />
+      </Menu>
+    );
+  } else {
+    return (
+      <ul className="flex gap-2 flex-col">
+        <li className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors">
+          <Link href="#">{arr}</Link>
+        </li>
+      </ul>
+    );
+  }
+}
