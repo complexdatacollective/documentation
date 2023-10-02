@@ -14,19 +14,19 @@ const DesktopMenus = () => {
 
   async function getMenusData() {
     const tutorialsData = await getSortedDocsData("docs/desktop/_tutorials");
-    const how_toData = await getSortedDocsData("docs/desktop/_how-to-guides");
-    const interfaceDocumentationData = await getSortedDocsData(
-      "docs/desktop/_interface-documentation"
-    );
-    const keyConceptsData = await getSortedDocsData("docs/desktop/_key-concepts");
-    const referenceData = await getSortedDocsData("docs/desktop/_reference");
+    // const how_toData = await getSortedDocsData("docs/desktop/_how-to-guides");
+    // const interfaceDocumentationData = await getSortedDocsData(
+    //   "docs/desktop/_interface-documentation"
+    // );
+    // const keyConceptsData = await getSortedDocsData("docs/desktop/_key-concepts");
+    // const referenceData = await getSortedDocsData("docs/desktop/_reference");
 
     setState({
       tutorialsData,
-      how_toData,
-      interfaceDocumentationData,
-      keyConceptsData,
-      referenceData,
+      // how_toData,
+      // interfaceDocumentationData,
+      // keyConceptsData,
+      // referenceData,
     });
   }
 

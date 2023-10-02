@@ -30,6 +30,9 @@ export async function getSortedDocsData(dir: string) {
     // Combine the data with the id
     return docData;
   });
+
+  console.log("HELLO:", allDocsData);
+
   // Sort docs by date
   return allDocsData;
 }
