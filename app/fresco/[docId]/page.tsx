@@ -34,7 +34,7 @@ const DocPage = async ({ params }: { params: { docId: string } }) => {
       <MDXRemote
         options={{
           mdxOptions: {
-            rehypePlugins: [rehypePrettyCode],
+            // rehypePlugins: [rehypePrettyCode],
           },
         }}
         components={components}
