@@ -1,5 +1,5 @@
 import SwitchProducts from "@/components/SwitchProducts";
-import DesktopMenus from "../desktop/_components/DesktopMenus";
+import DesktopMenus from "../[project]/_components/DesktopMenus";
 
 const Sidebar = () => {
   return (

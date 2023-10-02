@@ -1,10 +1,6 @@
 import Link from "next/link";
 
-type Props = {
-  post: DocArticle;
-};
-
-const ListItem = ({ post }: Props) => {
+const ListItem = ({ post }) => {
   const { id, date, title } = post;
 
   return (

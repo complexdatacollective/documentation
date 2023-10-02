@@ -1,68 +1,62 @@
-import fs from "fs";
-import path from "path";
+import fs, { PathLike } from "fs";
+import { join } from "path";
 import matter from "gray-matter";
 
-export type SubfoldersType = {
-  folder: string;
-  files: DocArticle[];
+export type DocRouteParams = {
+  params: {
+    docPath: string;
+  };
 };
 
-export const getdocsDataWithFolders = (directoryPath: string = "docs/desktop") => {
-  fs.readdir(directoryPath, { withFileTypes: true }, (err, files) => {
-    if (err) {
-      console.error("Error reading directory:", err);
-      return;
+const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
+
+// Given a path, return an array of all filenames in that directory and all subdirectories.
+export const getAllFiles = function (
+  dirPath: string,
+  arrayOfFiles: DocRouteParams[] = []
+) {
+  const relativePath = join(process.cwd(), dirPath);
+  const files = fs.readdirSync(relativePath);
+
+  files.forEach(function (file) {
+    if (isDirectory(dirPath + "/" + file)) {
+      arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
+    } else {
+      arrayOfFiles.push({
+        params: {
+          docPath: dirPath + "/" + file,
+        },
+      });
     }
-
-    const subfolders = files
-      .filter((file) => file.isDirectory())
-      .map((file) => ({
-        folder: file.name,
-        files: getSortedDocsData(`docs/desktop/${file.name}`),
-      }));
-
-    return subfolders;
   });
+
+  return arrayOfFiles;
 };
 
+// JRM - I wasn't sure what you intended with 'sorting' so I left it for you to implement.
+// If you don't need this, just return getAllFiles directly.
 export function getSortedDocsData(dir: string) {
-  const docsDirectory = path.join(process.cwd(), dir);
-
-  // Get file names
-  const fileNames = fs.readdirSync(docsDirectory);
-  const allDocsData = fileNames.map((fileName) => {
-    // Remove ".mdx" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
-
-    // Read markdown file as string
-    const fullPath = path.join(docsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    const docData: DocArticle = {
-      id,
-      title: matterResult.data.title,
-      date: matterResult.data.date ?? "",
-      dir,
-    };
-
-    // Combine the data with the id
-    return docData;
-  });
-  // Sort docs by date
-  return allDocsData;
+  const allFiles = getAllFiles(dir);
+  return allFiles;
 }
-// allDocsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 
-export async function getDocData(filePath: string) {
-  const markdownFile = fs.readFileSync(filePath + ".md", "utf-8");
+// Take a nextjs route segment and convert it to a path, adding the .md extension.
+const segmentToPath = (segment: string[]) => {
+  const path = segment.join("/");
+  return join(process.cwd(), "docs", `${path}.md`); // <- hard coded 'docs' - should be part of env?
+};
+
+// Takes a path segment and returns an object containing parsed markdown for the
+// file at the segment, along with useful metadata.
+export function getDoc(pathSegment: string[]) {
+  const path = segmentToPath(pathSegment);
+  const markdownFile = fs.readFileSync(path, "utf-8");
   const matterResult = matter(markdownFile);
 
   return {
-    title: matterResult.data.title,
-    date: matterResult.data.date ?? "",
+    // Add other elements of the frontmatter here as needed.
+    title: matterResult.data.title ?? undefined,
+    lastUpdated: matterResult.data.date ?? undefined,
     content: matterResult.content,
   };
 }
