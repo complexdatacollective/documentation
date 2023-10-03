@@ -1,8 +1,8 @@
 import Menu from "@/app/_components/Menu";
+import { File, Folder, fetchFileSystemData } from "@/lib/docs";
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { File, Folder, fetchFileSystemData } from "../_actions/actions";
+// import { useEffect, useState } from "react";
 
 interface NavigationProps {
   data: Array<File | Folder>;
@@ -38,18 +38,20 @@ function Navigation({ data }: NavigationProps): JSX.Element {
 }
 
 export default function Menus({ mainPath }: { mainPath: string }): JSX.Element {
-  const [data, setData] = useState<Array<File | Folder>>([]);
+  const fileSystemData = fetchFileSystemData(`${process.env.NEXT_PUBLIC_DOCS_PATH}/${mainPath}`);
 
-  useEffect(() => {
-    async function getFileSystemData() {
-      const fileSystemData = await fetchFileSystemData(
-        `${process.env.NEXT_PUBLIC_DOCS_PATH}/${mainPath}`
-      );
-      setData(fileSystemData);
-    }
+  // const [data, setData] = useState<Array<File | Folder>>([]);
 
-    getFileSystemData();
-  }, [mainPath]);
+  // useEffect(() => {
+  //   async function getFileSystemData() {
+  //     const fileSystemData = await fetchFileSystemData(
+  //       `${process.env.NEXT_PUBLIC_DOCS_PATH}/${mainPath}`
+  //     );
+  //     setData(fileSystemData);
+  //   }
 
-  return <Navigation data={data} />;
+  //   getFileSystemData();
+  // }, [mainPath]);
+
+  return <Navigation data={fileSystemData} />;
 }
