@@ -1,8 +1,8 @@
 import fs, { PathLike } from "fs";
-import { join } from "path";
 import matter from "gray-matter";
+import { join } from "path";
 
-const DOCS_PATH = "docs"; // <- hard coded 'docs' - should be part of env?
+const DOCS_PATH = process.env.NEXT_PUBLIC_DOCS_PATH + "";
 
 export type DocRouteParams = {
   params: {
