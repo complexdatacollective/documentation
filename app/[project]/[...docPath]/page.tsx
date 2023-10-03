@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 // import rehypePrettyCode from "rehype-pretty-code";
 
+export const runtime = "nodejs";
+
 const components = {
   h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
     <h1 className="dark:text-green-400">{props.children}</h1>

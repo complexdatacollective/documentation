@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Sidebar from "./_components/Sidebar";
 
+export const runtime = "nodejs";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

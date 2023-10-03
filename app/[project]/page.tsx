@@ -1,5 +1,7 @@
 import MDXFile from "@/lib/MDXFile";
 
+export const runtime = "nodejs";
+
 const DesktopPage = () => {
   return (
     <main className="flex justify-center flex-col items-center gap-2">
