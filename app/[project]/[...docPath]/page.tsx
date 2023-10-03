@@ -1,8 +1,8 @@
-import { getSortedDocsData } from "@/app/_actions/actions";
-import { getDocData, getDocNamesWithFolders } from "@/lib/docs";
+import { getAllFiles, getDoc } from "@/lib/docs";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import rehypePrettyCode from "rehype-pretty-code";
 
@@ -13,27 +13,39 @@ const components = {
   h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
     <h2 className="dark:text-green-400">{props.children}</h2>
   ),
-
-  // img: (props) => <Image width={300} height={300} src={props.src ?? ""} alt={props.alt ?? ""} />,
 };
 
-export async function generateMetadata({ params }: { params: { docId: string[] } }) {
-  const docs = await getSortedDocsData(`docs/fresco/${params.docId[0]}`);
-  const doc = docs.find((post) => post.id === params.docId[1]);
+export async function generateMetadata({
+  params: { docPath, project },
+}: {
+  params: { project: string; docPath: string[] };
+}) {
+  const segmentWithProject = [project, ...docPath];
+  const { title } = getDoc(segmentWithProject);
 
-  if (!doc) return { title: "Doc Not Found" };
+  if (!title) {
+    console.error(`No title found for ${docPath}!`);
+    return { title: "Network Canvas Documentation" };
+  }
 
-  return { title: doc.title };
+  return { title: title };
 }
 
 export async function generateStaticParams() {
-  const docs = getDocNamesWithFolders("docs/fresco");
+  const docs = getAllFiles("docs");
 
-  return docs.map((doc) => ({ docId: [doc.folderName, doc.filename] }));
+  return docs;
 }
 
-const DocPage = async ({ params }: { params: { docId: string[] } }) => {
-  const doc = await getDocData(`docs/fresco/${params.docId.join("/")}`);
+const DocPage = ({
+  params: { project, docPath },
+}: {
+  params: { project: string; docPath: string[] };
+}) => {
+  const segmentWithProject = [project, ...docPath];
+  const { content, lastUpdated } = getDoc(segmentWithProject);
+
+  if (content === null) return notFound();
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
@@ -44,10 +56,10 @@ const DocPage = async ({ params }: { params: { docId: string[] } }) => {
           },
         }}
         components={components}
-        source={doc.content}
+        source={content}
       ></MDXRemote>
-      <p className="text-sm text-red-400">{doc.date}</p>
-      <Link className="flex gap-0 items-center" href={"/fresco"}>
+      <p className="text-sm text-red-400">{lastUpdated}</p>
+      <Link className="flex gap-0 items-center" href={"/desktop"}>
         <StepBack /> Back
       </Link>
     </article>

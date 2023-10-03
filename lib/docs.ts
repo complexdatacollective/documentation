@@ -1,52 +1,71 @@
-import fs from "fs";
-import path from "path";
+import fs, { PathLike } from "fs";
 import matter from "gray-matter";
+import { join } from "path";
 
-export type SubfoldersType = {
-  folder: string;
-  files: DocArticle[];
+const DOCS_PATH = process.env.NEXT_PUBLIC_DOCS_PATH + "";
+
+export type DocRouteParams = {
+  params: {
+    docPath: string;
+  };
 };
 
-export function getDocNamesWithFolders(directory: string = "docs/desktop") {
-  const docs = [];
+const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
 
-  // Get the full path of the directory
-  const dirPath = path.join(process.cwd(), directory);
+// Given a path, return an array of all filenames in that directory and all subdirectories.
+export const getAllFiles = function (dirPath: string, arrayOfFiles: DocRouteParams[] = []) {
+  const relativePath = join(process.cwd(), dirPath);
+  const files = fs.readdirSync(relativePath);
 
-  // Read the directory
-  const subDirectories = fs.readdirSync(dirPath);
-
-  // Iterate through the subdirectories
-  for (const subDir of subDirectories) {
-    const subDirPath = path.join(dirPath, subDir);
-
-    // Read the files inside the subdirectory
-    const files = fs.readdirSync(subDirPath);
-
-    // Iterate through the files
-    for (const file of files) {
-      // Extract the folder name and filename without the extension
-      const folderName = subDir;
-      const filename = path.parse(file).name;
-
-      // Create an object with folderName and filename properties
-      const doc = { folderName, filename };
-
-      // Push the object to the docs array
-      docs.push(doc);
+  files.forEach(function (file) {
+    if (isDirectory(dirPath + "/" + file)) {
+      arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
+    } else {
+      arrayOfFiles.push({
+        params: {
+          docPath: dirPath + "/" + file,
+        },
+      });
     }
+  });
+
+  return arrayOfFiles;
+};
+
+// Take a nextjs route segment and convert it to a path, adding the .md extension.
+const segmentToPath = (segment: string[]) => {
+  const path = segment.join("/");
+  const pathToMdFile = join(process.cwd(), DOCS_PATH, `${path}.md`);
+  const pathToMdXFile = join(process.cwd(), DOCS_PATH, `${path}.mdx`);
+
+  if (fs.existsSync(pathToMdFile)) {
+    return pathToMdFile;
+  } else if (fs.existsSync(pathToMdXFile)) {
+    return pathToMdXFile;
+  } else {
+    return null;
   }
+};
 
-  return docs;
-}
+// Takes a path segment and returns an object containing parsed markdown for the
+// file at the segment, along with useful metadata.
+export function getDoc(pathSegment: string[]) {
+  const path = segmentToPath(pathSegment);
 
-export async function getDocData(filePath: string) {
-  const markdownFile = fs.readFileSync(filePath + ".md", "utf-8");
+  if (path === null)
+    return {
+      title: "File not found",
+      content: null,
+      lastUpdated: undefined,
+    };
+
+  const markdownFile = fs.readFileSync(path, "utf-8");
   const matterResult = matter(markdownFile);
 
   return {
-    title: matterResult.data.title,
-    date: matterResult.data.date ?? "",
+    // Add other elements of the frontmatter here as needed.
+    title: matterResult.data.title ?? undefined,
+    lastUpdated: matterResult.data.date ?? undefined,
     content: matterResult.content,
   };
 }
