@@ -35,13 +35,30 @@ export const getAllFiles = function (dirPath: string, arrayOfFiles: DocRoutePara
 // Take a nextjs route segment and convert it to a path, adding the .md extension.
 const segmentToPath = (segment: string[]) => {
   const path = segment.join("/");
-  return join(process.cwd(), DOCS_PATH, `${path}.md`);
+  const pathToMdFile = join(process.cwd(), DOCS_PATH, `${path}.md`);
+  const pathToMdXFile = join(process.cwd(), DOCS_PATH, `${path}.mdx`);
+
+  if (fs.existsSync(pathToMdFile)) {
+    return pathToMdFile;
+  } else if (fs.existsSync(pathToMdXFile)) {
+    return pathToMdXFile;
+  } else {
+    return null;
+  }
 };
 
 // Takes a path segment and returns an object containing parsed markdown for the
 // file at the segment, along with useful metadata.
 export function getDoc(pathSegment: string[]) {
   const path = segmentToPath(pathSegment);
+
+  if (path === null)
+    return {
+      title: "File not found",
+      content: null,
+      lastUpdated: undefined,
+    };
+
   const markdownFile = fs.readFileSync(path, "utf-8");
   const matterResult = matter(markdownFile);
 

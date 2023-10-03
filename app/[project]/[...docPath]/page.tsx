@@ -2,6 +2,7 @@ import { getAllFiles, getDoc } from "@/lib/docs";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import rehypePrettyCode from "rehype-pretty-code";
 
@@ -36,13 +37,15 @@ export async function generateStaticParams() {
   return docs;
 }
 
-const DocPage = async ({
+const DocPage = ({
   params: { project, docPath },
 }: {
   params: { project: string; docPath: string[] };
 }) => {
   const segmentWithProject = [project, ...docPath];
-  const { content, lastUpdated } = await getDoc(segmentWithProject);
+  const { content, lastUpdated } = getDoc(segmentWithProject);
+
+  if (content === null) return notFound();
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
