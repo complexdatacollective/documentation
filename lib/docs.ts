@@ -114,7 +114,7 @@ export function fetchFileSystemData(directory: string): Array<File | Folder> {
         files: nestedFiles,
       } as Folder;
     } else {
-      const fileRelativePath = relative("./docs", filePath);
+      const fileRelativePath = relative(DOCS_PATH, filePath);
       const fileLink = fileRelativePath.replace(/\.(md|mdx)$/, "");
       const fileName = basename(fileLink);
       return {
