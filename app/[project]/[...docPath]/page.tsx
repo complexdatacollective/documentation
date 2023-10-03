@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import rehypePrettyCode from "rehype-pretty-code";
+// import rehypePrettyCode from "rehype-pretty-code";
 
 const components = {
   h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
@@ -52,7 +52,7 @@ const DocPage = ({
       <MDXRemote
         options={{
           mdxOptions: {
-            rehypePlugins: [rehypePrettyCode],
+            // rehypePlugins: [rehypePrettyCode],
           },
         }}
         components={components}
