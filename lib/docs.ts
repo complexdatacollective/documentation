@@ -84,7 +84,7 @@ export interface File {
   path: string;
 }
 
-export function fetchFileSystemData(directory: string): Array<File | Folder> {
+export function fetchFileSystemData(directory: string = DOCS_PATH): Array<File | Folder> {
   const files = fs.readdirSync(directory);
 
   const sortedFiles = files.sort((a, b) => {
