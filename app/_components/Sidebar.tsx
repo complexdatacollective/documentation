@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="sticky top-1">
       <h2>Navigatons here</h2>
-      {/* <Navigations /> */}
+      <Navigations />
     </div>
   );
 };

@@ -86,7 +86,7 @@ export interface File {
   path: string;
 }
 
-export function fetchFileSystemData(directory: string = DOCS_PATH): Array<File | Folder> {
+export function fetchFileSystemData(directory: string): Array<File | Folder> {
   const files = fs.readdirSync(directory);
 
   const sortedFiles = files.sort((a, b) => {
@@ -116,7 +116,7 @@ export function fetchFileSystemData(directory: string = DOCS_PATH): Array<File |
         files: nestedFiles,
       } as Folder;
     } else {
-      const fileRelativePath = relative(DOCS_PATH, filePath);
+      const fileRelativePath = relative("./docs", filePath);
       const fileLink = fileRelativePath.replace(/\.(md|mdx)$/, "");
       const fileName = basename(fileLink);
       return {
