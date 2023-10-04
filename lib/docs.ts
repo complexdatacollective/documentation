@@ -86,23 +86,29 @@ export interface File {
   path: string;
 }
 
-export function fetchFileSystemData(directory: string): Array<File | Folder> {
-  const files = fs.readdirSync(directory);
+export function fetchFileSystemData(directory: string = "docs"): Array<File | Folder> {
+  const relativePath = join(process.cwd(), directory);
 
-  const sortedFiles = files.sort((a, b) => {
-    const fileA = join(directory, a);
-    const fileB = join(directory, b);
-    const statsA = fs.statSync(fileA);
-    const statsB = fs.statSync(fileB);
+  console.log("HELLO:", relativePath, directory);
 
-    if (statsA.isDirectory() && !statsB.isDirectory()) {
-      return 1;
-    } else if (!statsA.isDirectory() && statsB.isDirectory()) {
-      return -1;
-    }
+  const files = fs.readdirSync(relativePath);
 
-    return a.localeCompare(b);
-  });
+  const sortedFiles = files;
+
+  // const sortedFiles = files.sort((a, b) => {
+  //   const fileA = join(directory, a);
+  //   const fileB = join(directory, b);
+  //   const statsA = fs.statSync(fileA);
+  //   const statsB = fs.statSync(fileB);
+
+  //   if (statsA.isDirectory() && !statsB.isDirectory()) {
+  //     return 1;
+  //   } else if (!statsA.isDirectory() && statsB.isDirectory()) {
+  //     return -1;
+  //   }
+
+  //   return a.localeCompare(b);
+  // });
 
   return sortedFiles.map((file) => {
     const filePath = join(directory, file);
