@@ -1,7 +1,5 @@
-import { redirect } from "next/navigation";
-
 export const runtime = "nodejs";
 
 export default function Home() {
-  return redirect("/desktop");
+  return <h1>Home Page</h1>;
 }
