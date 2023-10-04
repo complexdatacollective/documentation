@@ -2,6 +2,8 @@ import fs, { PathLike } from "fs";
 import matter from "gray-matter";
 import { basename, join, relative } from "path";
 
+export const runtime = "nodejs";
+
 const DOCS_PATH = process.env.NEXT_PUBLIC_DOCS_PATH + "";
 
 export type DocRouteParams = {
