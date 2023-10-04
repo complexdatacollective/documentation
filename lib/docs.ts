@@ -4,8 +4,6 @@ import { basename, join, relative } from "path";
 
 export const runtime = "nodejs";
 
-const DOCS_PATH = process.env.NEXT_PUBLIC_DOCS_PATH + "";
-
 export type DocRouteParams = {
   params: {
     docPath: string;
@@ -16,7 +14,7 @@ const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
 
 // Given a path, return an array of all filenames in that directory and all subdirectories.
 export const getAllFiles = function (
-  dirPath: string,
+  dirPath: string = process.env.NEXT_PUBLIC_DOCS_PATH!,
   arrayOfFiles: DocRouteParams[] = []
 ) {
   const relativePath = join(process.cwd(), dirPath);
@@ -40,8 +38,16 @@ export const getAllFiles = function (
 // Take a nextjs route segment and convert it to a path, adding the .md extension.
 const segmentToPath = (segment: string[]) => {
   const path = segment.join("/");
-  const pathToMdFile = join(process.cwd(), DOCS_PATH, `${path}.md`);
-  const pathToMdXFile = join(process.cwd(), DOCS_PATH, `${path}.mdx`);
+  const pathToMdFile = join(
+    process.cwd(),
+    process.env.NEXT_PUBLIC_DOCS_PATH!,
+    `${path}.md`
+  );
+  const pathToMdXFile = join(
+    process.cwd(),
+    process.env.NEXT_PUBLIC_DOCS_PATH!,
+    `${path}.mdx`
+  );
 
   if (fs.existsSync(pathToMdFile)) {
     return pathToMdFile;
@@ -90,13 +96,13 @@ export interface File {
 }
 
 export function getSidebarData() {
-  return fetchFileSystemData("./public/docs");
+  const fsData = fetchFileSystemData(process.env.NEXT_PUBLIC_DOCS_PATH!);
+  console.log(fsData);
+  return fsData;
 }
 
 export function fetchFileSystemData(directory: string): Array<File | Folder> {
   const relativePath = join(process.cwd(), directory);
-
-  console.log("HELLO:", relativePath, directory);
 
   const files = fs.readdirSync(relativePath);
 
@@ -129,7 +135,10 @@ export function fetchFileSystemData(directory: string): Array<File | Folder> {
         files: nestedFiles,
       } as Folder;
     } else {
-      const fileRelativePath = relative("./docs", filePath);
+      const fileRelativePath = relative(
+        process.env.NEXT_PUBLIC_DOCS_PATH!,
+        filePath
+      );
       const fileLink = fileRelativePath.replace(/\.(md|mdx)$/, "");
       const fileName = basename(fileLink);
       return {

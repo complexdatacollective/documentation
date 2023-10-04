@@ -9,12 +9,18 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 export const runtime = "nodejs";
 
 const components = {
-  h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h1 className="dark:text-green-400">{props.children}</h1>
-  ),
-  h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h2 className="dark:text-green-400">{props.children}</h2>
-  ),
+  h1: (
+    props: DetailedHTMLProps<
+      HTMLAttributes<HTMLHeadingElement>,
+      HTMLHeadingElement
+    >
+  ) => <h1 className="dark:text-green-400">{props.children}</h1>,
+  h2: (
+    props: DetailedHTMLProps<
+      HTMLAttributes<HTMLHeadingElement>,
+      HTMLHeadingElement
+    >
+  ) => <h2 className="dark:text-green-400">{props.children}</h2>,
 };
 
 export async function generateMetadata({
@@ -34,7 +40,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const docs = getAllFiles("docs");
+  const docs = getAllFiles();
 
   return docs;
 }
