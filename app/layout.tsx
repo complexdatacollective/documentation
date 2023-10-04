@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Sidebar from "./_components/Sidebar";
-import fs from "node:fs";
+import data from "@/public/sidebar.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +18,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const sidebarData = await fs.promises
-    .readFile("./public/sidebar.json", {
-      encoding: "utf-8",
-    })
-    .then(JSON.parse);
+  const sidebarData = JSON.parse(JSON.stringify(data));
 
   return (
     <html lang="en" suppressHydrationWarning>
