@@ -32,6 +32,8 @@ export const getAllFiles = function (
     }
   });
 
+  getSidebarData();
+
   return arrayOfFiles;
 };
 
@@ -97,8 +99,13 @@ export interface File {
 
 export function getSidebarData() {
   const fsData = fetchFileSystemData(process.env.NEXT_PUBLIC_DOCS_PATH!);
-  console.log(fsData);
-  return fsData;
+  console.log("fsdata", fsData);
+
+  fs.writeFileSync(
+    "./public/sidebar.json",
+    JSON.stringify(fsData, null, 2),
+    "utf-8"
+  );
 }
 
 export function fetchFileSystemData(directory: string): Array<File | Folder> {

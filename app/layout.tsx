@@ -4,9 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Sidebar from "./_components/Sidebar";
-import { getSidebarData } from "@/lib/docs";
-
-export const runtime = "nodejs";
+import fs from "node:fs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +13,16 @@ export const metadata: Metadata = {
   description: "All Network Canvas Docs",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const sidebarData = getSidebarData();
+  const sidebarData = await fs.promises
+    .readFile("./public/sidebar.json", {
+      encoding: "utf-8",
+    })
+    .then(JSON.parse);
 
   return (
     <html lang="en" suppressHydrationWarning>
