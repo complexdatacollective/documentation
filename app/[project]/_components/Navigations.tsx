@@ -9,7 +9,7 @@ export default function Navigations(): JSX.Element {
   return (
     <div>
       <h2> Navigations</h2>
-      {/* <NavigationSwitcher data={fileSystemData} /> */}
+      <NavigationSwitcher data={fileSystemData} />
     </div>
   );
 }

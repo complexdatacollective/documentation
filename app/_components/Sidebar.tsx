@@ -5,7 +5,8 @@ export const runtime = "nodejs";
 const Sidebar = () => {
   return (
     <div className="sticky top-1">
-      <Navigations />
+      <h2>Navigatons here</h2>
+      {/* <Navigations /> */}
     </div>
   );
 };
