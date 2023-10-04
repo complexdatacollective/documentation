@@ -15,7 +15,10 @@ export type DocRouteParams = {
 const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
 
 // Given a path, return an array of all filenames in that directory and all subdirectories.
-export const getAllFiles = function (dirPath: string, arrayOfFiles: DocRouteParams[] = []) {
+export const getAllFiles = function (
+  dirPath: string,
+  arrayOfFiles: DocRouteParams[] = []
+) {
   const relativePath = join(process.cwd(), dirPath);
   const files = fs.readdirSync(relativePath);
 
@@ -86,7 +89,11 @@ export interface File {
   path: string;
 }
 
-export function fetchFileSystemData(directory: string = "docs"): Array<File | Folder> {
+export function getSidebarData() {
+  return fetchFileSystemData("./public/docs");
+}
+
+export function fetchFileSystemData(directory: string): Array<File | Folder> {
   const relativePath = join(process.cwd(), directory);
 
   console.log("HELLO:", relativePath, directory);

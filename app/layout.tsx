@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Sidebar from "./_components/Sidebar";
+import { getSidebarData } from "@/lib/docs";
 
 export const runtime = "nodejs";
 
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
   description: "All Network Canvas Docs",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const sidebarData = getSidebarData();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -26,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           <Navbar />
           <div className="container grid grid-cols-5 items-start">
-            <Sidebar />
+            <Sidebar data={sidebarData} />
             <div className="col-span-3">{children}</div>
           </div>
         </ThemeProvider>

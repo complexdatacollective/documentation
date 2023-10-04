@@ -11,11 +11,11 @@ import {
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 
-type SwitchProductsProps = {
+type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
 };
 
-export default function SwitchProducts({ setProduct }: SwitchProductsProps) {
+export default function ProductSwitcher({ setProduct }: ProductSwitcherProps) {
   const router = useRouter();
 
   return (
