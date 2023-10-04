@@ -1,15 +1,11 @@
-import MDXFile from "@/lib/MDXFile";
-
 export const runtime = "nodejs";
 
-const DesktopPage = () => {
-  return (
-    <main className="flex justify-center flex-col items-center gap-2">
-      <div className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert mx-auto">
-        <MDXFile name="hello" />
-      </div>
-    </main>
-  );
-};
+export default function ProjectPage({ params }: { params: { project: string } }) {
+  console.log("PARAMS:", params);
 
-export default DesktopPage;
+  return (
+    <h1 className="mx-4">
+      Project Page Params: <span className="text-blue-400 text-2xl">{params.project}</span>{" "}
+    </h1>
+  );
+}
