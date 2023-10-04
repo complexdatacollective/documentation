@@ -32,24 +32,14 @@ export const getAllFiles = function (
     }
   });
 
-  getSidebarData();
-
   return arrayOfFiles;
 };
 
 // Take a nextjs route segment and convert it to a path, adding the .md extension.
 const segmentToPath = (segment: string[]) => {
   const path = segment.join("/");
-  const pathToMdFile = join(
-    process.cwd(),
-    process.env.NEXT_PUBLIC_DOCS_PATH!,
-    `${path}.md`
-  );
-  const pathToMdXFile = join(
-    process.cwd(),
-    process.env.NEXT_PUBLIC_DOCS_PATH!,
-    `${path}.mdx`
-  );
+  const pathToMdFile = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!, `${path}.md`);
+  const pathToMdXFile = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!, `${path}.mdx`);
 
   if (fs.existsSync(pathToMdFile)) {
     return pathToMdFile;
@@ -97,15 +87,11 @@ export interface File {
   path: string;
 }
 
-export function getSidebarData() {
+export function writeSidebarDataJSON() {
   const fsData = fetchFileSystemData(process.env.NEXT_PUBLIC_DOCS_PATH!);
   console.log("fsdata", fsData);
 
-  fs.writeFileSync(
-    "./public/sidebar.json",
-    JSON.stringify(fsData, null, 2),
-    "utf-8"
-  );
+  fs.writeFileSync("./public/sidebar.json", JSON.stringify(fsData, null, 2), "utf-8");
 }
 
 export function fetchFileSystemData(directory: string): Array<File | Folder> {
@@ -142,10 +128,7 @@ export function fetchFileSystemData(directory: string): Array<File | Folder> {
         files: nestedFiles,
       } as Folder;
     } else {
-      const fileRelativePath = relative(
-        process.env.NEXT_PUBLIC_DOCS_PATH!,
-        filePath
-      );
+      const fileRelativePath = relative(process.env.NEXT_PUBLIC_DOCS_PATH!, filePath);
       const fileLink = fileRelativePath.replace(/\.(md|mdx)$/, "");
       const fileName = basename(fileLink);
       return {
