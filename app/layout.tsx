@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   description: "All Network Canvas Docs",
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const sidebarData = JSON.parse(JSON.stringify(data));
 
   return (
@@ -31,7 +27,7 @@ export default async function RootLayout({
         >
           <Navbar />
           <div className="container grid grid-cols-5 items-start">
-            <Sidebar data={sidebarData} />
+            {sidebarData && <Sidebar data={sidebarData} />}
             <div className="col-span-3">{children}</div>
           </div>
         </ThemeProvider>

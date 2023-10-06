@@ -1,3 +1,4 @@
+import { getAllDocFiles, indexAllFiles } from "@/lib/algolia-search";
 import { getAllFiles, getDoc, writeSidebarDataJSON } from "@/lib/docs";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -33,6 +34,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const docs = getAllFiles();
   writeSidebarDataJSON();
+  await indexAllFiles();
 
   return docs;
 }
