@@ -20,3 +20,16 @@ export function formatPathPattern(pathPattern: string): string {
 
   return formattedPath;
 }
+
+export function convertToUrlText(text: string): string {
+  // Convert the text to lowercase
+  const lowercaseText = text.toLowerCase();
+
+  // Replace spaces with hyphens
+  const hyphenatedText = lowercaseText.replace(/\s+/g, "-");
+
+  // Remove any non-alphanumeric characters except hyphens
+  const cleanedText = hyphenatedText.replace(/[^a-z0-9-]/g, "");
+
+  return cleanedText;
+}

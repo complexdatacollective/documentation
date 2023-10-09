@@ -1,4 +1,5 @@
 import { getAllFiles, getDoc, writeSidebarDataJSON } from "@/lib/docs";
+import { convertToUrlText } from "@/lib/helper_functions";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -10,7 +11,11 @@ const components = {
     <h1 className="dark:text-green-400">{props.children}</h1>
   ),
   h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h2 className="dark:text-green-400">{props.children}</h2>
+    <h2 className="dark:text-green-400">
+      <Link href={`#${convertToUrlText(props.children?.toString() ?? "")}`}>
+        <span id={convertToUrlText(props.children?.toString() ?? "")}>{props.children}</span>
+      </Link>
+    </h2>
   ),
 };
 
