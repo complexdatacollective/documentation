@@ -10,10 +10,10 @@ export function Panel({
   footer?: React.ReactNode;
 }) {
   return (
-    <div className="ais-Panel">
-      {header && <div className="ais-Panel-header">{header}</div>}
-      <div className="ais-Panel-body">{children}</div>
-      {footer && <div className="ais-Panel-footer">{footer}</div>}
+    <div>
+      {header && <div>{header}</div>}
+      <div>{children}</div>
+      {footer && <div>{footer}</div>}
     </div>
   );
 }

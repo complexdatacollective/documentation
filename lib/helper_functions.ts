@@ -10,3 +10,13 @@ export function convertToTitleCase(str: string) {
   // Join the words with spaces and return the final string
   return capitalizedWords.join(" ");
 }
+
+export function formatPathPattern(pathPattern: string): string {
+  // Remove the "/docs" prefix
+  let formattedPath = pathPattern.replace("docs/", "");
+
+  // Remove the file extension
+  formattedPath = formattedPath.replace(/\.mdx?$/, "");
+
+  return formattedPath;
+}

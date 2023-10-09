@@ -109,10 +109,5 @@
         ]
       }
     ]
-  },
-  {
-    "type": "file",
-    "name": "hello",
-    "path": "/hello"
   }
 ]
