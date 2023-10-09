@@ -29,7 +29,6 @@ export async function getAllDocFiles() {
 function transformDocsToSearchObjects(articles: Articles) {
   const transFormed = articles.map((article) => {
     return {
-      ObjectID: article.data.title,
       title: article.data.title,
       filePath: article.filePath,
       content: article.content,
@@ -44,9 +43,11 @@ export async function indexAllFiles() {
     const articles = await getAllDocFiles();
     const transformed = transformDocsToSearchObjects(articles);
 
-    const index = algolia_client.initIndex("network_canvas_algolia");
+    const index = algolia_client.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME + "");
 
-    const algoliaResponse = await index.saveObjects(transformed);
+    const algoliaResponse = await index.saveObjects(transformed, {
+      autoGenerateObjectIDIfNotExist: true,
+    });
 
     console.log(
       `Successfully added ${algoliaResponse.objectIDs.length} records to Algolia search.`

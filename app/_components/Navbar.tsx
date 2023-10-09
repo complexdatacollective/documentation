@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/assets/img/logo.svg";
+import AlgoliaSearch from "./AlgoliaSearch";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
         </Link>
         <div className="flex gap-3 items-center">
           <ThemeToggle />
-          <Button>Community</Button>
+          <Button>Community</Button>A
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ export async function generateStaticParams() {
   return docs;
 }
 
-const DocPage = ({
+const DocPage = async ({
   params: { project, docPath },
 }: {
   params: { project: string; docPath: string[] };

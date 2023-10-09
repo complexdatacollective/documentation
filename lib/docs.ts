@@ -89,7 +89,6 @@ export interface File {
 
 export function writeSidebarDataJSON() {
   const fsData = fetchFileSystemData(process.env.NEXT_PUBLIC_DOCS_PATH!);
-  console.log("fsdata", fsData);
 
   fs.writeFileSync("./public/sidebar.json", JSON.stringify(fsData, null, 2), "utf-8");
 }

@@ -67,13 +67,7 @@
       {
         "type": "folder",
         "name": "tutorials",
-        "files": [
-          {
-            "type": "file",
-            "name": "building-a-protocol",
-            "path": "/desktop\\tutorials\\building-a-protocol"
-          }
-        ]
+        "files": []
       }
     ]
   },
