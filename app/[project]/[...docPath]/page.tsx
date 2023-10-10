@@ -1,5 +1,7 @@
+import { indexAllFiles } from "@/lib/algolia-search";
 import { getAllFiles, getDoc, writeSidebarDataJSON } from "@/lib/docs";
 import { convertToUrlText } from "@/lib/helper_functions";
+import { markdownToText } from "@/lib/markdownToText";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";

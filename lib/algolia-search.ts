@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { algolia_client } from "./algolia-client";
 import { getAllFiles } from "./docs";
+import { markdownToText } from "./markdownToText";
 
 type Articles = {
   content: string;
@@ -16,14 +17,15 @@ const allFilePaths = getAllFiles().map((p) => ({
 }));
 
 export async function getAllDocFiles() {
-  const articles = allFilePaths.map((file) => {
+  const articles = allFilePaths.map(async (file) => {
     const source = fs.readFileSync(file.docPath);
     const { content, data } = matter(source);
+    const plainText = await markdownToText(content);
 
-    return { content, data, filePath: file.docPath };
+    return { content: plainText, data, filePath: file.docPath };
   });
 
-  return articles;
+  return Promise.all(articles);
 }
 
 function transformDocsToSearchObjects(articles: Articles) {
@@ -42,6 +44,8 @@ export async function indexAllFiles() {
   try {
     const articles = await getAllDocFiles();
     const transformed = transformDocsToSearchObjects(articles);
+
+    console.log("Transformed Data:", transformed);
 
     const index = algolia_client.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME + "");
 

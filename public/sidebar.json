@@ -63,11 +63,6 @@
             "path": "/desktop\\reference\\irb-best-practices"
           }
         ]
-      },
-      {
-        "type": "folder",
-        "name": "tutorials",
-        "files": []
       }
     ]
   },
