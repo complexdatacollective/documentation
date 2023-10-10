@@ -15,7 +15,7 @@ const Navbar = () => {
         </Link>
         <div className="flex gap-3 items-center">
           <ThemeToggle />
-          <Button>Community</Button>A
+          <Button>Community</Button>
         </div>
       </div>
     </div>
