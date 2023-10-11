@@ -1,0 +1,108 @@
+[
+  {
+    "type": "folder",
+    "name": "desktop",
+    "files": [
+      {
+        "type": "folder",
+        "name": "how-to-guides",
+        "files": [
+          {
+            "type": "folder",
+            "name": "tojik",
+            "files": [
+              {
+                "type": "file",
+                "name": "tojiki",
+                "path": "/desktop\\how-to-guides\\tojik\\tojiki"
+              },
+              {
+                "type": "folder",
+                "name": "jugi-bacha",
+                "files": [
+                  {
+                    "type": "file",
+                    "name": "jugi-bla",
+                    "path": "/desktop\\how-to-guides\\tojik\\jugi-bacha\\jugi-bla"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "interface-documentation",
+        "files": [
+          {
+            "type": "file",
+            "name": "tie-strength-census",
+            "path": "/desktop\\interface-documentation\\tie-strength-census"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "key-concepts",
+        "files": [
+          {
+            "type": "file",
+            "name": "codebook",
+            "path": "/desktop\\key-concepts\\codebook"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "reference",
+        "files": [
+          {
+            "type": "file",
+            "name": "irb-best-practices",
+            "path": "/desktop\\reference\\irb-best-practices"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "folder",
+    "name": "fresco",
+    "files": [
+      {
+        "type": "folder",
+        "name": "installation",
+        "files": [
+          {
+            "type": "file",
+            "name": "installation",
+            "path": "/fresco\\installation\\installation"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "introduction",
+        "files": [
+          {
+            "type": "file",
+            "name": "introduction",
+            "path": "/fresco\\introduction\\introduction"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "third-folder",
+        "files": [
+          {
+            "type": "file",
+            "name": "test",
+            "path": "/fresco\\third-folder\\test"
+          }
+        ]
+      }
+    ]
+  }
+]
