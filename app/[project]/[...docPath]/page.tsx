@@ -1,7 +1,5 @@
-import { indexAllFiles } from "@/lib/algolia-search";
-import { getAllFiles, getDoc, writeSidebarDataJSON } from "@/lib/docs";
+import { getAllFiles, getDoc } from "@/lib/docs.mjs";
 import { convertToUrlText } from "@/lib/helper_functions";
-import { markdownToText } from "@/lib/markdownToText";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -39,7 +37,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const docs = getAllFiles();
-  writeSidebarDataJSON();
+  // writeSidebarDataJSON();
   // await indexAllFiles();
 
   return docs;

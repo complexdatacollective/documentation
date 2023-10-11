@@ -2,10 +2,21 @@
 
 import Menu from "@/app/_components/Menu";
 import ProductSwitcher from "@/app/_components/ProductSwitcher";
-import { File, Folder } from "@/lib/docs";
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+export interface Folder {
+  type: "folder";
+  name: string;
+  files: Array<File | Folder>;
+}
+
+export interface File {
+  type: "file";
+  name: string;
+  path: string;
+}
 
 interface NavigationMenusProps {
   data: Array<File | Folder>;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { algolia_client } from "./algolia-client";
-import { getAllFiles } from "./docs";
+import { getAllFiles } from "./docs.mjs";
 import { markdownToText } from "./markdownToText";
 
 type Articles = {
