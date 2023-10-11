@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prebuild": "node ./lib/docs.mjs",
+    "prebuild": "node ./lib/writeSidebarJson.mjs",
     "start": "next start",
     "lint": "next lint"
   },

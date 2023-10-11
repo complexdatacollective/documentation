@@ -1,4 +1,4 @@
-import { getAllFiles, getDoc } from "@/lib/docs.mjs";
+import { getAllFiles, getDoc } from "@/lib/docs";
 import { convertToUrlText } from "@/lib/helper_functions";
 import { StepBack } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -49,6 +49,7 @@ const DocPage = async ({
   params: { project: string; docPath: string[] };
 }) => {
   const segmentWithProject = [project, ...docPath];
+
   const { content, lastUpdated } = getDoc(segmentWithProject);
 
   if (content === null) return notFound();
