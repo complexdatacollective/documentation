@@ -6,6 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
+// temporary custom styled components
 const components = {
   h1: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
     <h1 className="dark:text-green-400">{props.children}</h1>
@@ -37,9 +38,6 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const docs = getAllFiles();
-  // writeSidebarDataJSON();
-  // await indexAllFiles();
-
   return docs;
 }
 
@@ -49,24 +47,15 @@ const DocPage = async ({
   params: { project: string; docPath: string[] };
 }) => {
   const segmentWithProject = [project, ...docPath];
-
   const { content, lastUpdated } = getDoc(segmentWithProject);
 
   if (content === null) return notFound();
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
-      <MDXRemote
-        options={{
-          mdxOptions: {
-            // rehypePlugins: [rehypePrettyCode],
-          },
-        }}
-        components={components}
-        source={content}
-      ></MDXRemote>
+      <MDXRemote components={components} source={content} />
       <p className="text-sm text-red-400">{lastUpdated}</p>
-      <Link className="flex gap-0 items-center" href={"/desktop"}>
+      <Link className="flex gap-0 items-center" href={"/"}>
         <StepBack /> Back
       </Link>
     </article>

@@ -1,9 +1,8 @@
-import { ThemeToggle } from "@/components/themeToggle";
+import { ThemeToggle } from "@/app/_components/Navbar/themeToggle";
 import { Button } from "@/components/ui/button";
+import logo from "@/public/assets/img/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/assets/img/logo.svg";
-import AlgoliaSearch from "./AlgoliaSearch";
 
 const Navbar = () => {
   return (

@@ -1,3 +1,6 @@
+// This component might be useful when we want to display documents client-side
+// We can delete it before production release in case we don't use it.
+
 "use client";
 
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";

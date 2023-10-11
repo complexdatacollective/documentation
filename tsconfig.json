@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "lib/docs.ts",
     "lib/algolia-search.mjs",
-    "lib/markdownToText.mjs"
+    "lib/markdownToText.mjs",
+    "lib/algolia-client.mjs"
   ],
   "exclude": ["node_modules"]
 }

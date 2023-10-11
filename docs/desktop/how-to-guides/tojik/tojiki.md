@@ -2,4 +2,4 @@
 title: salom tojik
 ---
 
-# salom tojik
+# salom tojiki medoni kani duxtar gapzane

@@ -1,10 +1,6 @@
-"use client";
-
-import Menu from "@/app/_components/Menu";
-import ProductSwitcher from "@/app/_components/ProductSwitcher";
+import Menu from "@/app/_components/Sidebar/Menu";
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export interface Folder {
   type: "folder";
@@ -18,11 +14,11 @@ export interface File {
   path: string;
 }
 
-interface NavigationMenusProps {
+export interface NavigationMenusProps {
   data: Array<File | Folder>;
 }
 
-function NavigationMenus({ data }: NavigationMenusProps): JSX.Element {
+export default function NavigationMenus({ data }: NavigationMenusProps): JSX.Element {
   return (
     <ul>
       {data.map((item) => {
@@ -48,25 +44,5 @@ function NavigationMenus({ data }: NavigationMenusProps): JSX.Element {
         }
       })}
     </ul>
-  );
-}
-
-export default function Sidebar({ data }: NavigationMenusProps) {
-  const [product, setProduct] = useState("desktop");
-  const [productData, setProductData] = useState<Folder>();
-
-  useEffect(() => {
-    const pdata = data.filter(
-      (item) => item.type === "folder" && item.name === product
-    )[0] as Folder;
-
-    setProductData(pdata);
-  }, [product, data]);
-
-  return (
-    <div className="flex flex-col gap-2">
-      <ProductSwitcher setProduct={setProduct} />
-      {productData && <NavigationMenus data={productData.files} />}
-    </div>
   );
 }
