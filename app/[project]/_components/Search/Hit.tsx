@@ -1,7 +1,11 @@
+"use client";
+
 import { formatPathPattern } from "@/lib/helper_functions";
 import { Hit as AlgoliaHit } from "instantsearch.js";
 import Link from "next/link";
+import { useContext } from "react";
 import { Highlight, Snippet } from "react-instantsearch";
+import { DialogContext } from "./Provider/DialogContext";
 
 type HitProps = {
   hit: AlgoliaHit<{
@@ -12,24 +16,23 @@ type HitProps = {
 };
 
 export default function Hit({ hit }: HitProps) {
-  return (
-    <div className="flex gap-2 flex-col">
-      <Link href={formatPathPattern(hit.filePath)} className="text-xl underline">
-        <Highlight
-          classNames={{ highlighted: "text-red-400 bg-black", root: "text-teal-400" }}
-          hit={hit}
-          attribute="title"
-        />
-      </Link>
+  const { setOpen } = useContext(DialogContext);
+  const path = "/" + formatPathPattern(hit.filePath);
 
-      <Link href={formatPathPattern(hit.filePath)} className="underline">
-        <Snippet
-          classNames={{ root: "" }}
-          attribute="content"
-          hit={hit}
-          highlightedTagName={"mark"}
-        />
-      </Link>
-    </div>
+  return (
+    <Link onClick={() => setOpen(false)} href={path} className="underline flex gap-2 flex-col">
+      <Highlight
+        classNames={{ highlighted: "text-red-400 bg-black", root: "text-teal-400" }}
+        hit={hit}
+        attribute="title"
+      />
+
+      <Snippet
+        classNames={{ root: "" }}
+        attribute="content"
+        hit={hit}
+        highlightedTagName={"mark"}
+      />
+    </Link>
   );
 }
