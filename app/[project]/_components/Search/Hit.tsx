@@ -21,9 +21,10 @@ export default function Hit({ hit }: HitProps) {
           attribute="title"
         />
       </Link>
+
       <Link href={formatPathPattern(hit.filePath)} className="underline">
         <Snippet
-          classNames={{ root: "overflow-hidden whitespace-nowrap overflow-ellipsis" }}
+          classNames={{ root: "" }}
           attribute="content"
           hit={hit}
           highlightedTagName={"mark"}
