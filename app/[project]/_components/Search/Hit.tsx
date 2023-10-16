@@ -28,11 +28,11 @@ export default function Hit({ hit }: HitProps) {
   };
 
   return (
-    <CommandItem onSelect={handleSelect}>
+    <CommandItem className="cursor-pointer" onSelect={handleSelect}>
       <FileText className="mr-2 h-4 w-4" />
       <div className="underline flex gap-2 flex-col">
         <Highlight
-          classNames={{ highlighted: "text-red-400 bg-black", root: "text-teal-400" }}
+          classNames={{ highlighted: "text-red-400 bg-black", root: "text-teal-400 text-lg" }}
           hit={hit}
           attribute="title"
         />

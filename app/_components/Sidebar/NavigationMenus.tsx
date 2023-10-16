@@ -16,28 +16,30 @@ export interface File {
 
 export interface NavigationMenusProps {
   data: Array<File | Folder>;
+  activeMenus: string[];
 }
 
-export default function NavigationMenus({ data }: NavigationMenusProps): JSX.Element {
+export default function NavigationMenus({ data, activeMenus }: NavigationMenusProps): JSX.Element {
   return (
     <ul>
       {data.map((item) => {
         if (item.type === "folder") {
           const folder = item as Folder;
           return (
-            <Menu key={folder.name} title={convertToTitleCase(folder.name)}>
+            <Menu
+              activeTitles={activeMenus.map((m) => convertToTitleCase(m))}
+              key={folder.name}
+              title={convertToTitleCase(folder.name)}
+            >
               <ul>
-                <NavigationMenus data={folder.files} />
+                <NavigationMenus activeMenus={activeMenus} data={folder.files} />
               </ul>
             </Menu>
           );
         } else {
           const file = item as File;
           return (
-            <li
-              key={file.name}
-              className="text-slate-500 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
+            <li key={file.name} className="dark:hover:text-white transition-colors">
               <Link href={file.path}>{convertToTitleCase(file.name)}</Link>
             </li>
           );

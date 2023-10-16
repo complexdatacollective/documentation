@@ -9,12 +9,12 @@
         "files": [
           {
             "type": "folder",
-            "name": "tojik",
+            "name": "chidir",
             "files": [
               {
                 "type": "file",
                 "name": "tojiki",
-                "path": "/desktop\\how-to-guides\\tojik\\tojiki"
+                "path": "/desktop\\how-to-guides\\chidir\\tojiki"
               },
               {
                 "type": "folder",
@@ -23,7 +23,7 @@
                   {
                     "type": "file",
                     "name": "jugi-bla",
-                    "path": "/desktop\\how-to-guides\\tojik\\jugi-bacha\\jugi-bla"
+                    "path": "/desktop\\how-to-guides\\chidir\\jugi-bacha\\jugi-bla"
                   }
                 ]
               }

@@ -5,10 +5,10 @@ import NavigationMenus, {
   type NavigationMenusProps,
 } from "@/app/_components/Sidebar/NavigationMenus";
 import ProductSwitcher from "@/app/_components/Sidebar/ProductSwitcher";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default function Sidebar({ data }: NavigationMenusProps) {
+export default function Sidebar({ data }: Omit<NavigationMenusProps, "activeMenus">) {
   const [product, setProduct] = useState("");
   const [productData, setProductData] = useState<Folder>();
   const pathName = usePathname();
@@ -28,7 +28,9 @@ export default function Sidebar({ data }: NavigationMenusProps) {
   return (
     <div className="flex flex-col gap-2">
       <ProductSwitcher product={product} setProduct={setProduct} />
-      {productData && <NavigationMenus data={productData.files} />}
+      {productData && (
+        <NavigationMenus activeMenus={pathName.split("/").splice(1)} data={productData.files} />
+      )}
     </div>
   );
 }
