@@ -1,3 +1,4 @@
+import { CommandEmpty } from "@/components/ui/command";
 import { useInstantSearch } from "react-instantsearch";
 
 export default function NoResultsBoundary({ children }: React.PropsWithChildren) {
@@ -20,9 +21,9 @@ function NoResults() {
 
   return (
     <div className="mt-10 text-lg flex justify-center items-center h-64 overflow-y-auto overflow-x-hidden">
-      <p>
+      <CommandEmpty>
         No results for <q>{indexUiState.query}</q>.
-      </p>
+      </CommandEmpty>
     </div>
   );
 }

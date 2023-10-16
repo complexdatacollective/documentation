@@ -11,5 +11,5 @@ export default function EmptyQueryBoundary({ children }: { children: React.React
     );
   }
 
-  return <div className="mt-10 h-64 overflow-y-auto overflow-x-hidden">{children}</div>;
+  return <div className="mt-5">{children}</div>;
 }

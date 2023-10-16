@@ -17,51 +17,49 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
   }
 
   return (
-    <div>
-      <form
-        autoFocus
-        noValidate
-        onSubmit={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
+    <form
+      autoFocus
+      noValidate
+      onSubmit={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
 
-          if (inputRef.current) {
-            inputRef.current.blur();
-          }
+        if (inputRef.current) {
+          inputRef.current.blur();
+        }
+      }}
+      onReset={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        setQuery("");
+
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }}
+    >
+      <Input
+        className="border-transparent"
+        ref={inputRef}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        placeholder="Search for documents..."
+        spellCheck={false}
+        type="text"
+        value={inputValue}
+        onChange={(event) => {
+          setQuery(event.currentTarget.value);
         }}
-        onReset={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-
-          setQuery("");
-
-          if (inputRef.current) {
-            inputRef.current.focus();
-          }
-        }}
-      >
-        <Input
-          className="border-transparent"
-          ref={inputRef}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          placeholder="Search for documents..."
-          spellCheck={false}
-          type="text"
-          value={inputValue}
-          onChange={(event) => {
-            setQuery(event.currentTarget.value);
-          }}
-        />
-        <button hidden type="submit">
-          Submit
-        </button>
-        <button type="reset" hidden>
-          Reset
-        </button>
-        <span hidden={!isSearchStalled}>Searching…</span>
-      </form>
-    </div>
+      />
+      <button hidden type="submit">
+        Submit
+      </button>
+      <button type="reset" hidden>
+        Reset
+      </button>
+      <span hidden={!isSearchStalled}>Searching…</span>
+    </form>
   );
 }
