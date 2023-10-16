@@ -1,3 +1,10 @@
+import { getAllProjects } from "@/lib/docs";
+
+export async function generateStaticParams() {
+  const projectParams = getAllProjects();
+  return projectParams;
+}
+
 export default function ProjectPage({ params }: { params: { project: string } }) {
   return (
     <h1 className="mx-4">

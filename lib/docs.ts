@@ -33,6 +33,21 @@ export const getAllFiles = function (
   return arrayOfFiles;
 };
 
+// Get all project names
+export const getAllProjects = function () {
+  const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);
+  const projectParams = fs
+    .readdirSync(docsDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => ({
+      params: {
+        project: dirent.name,
+      },
+    }));
+
+  return projectParams;
+};
+
 // Take a nextjs route segment and convert it to a path, adding the .md/mdx extension.
 const segmentToPath = (segment: string[]) => {
   const path = segment.join("/");
