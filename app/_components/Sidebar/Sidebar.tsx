@@ -6,10 +6,16 @@ import NavigationMenus, {
 } from "@/app/_components/Sidebar/NavigationMenus";
 import ProductSwitcher from "@/app/_components/Sidebar/ProductSwitcher";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar({ data }: NavigationMenusProps) {
-  const [product, setProduct] = useState("desktop"); // using default desktop, can be changed to introductory product or smt
+  const [product, setProduct] = useState("");
   const [productData, setProductData] = useState<Folder>();
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setProduct(pathName.split("/")[1] ? pathName.split("/")[1] : "desktop");
+  }, [pathName]);
 
   useEffect(() => {
     const pdata = data.filter(
@@ -21,7 +27,7 @@ export default function Sidebar({ data }: NavigationMenusProps) {
 
   return (
     <div className="flex flex-col gap-2">
-      <ProductSwitcher setProduct={setProduct} />
+      <ProductSwitcher product={product} setProduct={setProduct} />
       {productData && <NavigationMenus data={productData.files} />}
     </div>
   );
