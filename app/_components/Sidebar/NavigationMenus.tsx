@@ -25,9 +25,11 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
       {data.map((item) => {
         if (item.type === "folder") {
           const folder = item as Folder;
+          const activeMenu = activeMenus.find((m) => m === folder.name);
+
           return (
             <Menu
-              activeTitles={activeMenus.map((m) => convertToTitleCase(m))}
+              value={activeMenu && convertToTitleCase(activeMenu)}
               key={folder.name}
               title={convertToTitleCase(folder.name)}
             >
@@ -39,7 +41,12 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
         } else {
           const file = item as File;
           return (
-            <li key={file.name} className="dark:hover:text-white transition-colors">
+            <li
+              key={file.name}
+              className={`${
+                activeMenus.includes(file.name) ? "text-violet-500" : "text-slate-500"
+              } dark:hover:text-white transition-colors`}
+            >
               <Link href={file.path}>{convertToTitleCase(file.name)}</Link>
             </li>
           );
