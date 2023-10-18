@@ -34,7 +34,7 @@ export default function SearchCommand() {
   // }, [setOpen]);
 
   return (
-    <DialogContextProvider open={open} setOpen={setOpen}>
+    <>
       <Button
         className="min-w-[250px] text-left flex gap-1 px-2 items-center justify-between"
         variant={"secondary"}
@@ -65,6 +65,6 @@ export default function SearchCommand() {
           </Command>
         </CommandDialog>
       </InstantSearchNext>
-    </DialogContextProvider>
+    </>
   );
 }
