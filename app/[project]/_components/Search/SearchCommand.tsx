@@ -34,7 +34,11 @@ export default function SearchCommand() {
   // }, [setOpen]);
 
   return (
-    <>
+    <InstantSearchNext
+      searchClient={algolia_client}
+      indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!}
+      insights={true}
+    >
       <Button
         className="min-w-[250px] text-left flex gap-1 px-2 items-center justify-between"
         variant={"secondary"}
@@ -45,24 +49,18 @@ export default function SearchCommand() {
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <InstantSearchNext
-          searchClient={algolia_client}
-          indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!}
-          insights={true}
-        >
-          <CustomSearchBox />
-          <CommandSeparator />
+        <CustomSearchBox />
+        <CommandSeparator />
 
-          <CommandList>
-            <NoResultsBoundary />
-            <CommandGroup>
-              <EmptyQueryBoundary>
-                <Hits hitComponent={Hit} />
-              </EmptyQueryBoundary>
-            </CommandGroup>
-          </CommandList>
-        </InstantSearchNext>
+        <CommandList>
+          <NoResultsBoundary />
+          <CommandGroup>
+            <EmptyQueryBoundary>
+              <Hits hitComponent={Hit} />
+            </EmptyQueryBoundary>
+          </CommandGroup>
+        </CommandList>
       </CommandDialog>
-    </>
+    </InstantSearchNext>
   );
 }
