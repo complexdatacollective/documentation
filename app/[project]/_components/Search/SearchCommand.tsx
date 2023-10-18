@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandDialog,
+  CommandEmpty,
   CommandGroup,
+  CommandInput,
+  CommandItem,
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
@@ -44,7 +47,37 @@ export default function SearchCommand() {
         <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">Ctrl+J</span>
       </Button>
 
-      <InstantSearchNext
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem>
+              <span>Calendar</span>
+            </CommandItem>
+            <CommandItem>
+              <span>Search Emoji</span>
+            </CommandItem>
+            <CommandItem>
+              <span>Calculator</span>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem>
+              <span>Profile</span>
+            </CommandItem>
+            <CommandItem>
+              <span>Billing</span>
+            </CommandItem>
+            <CommandItem>
+              <span>Settings</span>
+            </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+
+      {/* <InstantSearchNext
         searchClient={algolia_client}
         indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!}
         insights={true}
@@ -62,7 +95,7 @@ export default function SearchCommand() {
             </CommandGroup>
           </CommandList>
         </CommandDialog>
-      </InstantSearchNext>
+      </InstantSearchNext> */}
     </>
   );
 }
