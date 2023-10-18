@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/command";
 import { algolia_client } from "@/lib/algolia-client.mjs";
 import { useEffect, useState } from "react";
-import { Hits } from "react-instantsearch";
+import { Hits, InstantSearch } from "react-instantsearch";
 import { InstantSearchNext } from "react-instantsearch-nextjs";
 import CustomSearchBox from "./CustomSearchBox";
 import Hit from "./Hit";
@@ -34,7 +34,7 @@ export default function SearchCommand() {
   // }, [setOpen]);
 
   return (
-    <InstantSearchNext
+    <InstantSearch
       searchClient={algolia_client}
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!}
       insights={true}
@@ -61,6 +61,6 @@ export default function SearchCommand() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </InstantSearchNext>
+    </InstantSearch>
   );
 }
