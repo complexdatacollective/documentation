@@ -1,4 +1,4 @@
-import SearchComponent from "@/app/[project]/_components/Search/SearchComponent";
+import SearchCommand from "@/app/[project]/_components/Search/SearchCommand";
 import { ThemeToggle } from "@/app/_components/Navbar/themeToggle";
 import { Button } from "@/components/ui/button";
 import logo from "@/public/assets/img/logo.svg";
@@ -14,7 +14,7 @@ const Navbar = () => {
           <span className="text-green-400">Network Canvas</span>
         </Link>
         <div className="flex gap-3 items-center">
-          <SearchComponent />
+          <SearchCommand />
           <ThemeToggle />
           <Button>Community</Button>
         </div>
