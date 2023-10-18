@@ -50,19 +50,17 @@ export default function SearchCommand() {
         insights={true}
       >
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <Command className="rounded-lg border shadow-md">
-            <CustomSearchBox />
-            <CommandSeparator />
+          <CustomSearchBox />
+          <CommandSeparator />
 
-            <CommandList>
-              <NoResultsBoundary />
-              <CommandGroup>
-                <EmptyQueryBoundary>
-                  <Hits hitComponent={Hit} />
-                </EmptyQueryBoundary>
-              </CommandGroup>
-            </CommandList>
-          </Command>
+          <CommandList>
+            <NoResultsBoundary />
+            <CommandGroup>
+              <EmptyQueryBoundary>
+                <Hits hitComponent={Hit} />
+              </EmptyQueryBoundary>
+            </CommandGroup>
+          </CommandList>
         </CommandDialog>
       </InstantSearchNext>
     </>
