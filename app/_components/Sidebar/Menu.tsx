@@ -8,12 +8,13 @@ import { ReactNode } from "react";
 
 type MenuProps = {
   title: string;
+  value: string | undefined;
   children: ReactNode;
 };
 
-export default function Menu({ title, children }: MenuProps) {
+export default function Menu({ title, children, value }: MenuProps) {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion value={value} type="single" collapsible className="w-full">
       <AccordionItem value={title}>
         <AccordionTrigger className="text-red-400">{title}</AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>

@@ -13,14 +13,15 @@ import { Dispatch, SetStateAction } from "react";
 
 type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
+  product: string;
 };
 
-export default function ProductSwitcher({ setProduct }: ProductSwitcherProps) {
+export default function ProductSwitcher({ setProduct, product }: ProductSwitcherProps) {
   const router = useRouter();
 
   return (
     <Select
-      defaultValue="desktop"
+      value={product}
       onValueChange={(val) => {
         setProduct(val);
         router.push(`/${val}`);

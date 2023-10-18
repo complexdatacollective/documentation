@@ -23,9 +23,7 @@ const withMDX = require("@next/mdx")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    serverActions: true,
-  },
+  // output: "export",
 };
 
 // Merge MDX config with Next.js config

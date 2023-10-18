@@ -9,8 +9,13 @@
         "files": [
           {
             "type": "folder",
-            "name": "tojik",
+            "name": "chidir",
             "files": [
+              {
+                "type": "file",
+                "name": "tojiki",
+                "path": "/desktop\\how-to-guides\\chidir\\tojiki"
+              },
               {
                 "type": "folder",
                 "name": "jugi-bacha",
@@ -18,14 +23,9 @@
                   {
                     "type": "file",
                     "name": "jugi-bla",
-                    "path": "/desktop\\how-to-guides\\tojik\\jugi-bacha\\jugi-bla"
+                    "path": "/desktop\\how-to-guides\\chidir\\jugi-bacha\\jugi-bla"
                   }
                 ]
-              },
-              {
-                "type": "file",
-                "name": "tojiki",
-                "path": "/desktop\\how-to-guides\\tojik\\tojiki"
               }
             ]
           }
@@ -61,17 +61,6 @@
             "type": "file",
             "name": "irb-best-practices",
             "path": "/desktop\\reference\\irb-best-practices"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "tutorials",
-        "files": [
-          {
-            "type": "file",
-            "name": "building-a-protocol",
-            "path": "/desktop\\tutorials\\building-a-protocol"
           }
         ]
       }
@@ -115,10 +104,5 @@
         ]
       }
     ]
-  },
-  {
-    "type": "file",
-    "name": "hello",
-    "path": "/hello"
   }
 ]

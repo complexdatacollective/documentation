@@ -1,6 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 // import "@/assets/styles/style.css";
-import { MyH1 } from "./components/Headings";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -11,7 +10,7 @@ import { MyH1 } from "./components/Headings";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
-    h1: ({ children }) => <MyH1>{children}</MyH1>,
+    h1: ({ children }) => <h1>{children}</h1>,
     ...components,
   };
 }

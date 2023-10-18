@@ -5,11 +5,3 @@ description: Some description about fresco installation
 ---
 
 ## Fresco Installation guide
-
-```js showLineNumbers
-console.log("Hello World");
-
-function hey() {
-  return null;
-}
-```
