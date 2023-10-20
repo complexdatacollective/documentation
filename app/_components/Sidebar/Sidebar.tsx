@@ -26,7 +26,7 @@ export default function Sidebar({ data }: Omit<NavigationMenusProps, "activeMenu
   }, [product, data]);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 sticky top-0">
       <ProductSwitcher product={product} setProduct={setProduct} />
       {productData && (
         <NavigationMenus activeMenus={pathName.split("/").splice(1)} data={productData.files} />
