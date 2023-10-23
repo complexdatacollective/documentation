@@ -1,20 +1,13 @@
 "use client";
 
-export interface HeadingNode {
-  value: string;
-  depth: number;
-  data: {
-    id: string;
-  };
-  children: HeadingNode[];
-}
+import { type HeadingNode } from "@/lib/tableOfContents";
 
 interface TableOfContentsProps {
-  nodes: HeadingNode[] | unknown;
+  nodes: HeadingNode[] | null;
 }
 
 const TableOfContents = ({ nodes }: TableOfContentsProps) => {
-  if (!Array.isArray(nodes) || !nodes?.length) return null;
+  if (!nodes) return null;
 
   return (
     <div className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">

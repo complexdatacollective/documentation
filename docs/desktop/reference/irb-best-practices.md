@@ -1,8 +1,9 @@
 ---
 title: IRB and Security Best Practices
+toc: true
 ---
 
-# Some title here
+# Some h1 title here
 
 We recognize that data security is a primary concern for most researchers. Network Canvas was born in the context of sensitive public health research with marginalized populations, and we have used our experience conducting studies in this space to guide our security paradigm.
 
@@ -28,11 +29,3 @@ Since the onus of data storage and device security is on the researcher, we sugg
 - **Minimize time study data remains on field devices.** Uploading data to designated secured storage locations as regularly as possible, and then deleting it from field devices, helps limit risk of breach (e.g. a device being stolen).
 - **Only access Server on a local network or through a VPN.** Using VPN technology, secured ad-hoc networks, an "air gap", or other common security techniques when transferring data between field devices and Server. These technologies can often supplement the security measures already within the software. _Never expose Server to the public internet._
 - **Periodically re-pair your devices.** Re-pairing allows your devices to refresh their encryption code which helps to minimize the potential for any interception.
-
-### h3 title
-
-#### h4 title
-
-##### h5 title
-
-###### h6 title

@@ -4,7 +4,7 @@ import { toString } from "mdast-util-to-string";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
 
-type HeadingNode = {
+export type HeadingNode = {
   value: string;
   depth: number;
   data: {
@@ -23,7 +23,7 @@ function getHeadingsForTree(root: Node): HeadingNode[] {
   const nodes = {};
   const output: HeadingNode[] = [];
   const indexMap = {};
-  visit(root, "heading", (node: Node) => {
+  visit(root, "heading", (node: HeadingNode) => {
     addID(node, nodes);
     transformNode(node, output, indexMap);
   });
@@ -34,8 +34,8 @@ function getHeadingsForTree(root: Node): HeadingNode[] {
 /*
  * Add an "id" attribute to the heading elements based on their content
  */
-function addID(node: Node, nodes: Record<string, number>): void {
-  const id = node.children.map((c: Node) => c.value || "").join("");
+function addID(node: HeadingNode, nodes: Record<string, number>): void {
+  const id = node.children.map((c: HeadingNode) => c.value || "").join("");
   nodes[id] = (nodes[id] || 0) + 1;
   node.data = node.data || {
     id: `${id}${nodes[id] > 1 ? ` ${nodes[id] - 1}` : ""}`
@@ -48,10 +48,14 @@ function addID(node: Node, nodes: Record<string, number>): void {
 
 // sadas
 
-function transformNode(node: Node, output: HeadingNode[], indexMap: Record<string, any>): void {
+function transformNode(
+  node: HeadingNode,
+  output: HeadingNode[],
+  indexMap: Record<string, any>
+): void {
   const transformedNode: HeadingNode = {
     value: toString(node),
-    depth: node.depth as number,
+    depth: node.depth,
     data: node.data,
     children: [],
   };
@@ -68,9 +72,9 @@ function transformNode(node: Node, output: HeadingNode[], indexMap: Record<strin
   }
 }
 
-export async function getHeadings(content: string) {
+export async function getHeadings(content: string): Promise<HeadingNode[]> {
   // Use remark to convert Markdown into HTML string
   const processedContent = await remark().use(headingTree).process(content);
 
-  return processedContent.data.headings;
+  return processedContent.data.headings as HeadingNode[];
 }
