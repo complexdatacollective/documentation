@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="container grid grid-cols-5 gap-5 items-start">
+          <div className="container grid grid-cols-5 gap-5 items-start mt-8">
             {sidebarData && <Sidebar data={sidebarData} />}
             <div className="col-span-4 px-2">{children}</div>
           </div>

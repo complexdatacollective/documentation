@@ -1,21 +1,15 @@
 import { convertToUrlText } from "@/lib/helper_functions";
-import { Link2 } from "lucide-react";
-import Link from "next/link";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import CustomLink from "./CustomLink";
 
 // temporary custom styled heading components
 export const styledHeadings = {
   h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
     <h2
       id={convertToUrlText(props.children?.toString() ?? "")}
-      className="dark:text-green-400 flex items-center gap-1.5"
+      className="adjust-heading dark:text-green-400 flex items-center gap-1.5"
     >
-      <Link
-        className="text-violet-500"
-        href={`#${convertToUrlText(props.children?.toString() ?? "")}`}
-      >
-        <Link2 />
-      </Link>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`} />
       {props.children}
     </h2>
   ),
@@ -24,12 +18,7 @@ export const styledHeadings = {
       id={convertToUrlText(props.children?.toString() ?? "")}
       className="flex items-center gap-1.5"
     >
-      <Link
-        className="text-violet-500"
-        href={`#${convertToUrlText(props.children?.toString() ?? "")}`}
-      >
-        <Link2 />
-      </Link>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`} />
       {props.children}
     </h3>
   ),
@@ -38,12 +27,7 @@ export const styledHeadings = {
       id={convertToUrlText(props.children?.toString() ?? "")}
       className="flex items-center gap-1.5"
     >
-      <Link
-        className="text-violet-500"
-        href={`#${convertToUrlText(props.children?.toString() ?? "")}`}
-      >
-        <Link2 />
-      </Link>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`} />
       {props.children}
     </h4>
   ),
@@ -52,12 +36,7 @@ export const styledHeadings = {
       id={convertToUrlText(props.children?.toString() ?? "")}
       className="flex items-center gap-1.5"
     >
-      <Link
-        className="text-violet-500"
-        href={`#${convertToUrlText(props.children?.toString() ?? "")}`}
-      >
-        <Link2 />
-      </Link>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`} />
       {props.children}
     </h5>
   ),
@@ -66,12 +45,7 @@ export const styledHeadings = {
       id={convertToUrlText(props.children?.toString() ?? "")}
       className="flex items-center gap-1.5"
     >
-      <Link
-        className="text-violet-500"
-        href={`#${convertToUrlText(props.children?.toString() ?? "")}`}
-      >
-        <Link2 />
-      </Link>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`} />
       {props.children}
     </h6>
   ),
