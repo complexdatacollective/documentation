@@ -31,9 +31,7 @@ function getHeadingsForTree(root: Node): HeadingNode[] {
   return output;
 }
 
-/*
- * Add an "id" attribute to the heading elements based on their content
- */
+// Add an "id" attribute to the heading elements based on their content
 function addID(node: HeadingNode, nodes: Record<string, number>): void {
   const id = node.children.map((c: HeadingNode) => c.value || "").join("");
   nodes[id] = (nodes[id] || 0) + 1;
@@ -45,8 +43,6 @@ function addID(node: HeadingNode, nodes: Record<string, number>): void {
       .toLowerCase(),
   };
 }
-
-// sadas
 
 function transformNode(
   node: HeadingNode,
