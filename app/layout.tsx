@@ -2,6 +2,7 @@ import Navbar from "@/app/_components/Navbar/Navbar";
 import Sidebar from "@/app/_components/Sidebar/Sidebar";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/Providers/theme-provider";
+import AIAssistant from "@/components/ai-assistant";
 import data from "@/public/sidebar.json";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -29,6 +30,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div className="container grid grid-cols-5 gap-5 items-start mt-8">
             {sidebarData && <Sidebar data={sidebarData} />}
             <div className="col-span-4 px-2">{children}</div>
+            <AIAssistant />
           </div>
         </ThemeProvider>
       </body>
