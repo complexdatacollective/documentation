@@ -12,16 +12,12 @@ const TableOfContents = ({ nodes }: TableOfContentsProps) => {
 
   return (
     <div
-      className={`overflow-x-hidden pb-5 ${
+      className={`toc-component group overflow-x-hidden pb-5 ${
         nodes.length > 10 && "h-[750px]"
-      } min-w-[290px] overflow-y-hidden`}
+      } min-w-[300px] overflow-y-auto`}
     >
-      <div className="group">
-        <h3 className="text-slate-300 uppercase text-md">Table of contents</h3>
-        <div className={`group-hover:overflow-y-auto pb-5 ${nodes.length > 10 && "h-[750px]"}`}>
-          {renderNodes(nodes)}
-        </div>
-      </div>
+      <h3 className="text-slate-300 uppercase text-md">Table of contents</h3>
+      {renderNodes(nodes)}
     </div>
   );
 };

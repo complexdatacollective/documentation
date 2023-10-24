@@ -26,6 +26,15 @@
   cursor: pointer;
 }
 
+/* toc scroll bar control */
+.toc-component::-webkit-scrollbar {
+  width: 0px;
+}
+
+.toc-component:hover::-webkit-scrollbar {
+  width: 6px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
