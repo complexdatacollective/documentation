@@ -27,15 +27,15 @@ export default function ProductSwitcher({ setProduct, product }: ProductSwitcher
         router.push(`/${val}`);
       }}
     >
-      <SelectTrigger className="w-full h-16 text-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+      <SelectTrigger className="w-full h-16 text-sm lg:text-base hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
         <SelectValue placeholder="Select software" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectItem className="text-lg" value="desktop">
+          <SelectItem className="text-sm lg:text-base" value="desktop">
             Desktop
           </SelectItem>
-          <SelectItem className="text-lg" value="fresco">
+          <SelectItem className="text-sm lg:text-base" value="fresco">
             Fresco
           </SelectItem>
         </SelectGroup>

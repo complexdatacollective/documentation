@@ -63,6 +63,17 @@
             "path": "/desktop\\reference\\irb-best-practices"
           }
         ]
+      },
+      {
+        "type": "folder",
+        "name": "tutorials",
+        "files": [
+          {
+            "type": "file",
+            "name": "building-a-protocol",
+            "path": "/desktop\\tutorials\\building-a-protocol"
+          }
+        ]
       }
     ]
   },

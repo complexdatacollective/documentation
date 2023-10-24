@@ -80,8 +80,9 @@ export function getDoc(pathSegment: string[]) {
 
   return {
     // Add other elements of the frontmatter here as needed.
-    title: matterResult.data.title ?? undefined,
-    lastUpdated: matterResult.data.date ?? undefined,
+    title: matterResult.data.title,
+    lastUpdated: matterResult.data.date,
     content: matterResult.content,
+    toc: matterResult.data.toc,
   };
 }
