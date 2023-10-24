@@ -1,6 +1,5 @@
 ---
 title: IRB and Security Best Practices
-toc: false
 ---
 
 # Some h1 title here
