@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const icon = (
   <div className="flex flex-col items-center">
     <Image width="50" height="50" priority src={logo} alt="Logo" />
-    <span className="text-xs font-extrabold">Ctrl+K</span>
+    <span className="text-xs font-extrabold">Ctrl+J</span>
   </div>
 );
 
@@ -31,6 +31,7 @@ const AIAssistant = () => {
         messageSettings={{ prettySources: true, openSourcesInNewTab: true }}
         popupText={"Hi, how can I help you?"}
         welcomeMessage="Hi, I'm an AI assistant trained on documentation. Ask me anything about Network Canvas."
+        cmdShortcutKey="j"
       />
     )
   );

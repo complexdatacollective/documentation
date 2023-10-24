@@ -21,7 +21,7 @@ export default function SearchCommand() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
@@ -44,7 +44,7 @@ export default function SearchCommand() {
           onClick={() => setOpen(true)}
         >
           <span>Search documentation...</span>
-          <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">Ctrl+J</span>
+          <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">Ctrl+K</span>
         </Button>
 
         <CommandDialog open={open} onOpenChange={setOpen}>
