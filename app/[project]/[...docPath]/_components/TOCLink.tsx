@@ -29,7 +29,9 @@ const TOCLink = ({ node }: { node: HeadingNode }) => {
     <Link
       href={`#${node.data.id}`}
       onClick={(event) => handleLinkClick(event, node)}
-      className={`block text-${node.depth === 2 ? "base" : "sm"} hover:accent-color py-1 ${
+      className={`block ${
+        node.depth === 2 ? "text-sm lg:text-base" : "text-xs lg:text-sm"
+      } hover:accent-color py-1 ${
         highlighted ? "text-violet-500" : "text-slate-500 transition-colors dark:hover:text-white"
       }`}
     >

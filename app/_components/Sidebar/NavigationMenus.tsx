@@ -47,7 +47,9 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
                 activeMenus.includes(file.name) ? "text-violet-500" : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
-              <Link href={file.path}>{convertToTitleCase(file.name)}</Link>
+              <Link className="text-sm" href={file.path}>
+                {convertToTitleCase(file.name)}
+              </Link>
             </li>
           );
         }

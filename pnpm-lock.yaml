@@ -83,18 +83,9 @@ dependencies:
   react-instantsearch:
     specifier: ^7.1.0
     version: 7.1.0(algoliasearch@4.20.0)(react-dom@18.2.0)(react@18.2.0)
-  react-instantsearch-nextjs:
-    specifier: ^0.1.2
-    version: 0.1.2(next@13.5.6)(react-instantsearch@7.1.0)
-  rehype-autolink-headings:
-    specifier: ^7.0.0
-    version: 7.0.0
   rehype-pretty-code:
     specifier: ^0.10.1
     version: 0.10.1(shiki@0.14.4)
-  rehype-slug:
-    specifier: ^6.0.0
-    version: 6.0.0
   rehype-stringify:
     specifier: ^10.0.0
     version: 10.0.0
@@ -107,9 +98,6 @@ dependencies:
   remark-rehype:
     specifier: ^11.0.0
     version: 11.0.0
-  remarkable:
-    specifier: ^2.0.1
-    version: 2.0.1
   shiki:
     specifier: ^0.14.4
     version: 0.14.4
@@ -132,16 +120,13 @@ dependencies:
 devDependencies:
   '@types/node':
     specifier: latest
-    version: 20.8.7
+    version: 20.8.8
   '@types/react':
     specifier: latest
     version: 18.2.31
   '@types/react-dom':
     specifier: latest
     version: 18.2.14
-  '@types/remarkable':
-    specifier: ^2.0.7
-    version: 2.0.7
   '@types/unist':
     specifier: ^3.0.0
     version: 3.0.0
@@ -162,7 +147,7 @@ devDependencies:
     version: 3.3.3(ts-node@10.9.1)
   ts-node:
     specifier: ^10.9.1
-    version: 10.9.1(@types/node@20.8.7)(typescript@5.2.2)
+    version: 10.9.1(@types/node@20.8.8)(typescript@5.2.2)
   typescript:
     specifier: latest
     version: 5.2.2
@@ -1561,8 +1546,8 @@ packages:
     resolution: {integrity: sha512-xPSg0jm4mqgEkNhowKgZFBNtwoEwF6gJ4Dhww+GFpm3IgtNseHQZ5IqdNwnquZEoANxyDAKDRAdVo4Z72VvD/g==}
     dev: false
 
-  /@types/node@20.8.7:
-    resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
+  /@types/node@20.8.8:
+    resolution: {integrity: sha512-YRsdVxq6OaLfmR9Hy816IMp33xOBjfyOgUd77ehqg96CFywxAPbDbXvAsuN2KVg2HOT8Eh6uAfU+l4WffwPVrQ==}
     dependencies:
       undici-types: 5.25.3
 
@@ -1584,10 +1569,6 @@ packages:
       '@types/prop-types': 15.7.7
       '@types/scheduler': 0.16.4
       csstype: 3.1.2
-
-  /@types/remarkable@2.0.7:
-    resolution: {integrity: sha512-yjt139N0JY5sDbRq2iXVbu+IM3BGHis7YtPOqETJZrbV6VYeQPNaHuTYIAqxTRdwul6eDBCNlh1Txiu5c4fj6w==}
-    dev: true
 
   /@types/scheduler@0.16.4:
     resolution: {integrity: sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ==}
@@ -1997,12 +1978,6 @@ packages:
     dependencies:
       has-symbols: 1.0.3
     dev: true
-
-  /autolinker@3.16.2:
-    resolution: {integrity: sha512-JiYl7j2Z19F9NdTmirENSUUIIL/9MytEWtmzhfmsKPCp9E+G35Y0UNCMoM9tFigxT59qSc8Ml2dlZXOCVTYwuA==}
-    dependencies:
-      tslib: 2.6.2
-    dev: false
 
   /autoprefixer@10.4.16(postcss@8.4.31):
     resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
@@ -2927,10 +2902,6 @@ packages:
       resolve-pkg-maps: 1.0.0
     dev: true
 
-  /github-slugger@2.0.0:
-    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
-    dev: false
-
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -3087,18 +3058,6 @@ packages:
       web-namespaces: 2.0.1
     dev: false
 
-  /hast-util-heading-rank@3.0.0:
-    resolution: {integrity: sha512-EJKb8oMUXVHcWZTDepnr+WNbfnXKFNf9duMesmr4S8SXTJBJ9M4Yok08pu9vxdJwdlGRhVumk9mEhkEvKGifwA==}
-    dependencies:
-      '@types/hast': 3.0.1
-    dev: false
-
-  /hast-util-is-element@3.0.0:
-    resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==}
-    dependencies:
-      '@types/hast': 3.0.1
-    dev: false
-
   /hast-util-parse-selector@4.0.0:
     resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
     dependencies:
@@ -3172,12 +3131,6 @@ packages:
       space-separated-tokens: 2.0.2
       web-namespaces: 2.0.1
       zwitch: 2.0.4
-    dev: false
-
-  /hast-util-to-string@3.0.0:
-    resolution: {integrity: sha512-OGkAxX1Ua3cbcW6EJ5pT/tslVb90uViVkcJ4ZZIMW/R33DX/AkcJcRrPebPwJkHYwlDHXz4aIwvAAaAdtrACFA==}
-    dependencies:
-      '@types/hast': 3.0.1
     dev: false
 
   /hast-util-whitespace@2.0.1:
@@ -3508,7 +3461,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.8.7
+      '@types/node': 20.8.8
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -4653,7 +4606,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.31
-      ts-node: 10.9.1(@types/node@20.8.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.8.8)(typescript@5.2.2)
       yaml: 2.3.2
 
   /postcss-nested@6.0.1(postcss@8.4.31):
@@ -4752,16 +4705,6 @@ packages:
       instantsearch.js: 4.57.0(algoliasearch@4.20.0)
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
-    dev: false
-
-  /react-instantsearch-nextjs@0.1.2(next@13.5.6)(react-instantsearch@7.1.0):
-    resolution: {integrity: sha512-cwObiL5RUey3u0fVgWvK3TbuPjMPjYQVsfVClnKNf8W3wAc6Ujt8pmoZbaJSaQ02tRElF7YUtd20NeTyLqo4ew==}
-    peerDependencies:
-      next: '>= 13.4 && < 14'
-      react-instantsearch: '>= 7.1.0 && < 8'
-    dependencies:
-      next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
-      react-instantsearch: 7.1.0(algoliasearch@4.20.0)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /react-instantsearch@7.1.0(algoliasearch@4.20.0)(react-dom@18.2.0)(react@18.2.0):
@@ -4897,17 +4840,6 @@ packages:
       set-function-name: 2.0.1
     dev: true
 
-  /rehype-autolink-headings@7.0.0:
-    resolution: {integrity: sha512-DLskejGYHQP9v7vUW85BeYIclgfMQ1IwAMx+0lm8Sr3cME2NThgy2OdTfosmuBA68fqP5o4FK+dknpUMFvlxYQ==}
-    dependencies:
-      '@types/hast': 3.0.1
-      '@ungap/structured-clone': 1.2.0
-      hast-util-heading-rank: 3.0.0
-      hast-util-is-element: 3.0.0
-      unified: 11.0.3
-      unist-util-visit: 5.0.0
-    dev: false
-
   /rehype-pretty-code@0.10.1(shiki@0.14.4):
     resolution: {integrity: sha512-WHjRvGlqPXG8BVRB9mK0255WvIOnzvHivAWhFkA2OG+NTkQWtTbCULZMokOHLf3Yy8q8I8/F8QNjDSQBhjMK5w==}
     engines: {node: '>=16'}
@@ -4918,16 +4850,6 @@ packages:
       hash-obj: 4.0.0
       parse-numeric-range: 1.3.0
       shiki: 0.14.4
-    dev: false
-
-  /rehype-slug@6.0.0:
-    resolution: {integrity: sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==}
-    dependencies:
-      '@types/hast': 3.0.1
-      github-slugger: 2.0.0
-      hast-util-heading-rank: 3.0.0
-      hast-util-to-string: 3.0.0
-      unist-util-visit: 5.0.0
     dev: false
 
   /rehype-stringify@10.0.0:
@@ -5004,15 +4926,6 @@ packages:
       unified: 11.0.3
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /remarkable@2.0.1:
-    resolution: {integrity: sha512-YJyMcOH5lrR+kZdmB0aJJ4+93bEojRZ1HGDn9Eagu6ibg7aVZhc3OWbbShRid+Q5eAfsEqWxpe+g5W5nYNfNiA==}
-    engines: {node: '>= 6.0.0'}
-    hasBin: true
-    dependencies:
-      argparse: 1.0.10
-      autolinker: 3.16.2
     dev: false
 
   /resolve-from@4.0.0:
@@ -5461,7 +5374,7 @@ packages:
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  /ts-node@10.9.1(@types/node@20.8.7)(typescript@5.2.2):
+  /ts-node@10.9.1(@types/node@20.8.8)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -5480,7 +5393,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.8.7
+      '@types/node': 20.8.8
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
