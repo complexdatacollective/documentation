@@ -3,12 +3,13 @@
 import Link from "next/link";
 import React from "react";
 
-const CustomLink = ({ id, children }: { id: string; children: React.ReactNode }) => {
+type CustomLinkProps = { id: string; children: React.ReactNode; className?: string };
+
+const CustomLink = ({ id, children, className }: CustomLinkProps) => {
   return (
     <Link
-      className="group no-underline hover:underline transition-transform"
+      className={`flex gap-1.5 items-center no-underline hover:text-blue-400 transition-all group ${className} `}
       href={`#${id}`}
-      scroll={true}
     >
       {children}
     </Link>

@@ -3,7 +3,7 @@ import { type HeadingNode } from "@/lib/tableOfContents";
 import Link from "next/link";
 
 const TOCLink = ({ node }: { node: HeadingNode }) => {
-  const [highlighted, setHighlighted] = useHighlighted(node.data.id);
+  const [highlighted] = useHighlighted(node.data.id);
 
   return (
     <Link

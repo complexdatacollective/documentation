@@ -1,63 +1,51 @@
 import { convertToUrlText } from "@/lib/helper_functions";
+import { Link2 } from "lucide-react";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import CustomLink from "./CustomLink";
-import { Link2 } from "lucide-react";
 
-// temporary custom styled heading components
+// custom styled heading components
 export const styledHeadings = {
   h2: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
-      <h2
-        id={convertToUrlText(props.children?.toString() ?? "")}
-        className="adjust-heading dark:text-green-400 flex items-center gap-1.5"
+    <h2 id={convertToUrlText(props.children?.toString() ?? "")}>
+      <CustomLink
+        className="text-green-400"
+        id={`${convertToUrlText(props.children?.toString() ?? "")}`}
       >
         {props.children}
         <Link2 className="text-violet-500 hidden group-hover:block" />
-      </h2>
-    </CustomLink>
+      </CustomLink>
+    </h2>
   ),
   h3: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
-      <h3
-        id={convertToUrlText(props.children?.toString() ?? "")}
-        className="adjust-heading flex items-center gap-1.5"
-      >
+    <h3 id={convertToUrlText(props.children?.toString() ?? "")}>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
         {props.children}
         <Link2 className="text-violet-500 hidden group-hover:block" />
-      </h3>
-    </CustomLink>
+      </CustomLink>
+    </h3>
   ),
   h4: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
-      <h4
-        id={convertToUrlText(props.children?.toString() ?? "")}
-        className="adjust-heading flex items-center gap-1.5"
-      >
+    <h4 id={convertToUrlText(props.children?.toString() ?? "")}>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
         {props.children}
         <Link2 className="text-violet-500 hidden group-hover:block" />
-      </h4>
-    </CustomLink>
+      </CustomLink>
+    </h4>
   ),
   h5: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
-      <h5
-        id={convertToUrlText(props.children?.toString() ?? "")}
-        className="adjust-heading flex items-center gap-1.5"
-      >
+    <h5 id={convertToUrlText(props.children?.toString() ?? "")}>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
         {props.children}
         <Link2 className="text-violet-500 hidden group-hover:block" />
-      </h5>
-    </CustomLink>
+      </CustomLink>
+    </h5>
   ),
   h6: (props: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
-      <h6
-        id={convertToUrlText(props.children?.toString() ?? "")}
-        className="adjust-heading flex items-center gap-1.5"
-      >
+    <h6 id={convertToUrlText(props.children?.toString() ?? "")}>
+      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? "")}`}>
         {props.children}
         <Link2 className="text-violet-500 hidden group-hover:block" />
-      </h6>
-    </CustomLink>
+      </CustomLink>
+    </h6>
   ),
 };
