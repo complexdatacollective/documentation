@@ -8,17 +8,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 
 type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
   product: string;
-  locale: string;
 };
 
-export default function ProductSwitcher({ setProduct, product, locale }: ProductSwitcherProps) {
+export default function ProductSwitcher({ setProduct, product }: ProductSwitcherProps) {
   const router = useRouter();
+  const locale = useLocale();
 
   return (
     <Select

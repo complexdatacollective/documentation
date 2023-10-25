@@ -7,14 +7,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
 
 interface LanguageSwitcherProps {
-  locale: string;
   width: string;
 }
 
-const LanguageSwitcher = ({ locale, width }: LanguageSwitcherProps) => {
+const LanguageSwitcher = ({ width }: LanguageSwitcherProps) => {
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 

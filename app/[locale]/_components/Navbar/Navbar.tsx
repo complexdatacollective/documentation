@@ -3,10 +3,10 @@ import logo from "@/public/assets/img/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import SearchCommand from "../../[project]/_components/Search/SearchCommand";
-import { ThemeToggle } from "./themeToggle";
 import LanguageSwitcher from "./languageSwitcher";
+import { ThemeToggle } from "./themeToggle";
 
-const Navbar = ({ locale }: { locale: string }) => {
+const Navbar = () => {
   return (
     <div className="border-slate-200 border-b mb-5 sticky top-0 z-50 bg-slate-950">
       <div className="container flex items-center justify-between h-16 p-1">
@@ -16,7 +16,7 @@ const Navbar = ({ locale }: { locale: string }) => {
         </Link>
         <div className="flex gap-3 items-center">
           <SearchCommand />
-          <LanguageSwitcher width="w-fit" locale={locale} />
+          <LanguageSwitcher width="w-fit" />
           <ThemeToggle />
           <Button>Community</Button>
         </div>

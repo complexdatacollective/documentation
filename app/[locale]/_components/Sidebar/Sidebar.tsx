@@ -8,10 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ProductSwitcher from "./ProductSwitcher";
 
-export default function Sidebar({
-  data,
-  locale,
-}: Omit<NavigationMenusProps & { locale: string }, "activeMenus">) {
+export default function Sidebar({ data }: Omit<NavigationMenusProps, "activeMenus">) {
   const [product, setProduct] = useState("");
   const [productData, setProductData] = useState<Folder>();
   const pathName = usePathname();
@@ -33,7 +30,7 @@ export default function Sidebar({
 
   return (
     <div className="flex flex-col gap-2 sticky top-20">
-      <ProductSwitcher product={product} setProduct={setProduct} locale={locale} />
+      <ProductSwitcher product={product} setProduct={setProduct} />
       {productData && (
         <NavigationMenus activeMenus={pathName.split("/").splice(1)} data={productData.files} />
       )}

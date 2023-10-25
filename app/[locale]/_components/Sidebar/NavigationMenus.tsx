@@ -1,6 +1,7 @@
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
 import Menu from "./Menu";
+import { useLocale } from "next-intl";
 
 export interface Folder {
   type: "folder";
@@ -20,6 +21,8 @@ export interface NavigationMenusProps {
 }
 
 export default function NavigationMenus({ data, activeMenus }: NavigationMenusProps): JSX.Element {
+  const locale = useLocale();
+
   return (
     <ul>
       {data.map((item) => {
@@ -47,7 +50,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
                 activeMenus.includes(file.name) ? "text-violet-500" : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
-              <Link className="text-sm" href={file.path}>
+              <Link className="text-sm" href={`/${locale}${file.path}`}>
                 {convertToTitleCase(file.name)}
               </Link>
             </li>
