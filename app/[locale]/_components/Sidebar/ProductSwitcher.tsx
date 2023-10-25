@@ -14,9 +14,10 @@ import { Dispatch, SetStateAction } from "react";
 type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
   product: string;
+  local: string;
 };
 
-export default function ProductSwitcher({ setProduct, product }: ProductSwitcherProps) {
+export default function ProductSwitcher({ setProduct, product, local }: ProductSwitcherProps) {
   const router = useRouter();
 
   return (
@@ -24,7 +25,7 @@ export default function ProductSwitcher({ setProduct, product }: ProductSwitcher
       value={product}
       onValueChange={(val) => {
         setProduct(val);
-        router.push(`/${val}`);
+        router.push(`/${local}/${val}`);
       }}
     >
       <SelectTrigger className="w-full h-16 text-sm lg:text-base hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">

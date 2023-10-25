@@ -1,6 +1,6 @@
-import Menu from "@/app/_components/Sidebar/Menu";
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
+import Menu from "./Menu";
 
 export interface Folder {
   type: "folder";

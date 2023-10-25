@@ -37,7 +37,7 @@ dependencies:
     version: 1.0.2(@types/react@18.2.31)(react@18.2.0)
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.3.3)
+    version: 0.5.10(tailwindcss@3.3.4)
   '@types/mdx':
     specifier: ^2.0.8
     version: 2.0.8
@@ -71,6 +71,9 @@ dependencies:
   next:
     specifier: latest
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
+  next-intl:
+    specifier: 3.0.0-beta.19
+    version: 3.0.0-beta.19(next@13.5.6)(react@18.2.0)
   next-mdx-remote:
     specifier: ^4.4.1
     version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
@@ -109,7 +112,7 @@ dependencies:
     version: 1.14.0
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.3.3)
+    version: 1.0.7(tailwindcss@3.3.4)
   unified:
     specifier: ^11.0.3
     version: 11.0.3
@@ -147,7 +150,7 @@ devDependencies:
     version: 8.4.31
   tailwindcss:
     specifier: latest
-    version: 3.3.3(ts-node@10.9.1)
+    version: 3.3.4(ts-node@10.9.1)
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@20.8.8)(typescript@5.2.2)
@@ -346,6 +349,59 @@ packages:
 
   /@floating-ui/utils@0.1.4:
     resolution: {integrity: sha512-qprfWkn82Iw821mcKofJ5Pk9wgioHicxcQMxx+5zt5GSKoqdWvgG5AxVmpmUUjzTLPVSH5auBrhI93Deayn/DA==}
+    dev: false
+
+  /@formatjs/ecma402-abstract@1.11.4:
+    resolution: {integrity: sha512-EBikYFp2JCdIfGEb5G9dyCkTGDmC57KSHhRQOC3aYxoPWVZvfWCDjZwkGYHN7Lis/fmuWl906bnNTJifDQ3sXw==}
+    dependencies:
+      '@formatjs/intl-localematcher': 0.2.25
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/ecma402-abstract@1.17.2:
+    resolution: {integrity: sha512-k2mTh0m+IV1HRdU0xXM617tSQTi53tVR2muvYOsBeYcUgEAyxV1FOC7Qj279th3fBVQ+Dj6muvNJZcHSPNdbKg==}
+    dependencies:
+      '@formatjs/intl-localematcher': 0.4.2
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/fast-memoize@1.2.1:
+    resolution: {integrity: sha512-Rg0e76nomkz3vF9IPlKeV+Qynok0r7YZjL6syLz4/urSg0IbjPZCB/iYUMNsYA643gh4mgrX3T7KEIFIxJBQeg==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/icu-messageformat-parser@2.1.0:
+    resolution: {integrity: sha512-Qxv/lmCN6hKpBSss2uQ8IROVnta2r9jd3ymUEIjm2UyIkUCHVcbUVRGL/KS/wv7876edvsPe+hjHVJ4z8YuVaw==}
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.11.4
+      '@formatjs/icu-skeleton-parser': 1.3.6
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/icu-skeleton-parser@1.3.6:
+    resolution: {integrity: sha512-I96mOxvml/YLrwU2Txnd4klA7V8fRhb6JG/4hm3VMNmeJo1F03IpV2L3wWt7EweqNLES59SZ4d6hVOPCSf80Bg==}
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.11.4
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/intl-localematcher@0.2.25:
+    resolution: {integrity: sha512-YmLcX70BxoSopLFdLr1Ds99NdlTI2oWoLbaUW2M406lxOIPzE1KQhRz2fPUkq34xVZQaihCoU29h0KK7An3bhA==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/intl-localematcher@0.2.32:
+    resolution: {integrity: sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
+  /@formatjs/intl-localematcher@0.4.2:
+    resolution: {integrity: sha512-BGdtJFmaNJy5An/Zan4OId/yR9Ih1OojFjcduX/xOvq798OgWSyDtd6Qd5jqJXwJs1ipe4Fxu9+cshic5Ox2tA==}
+    dependencies:
+      tslib: 2.6.2
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
@@ -1445,7 +1501,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.3):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.4):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -1454,7 +1510,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.3(ts-node@10.9.1)
+      tailwindcss: 3.3.4(ts-node@10.9.1)
     dev: false
 
   /@tsconfig/node10@1.0.9:
@@ -3308,6 +3364,15 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /intl-messageformat@9.13.0:
+    resolution: {integrity: sha512-7sGC7QnSQGa5LZP7bXLDhVDtQOeKGeBFGHF2Y8LVBwYZoQZCgWeKoPGTa5GMG8g/TzDgeXuYJQis7Ggiw2xTOw==}
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.11.4
+      '@formatjs/fast-memoize': 1.2.1
+      '@formatjs/icu-messageformat-parser': 2.1.0
+      tslib: 2.6.2
+    dev: false
+
   /invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
     dependencies:
@@ -4383,8 +4448,27 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /negotiator@0.6.3:
+    resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+    dev: false
+
+  /next-intl@3.0.0-beta.19(next@13.5.6)(react@18.2.0):
+    resolution: {integrity: sha512-F9ZZ342rDUJE3hOD2ZkKtkbeJNNUQtorN0Wnr2gThgLeeyKchbwm5KgijK4gOU66Yw91V1lRuGEcV6BMJdSaxg==}
+    peerDependencies:
+      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@formatjs/intl-localematcher': 0.2.32
+      negotiator: 0.6.3
+      next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      server-only: 0.0.1
+      use-intl: 3.0.0-beta.3(react@18.2.0)
     dev: false
 
   /next-mdx-remote@4.4.1(react-dom@18.2.0)(react@18.2.0):
@@ -5133,6 +5217,10 @@ packages:
       randombytes: 2.1.0
     dev: false
 
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
+
   /set-function-name@2.0.1:
     resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==}
     engines: {node: '>= 0.4'}
@@ -5355,16 +5443,16 @@ packages:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.3.3):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.3.4):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.3.3(ts-node@10.9.1)
+      tailwindcss: 3.3.4(ts-node@10.9.1)
     dev: false
 
-  /tailwindcss@3.3.3(ts-node@10.9.1):
-    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
+  /tailwindcss@3.3.4(ts-node@10.9.1):
+    resolution: {integrity: sha512-JXZNOkggUAc9T5E7nCrimoXHcSf9h3NWFe5sh36CGD/3M5TRLuQeFnQoDsit2uVTqgoOZHLx5rTykLUu16vsMQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -5724,6 +5812,16 @@ packages:
       '@types/react': 18.2.31
       react: 18.2.0
       tslib: 2.6.2
+    dev: false
+
+  /use-intl@3.0.0-beta.3(react@18.2.0):
+    resolution: {integrity: sha512-b5c9F6F3Yw7xbdIVdDBj2qh5BHntdr2Obp3c40OTxXOwqDIyjAbOxjezGe7ak8EGo0TEezyN6oPvi6aQWPjDdQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.17.2
+      intl-messageformat: 9.13.0
+      react: 18.2.0
     dev: false
 
   /use-sidecar@1.1.2(@types/react@18.2.31)(react@18.2.0):

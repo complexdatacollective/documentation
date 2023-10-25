@@ -1,6 +1,5 @@
 "use client";
 
-import EmptyQueryBoundary from "@/app/[project]/_components/Search/EmtyQueryBoundary";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -15,6 +14,7 @@ import CustomSearchBox from "./CustomSearchBox";
 import Hit from "./Hit";
 import NoResultsBoundary from "./NoResultsBoundary";
 import { DialogContextProvider } from "./Provider/DialogContext";
+import EmptyQueryBoundary from "./EmtyQueryBoundary";
 
 export default function SearchCommand() {
   const [open, setOpen] = useState(false);
