@@ -22,9 +22,9 @@ const LanguageSwitcher = ({ locale, width }: LanguageSwitcherProps) => {
     <Select
       onValueChange={(val) => {
         router.push(pathname, { locale: val });
-        setTimeout(() => {
-          window.location.reload();
-        }, 1200);
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 1200);
       }}
     >
       <SelectTrigger

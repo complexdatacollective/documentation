@@ -49,10 +49,18 @@ export const getAllProjects = function () {
 };
 
 // Take a nextjs route segment and convert it to a path, adding the .md/mdx extension.
-const segmentToPath = (segment: string[]) => {
+const segmentToPath = (segment: string[], locale: string) => {
   const path = segment.join("/");
-  const pathToMdFile = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!, `${path}.md`);
-  const pathToMdXFile = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!, `${path}.mdx`);
+  const pathToMdFile = join(
+    process.cwd(),
+    process.env.NEXT_PUBLIC_DOCS_PATH!,
+    `${path}.${locale}.md`
+  );
+  const pathToMdXFile = join(
+    process.cwd(),
+    process.env.NEXT_PUBLIC_DOCS_PATH!,
+    `${path}.${locale}.mdx`
+  );
 
   if (fs.existsSync(pathToMdFile)) {
     return pathToMdFile;
@@ -65,8 +73,8 @@ const segmentToPath = (segment: string[]) => {
 
 // Takes a path segment and returns an object containing parsed markdown for the
 // file at the segment, along with useful metadata.
-export function getDoc(pathSegment: string[]) {
-  const path = segmentToPath(pathSegment);
+export function getDoc(pathSegment: string[], locale: string) {
+  const path = segmentToPath(pathSegment, locale);
 
   if (path === null)
     return {

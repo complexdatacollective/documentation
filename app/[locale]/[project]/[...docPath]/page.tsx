@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator";
 import { getAllFiles, getDoc } from "@/lib/docs";
 import { getHeadings } from "@/lib/tableOfContents";
 import { StepBack } from "lucide-react";
@@ -6,15 +7,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { styledHeadings } from "./_components/CustomHeadings";
 import TableOfContents from "./_components/TableOfContents";
-import { Separator } from "@/components/ui/separator";
 
-export async function generateMetadata({
-  params: { docPath, project },
-}: {
-  params: { project: string; docPath: string[] };
-}) {
+type DocPageProps = {
+  params: { locale: string; project: string; docPath: string[] };
+};
+
+export async function generateMetadata({ params: { docPath, project, locale } }: DocPageProps) {
   const segmentWithProject = [project, ...docPath];
-  const { title } = getDoc(segmentWithProject);
+  const { title } = getDoc(segmentWithProject, locale);
 
   if (!title) {
     console.error(`No title found for ${docPath}!`);
@@ -29,13 +29,9 @@ export async function generateStaticParams() {
   return docs;
 }
 
-const DocPage = async ({
-  params: { project, docPath },
-}: {
-  params: { project: string; docPath: string[] };
-}) => {
+const DocPage = async ({ params: { locale, project, docPath } }: DocPageProps) => {
   const segmentWithProject = [project, ...docPath];
-  const { content, lastUpdated, toc } = getDoc(segmentWithProject);
+  const { content, lastUpdated, toc } = getDoc(segmentWithProject, locale);
   const headings = toc ? await getHeadings(content as string) : null;
 
   if (content === null) notFound();
