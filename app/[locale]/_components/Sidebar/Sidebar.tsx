@@ -10,14 +10,17 @@ import ProductSwitcher from "./ProductSwitcher";
 
 export default function Sidebar({
   data,
-  local,
-}: Omit<NavigationMenusProps & { local: string }, "activeMenus">) {
+  locale,
+}: Omit<NavigationMenusProps & { locale: string }, "activeMenus">) {
   const [product, setProduct] = useState("");
   const [productData, setProductData] = useState<Folder>();
   const pathName = usePathname();
 
   useEffect(() => {
-    setProduct(pathName.split("/")[2] ? pathName.split("/")[2] : "desktop");
+    const products = ["desktop", "fresco"];
+    const currentProduct = pathName.split("/").filter((item) => products.includes(item))[0];
+
+    setProduct(currentProduct ? currentProduct : "desktop");
   }, [pathName]);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function Sidebar({
 
   return (
     <div className="flex flex-col gap-2 sticky top-20">
-      <ProductSwitcher product={product} setProduct={setProduct} local={local} />
+      <ProductSwitcher product={product} setProduct={setProduct} locale={locale} />
       {productData && (
         <NavigationMenus activeMenus={pathName.split("/").splice(1)} data={productData.files} />
       )}
