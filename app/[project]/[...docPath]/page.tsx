@@ -52,6 +52,7 @@ const DocPage = async ({
       {headings && (
         <div className="sticky top-20">
           <TableOfContents nodes={headings} />
+          <div className="py-3 dark:bg-slate-950"></div>
           <Separator />
         </div>
       )}

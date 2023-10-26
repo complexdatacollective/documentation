@@ -14,7 +14,7 @@ const useHighlighted = (id: string): [boolean, React.Dispatch<React.SetStateActi
     };
 
     observer.current = new IntersectionObserver(handleObserver, {
-      rootMargin: "0% 0% -50% 0px",
+      rootMargin: "0% 0% -75% 0px",
     });
 
     const elements = document.querySelectorAll("h2, h3, h4, h5, h6");
