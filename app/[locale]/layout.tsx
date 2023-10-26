@@ -46,6 +46,6 @@ export default async function RootLayout({ children, params: { locale } }: RootL
   );
 }
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }));
+// }
