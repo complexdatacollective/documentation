@@ -45,7 +45,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
           );
         } else {
           const file = item as File;
-          console.log("PATH:", `/${locale}${file.path}`);
+          console.log("PATH:", file.path);
           return (
             <li
               key={file.name}
