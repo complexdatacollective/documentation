@@ -8,7 +8,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ProductSwitcher from "./ProductSwitcher";
 
-export default function Sidebar({ data }: Omit<NavigationMenusProps, "activeMenus">) {
+export default function Sidebar({
+  data,
+  locale,
+}: Omit<NavigationMenusProps & { locale: string }, "activeMenus">) {
   const [product, setProduct] = useState("");
   const [productData, setProductData] = useState<Folder>();
   const pathName = usePathname();
@@ -21,12 +24,16 @@ export default function Sidebar({ data }: Omit<NavigationMenusProps, "activeMenu
   }, [pathName]);
 
   useEffect(() => {
-    const pdata = data.filter(
+    const localedSidebarData = data.filter(
+      (item) => item.type === "folder" && item.name === locale
+    )[0] as Folder;
+
+    const prData = localedSidebarData.files.filter(
       (item) => item.type === "folder" && item.name === product
     )[0] as Folder;
 
-    setProductData(pdata);
-  }, [product, data]);
+    setProductData(prData);
+  }, [product, data, locale]);
 
   return (
     <div className="flex flex-col gap-2 sticky top-20">

@@ -51,7 +51,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
               } dark:hover:text-white transition-colors`}
             >
               <Link className="text-sm" href={`/${locale}${file.path}`}>
-                {convertToTitleCase(file.name)}
+                {file.name}
               </Link>
             </li>
           );
