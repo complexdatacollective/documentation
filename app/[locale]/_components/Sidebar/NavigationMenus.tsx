@@ -25,6 +25,8 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
   const locale = useLocale();
   const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
 
+  console.log("LOCALE:", locale);
+
   return (
     <ul>
       {data.map((item) => {
