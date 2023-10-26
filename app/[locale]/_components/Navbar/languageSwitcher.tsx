@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "next-intl/client";
+import { useRouter } from "next-intl/client";
 
 interface LanguageSwitcherProps {
   width: string;
@@ -17,15 +17,11 @@ interface LanguageSwitcherProps {
 const LanguageSwitcher = ({ width }: LanguageSwitcherProps) => {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
 
   return (
     <Select
       onValueChange={(val) => {
-        router.push(pathname, { locale: val });
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 1200);
+        router.push("/", { locale: val });
       }}
     >
       <SelectTrigger

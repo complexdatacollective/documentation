@@ -13,7 +13,8 @@ type DocPageProps = {
 };
 
 export async function generateMetadata({ params: { docPath, project, locale } }: DocPageProps) {
-  const segmentWithProject = [project, ...docPath];
+  const decodedParams = docPath.map((p) => decodeURIComponent(p));
+  const segmentWithProject = [project, ...decodedParams];
   const { title } = getDoc(segmentWithProject, locale);
 
   if (!title) {
@@ -30,7 +31,9 @@ export async function generateStaticParams() {
 }
 
 const DocPage = async ({ params: { locale, project, docPath } }: DocPageProps) => {
-  const segmentWithProject = [project, ...docPath];
+  const decodedParams = docPath.map((p) => decodeURIComponent(p));
+  const segmentWithProject = [project, ...decodedParams];
+
   const { content, lastUpdated, toc } = getDoc(segmentWithProject, locale);
   const headings = toc ? await getHeadings(content as string) : null;
 

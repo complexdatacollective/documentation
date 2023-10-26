@@ -13,6 +13,7 @@ export interface File {
   type: "file";
   name: string;
   path: string;
+  source: string;
 }
 
 export interface NavigationMenusProps {
@@ -22,13 +23,14 @@ export interface NavigationMenusProps {
 
 export default function NavigationMenus({ data, activeMenus }: NavigationMenusProps): JSX.Element {
   const locale = useLocale();
+  const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
 
   return (
     <ul>
       {data.map((item) => {
         if (item.type === "folder") {
           const folder = item as Folder;
-          const activeMenu = activeMenus.find((m) => m === folder.name);
+          const activeMenu = decodedActiveMenus.find((m) => m === folder.name);
 
           return (
             <Menu
@@ -37,7 +39,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
               title={convertToTitleCase(folder.name)}
             >
               <ul>
-                <NavigationMenus activeMenus={activeMenus} data={folder.files} />
+                <NavigationMenus activeMenus={decodedActiveMenus} data={folder.files} />
               </ul>
             </Menu>
           );
@@ -47,7 +49,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
             <li
               key={file.name}
               className={`${
-                activeMenus.includes(file.name) ? "text-violet-500" : "text-slate-500"
+                activeMenus.includes(file.source) ? "text-violet-500" : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
               <Link className="text-sm" href={`/${locale}${file.path}`}>

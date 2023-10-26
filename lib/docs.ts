@@ -54,12 +54,14 @@ const segmentToPath = (segment: string[], locale: string) => {
   const pathToMdFile = join(
     process.cwd(),
     process.env.NEXT_PUBLIC_DOCS_PATH!,
-    `${path}.${locale}.md`
+    locale,
+    `${path}.md`
   );
   const pathToMdXFile = join(
     process.cwd(),
     process.env.NEXT_PUBLIC_DOCS_PATH!,
-    `${path}.${locale}.mdx`
+    locale,
+    `${path}.mdx`
   );
 
   if (fs.existsSync(pathToMdFile)) {

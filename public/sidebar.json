@@ -18,7 +18,8 @@
                   {
                     "type": "file",
                     "name": "Salom Tojik",
-                    "path": "/en\\desktop\\how-to-guides\\subfolder\\tojiki"
+                    "path": "/desktop\\how-to-guides\\subfolder\\tojiki",
+                    "source": "tojiki"
                   },
                   {
                     "type": "folder",
@@ -27,7 +28,8 @@
                       {
                         "type": "file",
                         "name": "Koro sarami",
-                        "path": "/en\\desktop\\how-to-guides\\subfolder\\subfolder-child\\jugi-bla"
+                        "path": "/desktop\\how-to-guides\\subfolder\\subfolder-child\\jugi-bla",
+                        "source": "jugi-bla"
                       }
                     ]
                   }
@@ -42,7 +44,8 @@
               {
                 "type": "file",
                 "name": "Codebook",
-                "path": "/en\\desktop\\key-concepts\\codebook"
+                "path": "/desktop\\key-concepts\\codebook",
+                "source": "codebook"
               }
             ]
           },
@@ -53,7 +56,8 @@
               {
                 "type": "file",
                 "name": "IRB and Security Best Practices",
-                "path": "/en\\desktop\\reference\\irb-best-practices"
+                "path": "/desktop\\reference\\irb-best-practices",
+                "source": "irb-best-practices"
               }
             ]
           }
@@ -70,7 +74,8 @@
               {
                 "type": "file",
                 "name": "Fresco Installation guide",
-                "path": "/en\\fresco\\installation\\installation"
+                "path": "/fresco\\installation\\installation",
+                "source": "installation"
               }
             ]
           },
@@ -81,7 +86,8 @@
               {
                 "type": "file",
                 "name": "Fresco Introduction",
-                "path": "/en\\fresco\\introduction\\introduction"
+                "path": "/fresco\\introduction\\introduction",
+                "source": "introduction"
               }
             ]
           },
@@ -92,7 +98,8 @@
               {
                 "type": "file",
                 "name": "TEST",
-                "path": "/en\\fresco\\third-folder\\test"
+                "path": "/fresco\\third-folder\\test",
+                "source": "test"
               }
             ]
           }
@@ -119,7 +126,8 @@
                   {
                     "type": "file",
                     "name": "Привет таджик",
-                    "path": "/ru\\desktop\\как-сделать-руководства\\подпапка\\привет-таджик"
+                    "path": "/desktop\\как-сделать-руководства\\подпапка\\привет-таджик",
+                    "source": "привет-таджик"
                   },
                   {
                     "type": "folder",
@@ -128,7 +136,8 @@
                       {
                         "type": "file",
                         "name": "Какое-то название файла",
-                        "path": "/ru\\desktop\\как-сделать-руководства\\подпапка\\подпапка-подчиненная\\какое-то-название-файла"
+                        "path": "/desktop\\как-сделать-руководства\\подпапка\\подпапка-подчиненная\\какое-то-название-файла",
+                        "source": "какое-то-название-файла"
                       }
                     ]
                   }
@@ -143,7 +152,8 @@
               {
                 "type": "file",
                 "name": "Кодовая книга",
-                "path": "/ru\\desktop\\ключевые-концепции\\кодовая-книга"
+                "path": "/desktop\\ключевые-концепции\\кодовая-книга",
+                "source": "кодовая-книга"
               }
             ]
           },
@@ -154,7 +164,8 @@
               {
                 "type": "file",
                 "name": "Лучшие практики по IRB и безопасности",
-                "path": "/ru\\desktop\\ссылка-на-источник\\лучшие-практики-по-irb-и-безопасности"
+                "path": "/desktop\\ссылка-на-источник\\лучшие-практики-по-irb-и-безопасности",
+                "source": "лучшие-практики-по-irb-и-безопасности"
               }
             ]
           }
@@ -171,7 +182,8 @@
               {
                 "type": "file",
                 "name": "Fresco Введение",
-                "path": "/ru\\fresco\\введение\\fresco-введение"
+                "path": "/fresco\\введение\\fresco-введение",
+                "source": "fresco-введение"
               }
             ]
           },
@@ -182,7 +194,8 @@
               {
                 "type": "file",
                 "name": "ТЕСТ",
-                "path": "/ru\\fresco\\третья-папка\\тест"
+                "path": "/fresco\\третья-папка\\тест",
+                "source": "тест"
               }
             ]
           },
@@ -193,7 +206,8 @@
               {
                 "type": "file",
                 "name": "Руководство по установке фрески",
-                "path": "/ru\\fresco\\установка\\установке"
+                "path": "/fresco\\установка\\установке",
+                "source": "установке"
               }
             ]
           }
