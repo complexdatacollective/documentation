@@ -25,8 +25,6 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
   const locale = useLocale();
   const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
 
-  console.log("LOCALE:", locale);
-
   return (
     <ul>
       {data.map((item) => {
@@ -47,6 +45,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
           );
         } else {
           const file = item as File;
+          console.log("PATH:", `/${locale}${file.path}`);
           return (
             <li
               key={file.name}
@@ -54,7 +53,11 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
                 activeMenus.includes(file.source) ? "text-violet-500" : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
-              <Link className="text-sm" href={`/${locale}${file.path}`}>
+              <Link
+                onClick={() => console.log("HELLOW")}
+                className="text-sm"
+                href={`/${locale}${file.path}`}
+              >
                 {file.name}
               </Link>
             </li>
