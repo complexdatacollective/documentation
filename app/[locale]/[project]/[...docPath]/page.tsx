@@ -39,8 +39,6 @@ const DocPage = async ({ params: { locale, project, docPath } }: DocPageProps) =
 
   if (content === null) notFound();
 
-  console.log("DOC PAGE");
-
   return (
     <div className="flex gap-1 items-start">
       <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-5">

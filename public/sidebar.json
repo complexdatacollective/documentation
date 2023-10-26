@@ -18,7 +18,7 @@
                   {
                     "type": "file",
                     "name": "Salom Tojik",
-                    "path": "/",
+                    "path": "/en\\desktop\\how-to-guides\\subfolder\\tojiki",
                     "source": "tojiki"
                   },
                   {
@@ -28,7 +28,7 @@
                       {
                         "type": "file",
                         "name": "Koro sarami",
-                        "path": "/",
+                        "path": "/en\\desktop\\how-to-guides\\subfolder\\subfolder-child\\jugi-bla",
                         "source": "jugi-bla"
                       }
                     ]
@@ -44,7 +44,7 @@
               {
                 "type": "file",
                 "name": "Codebook",
-                "path": "/",
+                "path": "/en\\desktop\\key-concepts\\codebook",
                 "source": "codebook"
               }
             ]
@@ -56,7 +56,7 @@
               {
                 "type": "file",
                 "name": "IRB and Security Best Practices",
-                "path": "/",
+                "path": "/en\\desktop\\reference\\irb-best-practices",
                 "source": "irb-best-practices"
               }
             ]
@@ -74,7 +74,7 @@
               {
                 "type": "file",
                 "name": "Fresco Installation guide",
-                "path": "/",
+                "path": "/en\\fresco\\installation\\installation",
                 "source": "installation"
               }
             ]
@@ -86,7 +86,7 @@
               {
                 "type": "file",
                 "name": "Fresco Introduction",
-                "path": "/",
+                "path": "/en\\fresco\\introduction\\introduction",
                 "source": "introduction"
               }
             ]
@@ -98,7 +98,7 @@
               {
                 "type": "file",
                 "name": "TEST",
-                "path": "/",
+                "path": "/en\\fresco\\third-folder\\test",
                 "source": "test"
               }
             ]
@@ -126,7 +126,7 @@
                   {
                     "type": "file",
                     "name": "Привет таджик",
-                    "path": "/",
+                    "path": "/ru\\desktop\\как-сделать-руководства\\подпапка\\привет-таджик",
                     "source": "привет-таджик"
                   },
                   {
@@ -136,7 +136,7 @@
                       {
                         "type": "file",
                         "name": "Какое-то название файла",
-                        "path": "/",
+                        "path": "/ru\\desktop\\как-сделать-руководства\\подпапка\\подпапка-подчиненная\\какое-то-название-файла",
                         "source": "какое-то-название-файла"
                       }
                     ]
@@ -152,7 +152,7 @@
               {
                 "type": "file",
                 "name": "Кодовая книга",
-                "path": "/",
+                "path": "/ru\\desktop\\ключевые-концепции\\кодовая-книга",
                 "source": "кодовая-книга"
               }
             ]
@@ -164,7 +164,7 @@
               {
                 "type": "file",
                 "name": "Лучшие практики по IRB и безопасности",
-                "path": "/",
+                "path": "/ru\\desktop\\ссылка-на-источник\\лучшие-практики-по-irb-и-безопасности",
                 "source": "лучшие-практики-по-irb-и-безопасности"
               }
             ]
@@ -182,7 +182,7 @@
               {
                 "type": "file",
                 "name": "Fresco Введение",
-                "path": "/",
+                "path": "/ru\\fresco\\введение\\fresco-введение",
                 "source": "fresco-введение"
               }
             ]
@@ -194,7 +194,7 @@
               {
                 "type": "file",
                 "name": "ТЕСТ",
-                "path": "/",
+                "path": "/ru\\fresco\\третья-папка\\тест",
                 "source": "тест"
               }
             ]
@@ -206,7 +206,7 @@
               {
                 "type": "file",
                 "name": "Руководство по установке фрески",
-                "path": "/",
+                "path": "/ru\\fresco\\установка\\установке",
                 "source": "установке"
               }
             ]

@@ -22,7 +22,6 @@ export interface NavigationMenusProps {
 }
 
 export default function NavigationMenus({ data, activeMenus }: NavigationMenusProps): JSX.Element {
-  const locale = useLocale();
   const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
 
   return (
@@ -45,7 +44,6 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
           );
         } else {
           const file = item as File;
-          console.log("PATH:", file.path);
           return (
             <li
               key={file.name}
@@ -53,11 +51,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
                 activeMenus.includes(file.source) ? "text-violet-500" : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
-              <Link
-                onClick={() => console.log("HELLOW")}
-                className="text-sm"
-                href={`/${locale}${file.path}`}
-              >
+              <Link className="text-sm" href={`${file.path}`}>
                 {file.name}
               </Link>
             </li>
