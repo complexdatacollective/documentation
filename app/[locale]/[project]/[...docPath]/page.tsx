@@ -7,6 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { styledHeadings } from "./_components/CustomHeadings";
 import TableOfContents from "./_components/TableOfContents";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 type DocPageProps = {
   params: { locale: string; project: string; docPath: string[] };
@@ -31,6 +32,9 @@ export async function generateStaticParams() {
 }
 
 const DocPage = async ({ params: { locale, project, docPath } }: DocPageProps) => {
+  // setting setRequestLocale to support next-intl for static rendering
+  unstable_setRequestLocale(locale);
+
   const decodedParams = docPath.map((p) => decodeURIComponent(p));
   const segmentWithProject = [project, ...decodedParams];
 

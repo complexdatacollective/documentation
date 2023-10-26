@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 import Navbar from "./_components/Navbar/Navbar";
 import Sidebar from "./_components/Sidebar/Sidebar";
 import { notFound } from "next/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 const locales = ["en", "ru"];
@@ -22,6 +23,9 @@ export default async function RootLayout({ children, params: { locale } }: RootL
   // Validate that the incoming `locale` parameter is valid
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
+
+  // setting setRequestLocale to support next-intl for static rendering
+  unstable_setRequestLocale(locale);
 
   const sidebarData = JSON.parse(JSON.stringify(data));
 
@@ -46,6 +50,6 @@ export default async function RootLayout({ children, params: { locale } }: RootL
   );
 }
 
-// export function generateStaticParams() {
-//   return locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
