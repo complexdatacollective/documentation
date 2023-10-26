@@ -1,7 +1,6 @@
 import { convertToTitleCase } from "@/lib/helper_functions";
 import Link from "next/link";
 import Menu from "./Menu";
-import { useLocale } from "next-intl";
 
 export interface Folder {
   type: "folder";

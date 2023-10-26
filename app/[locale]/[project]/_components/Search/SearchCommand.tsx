@@ -16,7 +16,13 @@ import NoResultsBoundary from "./NoResultsBoundary";
 import { DialogContextProvider } from "./Provider/DialogContext";
 import EmptyQueryBoundary from "./EmtyQueryBoundary";
 
-export default function SearchCommand() {
+type SearchCommandProps = {
+  searchCommandTranslations: {
+    searchPlaceholder: string;
+  };
+};
+
+export default function SearchCommand({ searchCommandTranslations }: SearchCommandProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -43,7 +49,7 @@ export default function SearchCommand() {
           variant={"secondary"}
           onClick={() => setOpen(true)}
         >
-          <span>Search documentation...</span>
+          <span>{searchCommandTranslations.searchPlaceholder}</span>
           <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">Ctrl+J</span>
         </Button>
 
