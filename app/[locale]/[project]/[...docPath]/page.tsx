@@ -16,7 +16,9 @@ type DocPageProps = {
   docAvailableTxt: string;
 };
 
-export async function generateMetadata({ params: { docPath, project, locale } }: DocPageProps) {
+export async function generateMetadata({
+  params: { docPath, project, locale },
+}: Omit<DocPageProps, "docAvailableTxt">) {
   const decodedParams = docPath.map((p) => decodeURIComponent(p));
   const segmentWithProject = [project, ...decodedParams];
   const { title } = getDoc(segmentWithProject, locale);
