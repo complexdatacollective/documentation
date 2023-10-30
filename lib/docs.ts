@@ -94,5 +94,7 @@ export function getDoc(pathSegment: string[], locale: string) {
     lastUpdated: matterResult.data.date,
     content: matterResult.content,
     toc: matterResult.data.toc,
+    docId: matterResult.data.docId ?? null,
+    supportedLocales: matterResult.data.supportedLocales ?? null,
   };
 }

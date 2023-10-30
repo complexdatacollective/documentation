@@ -8,5 +8,8 @@
   },
   "Home": {
     "title": "Home Page"
+  },
+  "DocPage": {
+    "docAvailabeLanguageTxt": "This document is also avaialabe in"
   }
 }

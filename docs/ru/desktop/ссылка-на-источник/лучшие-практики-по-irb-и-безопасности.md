@@ -1,5 +1,8 @@
 ---
 title: Лучшие практики по IRB и безопасности
+docId: "Security Best Practices"
+language: "ru"
+supportedLocales: ["en", "ru"]
 ---
 
 # Документ на русском языке

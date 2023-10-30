@@ -1,5 +1,8 @@
 ---
 title: IRB and Security Best Practices
+docId: "Security Best Practices"
+language: "en"
+supportedLocales: ["en", "ru"]
 ---
 
 # English document

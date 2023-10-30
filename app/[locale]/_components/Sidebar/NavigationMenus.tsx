@@ -13,6 +13,8 @@ export interface File {
   name: string;
   path: string;
   source: string;
+  docId: string;
+  language: string;
 }
 
 export interface NavigationMenusProps {
