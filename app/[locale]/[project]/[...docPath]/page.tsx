@@ -16,7 +16,7 @@ type DocPageProps = {
   docAvailableTxt: string;
 };
 
-// Generating Metadata
+// Generating Metadata for each document
 export async function generateMetadata({
   params: { docPath, project, locale },
 }: Omit<DocPageProps, "docAvailableTxt">) {
@@ -32,7 +32,7 @@ export async function generateMetadata({
   return { title: title };
 }
 
-// Generating Static Params
+// Generating Static Params for each page
 export async function generateStaticParams() {
   const docs = getAllFiles();
   return docs;

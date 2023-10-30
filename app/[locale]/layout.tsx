@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
-const locales = ["en", "ru"];
+const locales = ["en", "ru"]; // I don't know where to put this variable for now
 
 export const metadata: Metadata = {
   title: "Network Canvas Docs",

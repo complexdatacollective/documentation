@@ -17,7 +17,7 @@ export default function Sidebar({
   const pathName = usePathname();
 
   useEffect(() => {
-    const products = ["desktop", "fresco"];
+    const products = ["desktop", "fresco"]; // I don't know where to put this hardcoded values, open to suggestions
     const currentProduct = pathName.split("/").filter((item) => products.includes(item))[0];
 
     setProduct(currentProduct ? currentProduct : "desktop");
