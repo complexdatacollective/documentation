@@ -40,7 +40,7 @@ const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }
   const decodedParams = docPath.map((p) => decodeURIComponent(p));
   const segmentWithProject = [project, ...decodedParams];
 
-  const { content, lastUpdated, toc, docId, supportedLocales } = getDoc(segmentWithProject, locale);
+  const { content, lastUpdated, toc, docId } = getDoc(segmentWithProject, locale);
   const headings = toc ? await getHeadings(content as string) : null;
 
   if (content === null) notFound();
@@ -48,9 +48,9 @@ const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }
   return (
     <div className="flex gap-1 items-start">
       <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-5">
-        {docId && supportedLocales && (
+        {docId && (
           <InnerLanguageSwitcher
-            availabeLocales={supportedLocales.filter((spl: string) => spl !== locale)}
+            currentLocale={locale}
             currentDocId={docId}
             docAvailableTxt={docAvailableTxt}
           />
