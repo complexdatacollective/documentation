@@ -16,6 +16,7 @@ type DocPageProps = {
   docAvailableTxt: string;
 };
 
+// Generating Metadata
 export async function generateMetadata({
   params: { docPath, project, locale },
 }: Omit<DocPageProps, "docAvailableTxt">) {
@@ -31,11 +32,13 @@ export async function generateMetadata({
   return { title: title };
 }
 
+// Generating Static Params
 export async function generateStaticParams() {
   const docs = getAllFiles();
   return docs;
 }
 
+// The Page Component
 const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }: DocPageProps) => {
   const decodedParams = docPath.map((p) => decodeURIComponent(p));
   const segmentWithProject = [project, ...decodedParams];
@@ -71,12 +74,13 @@ const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }
   );
 };
 
+// Using wrapper component to support useTranslations hook because it's not supported in an async component
 const DocPageWrapper = (props: Omit<DocPageProps, "docAvailableTxt">) => {
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(props.params.locale);
 
   const t = useTranslations("DocPage");
-  const docAvailableTxt = t("docAvailabeLanguageTxt");
+  const docAvailableTxt = t("docAvailableLanguageTxt");
 
   return <DocPage {...props} docAvailableTxt={docAvailableTxt} />;
 };

@@ -14,7 +14,7 @@ import CustomSearchBox from "./CustomSearchBox";
 import Hit from "./Hit";
 import NoResultsBoundary from "./NoResultsBoundary";
 import { DialogContextProvider } from "./Provider/DialogContext";
-import EmptyQueryBoundary from "./EmtyQueryBoundary";
+import EmptyQueryBoundary from "./EmptyQueryBoundary";
 
 type SearchCommandProps = {
   searchCommandTranslations: {

@@ -24,11 +24,11 @@ export default function Sidebar({
   }, [pathName]);
 
   useEffect(() => {
-    const localedSidebarData = data.filter(
+    const localeBasedSidebarData = data.filter(
       (item) => item.type === "folder" && item.name === locale
     )[0] as Folder;
 
-    const prData = localedSidebarData.files.filter(
+    const prData = localeBasedSidebarData.files.filter(
       (item) => item.type === "folder" && item.name === product
     )[0] as Folder;
 

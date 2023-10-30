@@ -1,36 +1,15 @@
 "use client";
 
-import { File, Folder } from "@/app/[locale]/_components/Sidebar/NavigationMenus";
 import { Button } from "@/components/ui/button";
+import { getAvailableLocales, getDocsFromSidebarData } from "@/lib/helper_functions";
 import data from "@/public/sidebar.json";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
 type InnerLanguageSwitcherProps = {
   currentDocId: string;
-  currentLocale: string; // better typing for this
+  currentLocale: string;
   docAvailableTxt: string;
-};
-
-const getAvailableLocales = (sidebarData: Array<File | Folder>, currentDocId: string) => {
-  const allDocFiles = getDocsFromSidebarData(sidebarData);
-  const availableLocales = allDocFiles
-    .filter((file) => file.docId === currentDocId)
-    .map((file) => file.language);
-
-  return availableLocales;
-};
-
-const getDocsFromSidebarData = (siData: Array<File | Folder>, docFiles: Array<File> = []) => {
-  siData.forEach((item) => {
-    if (item.type === "folder") {
-      docFiles = getDocsFromSidebarData(item.files, docFiles);
-    } else {
-      docFiles.push(item);
-    }
-  });
-
-  return docFiles;
 };
 
 const InnerLanguageSwitcher = ({

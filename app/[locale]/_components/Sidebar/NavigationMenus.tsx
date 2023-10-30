@@ -5,10 +5,10 @@ import Menu from "./Menu";
 export interface Folder {
   type: "folder";
   name: string;
-  files: Array<File | Folder>;
+  files: Array<DocFile | Folder>;
 }
 
-export interface File {
+export interface DocFile {
   type: "file";
   name: string;
   path: string;
@@ -18,7 +18,7 @@ export interface File {
 }
 
 export interface NavigationMenusProps {
-  data: Array<File | Folder>;
+  data: Array<DocFile | Folder>;
   activeMenus: string[];
 }
 
@@ -44,7 +44,7 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
             </Menu>
           );
         } else {
-          const file = item as File;
+          const file = item as DocFile;
           return (
             <li
               key={file.name}
