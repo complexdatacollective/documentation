@@ -37,9 +37,6 @@ export async function generateStaticParams() {
 }
 
 const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }: DocPageProps) => {
-  // setting setRequestLocale to support next-intl for static rendering
-  unstable_setRequestLocale(locale);
-
   const decodedParams = docPath.map((p) => decodeURIComponent(p));
   const segmentWithProject = [project, ...decodedParams];
 
@@ -75,6 +72,9 @@ const DocPage = async ({ params: { locale, project, docPath }, docAvailableTxt }
 };
 
 const DocPageWrapper = (props: Omit<DocPageProps, "docAvailableTxt">) => {
+  // setting setRequestLocale to support next-intl for static rendering
+  unstable_setRequestLocale(props.params.locale);
+
   const t = useTranslations("DocPage");
   const docAvailableTxt = t("docAvailabeLanguageTxt");
 
