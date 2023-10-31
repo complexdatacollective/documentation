@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description: "All Network Canvas Docs",
 };
 
-type RootLayoutProps = { children: React.ReactNode; params: { locale: string } };
+type MainLayoutProps = { children: React.ReactNode; params: { locale: string } };
 
-export default async function RootLayout({ children, params: { locale } }: RootLayoutProps) {
+export default async function MainLayout({ children, params: { locale } }: MainLayoutProps) {
   // Validate that the incoming `locale` parameter is valid
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();

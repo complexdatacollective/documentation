@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/public/assets/img/logo.svg";
 import Image from "next/image";
-import Link from "next/link";
 import SearchCommand from "../../[project]/_components/Search/SearchCommand";
 import LanguageSwitcher from "./languageSwitcher";
 import { ThemeToggle } from "./themeToggle";
 import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");

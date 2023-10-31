@@ -33,9 +33,24 @@ export async function generateMetadata({
 }
 
 // Generating Static Params for each page
-export async function generateStaticParams() {
+export async function generateStaticParams({ params: { locale } }: { params: { locale: string } }) {
   const docs = getAllFiles();
-  return docs;
+
+  const a = [
+    {
+      params: {
+        docPath: "/en/desktop/reference/irb-best-practices",
+        locale: "/en",
+        project: "/desktop",
+      },
+    },
+
+    // {
+    //   params: { docPath: "/en/desktop/reference/irb-best-practices" },
+    // },
+  ];
+
+  return a;
 }
 
 // The Page Component
