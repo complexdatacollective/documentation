@@ -11,13 +11,13 @@ const TableOfContents = ({ nodes }: TableOfContentsProps) => {
   if (!nodes) return null;
 
   return (
-    <div className={`overflow-x-hidden ${nodes.length > 10 && "h-[600px]"} overflow-y-hidden`}>
-      <div className="group">
-        <h3 className="text-slate-300 uppercase text-md">Table of contents</h3>
-        <div className={`group-hover:overflow-y-auto px-3 ${nodes.length > 10 && "h-[600px]"}`}>
-          {renderNodes(nodes)}
-        </div>
-      </div>
+    <div
+      className={`toc-component group overflow-x-hidden pb-5 ${
+        nodes.length > 10 && "h-[750px]"
+      } min-w-[300px] overflow-y-auto`}
+    >
+      <h3 className="text-slate-300 uppercase text-md">Table of contents</h3>
+      {renderNodes(nodes)}
     </div>
   );
 };

@@ -1,34 +1,22 @@
 import useHighlighted from "@/hooks/useHighlighted";
 import { type HeadingNode } from "@/lib/tableOfContents";
 import Link from "next/link";
-import { MouseEvent } from "react";
+import { useEffect, useRef } from "react";
 
 const TOCLink = ({ node }: { node: HeadingNode }) => {
-  const [highlighted, setHighlighted] = useHighlighted(node.data.id);
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [highlighted] = useHighlighted(node.data.id);
 
-  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>, node: HeadingNode) => {
-    event.preventDefault();
-    setHighlighted(node.data.id);
-
-    const headingElement = document.getElementById(node.data.id);
-
-    if (headingElement) {
-      const navbarHeight = 80;
-      const topOffset = headingElement.getBoundingClientRect().top;
-      const scrollOptions: ScrollIntoViewOptions = {
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      };
-
-      window.scrollBy({ top: topOffset - navbarHeight, ...scrollOptions });
+  useEffect(() => {
+    if (highlighted && ref.current) {
+      ref.current.scrollIntoView({ behavior: "auto", block: "nearest", inline: "nearest" });
     }
-  };
+  }, [highlighted]);
 
   return (
     <Link
+      ref={ref}
       href={`#${node.data.id}`}
-      onClick={(event) => handleLinkClick(event, node)}
       className={`block ${
         node.depth === 2 ? "text-sm lg:text-base" : "text-xs lg:text-sm"
       } hover:accent-color py-1 ${

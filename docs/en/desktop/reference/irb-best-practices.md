@@ -2,6 +2,7 @@
 title: IRB and Security Best Practices
 docId: "Security Best Practices"
 language: "en"
+toc: true
 ---
 
 # English document
