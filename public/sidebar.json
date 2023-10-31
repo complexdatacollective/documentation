@@ -1,16 +1,40 @@
 [
   {
+    "type": "file",
+    "path": "/.DS_Store",
+    "source": ".DS_Store",
+    "docId": null
+  },
+  {
     "type": "folder",
     "name": "en",
     "files": [
+      {
+        "type": "file",
+        "path": "/en/.DS_Store",
+        "source": ".DS_Store",
+        "docId": null
+      },
       {
         "type": "folder",
         "name": "desktop",
         "files": [
           {
+            "type": "file",
+            "path": "/en/desktop/.DS_Store",
+            "source": ".DS_Store",
+            "docId": null
+          },
+          {
             "type": "folder",
             "name": "how-to-guides",
             "files": [
+              {
+                "type": "file",
+                "path": "/en/desktop/how-to-guides/.DS_Store",
+                "source": ".DS_Store",
+                "docId": null
+              },
               {
                 "type": "folder",
                 "name": "subfolder",

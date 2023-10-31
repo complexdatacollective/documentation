@@ -1,5 +1,6 @@
-import fs, { PathLike } from "fs";
-import { join } from "path";
+import fs, { PathOrFileDescriptor, readdirSync } from "fs";
+import { readdir } from "node:fs/promises";
+import { join, sep } from "path";
 import matter from "gray-matter";
 
 export type DocRouteParams = {
@@ -8,84 +9,83 @@ export type DocRouteParams = {
   };
 };
 
-const isDirectory = (source: PathLike) => fs.lstatSync(source).isDirectory();
+// Remove CWD, locale, project, and extension from path
+export const processPath = (docPath: string) => {
+  return docPath
+    .replace(process.cwd() + "/", "") // Remove CWD
+    .replace("docs/", "") // Remove docs subdirectory
+    .replace(".mdx", "")
+    .replace(".md", "") // Remove file extensions
+    .split(sep); // Split into segments based on the platform directory separator
+};
 
-// Given a path, return an array of all filenames in that directory and all subdirectories.
-export const getAllFiles = function (
-  dirPath: string = process.env.NEXT_PUBLIC_DOCS_PATH!,
-  arrayOfFiles: DocRouteParams[] = []
-) {
-  const relativePath = join(process.cwd(), dirPath);
-  const files = fs.readdirSync(relativePath);
+export const getAllMarkdownDocs = async () => {
+  const relativePathToDocs = join(
+    process.cwd(),
+    process.env.NEXT_PUBLIC_DOCS_PATH!
+  );
 
-  files.forEach(function (file) {
-    if (isDirectory(dirPath + "/" + file)) {
-      arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
-    } else {
-      arrayOfFiles.push({
-        params: {
-          docPath: dirPath + "/" + file,
-        },
-      });
-    }
+  const files = await readdir(relativePathToDocs, {
+    withFileTypes: true,
+    recursive: true,
   });
 
-  return arrayOfFiles;
+  return files
+    .filter((dirent) => dirent.isFile()) // Only get files
+    .filter(
+      (dirent) => dirent.name.endsWith(".mdx") || dirent.name.endsWith(".md")
+    ) // Only get markdown files
+    .map((dirent) => join(dirent.path, dirent.name)); // Get the full path
 };
 
 // Get all project names
 export const getAllProjects = function () {
   const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);
-  const projectParams = fs
-    .readdirSync(docsDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => ({
-      params: {
-        project: dirent.name,
-      },
-    }));
 
-  return projectParams;
+  const locales = fs
+    .readdirSync(docsDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory());
+
+  const projects = locales.map((locale) => {
+    const projects = fs
+      .readdirSync(join(docsDirectory, locale.name), { withFileTypes: true })
+      .filter((dirent) => dirent.isDirectory());
+    return projects.map((project) => project.name);
+  });
+
+  // Make projects unique
+  return [...new Set(projects.flat())];
 };
 
-// Take a nextjs route segment and convert it to a path, adding the .md/mdx extension.
-const segmentToPath = (segment: string[], locale: string) => {
-  const path = segment.join("/");
-  const pathToMdFile = join(
+export function getDoc({
+  locale,
+  project,
+  pathSegment,
+}: {
+  locale: string;
+  project: string;
+  pathSegment: string[];
+}) {
+  const path = join(
     process.cwd(),
     process.env.NEXT_PUBLIC_DOCS_PATH!,
     locale,
-    `${path}.md`
-  );
-  const pathToMdXFile = join(
-    process.cwd(),
-    process.env.NEXT_PUBLIC_DOCS_PATH!,
-    locale,
-    `${path}.mdx`
+    project,
+    ...pathSegment
   );
 
-  if (fs.existsSync(pathToMdFile)) {
-    return pathToMdFile;
-  } else if (fs.existsSync(pathToMdXFile)) {
-    return pathToMdXFile;
+  // Check if the file exists.
+  let file;
+
+  if (fs.existsSync(path + ".md")) {
+    file = path + ".md";
+  } else if (fs.existsSync(path + ".mdx")) {
+    file = path + ".mdx";
   } else {
     return null;
   }
-};
 
-// Takes a path segment and returns an object containing parsed markdown for the
-// file at the segment, along with useful metadata.
-export function getDoc(pathSegment: string[], locale: string) {
-  const path = segmentToPath(pathSegment, locale);
-
-  if (path === null)
-    return {
-      title: "File not found",
-      content: null,
-      lastUpdated: undefined,
-    };
-
-  const markdownFile = fs.readFileSync(path, "utf-8");
+  const markdownFile = fs.readFileSync(file, "utf-8");
   const matterResult = matter(markdownFile);
 
   return {

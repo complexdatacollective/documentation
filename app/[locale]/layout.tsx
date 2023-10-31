@@ -10,16 +10,26 @@ import { notFound } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
-const locales = ["en", "ru"]; // I don't know where to put this variable for now
+const locales = ["en", "ru"]; // TODO: get these by reading the folders in the docs directory
 
 export const metadata: Metadata = {
   title: "Network Canvas Docs",
   description: "All Network Canvas Docs",
 };
 
-type MainLayoutProps = { children: React.ReactNode; params: { locale: string } };
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
-export default async function MainLayout({ children, params: { locale } }: MainLayoutProps) {
+type MainLayoutProps = {
+  children: React.ReactNode;
+  params: { locale: string };
+};
+
+export default async function MainLayout({
+  children,
+  params: { locale },
+}: MainLayoutProps) {
   // Validate that the incoming `locale` parameter is valid
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
@@ -48,8 +58,4 @@ export default async function MainLayout({ children, params: { locale } }: MainL
       </body>
     </html>
   );
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
 }
