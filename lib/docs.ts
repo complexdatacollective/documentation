@@ -19,12 +19,12 @@ export const processPath = (docPath: string) => {
     .split(sep); // Split into segments based on the platform directory separator
 };
 
-export const getAllMarkdownDocs = async () => {
-  const relativePathToDocs = join(
-    process.cwd(),
-    process.env.NEXT_PUBLIC_DOCS_PATH!
-  );
+export const relativePathToDocs = join(
+  process.cwd(),
+  process.env.NEXT_PUBLIC_DOCS_PATH!
+);
 
+export const getAllMarkdownDocs = async () => {
   const files = await readdir(relativePathToDocs, {
     withFileTypes: true,
     recursive: true,
@@ -34,7 +34,7 @@ export const getAllMarkdownDocs = async () => {
     .filter((dirent) => dirent.isFile()) // Only get files
     .filter(
       (dirent) => dirent.name.endsWith(".mdx") || dirent.name.endsWith(".md")
-    ) // Only get markdown files
+    ) // Only get files with .md or .mdx extension
     .map((dirent) => join(dirent.path, dirent.name)); // Get the full path
 };
 
