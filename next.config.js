@@ -28,7 +28,7 @@ const withNextIntl = require("next-intl/plugin")(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // output: "export",
+  output: "export",
 };
 
 // Merge MDX config with Next.js config

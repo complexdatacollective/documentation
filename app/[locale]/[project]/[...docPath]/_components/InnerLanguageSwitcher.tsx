@@ -1,7 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { getAvailableLocales, getDocsFromSidebarData } from "@/lib/helper_functions";
+import {
+  getAvailableLocales,
+  getDocsFromSidebarData,
+} from "@/lib/helper_functions";
 import data from "@/public/sidebar.json";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
@@ -9,13 +12,11 @@ import { useCallback } from "react";
 type InnerLanguageSwitcherProps = {
   currentDocId: string;
   currentLocale: string;
-  docAvailableTxt: string;
 };
 
 const InnerLanguageSwitcher = ({
   currentDocId,
   currentLocale,
-  docAvailableTxt,
 }: InnerLanguageSwitcherProps) => {
   const router = useRouter();
   const sidebarData = JSON.parse(JSON.stringify(data));
@@ -38,7 +39,6 @@ const InnerLanguageSwitcher = ({
 
   return (
     <p>
-      {docAvailableTxt}
       {availableLocales()
         .filter((locale) => locale !== currentLocale)
         .map((availableLocal) => (
