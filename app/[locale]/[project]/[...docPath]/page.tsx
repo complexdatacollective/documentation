@@ -11,6 +11,26 @@ import { styledHeadings } from "./_components/CustomHeadings";
 import InnerLanguageSwitcher from "./_components/InnerLanguageSwitcher";
 import TableOfContents from "./_components/TableOfContents";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string; project: string; docPath: string[] };
+}) {
+  const { locale, project, docPath } = params;
+
+  const doc = getDoc({
+    locale,
+    project,
+    pathSegment: docPath,
+  });
+
+  if (!doc || !doc.title) {
+    throw new Error(`Error getting document title for:${docPath}`);
+  }
+
+  return { title: doc.title };
+}
+
 // Generating Static Params for each page
 export async function generateStaticParams({
   params,
@@ -29,26 +49,16 @@ export async function generateStaticParams({
     return docLocale === locale && docProject === project;
   });
 
-  return filteredDocs.map((doc) => ({
+  const a = filteredDocs.map((doc) => ({
     locale,
     project,
-    docPath: processPath(doc).slice(2),
+    docPath: processPath(doc).slice(2), //remove the locale and the project from the docPath
   }));
+
+  console.log(a);
+
+  return a;
 }
-
-// export default function Page({
-//   params,
-// }: {
-//   params: { locale: string; project: string; docPath: string[] };
-// }) {
-//   const { locale, project, docPath } = params;
-
-//   return (
-//     <div>
-//       Post: {locale} {project} {docPath.map((p) => p).join("/")}
-//     </div>
-//   );
-// }
 
 // The Page Component
 const Page = async ({

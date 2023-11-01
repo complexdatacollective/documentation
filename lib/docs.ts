@@ -12,11 +12,12 @@ export type DocRouteParams = {
 // Remove CWD, locale, project, and extension from path
 export const processPath = (docPath: string) => {
   return docPath
-    .replace(process.cwd() + "/", "") // Remove CWD
-    .replace("docs/", "") // Remove docs subdirectory
+    .replace(process.cwd() + sep, "") // Remove CWD
+    .replace("docs" + sep, "") // Remove docs subdirectory
     .replace(".mdx", "")
     .replace(".md", "") // Remove file extensions
-    .split(sep); // Split into segments based on the platform directory separator
+    .split(sep) // Split into segments based on the platform directory separator
+    .map(decodeURIComponent); // decoding because of UTF-8 characters
 };
 
 export const relativePathToDocs = join(
