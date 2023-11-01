@@ -5,7 +5,7 @@ import SearchCommand from "../../[project]/_components/Search/SearchCommand";
 import LanguageSwitcher from "./languageSwitcher";
 import { ThemeToggle } from "./themeToggle";
 import { useTranslations } from "next-intl";
-import Link from "next-intl/link";
+import { Link } from "@/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -27,7 +27,9 @@ const Navbar = () => {
           <span className="text-green-400">Network Canvas</span>
         </Link>
         <div className="flex gap-3 items-center">
-          <SearchCommand searchCommandTranslations={searchCommandTranslations} />
+          <SearchCommand
+            searchCommandTranslations={searchCommandTranslations}
+          />
           <LanguageSwitcher width="w-fit" />
           <ThemeToggle themeTranslations={themeTranslations} />
           <Button>{t("communityBtn")}</Button>

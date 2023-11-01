@@ -7,8 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useRouter } from "@/navigation";
 import { useLocale } from "next-intl";
-import { useRouter } from "next-intl/client";
 
 interface LanguageSwitcherProps {
   width: string;
