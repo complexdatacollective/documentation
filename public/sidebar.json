@@ -1,31 +1,68 @@
 [
   {
     "type": "folder",
-    "name": "desktop",
+    "name": "en",
     "files": [
       {
         "type": "folder",
-        "name": "how-to-guides",
+        "name": "desktop",
         "files": [
           {
             "type": "folder",
-            "name": "chidir",
+            "name": "how-to-guides",
             "files": [
               {
-                "type": "file",
-                "name": "tojiki",
-                "path": "/desktop\\how-to-guides\\chidir\\tojiki"
-              },
-              {
                 "type": "folder",
-                "name": "jugi-bacha",
+                "name": "subfolder",
                 "files": [
                   {
                     "type": "file",
-                    "name": "jugi-bla",
-                    "path": "/desktop\\how-to-guides\\chidir\\jugi-bacha\\jugi-bla"
+                    "name": "Salom Tojik",
+                    "path": "/en/desktop/how-to-guides/subfolder/tojiki",
+                    "source": "tojiki",
+                    "docId": null
+                  },
+                  {
+                    "type": "folder",
+                    "name": "subfolder-child",
+                    "files": [
+                      {
+                        "type": "file",
+                        "name": "Koro sarami",
+                        "path": "/en/desktop/how-to-guides/subfolder/subfolder-child/jugi-bla",
+                        "source": "jugi-bla",
+                        "docId": null
+                      }
+                    ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "key-concepts",
+            "files": [
+              {
+                "type": "file",
+                "name": "Codebook",
+                "path": "/en/desktop/key-concepts/codebook",
+                "source": "codebook",
+                "docId": null
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "reference",
+            "files": [
+              {
+                "type": "file",
+                "name": "IRB and Security Best Practices",
+                "path": "/en/desktop/reference/irb-best-practices",
+                "source": "irb-best-practices",
+                "docId": "Security Best Practices",
+                "language": "en"
               }
             ]
           }
@@ -33,45 +70,46 @@
       },
       {
         "type": "folder",
-        "name": "interface-documentation",
+        "name": "fresco",
         "files": [
           {
-            "type": "file",
-            "name": "tie-strength-census",
-            "path": "/desktop\\interface-documentation\\tie-strength-census"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "key-concepts",
-        "files": [
+            "type": "folder",
+            "name": "installation",
+            "files": [
+              {
+                "type": "file",
+                "name": "Fresco Installation guide",
+                "path": "/en/fresco/installation/installation",
+                "source": "installation",
+                "docId": null
+              }
+            ]
+          },
           {
-            "type": "file",
-            "name": "codebook",
-            "path": "/desktop\\key-concepts\\codebook"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "reference",
-        "files": [
+            "type": "folder",
+            "name": "introduction",
+            "files": [
+              {
+                "type": "file",
+                "name": "Fresco Introduction",
+                "path": "/en/fresco/introduction/introduction",
+                "source": "introduction",
+                "docId": null
+              }
+            ]
+          },
           {
-            "type": "file",
-            "name": "irb-best-practices",
-            "path": "/desktop\\reference\\irb-best-practices"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "tutorials",
-        "files": [
-          {
-            "type": "file",
-            "name": "building-a-protocol",
-            "path": "/desktop\\tutorials\\building-a-protocol"
+            "type": "folder",
+            "name": "third-folder",
+            "files": [
+              {
+                "type": "file",
+                "name": "TEST",
+                "path": "/en/fresco/third-folder/test",
+                "source": "test",
+                "docId": null
+              }
+            ]
           }
         ]
       }
@@ -79,38 +117,115 @@
   },
   {
     "type": "folder",
-    "name": "fresco",
+    "name": "ru",
     "files": [
       {
         "type": "folder",
-        "name": "installation",
+        "name": "desktop",
         "files": [
           {
-            "type": "file",
-            "name": "installation",
-            "path": "/fresco\\installation\\installation"
+            "type": "folder",
+            "name": "как-сделать-руководства",
+            "files": [
+              {
+                "type": "folder",
+                "name": "подпапка",
+                "files": [
+                  {
+                    "type": "file",
+                    "name": "Привет таджик",
+                    "path": "/ru/desktop/как-сделать-руководства/подпапка/привет-таджик",
+                    "source": "привет-таджик",
+                    "docId": null
+                  },
+                  {
+                    "type": "folder",
+                    "name": "подпапка-подчиненная",
+                    "files": [
+                      {
+                        "type": "file",
+                        "name": "Какое-то название файла",
+                        "path": "/ru/desktop/как-сделать-руководства/подпапка/подпапка-подчиненная/какое-то-название-файла",
+                        "source": "какое-то-название-файла",
+                        "docId": null
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "ключевые-концепции",
+            "files": [
+              {
+                "type": "file",
+                "name": "Кодовая книга",
+                "path": "/ru/desktop/ключевые-концепции/кодовая-книга",
+                "source": "кодовая-книга",
+                "docId": null
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "ссылка-на-источник",
+            "files": [
+              {
+                "type": "file",
+                "name": "Лучшие практики по IRB и безопасности",
+                "path": "/ru/desktop/ссылка-на-источник/лучшие-практики-по-irb-и-безопасности",
+                "source": "лучшие-практики-по-irb-и-безопасности",
+                "docId": "Security Best Practices",
+                "language": "ru"
+              }
+            ]
           }
         ]
       },
       {
         "type": "folder",
-        "name": "introduction",
+        "name": "fresco",
         "files": [
           {
-            "type": "file",
-            "name": "introduction",
-            "path": "/fresco\\introduction\\introduction"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "third-folder",
-        "files": [
+            "type": "folder",
+            "name": "введение",
+            "files": [
+              {
+                "type": "file",
+                "name": "Fresco Введение",
+                "path": "/ru/fresco/введение/fresco-введение",
+                "source": "fresco-введение",
+                "docId": null
+              }
+            ]
+          },
           {
-            "type": "file",
-            "name": "test",
-            "path": "/fresco\\third-folder\\test"
+            "type": "folder",
+            "name": "третья-папка",
+            "files": [
+              {
+                "type": "file",
+                "name": "ТЕСТ",
+                "path": "/ru/fresco/третья-папка/тест",
+                "source": "тест",
+                "docId": null
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "установка",
+            "files": [
+              {
+                "type": "file",
+                "name": "Руководство по установке фрески",
+                "path": "/ru/fresco/установка/установке",
+                "source": "установке",
+                "docId": null
+              }
+            ]
           }
         ]
       }

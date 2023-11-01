@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+.pnp.jsfind . -name .DS_Store -delete
 
 # testing
 /coverage
@@ -17,6 +17,9 @@
 
 # misc
 .DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 *.pem
 
 # debug

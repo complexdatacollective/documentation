@@ -1,0 +1,15 @@
+{
+  "Navbar": {
+    "communityBtn": "Community",
+    "SearchPlaceholder": "Search documentation...",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System"
+  },
+  "Home": {
+    "title": "Home Page"
+  },
+  "DocPage": {
+    "docAvailableLanguageTxt": "This document is also available in"
+  }
+}

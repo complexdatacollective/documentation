@@ -1,11 +1,5 @@
-// export const dynamic = "force-dynamic";
+import { redirect } from "next/navigation";
 
-const HomePage = () => {
-  return (
-    <main>
-      <h2>Home Page</h2>
-    </main>
-  );
-};
-
-export default HomePage;
+export default function RootPage() {
+  redirect("/en");
+}

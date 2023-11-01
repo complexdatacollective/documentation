@@ -1,0 +1,15 @@
+{
+  "Navbar": {
+    "communityBtn": "Сообщество",
+    "SearchPlaceholder": "Поиск документации...",
+    "themeLight": "День",
+    "themeDark": "Ночь",
+    "themeSystem": "Система"
+  },
+  "Home": {
+    "title": "Домашняя страница"
+  },
+  "DocPage": {
+    "docAvailableLanguageTxt": "Этот документ также доступен в"
+  }
+}
