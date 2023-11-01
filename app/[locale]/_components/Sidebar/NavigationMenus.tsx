@@ -22,7 +22,10 @@ export interface NavigationMenusProps {
   activeMenus: string[];
 }
 
-export default function NavigationMenus({ data, activeMenus }: NavigationMenusProps): JSX.Element {
+export default function NavigationMenus({
+  data,
+  activeMenus,
+}: NavigationMenusProps): JSX.Element {
   const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
 
   return (
@@ -39,7 +42,10 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
               title={convertToTitleCase(folder.name)}
             >
               <ul>
-                <NavigationMenus activeMenus={decodedActiveMenus} data={folder.files} />
+                <NavigationMenus
+                  activeMenus={decodedActiveMenus}
+                  data={folder.files}
+                />
               </ul>
             </Menu>
           );
@@ -49,10 +55,12 @@ export default function NavigationMenus({ data, activeMenus }: NavigationMenusPr
             <li
               key={file.name}
               className={`${
-                activeMenus.includes(file.source) ? "text-violet-500" : "text-slate-500"
+                activeMenus.includes(file.source)
+                  ? "text-violet-500"
+                  : "text-slate-500"
               } dark:hover:text-white transition-colors`}
             >
-              <Link className="text-sm" href={`${file.path}`}>
+              <Link className="text-sm" href={file.path}>
                 {file.name}
               </Link>
             </li>

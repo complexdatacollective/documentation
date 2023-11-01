@@ -41,23 +41,18 @@ export async function generateStaticParams({
   const docs = await getAllMarkdownDocs();
 
   // Filter docs by locale and project
-  const filteredDocs = docs.filter((doc) => {
-    const processedPath = processPath(doc);
+  const filteredDocs = docs.map(processPath).filter((processedPath) => {
     const docLocale = processedPath[0];
     const docProject = processedPath[1];
 
     return docLocale === locale && docProject === project;
   });
 
-  const a = filteredDocs.map((doc) => ({
+  return filteredDocs.map((doc) => ({
     locale,
     project,
-    docPath: processPath(doc).slice(2), //remove the locale and the project from the docPath
+    docPath: doc.slice(2), //remove the locale and the project from the docPath
   }));
-
-  console.log(a);
-
-  return a;
 }
 
 // The Page Component

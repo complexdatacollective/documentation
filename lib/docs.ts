@@ -9,7 +9,7 @@ export type DocRouteParams = {
   };
 };
 
-// Remove CWD, locale, project, and extension from path
+// Process docPaths to remove CWD, docs subdirectory, file extensions, and split into segments
 export const processPath = (docPath: string) => {
   return docPath
     .replace(process.cwd() + sep, "") // Remove CWD
@@ -17,7 +17,7 @@ export const processPath = (docPath: string) => {
     .replace(".mdx", "")
     .replace(".md", "") // Remove file extensions
     .split(sep) // Split into segments based on the platform directory separator
-    .map(decodeURIComponent); // decoding because of UTF-8 characters
+    .map(encodeURIComponent); // encode unicode characters
 };
 
 export const relativePathToDocs = join(
@@ -67,12 +67,19 @@ export function getDoc({
   project: string;
   pathSegment: string[];
 }) {
+  // This is a hack to get around a possible NextJS bug where the pathSegment
+  // is double encoded when running pnpm run build but single encoded when
+  // running pnpm run dev.
+  const decodedPathSegment = pathSegment.map((segment) =>
+    decodeURIComponent(decodeURIComponent(segment))
+  );
+
   const path = join(
     process.cwd(),
     process.env.NEXT_PUBLIC_DOCS_PATH!,
     locale,
     project,
-    ...pathSegment
+    ...decodedPathSegment
   );
 
   // Check if the file exists.
