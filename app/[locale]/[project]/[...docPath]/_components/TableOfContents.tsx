@@ -1,5 +1,3 @@
-"use client";
-
 import { type HeadingNode } from "@/lib/tableOfContents";
 import TOCLink from "./TOCLink";
 

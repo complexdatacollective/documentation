@@ -1,7 +1,9 @@
 {
   "Navbar": {
     "communityBtn": "Сообщество",
-    "SearchPlaceholder": "Поиск документации...",
+    "searchPlaceholder": "Поиск документации...",
+    "searchNoResultsFor": "Нет результатов для",
+    "searchNoResults": "Нет результатов",
     "themeLight": "День",
     "themeDark": "Ночь",
     "themeSystem": "Система"
@@ -11,5 +13,8 @@
   },
   "DocPage": {
     "docAvailableTxt": "Этот документ также доступен в"
+  },
+  "ProjectPage": {
+    "title": "Это вводная страница для"
   }
 }

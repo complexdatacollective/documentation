@@ -1,12 +1,20 @@
 import { useInstantSearch } from "react-instantsearch";
 
-export default function EmptyQueryBoundary({ children }: { children: React.ReactNode }) {
+type EmptyQueryBoundaryProps = {
+  noResultTxt: string;
+  children: React.ReactNode;
+};
+
+export default function EmptyQueryBoundary({
+  children,
+  noResultTxt,
+}: EmptyQueryBoundaryProps) {
   const { indexUiState } = useInstantSearch();
 
   if (!indexUiState.query) {
     return (
       <div className="mt-10 text-lg flex justify-center items-center h-64 overflow-y-auto overflow-x-hidden">
-        No results
+        {noResultTxt}
       </div>
     );
   }

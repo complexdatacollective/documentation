@@ -1,9 +1,17 @@
 import { Input } from "@/components/ui/input";
 import { Loader, Search as SearchIcon } from "lucide-react";
 import { useRef, useState } from "react";
-import { UseSearchBoxProps, useInstantSearch, useSearchBox } from "react-instantsearch";
+import {
+  UseSearchBoxProps,
+  useInstantSearch,
+  useSearchBox,
+} from "react-instantsearch";
 
-export default function CustomSearchBox(props: UseSearchBoxProps) {
+interface CustomSearchBoxProps extends UseSearchBoxProps {
+  placeholder: string;
+}
+
+export default function CustomSearchBox(props: CustomSearchBoxProps) {
   const { query, refine } = useSearchBox(props);
   const { status } = useInstantSearch();
   const [inputValue, setInputValue] = useState(query);
@@ -13,7 +21,6 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
 
   function setQuery(newQuery: string) {
     setInputValue(newQuery);
-
     refine(newQuery);
   }
 
@@ -52,7 +59,7 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
-          placeholder="Search for documents..."
+          placeholder={props.placeholder}
           spellCheck={false}
           type="text"
           value={inputValue}

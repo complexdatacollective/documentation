@@ -1,6 +1,10 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
-const useHighlighted = (id: string): [boolean, React.Dispatch<React.SetStateAction<string>>] => {
+const useHighlighted = (
+  id: string
+): [boolean, React.Dispatch<React.SetStateAction<string>>] => {
   const observer = useRef<IntersectionObserver | null>(null);
   const [activeId, setActiveId] = useState<string>("");
 

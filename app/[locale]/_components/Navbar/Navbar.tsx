@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "@/navigation";
 import logo from "@/public/assets/img/logo.svg";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import SearchCommand from "../../[project]/_components/Search/SearchCommand";
+import SearchCommand from "./Search/SearchCommand";
 import LanguageSwitcher from "./languageSwitcher";
 import { ThemeToggle } from "./themeToggle";
-import { useTranslations } from "next-intl";
-import { Link } from "@/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -16,7 +16,9 @@ const Navbar = () => {
   };
 
   const searchCommandTranslations = {
-    searchPlaceholder: t("SearchPlaceholder"),
+    searchPlaceholder: t("searchPlaceholder"),
+    noResultFor: t("searchNoResultsFor"),
+    noResult: t("searchNoResults"),
   };
 
   return (

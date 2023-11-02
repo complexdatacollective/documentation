@@ -7,7 +7,6 @@ export function generateStaticParams({
   params: { locale: string };
 }) {
   const { locale } = params;
-
   const projects = getAllProjects();
 
   return projects.map((project) => {

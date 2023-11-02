@@ -1,9 +1,11 @@
-"use client";
-
-import Link from "next/link";
+import { Link } from "@/navigation";
 import React from "react";
 
-type CustomLinkProps = { id: string; children: React.ReactNode; className?: string };
+type CustomLinkProps = {
+  id: string;
+  children: React.ReactNode;
+  className?: string;
+};
 
 const CustomLink = ({ id, children, className }: CustomLinkProps) => {
   return (

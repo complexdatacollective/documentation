@@ -11,18 +11,22 @@ import { algolia_client } from "@/lib/algolia-client.mjs";
 import { useEffect, useState } from "react";
 import { Hits, InstantSearch } from "react-instantsearch";
 import CustomSearchBox from "./CustomSearchBox";
+import EmptyQueryBoundary from "./EmptyQueryBoundary";
 import Hit from "./Hit";
 import NoResultsBoundary from "./NoResultsBoundary";
 import { DialogContextProvider } from "./Provider/DialogContext";
-import EmptyQueryBoundary from "./EmptyQueryBoundary";
 
 type SearchCommandProps = {
   searchCommandTranslations: {
     searchPlaceholder: string;
+    noResultFor: string;
+    noResult: string;
   };
 };
 
-export default function SearchCommand({ searchCommandTranslations }: SearchCommandProps) {
+export default function SearchCommand({
+  searchCommandTranslations,
+}: SearchCommandProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -50,17 +54,25 @@ export default function SearchCommand({ searchCommandTranslations }: SearchComma
           onClick={() => setOpen(true)}
         >
           <span>{searchCommandTranslations.searchPlaceholder}</span>
-          <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">Ctrl+J</span>
+          <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">
+            Ctrl+J
+          </span>
         </Button>
 
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CustomSearchBox />
+          <CustomSearchBox
+            placeholder={searchCommandTranslations.searchPlaceholder}
+          />
           <CommandSeparator />
 
           <CommandList>
-            <NoResultsBoundary />
+            <NoResultsBoundary
+              noResultForTxt={searchCommandTranslations.noResultFor}
+            />
             <CommandGroup>
-              <EmptyQueryBoundary>
+              <EmptyQueryBoundary
+                noResultTxt={searchCommandTranslations.noResult}
+              >
                 <Hits hitComponent={Hit} />
               </EmptyQueryBoundary>
             </CommandGroup>
