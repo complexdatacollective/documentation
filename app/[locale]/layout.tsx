@@ -3,14 +3,15 @@ import { ThemeProvider } from "@/components/Providers/theme-provider";
 import AIAssistant from "@/components/ai-assistant";
 import data from "@/public/sidebar.json";
 import type { Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
 import Navbar from "./_components/Navbar/Navbar";
 import Sidebar from "./_components/Sidebar/Sidebar";
-import { notFound } from "next/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getAllLocales } from "@/lib/docs";
 
 const inter = Inter({ subsets: ["latin"] });
-const locales = ["en", "ru"]; // TODO: get these by reading the folders in the docs directory
+const locales = getAllLocales().map((dirent) => dirent.name);
 
 export const metadata: Metadata = {
   title: "Network Canvas Docs",

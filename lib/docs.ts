@@ -1,7 +1,7 @@
-import fs, { PathOrFileDescriptor, readdirSync } from "fs";
+import fs from "fs";
+import matter from "gray-matter";
 import { readdir } from "node:fs/promises";
 import { join, sep } from "path";
-import matter from "gray-matter";
 
 export type DocRouteParams = {
   params: {
@@ -38,6 +38,15 @@ export const getAllMarkdownDocs = async () => {
     ) // Only get files with .md or .mdx extension
     .map((dirent) => join(dirent.path, dirent.name)); // Get the full path
 };
+
+export function getAllLocales() {
+  const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);
+  const locales = fs
+    .readdirSync(docsDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory());
+
+  return locales;
+}
 
 // Get all project names
 export const getAllProjects = function () {
