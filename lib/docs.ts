@@ -39,15 +39,6 @@ export const getAllMarkdownDocs = async () => {
     .map((dirent) => join(dirent.path, dirent.name)); // Get the full path
 };
 
-export function getAllLocales() {
-  const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);
-  const locales = fs
-    .readdirSync(docsDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory());
-
-  return locales;
-}
-
 // Get all project names
 export const getAllProjects = function () {
   const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);

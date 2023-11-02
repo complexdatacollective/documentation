@@ -1,6 +1,7 @@
 import "@/app/[locale]/globals.css";
 import { ThemeProvider } from "@/components/Providers/theme-provider";
 import AIAssistant from "@/components/ai-assistant";
+import { locales } from "@/navigation";
 import data from "@/public/sidebar.json";
 import type { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -8,10 +9,8 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import Navbar from "./_components/Navbar/Navbar";
 import Sidebar from "./_components/Sidebar/Sidebar";
-import { getAllLocales } from "@/lib/docs";
 
 const inter = Inter({ subsets: ["latin"] });
-const locales = getAllLocales().map((dirent) => dirent.name);
 
 export const metadata: Metadata = {
   title: "Network Canvas Docs",
