@@ -8,25 +8,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction } from "react";
+import { useRouter } from "@/navigation";
+import { type Dispatch, type SetStateAction } from "react";
 
 type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
   product: string;
 };
 
-export default function ProductSwitcher({ setProduct, product }: ProductSwitcherProps) {
+export default function ProductSwitcher({
+  setProduct,
+  product,
+}: ProductSwitcherProps) {
   const router = useRouter();
-  const locale = useLocale();
 
   return (
     <Select
       value={product}
       onValueChange={(val) => {
         setProduct(val);
-        router.push(`/${locale}/${val}`);
+        router.push(`/${val}`);
       }}
     >
       <SelectTrigger className="w-full h-16 text-sm lg:text-base hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">

@@ -1,45 +1,40 @@
 "use client";
 
-import NavigationMenus, {
-  type Folder,
-  type NavigationMenusProps,
-} from "@/app/[locale]/_components/Sidebar/NavigationMenus";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import NavigationMenus from "@/app/[locale]/_components/Sidebar/NavigationMenus";
+import { filterSidebarData } from "@/lib/helper_functions";
+import { usePathname } from "@/navigation";
+import { type DocFile, type Folder } from "@/types";
+import { useEffect, useMemo, useState } from "react";
 import ProductSwitcher from "./ProductSwitcher";
 
-export default function Sidebar({
-  data,
-  locale,
-}: Omit<NavigationMenusProps & { locale: string }, "activeMenus">) {
+type SidebarProps = {
+  data: Array<DocFile | Folder>;
+  locale: string;
+};
+
+export default function Sidebar({ data, locale }: SidebarProps) {
   const [product, setProduct] = useState("");
-  const [productData, setProductData] = useState<Folder>();
   const pathName = usePathname();
+  const pathItems = pathName.split("/").splice(1);
 
   useEffect(() => {
-    const products = ["desktop", "fresco"]; // I don't know where to put this hardcoded values, open to suggestions
-    const currentProduct = pathName.split("/").filter((item) => products.includes(item))[0];
-
-    setProduct(currentProduct ? currentProduct : "desktop");
+    const currentProduct = pathName.split("/")[1]; // splitting pathname to get current "product"
+    setProduct(currentProduct ? currentProduct : "desktop"); // setting default product to "desktop" if it's empty string
   }, [pathName]);
 
-  useEffect(() => {
-    const localeBasedSidebarData = data.filter(
-      (item) => item.type === "folder" && item.name === locale
-    )[0] as Folder;
-
-    const prData = localeBasedSidebarData.files.filter(
-      (item) => item.type === "folder" && item.name === product
-    )[0] as Folder;
-
-    setProductData(prData);
-  }, [product, data, locale]);
+  const filteredSidebarData = useMemo(
+    () => filterSidebarData(product, data, locale),
+    [product, data, locale]
+  );
 
   return (
     <div className="flex flex-col gap-2 sticky top-20">
       <ProductSwitcher product={product} setProduct={setProduct} />
-      {productData && (
-        <NavigationMenus activeMenus={pathName.split("/").splice(1)} data={productData.files} />
+      {filteredSidebarData && (
+        <NavigationMenus
+          pathItems={pathItems}
+          sidebarData={filteredSidebarData.files}
+        />
       )}
     </div>
   );

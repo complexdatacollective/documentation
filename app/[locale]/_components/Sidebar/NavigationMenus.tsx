@@ -1,40 +1,26 @@
 import { convertToTitleCase } from "@/lib/helper_functions";
+import { type DocFile, type Folder } from "@/types";
 import Link from "next/link";
 import Menu from "./Menu";
 
-export interface Folder {
-  type: "folder";
-  name: string;
-  files: Array<DocFile | Folder>;
-}
-
-export interface DocFile {
-  type: "file";
-  name: string;
-  path: string;
-  source: string;
-  docId: string;
-  language: string;
-}
-
 export interface NavigationMenusProps {
-  data: Array<DocFile | Folder>;
-  activeMenus: string[];
+  sidebarData: Array<DocFile | Folder>;
+  pathItems: string[];
 }
 
 export default function NavigationMenus({
-  data,
-  activeMenus,
+  sidebarData,
+  pathItems,
 }: NavigationMenusProps): JSX.Element {
-  const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
+  const decodedPathItems = pathItems.map(decodeURIComponent);
 
   return (
     <ul>
-      {data.map((item) => {
+      {sidebarData.map((item) => {
         if (item.type === "folder") {
-          const folder = item as Folder;
-          const activeMenu = decodedActiveMenus.find((m) => m === folder.name);
-
+          const folder = item;
+          const activeMenu = decodedPathItems.find((pt) => pt === folder.name); //find active menu from path items
+          // render menu (folder)
           return (
             <Menu
               value={activeMenu && convertToTitleCase(activeMenu)}
@@ -43,19 +29,20 @@ export default function NavigationMenus({
             >
               <ul>
                 <NavigationMenus
-                  activeMenus={decodedActiveMenus}
-                  data={folder.files}
+                  pathItems={decodedPathItems}
+                  sidebarData={folder.files}
                 />
               </ul>
             </Menu>
           );
         } else {
-          const file = item as DocFile;
+          const file = item;
+          // render menu item (file)
           return (
             <li
               key={file.name}
               className={`${
-                activeMenus.includes(file.source)
+                decodedPathItems.includes(file.source)
                   ? "text-violet-500"
                   : "text-slate-500"
               } dark:hover:text-white transition-colors`}

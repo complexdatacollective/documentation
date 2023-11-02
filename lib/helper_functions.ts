@@ -1,4 +1,4 @@
-import { DocFile, Folder } from "@/app/[locale]/_components/Sidebar/NavigationMenus";
+import { type DocFile, type Folder } from "@/types";
 
 // Converts text to title Case eg: network-canvas => Network Canvas
 export function convertToTitleCase(str: string) {
@@ -28,21 +28,24 @@ export function convertToUrlText(text: string): string {
 }
 
 // Gets available locales from sidebar data by finding the documents with the same 'docId'
-export const getAvailableLocales = (sidebarData: Array<DocFile | Folder>, currentDocId: string) => {
+export function getAvailableLocales(
+  sidebarData: Array<DocFile | Folder>,
+  currentDocId: string
+) {
   const allDocFiles = getDocsFromSidebarData(sidebarData);
   const availableLocales = allDocFiles
     .filter((file) => file.docId === currentDocId)
     .map((file) => file.language);
 
   return availableLocales;
-};
+}
 
 // Todo: This function can be re-written with array.reduce method
 // Extracts all documents from sidebar data
-export const getDocsFromSidebarData = (
+export function getDocsFromSidebarData(
   siData: Array<DocFile | Folder>,
   docFiles: Array<DocFile> = []
-) => {
+) {
   siData.forEach((item) => {
     if (item.type === "folder") {
       docFiles = getDocsFromSidebarData(item.files, docFiles);
@@ -52,4 +55,21 @@ export const getDocsFromSidebarData = (
   });
 
   return docFiles;
-};
+}
+
+// filter sidebar data based on product and locale
+export function filterSidebarData(
+  product: string,
+  sidebarData: (Folder | DocFile)[],
+  locale: string
+) {
+  const localeBasedSidebarData = sidebarData.filter(
+    (item) => item.type === "folder" && item.name === locale
+  )[0] as Folder;
+
+  const productBasedSidebarData = localeBasedSidebarData.files.filter(
+    (item) => item.type === "folder" && item.name === product
+  )[0] as Folder;
+
+  return productBasedSidebarData;
+}
