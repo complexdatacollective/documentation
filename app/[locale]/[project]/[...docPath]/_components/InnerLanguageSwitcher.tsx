@@ -1,57 +1,39 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  getAvailableLocales,
-  getDocsFromSidebarData,
-} from "@/lib/helper_functions";
+import { getTranslatedFilesDataByDocId } from "@/lib/helper_functions";
 import data from "@/public/sidebar.json";
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { getTranslator } from "next-intl/server";
+import Link from "next/link";
 
 type InnerLanguageSwitcherProps = {
   currentDocId: string;
   currentLocale: string;
 };
 
-const InnerLanguageSwitcher = ({
+const InnerLanguageSwitcher = async ({
   currentDocId,
   currentLocale,
 }: InnerLanguageSwitcherProps) => {
-  const router = useRouter();
+  const t = await getTranslator(currentLocale, "DocPage");
   const sidebarData = JSON.parse(JSON.stringify(data));
-
-  const availableLocales = useCallback(
-    () => getAvailableLocales(sidebarData, currentDocId),
-    [sidebarData, currentDocId]
+  const translatedDocs = getTranslatedFilesDataByDocId(
+    sidebarData,
+    currentDocId
   );
 
-  const handleInnerLanguageSwitch = (availableLocal: string) => {
-    const allDocFiles = getDocsFromSidebarData(sidebarData);
-    const translatedDoc = allDocFiles.find(
-      (file) => file.docId === currentDocId && file.language === availableLocal
-    );
-
-    if (translatedDoc) {
-      router.push(translatedDoc.path);
-    }
-  };
-
   return (
-    <p>
-      {availableLocales()
-        .filter((locale) => locale !== currentLocale)
-        .map((availableLocal) => (
-          <Button
-            key={availableLocal}
-            onClick={() => handleInnerLanguageSwitch(availableLocal)}
-            variant={"ghost"}
-            className="text-green-500 underline"
+    <div className="flex gap-2 my-1">
+      <span>{t("docAvailableTxt")}</span>
+      {translatedDocs
+        .filter((doc) => doc.language !== currentLocale) //remove the current locale-based file
+        .map((doc) => (
+          <Link
+            className="text-blue-400 hover:text-cyan-400 transition-colors"
+            key={doc.language}
+            href={doc.path}
           >
-            {availableLocal}
-          </Button>
+            {doc.language}
+          </Link>
         ))}
-    </p>
+    </div>
   );
 };
 

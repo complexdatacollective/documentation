@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 import { getAllMarkdownDocs, getDoc, processPath } from "@/lib/docs";
 import { getHeadings } from "@/lib/tableOfContents";
 import { StepBack } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { getTranslator, unstable_setRequestLocale } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -65,7 +64,6 @@ const Page = async ({
 
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
-  const t = await getTranslator(locale, "DocPage");
 
   const doc = getDoc({
     locale,

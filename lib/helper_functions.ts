@@ -27,20 +27,20 @@ export function convertToUrlText(text: string): string {
   return cleanedText;
 }
 
-// Gets available locales from sidebar data by finding the documents with the same 'docId'
-export function getAvailableLocales(
+// Gets translated docs data from sidebar json based on specific docId
+export function getTranslatedFilesDataByDocId(
   sidebarData: Array<DocFile | Folder>,
   currentDocId: string
 ) {
   const allDocFiles = getDocsFromSidebarData(sidebarData);
-  const availableLocales = allDocFiles
-    .filter((file) => file.docId === currentDocId)
-    .map((file) => file.language);
+  const translatedFiles = allDocFiles.filter(
+    (file) => file.docId === currentDocId
+  );
 
-  return availableLocales;
+  return translatedFiles;
 }
 
-// Todo: This function can be re-written with array.reduce method
+// Todo: This function can be re-written with array.reduce method try that later
 // Extracts all documents from sidebar data
 export function getDocsFromSidebarData(
   siData: Array<DocFile | Folder>,
