@@ -1,25 +1,25 @@
-import "@/app/[locale]/globals.css";
-import { ThemeProvider } from "@/components/Providers/theme-provider";
-import AIAssistant from "@/components/ai-assistant";
-import { locales } from "@/navigation";
-import data from "@/public/sidebar.json";
-import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
+import '@/app/[locale]/globals.css';
+import { ThemeProvider } from '@/components/Providers/theme-provider';
+import AIAssistant from '@/components/ai-assistant';
+import { locales } from '@/navigation';
+import data from '@/public/sidebar.json';
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
 import {
   getNow,
   getTimeZone,
   unstable_setRequestLocale,
-} from "next-intl/server";
-import { Inter } from "next/font/google";
-import { notFound } from "next/navigation";
-import Navbar from "./_components/Navbar/Navbar";
-import Sidebar from "./_components/Sidebar/Sidebar";
+} from 'next-intl/server';
+import { Inter } from 'next/font/google';
+import { notFound } from 'next/navigation';
+import Navbar from './_components/Navbar/Navbar';
+import Sidebar from './_components/Sidebar/Sidebar';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Network Canvas Docs",
-  description: "All Network Canvas Docs",
+  title: 'Network Canvas Docs',
+  description: 'All Network Canvas Docs',
 };
 
 export function generateStaticParams() {
@@ -69,7 +69,7 @@ export default async function MainLayout({
             messages={messages}
           >
             <Navbar />
-            <div className="container grid grid-cols-5 gap-5 items-start mt-8">
+            <div className="container mt-8 grid grid-cols-5 items-start gap-5">
               {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
               <div className="col-span-4 px-2">{children}</div>
               <AIAssistant />

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import logo from "@/public/assets/img/logo.svg";
-import { MendableFloatingButton } from "@mendable/search";
-import { useTheme } from "next-themes";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import logo from '@/public/assets/img/logo.svg';
+import { MendableFloatingButton } from '@mendable/search';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const icon = (
   <div className="flex flex-col items-center">
@@ -17,7 +17,7 @@ const icon = (
 const AIAssistant = () => {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-  const t = useTranslations("AIAssistant");
+  const t = useTranslations('AIAssistant');
 
   useEffect(() => {
     setMounted(true);
@@ -30,13 +30,13 @@ const AIAssistant = () => {
     mounted && (
       <MendableFloatingButton
         icon={icon}
-        style={{ accentColor: "#123456", darkMode: theme !== "light" }}
+        style={{ accentColor: '#123456', darkMode: theme !== 'light' }}
         anon_key={process.env.NEXT_PUBLIC_MENDABLE_ANON_KEY!}
-        dialogPlaceholder={t("dialogPlaceholder")}
+        dialogPlaceholder={t('dialogPlaceholder')}
         messageSettings={{ prettySources: true, openSourcesInNewTab: true }}
-        hintQuestions={[t("q1"), t("q2")]}
-        popupText={t("popupText")}
-        welcomeMessage={t("welcomeMessage")}
+        hintQuestions={[t('q1'), t('q2')]}
+        popupText={t('popupText')}
+        welcomeMessage={t('welcomeMessage')}
         cmdShortcutKey="j"
       />
     )

@@ -1,4 +1,4 @@
-import { useInstantSearch } from "react-instantsearch";
+import { useInstantSearch } from 'react-instantsearch';
 
 type EmptyQueryBoundaryProps = {
   noResultTxt: string;
@@ -13,7 +13,7 @@ export default function EmptyQueryBoundary({
 
   if (!indexUiState.query) {
     return (
-      <div className="mt-10 text-lg flex justify-center items-center h-64 overflow-y-auto overflow-x-hidden">
+      <div className="mt-10 flex h-64 items-center justify-center overflow-y-auto overflow-x-hidden text-lg">
         {noResultTxt}
       </div>
     );

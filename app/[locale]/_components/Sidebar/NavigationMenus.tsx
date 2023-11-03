@@ -1,7 +1,7 @@
-import { convertToTitleCase } from "@/lib/helper_functions";
-import { type DocFile, type Folder } from "@/types";
-import Link from "next/link";
-import Menu from "./Menu";
+import { convertToTitleCase } from '@/lib/helper_functions';
+import { type DocFile, type Folder } from '@/types';
+import Link from 'next/link';
+import Menu from './Menu';
 
 export interface NavigationMenusProps {
   sidebarData: Array<DocFile | Folder>;
@@ -17,7 +17,7 @@ export default function NavigationMenus({
   return (
     <ul>
       {sidebarData.map((item) => {
-        if (item.type === "folder") {
+        if (item.type === 'folder') {
           const folder = item;
           const activeMenu = decodedPathItems.find((pt) => pt === folder.name); //find active menu from path items
           // render menu (folder)
@@ -43,9 +43,9 @@ export default function NavigationMenus({
               key={file.name}
               className={`${
                 decodedPathItems.includes(file.source)
-                  ? "text-violet-500"
-                  : "text-slate-500"
-              } dark:hover:text-white transition-colors`}
+                  ? 'text-violet-500'
+                  : 'text-slate-500'
+              } transition-colors dark:hover:text-white`}
             >
               <Link className="text-sm" href={file.path}>
                 {file.name}

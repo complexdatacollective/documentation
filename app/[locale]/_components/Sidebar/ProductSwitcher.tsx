@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Select,
@@ -7,10 +7,10 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { useRouter } from "@/navigation";
-import { useTranslations } from "next-intl";
-import { type Dispatch, type SetStateAction } from "react";
+} from '@/components/ui/select';
+import { useRouter } from '@/navigation';
+import { useTranslations } from 'next-intl';
+import { type Dispatch, type SetStateAction } from 'react';
 
 type ProductSwitcherProps = {
   setProduct: Dispatch<SetStateAction<string>>;
@@ -22,7 +22,7 @@ export default function ProductSwitcher({
   product,
 }: ProductSwitcherProps) {
   const router = useRouter();
-  const t = useTranslations("ProductSwitcher");
+  const t = useTranslations('ProductSwitcher');
 
   return (
     <Select
@@ -32,16 +32,16 @@ export default function ProductSwitcher({
         router.push(`/${val}`);
       }}
     >
-      <SelectTrigger className="w-full h-16 text-sm lg:text-base hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-        <SelectValue placeholder={t("selectPlaceholder")} />
+      <SelectTrigger className="h-16 w-full text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 lg:text-base">
+        <SelectValue placeholder={t('selectPlaceholder')} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectItem className="text-sm lg:text-base" value="desktop">
-            {t("desktop")}
+            {t('desktop')}
           </SelectItem>
           <SelectItem className="text-sm lg:text-base" value="fresco">
-            {t("fresco")}
+            {t('fresco')}
           </SelectItem>
         </SelectGroup>
       </SelectContent>

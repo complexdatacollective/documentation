@@ -1,14 +1,12 @@
-import { Separator } from "@/components/ui/separator";
-import { getAllMarkdownDocs, getDoc, processPath } from "@/lib/docs";
-import { getHeadings } from "@/lib/tableOfContents";
-import { StepBack } from "lucide-react";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { styledHeadings } from "./_components/CustomHeadings";
-import InnerLanguageSwitcher from "./_components/InnerLanguageSwitcher";
-import TableOfContents from "./_components/TableOfContents";
+import { Separator } from '@/components/ui/separator';
+import { getAllMarkdownDocs, getDoc, processPath } from '@/lib/docs';
+import { getHeadings } from '@/lib/tableOfContents';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
+import { styledHeadings } from './_components/CustomHeadings';
+import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
+import TableOfContents from './_components/TableOfContents';
 
 type PageParams = {
   locale: string;
@@ -16,7 +14,7 @@ type PageParams = {
   docPath: string[];
 };
 
-type PageParamsWithoutDocPath = Omit<PageParams, "docPath">;
+type PageParamsWithoutDocPath = Omit<PageParams, 'docPath'>;
 
 export async function generateMetadata({ params }: { params: PageParams }) {
   const { locale, project, docPath } = params;
@@ -73,8 +71,8 @@ const Page = async ({ params }: { params: PageParams }) => {
   const headings = toc ? await getHeadings(content) : null;
 
   return (
-    <div className="flex gap-1 items-start">
-      <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-5">
+    <div className="flex items-start gap-1">
+      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg">
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}

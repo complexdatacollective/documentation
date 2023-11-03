@@ -2,22 +2,22 @@
 // We can delete it before production release in case we don't use it.
 // This component is not being used now
 
-"use client";
+'use client';
 
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import React, { useEffect, useState } from "react";
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import React, { useEffect, useState } from 'react';
 
 const ShowMDX = ({ content }: { content: string }) => {
   const [mdxSource, setMdxSource] = useState<MDXRemoteSerializeResult | null>(
-    null
+    null,
   );
 
   useEffect(() => {
     async function getSerializedContent() {
       const result = await serialize(content, {
         mdxOptions: {
-          development: process.env.NODE_ENV === "development",
+          development: process.env.NODE_ENV === 'development',
         },
       });
       setMdxSource(result);
@@ -27,7 +27,7 @@ const ShowMDX = ({ content }: { content: string }) => {
   }, [content]);
 
   return (
-    <article className="overflow-hidden whitespace-nowrap overflow-ellipsis w-[500px]">
+    <article className="w-[500px] overflow-hidden overflow-ellipsis whitespace-nowrap">
       {mdxSource && <MDXRemote {...mdxSource} />}
     </article>
   );

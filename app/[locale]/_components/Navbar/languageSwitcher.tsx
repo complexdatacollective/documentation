@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Select,
@@ -6,9 +6,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { useRouter } from "@/navigation";
-import { useLocale } from "next-intl";
+} from '@/components/ui/select';
+import { useRouter } from '@/navigation';
+import { useLocale } from 'next-intl';
 
 interface LanguageSwitcherProps {
   width: string;
@@ -21,15 +21,15 @@ const LanguageSwitcher = ({ width }: LanguageSwitcherProps) => {
   return (
     <Select
       onValueChange={(val) => {
-        router.push("/", { locale: val });
+        router.push('/', { locale: val });
       }}
     >
       <SelectTrigger
-        className={`dark:bg-slate-700 dark:hover:bg-slate-600 bg-white hover:bg-stone-100 ${width} space-x-1 text-xs sm:text-sm`}
+        className={`bg-white hover:bg-stone-100 dark:bg-slate-700 dark:hover:bg-slate-600 ${width} space-x-1 text-xs sm:text-sm`}
       >
-        <SelectValue placeholder={locale === "en" ? "English" : "Русский"} />
+        <SelectValue placeholder={locale === 'en' ? 'English' : 'Русский'} />
       </SelectTrigger>
-      <SelectContent className="dark:bg-slate-700 bg-white">
+      <SelectContent className="bg-white dark:bg-slate-700">
         <SelectItem value="en">English</SelectItem>
         <SelectItem value="ru">Русский</SelectItem>
       </SelectContent>

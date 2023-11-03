@@ -1,5 +1,5 @@
-import { type HeadingNode } from "@/lib/tableOfContents";
-import TOCLink from "./TOCLink";
+import { type HeadingNode } from '@/lib/tableOfContents';
+import TOCLink from './TOCLink';
 
 interface TableOfContentsProps {
   nodes: HeadingNode[] | null;
@@ -11,10 +11,10 @@ const TableOfContents = ({ nodes }: TableOfContentsProps) => {
   return (
     <div
       className={`toc-component group overflow-x-hidden pb-5 ${
-        nodes.length > 10 && "h-[750px]"
+        nodes.length > 10 && 'h-[750px]'
       } min-w-[300px] overflow-y-auto`}
     >
-      <h3 className="text-slate-300 uppercase text-md">Table of contents</h3>
+      <h3 className="text-md uppercase text-slate-300">Table of contents</h3>
       {renderNodes(nodes)}
     </div>
   );

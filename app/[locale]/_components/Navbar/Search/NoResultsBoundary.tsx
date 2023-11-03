@@ -1,5 +1,5 @@
-import { CommandEmpty } from "@/components/ui/command";
-import { useInstantSearch } from "react-instantsearch";
+import { CommandEmpty } from '@/components/ui/command';
+import { useInstantSearch } from 'react-instantsearch';
 
 export default function NoResultsBoundary({
   noResultForTxt,
@@ -11,7 +11,7 @@ export default function NoResultsBoundary({
   if (!results.__isArtificial && results.nbHits === 0) {
     return (
       <>
-        <div className="mt-10 text-lg flex justify-center items-center h-64 overflow-y-auto overflow-x-hidden">
+        <div className="mt-10 flex h-64 items-center justify-center overflow-y-auto overflow-x-hidden text-lg">
           <CommandEmpty>
             {noResultForTxt} <q>{indexUiState.query}</q>.
           </CommandEmpty>
