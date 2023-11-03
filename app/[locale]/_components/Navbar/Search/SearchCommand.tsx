@@ -47,7 +47,7 @@ export default function SearchCommand() {
         >
           <span>{t("searchPlaceholder")}</span>
           <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">
-            Ctrl+J
+            Ctrl+K
           </span>
         </Button>
 

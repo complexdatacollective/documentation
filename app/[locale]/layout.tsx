@@ -5,7 +5,11 @@ import { locales } from "@/navigation";
 import data from "@/public/sidebar.json";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import {
+  getNow,
+  getTimeZone,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import Navbar from "./_components/Navbar/Navbar";
@@ -38,6 +42,8 @@ export default async function MainLayout({
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
 
+  const now = await getNow(locale);
+  const timeZone = await getTimeZone(locale);
   const sidebarData = JSON.parse(JSON.stringify(data));
   let messages;
 
@@ -56,7 +62,12 @@ export default async function MainLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider
+            timeZone={timeZone}
+            now={now}
+            locale={locale}
+            messages={messages}
+          >
             <Navbar />
             <div className="container grid grid-cols-5 gap-5 items-start mt-8">
               {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
