@@ -9,17 +9,6 @@ import { ThemeToggle } from "./themeToggle";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
-  const themeTranslations = {
-    light: t("themeLight"),
-    dark: t("themeDark"),
-    system: t("themeSystem"),
-  };
-
-  const searchCommandTranslations = {
-    searchPlaceholder: t("searchPlaceholder"),
-    noResultFor: t("searchNoResultsFor"),
-    noResult: t("searchNoResults"),
-  };
 
   return (
     <div className="border-slate-200 border-b mb-5 sticky top-0 z-50 bg-slate-950">
@@ -29,11 +18,9 @@ const Navbar = () => {
           <span className="text-green-400">Network Canvas</span>
         </Link>
         <div className="flex gap-3 items-center">
-          <SearchCommand
-            searchCommandTranslations={searchCommandTranslations}
-          />
+          <SearchCommand />
           <LanguageSwitcher width="w-fit" />
-          <ThemeToggle themeTranslations={themeTranslations} />
+          <ThemeToggle />
           <Button>{t("communityBtn")}</Button>
         </div>
       </div>

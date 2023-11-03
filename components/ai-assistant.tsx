@@ -5,6 +5,7 @@ import { MendableFloatingButton } from "@mendable/search";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const icon = (
   <div className="flex flex-col items-center">
@@ -16,21 +17,26 @@ const icon = (
 const AIAssistant = () => {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
+  const t = useTranslations("AIAssistant");
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Todo: We should make our own UI for the AI assistant so that we can translate the UI
+  // this is a temporary ai assistant translations,
+  // current Mendable Floating Button component can't be customized to support other languages.
   return (
     mounted && (
       <MendableFloatingButton
         icon={icon}
         style={{ accentColor: "#123456", darkMode: theme !== "light" }}
         anon_key={process.env.NEXT_PUBLIC_MENDABLE_ANON_KEY!}
-        dialogPlaceholder={"What is the main aim of the Network Canvas project?"}
+        dialogPlaceholder={t("dialogPlaceholder")}
         messageSettings={{ prettySources: true, openSourcesInNewTab: true }}
-        popupText={"Hi, how can I help you?"}
-        welcomeMessage="Hi, I'm an AI assistant trained on documentation. Ask me anything about Network Canvas."
+        hintQuestions={[t("q1"), t("q2")]}
+        popupText={t("popupText")}
+        welcomeMessage={t("welcomeMessage")}
         cmdShortcutKey="j"
       />
     )

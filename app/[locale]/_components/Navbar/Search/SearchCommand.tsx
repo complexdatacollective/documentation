@@ -8,6 +8,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { algolia_client } from "@/lib/algolia-client.mjs";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Hits, InstantSearch } from "react-instantsearch";
 import CustomSearchBox from "./CustomSearchBox";
@@ -16,18 +17,9 @@ import Hit from "./Hit";
 import NoResultsBoundary from "./NoResultsBoundary";
 import { DialogContextProvider } from "./Provider/DialogContext";
 
-type SearchCommandProps = {
-  searchCommandTranslations: {
-    searchPlaceholder: string;
-    noResultFor: string;
-    noResult: string;
-  };
-};
-
-export default function SearchCommand({
-  searchCommandTranslations,
-}: SearchCommandProps) {
+export default function SearchCommand() {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("SearchCommand");
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -53,26 +45,20 @@ export default function SearchCommand({
           variant={"secondary"}
           onClick={() => setOpen(true)}
         >
-          <span>{searchCommandTranslations.searchPlaceholder}</span>
+          <span>{t("searchPlaceholder")}</span>
           <span className="rounded-lg bg-white dark:bg-slate-900 p-2 text-xs">
             Ctrl+J
           </span>
         </Button>
 
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CustomSearchBox
-            placeholder={searchCommandTranslations.searchPlaceholder}
-          />
+          <CustomSearchBox placeholder={t("searchPlaceholder")} />
           <CommandSeparator />
 
           <CommandList>
-            <NoResultsBoundary
-              noResultForTxt={searchCommandTranslations.noResultFor}
-            />
+            <NoResultsBoundary noResultForTxt={t("searchNoResultsFor")} />
             <CommandGroup>
-              <EmptyQueryBoundary
-                noResultTxt={searchCommandTranslations.noResult}
-              >
+              <EmptyQueryBoundary noResultTxt={t("searchNoResults")}>
                 <Hits hitComponent={Hit} />
               </EmptyQueryBoundary>
             </CommandGroup>

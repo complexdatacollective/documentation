@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter } from "@/navigation";
+import { useTranslations } from "next-intl";
 import { type Dispatch, type SetStateAction } from "react";
 
 type ProductSwitcherProps = {
@@ -21,6 +22,7 @@ export default function ProductSwitcher({
   product,
 }: ProductSwitcherProps) {
   const router = useRouter();
+  const t = useTranslations("ProductSwitcher");
 
   return (
     <Select
@@ -31,15 +33,15 @@ export default function ProductSwitcher({
       }}
     >
       <SelectTrigger className="w-full h-16 text-sm lg:text-base hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-        <SelectValue placeholder="Select software" />
+        <SelectValue placeholder={t("selectPlaceholder")} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectItem className="text-sm lg:text-base" value="desktop">
-            Desktop
+            {t("desktop")}
           </SelectItem>
           <SelectItem className="text-sm lg:text-base" value="fresco">
-            Fresco
+            {t("fresco")}
           </SelectItem>
         </SelectGroup>
       </SelectContent>

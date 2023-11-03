@@ -4,6 +4,7 @@ import AIAssistant from "@/components/ai-assistant";
 import { locales } from "@/navigation";
 import data from "@/public/sidebar.json";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -38,6 +39,13 @@ export default async function MainLayout({
   unstable_setRequestLocale(locale);
 
   const sidebarData = JSON.parse(JSON.stringify(data));
+  let messages;
+
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound(); // redirecting to 404 page in case there's no translated locale json
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -48,12 +56,14 @@ export default async function MainLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <div className="container grid grid-cols-5 gap-5 items-start mt-8">
-            {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
-            <div className="col-span-4 px-2">{children}</div>
-            <AIAssistant />
-          </div>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Navbar />
+            <div className="container grid grid-cols-5 gap-5 items-start mt-8">
+              {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
+              <div className="col-span-4 px-2">{children}</div>
+              <AIAssistant />
+            </div>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
