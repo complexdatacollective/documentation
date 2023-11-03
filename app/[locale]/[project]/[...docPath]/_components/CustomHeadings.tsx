@@ -4,8 +4,6 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 import CustomLink from "./CustomLink";
 
 // TEMPORARY custom styled heading components
-// Todo: Fix heading id for other languages (it's not working for russian language)
-// Todo: probably will work for other languages, so it's better to fix it later
 export const styledHeadings = {
   h2: (
     props: DetailedHTMLProps<

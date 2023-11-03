@@ -3,6 +3,7 @@ import { VFile } from "vfile";
 import { toString } from "mdast-util-to-string";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
+import { convertToUrlText } from "./helper_functions";
 
 export type HeadingNode = {
   value: string;
@@ -36,11 +37,7 @@ function addID(node: HeadingNode, nodes: Record<string, number>): void {
   const id = node.children.map((c: HeadingNode) => c.value || "").join("");
   nodes[id] = (nodes[id] || 0) + 1;
   node.data = node.data || {
-    id: `${id}${nodes[id] > 1 ? ` ${nodes[id] - 1}` : ""}`
-      .replace(/[^a-zA-Z\d\s-]/g, "")
-      .split(" ")
-      .join("-")
-      .toLowerCase(),
+    id: convertToUrlText(`${id}${nodes[id] > 1 ? ` ${nodes[id] - 1}` : ""}`),
   };
 }
 

@@ -22,7 +22,7 @@ export function formatPathPattern(pathPattern: string): string {
 export function convertToUrlText(text: string): string {
   const lowercaseText = text.toLowerCase();
   const hyphenatedText = lowercaseText.replace(/\s+/g, "-");
-  const cleanedText = hyphenatedText.replace(/[^a-z0-9-]/g, "");
+  const cleanedText = hyphenatedText.replace(/[^a-z0-9-\u0400-\u04FF]/g, "");
 
   return cleanedText;
 }
