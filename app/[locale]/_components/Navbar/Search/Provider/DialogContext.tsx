@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext } from 'react';
 
 type DialogContextType = {
   open: boolean;
@@ -19,5 +19,9 @@ export const DialogContextProvider: React.FC<DialogContextProviderProps> = ({
   open,
   setOpen,
 }) => {
-  return <DialogContext.Provider value={{ open, setOpen }}>{children}</DialogContext.Provider>;
+  return (
+    <DialogContext.Provider value={{ open, setOpen }}>
+      {children}
+    </DialogContext.Provider>
+  );
 };

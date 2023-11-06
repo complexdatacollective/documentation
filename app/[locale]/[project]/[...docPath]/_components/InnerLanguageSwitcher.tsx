@@ -1,57 +1,43 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  getAvailableLocales,
-  getDocsFromSidebarData,
-} from "@/lib/helper_functions";
-import data from "@/public/sidebar.json";
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { getTranslatedFilesDataByDocId } from '@/lib/helper_functions';
+import data from '@/public/sidebar.json';
+import { type SidebarData } from '@/types';
+import { getTranslator } from 'next-intl/server';
+import Link from 'next/link';
 
 type InnerLanguageSwitcherProps = {
   currentDocId: string;
   currentLocale: string;
 };
 
-const InnerLanguageSwitcher = ({
+const InnerLanguageSwitcher = async ({
   currentDocId,
   currentLocale,
 }: InnerLanguageSwitcherProps) => {
-  const router = useRouter();
-  const sidebarData = JSON.parse(JSON.stringify(data));
+  const t = await getTranslator(currentLocale, 'DocPage');
+  const sidebarData: SidebarData = JSON.parse(
+    JSON.stringify(data),
+  ) as SidebarData;
 
-  const availableLocales = useCallback(
-    () => getAvailableLocales(sidebarData, currentDocId),
-    [sidebarData, currentDocId]
+  const translatedDocs = getTranslatedFilesDataByDocId(
+    sidebarData,
+    currentDocId,
   );
 
-  const handleInnerLanguageSwitch = (availableLocal: string) => {
-    const allDocFiles = getDocsFromSidebarData(sidebarData);
-    const translatedDoc = allDocFiles.find(
-      (file) => file.docId === currentDocId && file.language === availableLocal
-    );
-
-    if (translatedDoc) {
-      router.push(translatedDoc.path);
-    }
-  };
-
   return (
-    <p>
-      {availableLocales()
-        .filter((locale) => locale !== currentLocale)
-        .map((availableLocal) => (
-          <Button
-            key={availableLocal}
-            onClick={() => handleInnerLanguageSwitch(availableLocal)}
-            variant={"ghost"}
-            className="text-green-500 underline"
+    <div className="my-1 flex gap-2">
+      <span>{t('docAvailableTxt')}</span>
+      {translatedDocs
+        .filter((doc) => doc.language !== currentLocale) //remove the current locale-based file
+        .map((doc) => (
+          <Link
+            className="text-blue-400 transition-colors hover:text-cyan-400"
+            key={doc.language}
+            href={doc.path}
           >
-            {availableLocal}
-          </Button>
+            {doc.language}
+          </Link>
         ))}
-    </p>
+    </div>
   );
 };
 

@@ -1,14 +1,16 @@
-"use client";
+import { Link } from '@/navigation';
+import React from 'react';
 
-import Link from "next/link";
-import React from "react";
-
-type CustomLinkProps = { id: string; children: React.ReactNode; className?: string };
+type CustomLinkProps = {
+  id: string;
+  children: React.ReactNode;
+  className?: string;
+};
 
 const CustomLink = ({ id, children, className }: CustomLinkProps) => {
   return (
     <Link
-      className={`flex gap-1.5 items-center no-underline hover:text-blue-400 transition-all group ${className} `}
+      className={`group flex items-center gap-1.5 no-underline transition-all hover:text-blue-400 ${className} `}
       href={`#${id}`}
     >
       {children}

@@ -1,36 +1,33 @@
-import { Button } from "@/components/ui/button";
-import logo from "@/public/assets/img/logo.svg";
-import Image from "next/image";
-import SearchCommand from "../../[project]/_components/Search/SearchCommand";
-import LanguageSwitcher from "./languageSwitcher";
-import { ThemeToggle } from "./themeToggle";
-import { useTranslations } from "next-intl";
-import Link from "next-intl/link";
+import { Button } from '@/components/ui/button';
+import { Link } from '@/navigation';
+import logo from '@/public/assets/img/logo.svg';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import SearchCommand from './Search/SearchCommand';
+import LanguageSwitcher from './languageSwitcher';
+import { ThemeToggle } from './themeToggle';
 
 const Navbar = () => {
-  const t = useTranslations("Navbar");
-  const themeTranslations = {
-    light: t("themeLight"),
-    dark: t("themeDark"),
-    system: t("themeSystem"),
-  };
-
-  const searchCommandTranslations = {
-    searchPlaceholder: t("SearchPlaceholder"),
-  };
+  const t = useTranslations('Navbar');
 
   return (
-    <div className="border-slate-200 border-b mb-5 sticky top-0 z-50 bg-slate-950">
-      <div className="container flex items-center justify-between h-16 p-1">
-        <Link href={"/"} className="flex gap-0.5 items-center">
-          <Image width="40" height="40" priority src={logo} alt="Logo" />
+    <div className="sticky top-0 z-50 mb-5 border-b border-slate-200 bg-slate-950">
+      <div className="container flex h-16 items-center justify-between p-1">
+        <Link href={'/'} className="flex items-center gap-0.5">
+          <Image
+            width="40"
+            height="40"
+            priority
+            src={logo as string}
+            alt="Logo"
+          />
           <span className="text-green-400">Network Canvas</span>
         </Link>
-        <div className="flex gap-3 items-center">
-          <SearchCommand searchCommandTranslations={searchCommandTranslations} />
+        <div className="flex items-center gap-3">
+          <SearchCommand />
           <LanguageSwitcher width="w-fit" />
-          <ThemeToggle themeTranslations={themeTranslations} />
-          <Button>{t("communityBtn")}</Button>
+          <ThemeToggle />
+          <Button>{t('communityBtn')}</Button>
         </div>
       </div>
     </div>

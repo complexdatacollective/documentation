@@ -1,19 +1,26 @@
-import { Input } from "@/components/ui/input";
-import { Loader, Search as SearchIcon } from "lucide-react";
-import { useRef, useState } from "react";
-import { UseSearchBoxProps, useInstantSearch, useSearchBox } from "react-instantsearch";
+import { Input } from '@/components/ui/input';
+import { Loader, Search as SearchIcon } from 'lucide-react';
+import { useRef, useState } from 'react';
+import {
+  type UseSearchBoxProps,
+  useInstantSearch,
+  useSearchBox,
+} from 'react-instantsearch';
 
-export default function CustomSearchBox(props: UseSearchBoxProps) {
+interface CustomSearchBoxProps extends UseSearchBoxProps {
+  placeholder: string;
+}
+
+export default function CustomSearchBox(props: CustomSearchBoxProps) {
   const { query, refine } = useSearchBox(props);
   const { status } = useInstantSearch();
   const [inputValue, setInputValue] = useState(query);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const isSearchStalled = status === "stalled";
+  const isSearchStalled = status === 'stalled';
 
   function setQuery(newQuery: string) {
     setInputValue(newQuery);
-
     refine(newQuery);
   }
 
@@ -33,7 +40,7 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
         event.preventDefault();
         event.stopPropagation();
 
-        setQuery("");
+        setQuery('');
 
         if (inputRef.current) {
           inputRef.current.focus();
@@ -42,17 +49,17 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
     >
       <div className="flex items-center px-1.5">
         {isSearchStalled ? (
-          <Loader size={"19px"} className="text-gray-400 animate-spin" />
+          <Loader size={'19px'} className="animate-spin text-gray-400" />
         ) : (
-          <SearchIcon size={"19px"} className="text-gray-400" />
+          <SearchIcon size={'19px'} className="text-gray-400" />
         )}
         <Input
-          className="border-transparent w-[90%] px-1.5"
+          className="w-[90%] border-transparent px-1.5"
           ref={inputRef}
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
-          placeholder="Search for documents..."
+          placeholder={props.placeholder}
           spellCheck={false}
           type="text"
           value={inputValue}
@@ -64,7 +71,7 @@ export default function CustomSearchBox(props: UseSearchBoxProps) {
       <button hidden type="submit">
         Submit
       </button>
-      <button type="reset" hidden>
+      <button hidden type="reset">
         Reset
       </button>
     </form>

@@ -1,20 +1,26 @@
-import "@/app/[locale]/globals.css";
-import { ThemeProvider } from "@/components/Providers/theme-provider";
-import AIAssistant from "@/components/ai-assistant";
-import data from "@/public/sidebar.json";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "./_components/Navbar/Navbar";
-import Sidebar from "./_components/Sidebar/Sidebar";
-import { notFound } from "next/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
+import '@/app/[locale]/globals.css';
+import { ThemeProvider } from '@/components/Providers/theme-provider';
+import AIAssistant from '@/components/ai-assistant';
+import { locales } from '@/navigation';
+import data from '@/public/sidebar.json';
+import { type Messages, type SidebarData } from '@/types';
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import {
+  getNow,
+  getTimeZone,
+  unstable_setRequestLocale,
+} from 'next-intl/server';
+import { Inter } from 'next/font/google';
+import { notFound } from 'next/navigation';
+import Navbar from './_components/Navbar/Navbar';
+import Sidebar from './_components/Sidebar/Sidebar';
 
-const inter = Inter({ subsets: ["latin"] });
-const locales = ["en", "ru"]; // TODO: get these by reading the folders in the docs directory
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Network Canvas Docs",
-  description: "All Network Canvas Docs",
+  title: 'Network Canvas Docs',
+  description: 'All Network Canvas Docs',
 };
 
 export function generateStaticParams() {
@@ -37,7 +43,21 @@ export default async function MainLayout({
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
 
-  const sidebarData = JSON.parse(JSON.stringify(data));
+  const now = await getNow(locale);
+  const timeZone = await getTimeZone(locale);
+  const sidebarData: SidebarData = JSON.parse(
+    JSON.stringify(data),
+  ) as SidebarData;
+
+  let messages: Messages;
+
+  try {
+    messages =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      (await import(`../../messages/${locale}.json`)).default as Messages;
+  } catch (error) {
+    notFound(); // redirecting to 404 page in case there's no translated locale json
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -48,12 +68,19 @@ export default async function MainLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <div className="container grid grid-cols-5 gap-5 items-start mt-8">
-            {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
-            <div className="col-span-4 px-2">{children}</div>
-            <AIAssistant />
-          </div>
+          <NextIntlClientProvider
+            timeZone={timeZone}
+            now={now}
+            locale={locale}
+            messages={messages}
+          >
+            <Navbar />
+            <div className="container mt-8 grid grid-cols-5 items-start gap-5">
+              {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
+              <div className="col-span-4 px-2">{children}</div>
+              <AIAssistant />
+            </div>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,41 +1,39 @@
-import { Separator } from "@/components/ui/separator";
-import { getAllMarkdownDocs, getDoc, processPath } from "@/lib/docs";
-import { getHeadings } from "@/lib/tableOfContents";
-import { StepBack } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { styledHeadings } from "./_components/CustomHeadings";
-import InnerLanguageSwitcher from "./_components/InnerLanguageSwitcher";
-import TableOfContents from "./_components/TableOfContents";
+import { Separator } from '@/components/ui/separator';
+import { getAllMarkdownDocs, getDoc, processPath } from '@/lib/docs';
+import { getHeadings } from '@/lib/tableOfContents';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
+import { styledHeadings } from './_components/CustomHeadings';
+import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
+import TableOfContents from './_components/TableOfContents';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string; project: string; docPath: string[] };
-}) {
+type PageParams = {
+  locale: string;
+  project: string;
+  docPath: string[];
+};
+
+type PageParamsWithoutDocPath = Omit<PageParams, 'docPath'>;
+
+export function generateMetadata({ params }: { params: PageParams }) {
   const { locale, project, docPath } = params;
-
   const doc = getDoc({
     locale,
     project,
     pathSegment: docPath,
   });
-
   if (!doc || !doc.title) {
-    throw new Error(`Error getting document title for:${docPath}`);
+    throw new Error(`Error getting document title for:${docPath.join('')}`);
   }
 
   return { title: doc.title };
 }
 
-// Generating Static Params for each page
 export async function generateStaticParams({
   params,
 }: {
-  params: { locale: string; project: string };
+  params: PageParamsWithoutDocPath;
 }) {
   const { locale, project } = params;
   const docs = await getAllMarkdownDocs();
@@ -56,13 +54,8 @@ export async function generateStaticParams({
 }
 
 // The Page Component
-const Page = async ({
-  params,
-}: {
-  params: { locale: string; project: string; docPath: string[] };
-}) => {
+const Page = async ({ params }: { params: PageParams }) => {
   const { locale, project, docPath } = params;
-
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
 
@@ -72,27 +65,20 @@ const Page = async ({
     pathSegment: docPath,
   });
 
-  if (!doc) {
-    notFound();
-  }
+  if (!doc || doc.content === null) notFound();
 
   const { title, content, lastUpdated, toc, docId } = doc;
-
-  const headings = toc ? await getHeadings(content as string) : null;
-
-  if (content === null) notFound();
+  const headings = toc ? await getHeadings(content) : null;
 
   return (
-    <div className="flex gap-1 items-start">
-      <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-5">
+    <div className="flex items-start gap-1">
+      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg">
+        <p>Title: {title}</p>
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
         <MDXRemote components={{ ...styledHeadings }} source={content} />
         <p className="text-sm text-red-400">{lastUpdated}</p>
-        <Link className="flex gap-0 items-center" href={"/"}>
-          <StepBack /> Back
-        </Link>
       </article>
       {headings && (
         <div className="sticky top-20">

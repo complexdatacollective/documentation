@@ -1,40 +1,26 @@
-import { convertToTitleCase } from "@/lib/helper_functions";
-import Link from "next/link";
-import Menu from "./Menu";
-
-export interface Folder {
-  type: "folder";
-  name: string;
-  files: Array<DocFile | Folder>;
-}
-
-export interface DocFile {
-  type: "file";
-  name: string;
-  path: string;
-  source: string;
-  docId: string;
-  language: string;
-}
+import { convertToTitleCase } from '@/lib/helper_functions';
+import { type SidebarData } from '@/types';
+import Link from 'next/link';
+import Menu from './Menu';
 
 export interface NavigationMenusProps {
-  data: Array<DocFile | Folder>;
-  activeMenus: string[];
+  sidebarData: SidebarData;
+  pathItems: string[];
 }
 
 export default function NavigationMenus({
-  data,
-  activeMenus,
+  sidebarData,
+  pathItems,
 }: NavigationMenusProps): JSX.Element {
-  const decodedActiveMenus = activeMenus.map((m) => decodeURIComponent(m));
+  const decodedPathItems = pathItems.map(decodeURIComponent);
 
   return (
     <ul>
-      {data.map((item) => {
-        if (item.type === "folder") {
-          const folder = item as Folder;
-          const activeMenu = decodedActiveMenus.find((m) => m === folder.name);
-
+      {sidebarData.map((item) => {
+        if (item.type === 'folder') {
+          const folder = item;
+          const activeMenu = decodedPathItems.find((pt) => pt === folder.name); //find active menu from path items
+          // render menu (folder)
           return (
             <Menu
               value={activeMenu && convertToTitleCase(activeMenu)}
@@ -43,22 +29,23 @@ export default function NavigationMenus({
             >
               <ul>
                 <NavigationMenus
-                  activeMenus={decodedActiveMenus}
-                  data={folder.files}
+                  pathItems={decodedPathItems}
+                  sidebarData={folder.files}
                 />
               </ul>
             </Menu>
           );
         } else {
-          const file = item as DocFile;
+          const file = item;
+          // render menu item (file)
           return (
             <li
               key={file.name}
               className={`${
-                activeMenus.includes(file.source)
-                  ? "text-violet-500"
-                  : "text-slate-500"
-              } dark:hover:text-white transition-colors`}
+                decodedPathItems.includes(file.source)
+                  ? 'text-violet-500'
+                  : 'text-slate-500'
+              } transition-colors dark:hover:text-white`}
             >
               <Link className="text-sm" href={file.path}>
                 {file.name}
