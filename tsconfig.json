@@ -30,12 +30,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts",
-    "lib/docs.ts",
-    "lib/algolia-search.mjs",
-    "lib/markdownToText.mjs",
-    "lib/algolia-client.mjs",
-    "eslint-local-rules/index.js"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
