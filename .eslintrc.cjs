@@ -22,10 +22,9 @@ const config = {
   extends: [
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
-    'plugin:storybook/recommended',
     'prettier',
   ],
-  ignorePatterns: ['node_modules', 'lib', '*.stories.*', '*.test.*'],
+  ignorePatterns: ['node_modules', 'lib'],
   rules: {
     'no-process-env': 'error',
     'no-console': 'error',
@@ -49,7 +48,6 @@ const config = {
       },
     ],
     'no-unreachable': 'error',
-    'local-rules/require-data-mapper': 'error',
   },
 };
 module.exports = config;
