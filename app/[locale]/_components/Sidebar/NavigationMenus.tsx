@@ -1,10 +1,10 @@
 import { convertToTitleCase } from '@/lib/helper_functions';
-import { type DocFile, type Folder } from '@/types';
+import { type SidebarData } from '@/types';
 import Link from 'next/link';
 import Menu from './Menu';
 
 export interface NavigationMenusProps {
-  sidebarData: Array<DocFile | Folder>;
+  sidebarData: SidebarData;
   pathItems: string[];
 }
 

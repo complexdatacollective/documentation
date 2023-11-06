@@ -16,6 +16,7 @@ import EmptyQueryBoundary from './EmptyQueryBoundary';
 import Hit from './Hit';
 import NoResultsBoundary from './NoResultsBoundary';
 import { DialogContextProvider } from './Provider/DialogContext';
+import { env } from '@/env.mjs';
 
 export default function SearchCommand() {
   const [open, setOpen] = useState(false);
@@ -37,7 +38,7 @@ export default function SearchCommand() {
     <DialogContextProvider open={open} setOpen={setOpen}>
       <InstantSearch
         searchClient={algolia_client}
-        indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!}
+        indexName={env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
         insights={true}
       >
         <Button

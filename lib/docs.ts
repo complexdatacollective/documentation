@@ -2,6 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { readdir } from 'node:fs/promises';
 import { join, sep } from 'path';
+import { env } from '@/env.mjs';
 
 export type DocRouteParams = {
   params: {
@@ -22,7 +23,7 @@ export const processPath = (docPath: string) => {
 
 export const relativePathToDocs = join(
   process.cwd(),
-  process.env.NEXT_PUBLIC_DOCS_PATH!,
+  env.NEXT_PUBLIC_DOCS_PATH,
 );
 
 export const getAllMarkdownDocs = async () => {
@@ -41,7 +42,7 @@ export const getAllMarkdownDocs = async () => {
 
 // Get all project names
 export const getAllProjects = function () {
-  const docsDirectory = join(process.cwd(), process.env.NEXT_PUBLIC_DOCS_PATH!);
+  const docsDirectory = join(process.cwd(), env.NEXT_PUBLIC_DOCS_PATH);
 
   const locales = fs
     .readdirSync(docsDirectory, { withFileTypes: true })
@@ -76,7 +77,7 @@ export function getDoc({
 
   const path = join(
     process.cwd(),
-    process.env.NEXT_PUBLIC_DOCS_PATH!,
+    env.NEXT_PUBLIC_DOCS_PATH,
     locale,
     project,
     ...decodedPathSegment,

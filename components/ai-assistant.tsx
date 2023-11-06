@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { env } from '@/env.mjs';
 
 const icon = (
   <div className="flex flex-col items-center">
@@ -31,7 +32,7 @@ const AIAssistant = () => {
       <MendableFloatingButton
         icon={icon}
         style={{ accentColor: '#123456', darkMode: theme !== 'light' }}
-        anon_key={process.env.NEXT_PUBLIC_MENDABLE_ANON_KEY!}
+        anon_key={env.NEXT_PUBLIC_MENDABLE_ANON_KEY}
         dialogPlaceholder={t('dialogPlaceholder')}
         messageSettings={{ prettySources: true, openSourcesInNewTab: true }}
         hintQuestions={[t('q1'), t('q2')]}
