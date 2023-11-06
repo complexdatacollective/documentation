@@ -2,7 +2,7 @@ import { Input } from '@/components/ui/input';
 import { Loader, Search as SearchIcon } from 'lucide-react';
 import { useRef, useState } from 'react';
 import {
-  UseSearchBoxProps,
+  type UseSearchBoxProps,
   useInstantSearch,
   useSearchBox,
 } from 'react-instantsearch';

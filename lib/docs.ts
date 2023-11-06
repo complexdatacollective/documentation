@@ -98,10 +98,15 @@ export function getDoc({
 
   return {
     // Add other elements of the frontmatter here as needed.
-    title: matterResult.data.title,
-    lastUpdated: matterResult.data.date,
+    title: matterResult.data.title as string,
+    lastUpdated: matterResult.data.date
+      ? (matterResult.data.date as string)
+      : null,
     content: matterResult.content,
-    toc: matterResult.data.toc,
-    docId: matterResult.data.docId ?? null,
+    toc:
+      matterResult.data.toc !== undefined
+        ? (matterResult.data.toc as boolean)
+        : null,
+    docId: matterResult.data.docId ? (matterResult.data.docId as string) : null,
   };
 }

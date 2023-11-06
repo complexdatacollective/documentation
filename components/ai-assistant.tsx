@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 
 const icon = (
   <div className="flex flex-col items-center">
-    <Image width="50" height="50" priority src={logo} alt="Logo" />
+    <Image width="50" height="50" priority src={logo as string} alt="Logo" />
     <span className="text-xs font-extrabold">Ctrl+J</span>
   </div>
 );

@@ -3,12 +3,12 @@
 import NavigationMenus from '@/app/[locale]/_components/Sidebar/NavigationMenus';
 import { filterSidebarData } from '@/lib/helper_functions';
 import { usePathname } from '@/navigation';
-import { type DocFile, type Folder } from '@/types';
+import { type SidebarData } from '@/types';
 import { useEffect, useMemo, useState } from 'react';
 import ProductSwitcher from './ProductSwitcher';
 
 type SidebarProps = {
-  data: Array<DocFile | Folder>;
+  data: SidebarData;
   locale: string;
 };
 

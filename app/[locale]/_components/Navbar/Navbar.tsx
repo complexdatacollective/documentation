@@ -14,7 +14,13 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 mb-5 border-b border-slate-200 bg-slate-950">
       <div className="container flex h-16 items-center justify-between p-1">
         <Link href={'/'} className="flex items-center gap-0.5">
-          <Image width="40" height="40" priority src={logo} alt="Logo" />
+          <Image
+            width="40"
+            height="40"
+            priority
+            src={logo as string}
+            alt="Logo"
+          />
           <span className="text-green-400">Network Canvas</span>
         </Link>
         <div className="flex items-center gap-3">

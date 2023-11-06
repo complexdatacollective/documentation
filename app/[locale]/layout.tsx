@@ -3,6 +3,7 @@ import { ThemeProvider } from '@/components/Providers/theme-provider';
 import AIAssistant from '@/components/ai-assistant';
 import { locales } from '@/navigation';
 import data from '@/public/sidebar.json';
+import { type Messages, type SidebarData } from '@/types';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import {
@@ -44,11 +45,16 @@ export default async function MainLayout({
 
   const now = await getNow(locale);
   const timeZone = await getTimeZone(locale);
-  const sidebarData = JSON.parse(JSON.stringify(data));
-  let messages;
+  const sidebarData: SidebarData = JSON.parse(
+    JSON.stringify(data),
+  ) as SidebarData;
+
+  let messages: Messages;
 
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      (await import(`../../messages/${locale}.json`)).default as Messages;
   } catch (error) {
     notFound(); // redirecting to 404 page in case there's no translated locale json
   }

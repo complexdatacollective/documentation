@@ -1,6 +1,6 @@
 import { convertToUrlText } from '@/lib/helper_functions';
 import { Link2 } from 'lucide-react';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { type DetailedHTMLProps, type HTMLAttributes } from 'react';
 import CustomLink from './CustomLink';
 
 // TEMPORARY custom styled heading components

@@ -1,5 +1,6 @@
 import { getTranslatedFilesDataByDocId } from '@/lib/helper_functions';
 import data from '@/public/sidebar.json';
+import { type SidebarData } from '@/types';
 import { getTranslator } from 'next-intl/server';
 import Link from 'next/link';
 
@@ -13,7 +14,10 @@ const InnerLanguageSwitcher = async ({
   currentLocale,
 }: InnerLanguageSwitcherProps) => {
   const t = await getTranslator(currentLocale, 'DocPage');
-  const sidebarData = JSON.parse(JSON.stringify(data));
+  const sidebarData: SidebarData = JSON.parse(
+    JSON.stringify(data),
+  ) as SidebarData;
+
   const translatedDocs = getTranslatedFilesDataByDocId(
     sidebarData,
     currentDocId,

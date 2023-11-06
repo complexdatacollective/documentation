@@ -2,7 +2,7 @@
 
 import { CommandItem } from '@/components/ui/command';
 import { formatPathPattern } from '@/lib/helper_functions';
-import { Hit as AlgoliaHit } from 'instantsearch.js';
+import { type Hit as AlgoliaHit } from 'instantsearch.js';
 import { FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useContext } from 'react';

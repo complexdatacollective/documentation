@@ -4,7 +4,7 @@
 
 'use client';
 
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import React, { useEffect, useState } from 'react';
 
@@ -23,7 +23,7 @@ const ShowMDX = ({ content }: { content: string }) => {
       setMdxSource(result);
     }
 
-    getSerializedContent();
+    void getSerializedContent();
   }, [content]);
 
   return (

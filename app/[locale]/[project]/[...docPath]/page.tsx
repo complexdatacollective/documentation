@@ -16,7 +16,7 @@ type PageParams = {
 
 type PageParamsWithoutDocPath = Omit<PageParams, 'docPath'>;
 
-export async function generateMetadata({ params }: { params: PageParams }) {
+export function generateMetadata({ params }: { params: PageParams }) {
   const { locale, project, docPath } = params;
   const doc = getDoc({
     locale,
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: PageParams }) {
     pathSegment: docPath,
   });
   if (!doc || !doc.title) {
-    throw new Error(`Error getting document title for:${docPath}`);
+    throw new Error(`Error getting document title for:${docPath.join('')}`);
   }
 
   return { title: doc.title };
@@ -73,6 +73,7 @@ const Page = async ({ params }: { params: PageParams }) => {
   return (
     <div className="flex items-start gap-1">
       <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg">
+        <p>Title: {title}</p>
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
