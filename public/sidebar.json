@@ -9,8 +9,23 @@
         "files": [
           {
             "type": "folder",
-            "name": "how-to-guides",
+            "name": "testDocs",
             "files": [
+              {
+                "type": "file",
+                "name": "Codebook",
+                "path": "/en/desktop/testDocs/codebook",
+                "source": "codebook",
+                "docId": null
+              },
+              {
+                "type": "file",
+                "name": "IRB and Security Best Practices",
+                "path": "/en/desktop/testDocs/irb-best-practices",
+                "source": "irb-best-practices",
+                "docId": "Security Best Practices",
+                "language": "en"
+              },
               {
                 "type": "folder",
                 "name": "subfolder",
@@ -18,7 +33,7 @@
                   {
                     "type": "file",
                     "name": "Salom Tojik",
-                    "path": "/en/desktop/how-to-guides/subfolder/tojiki",
+                    "path": "/en/desktop/testDocs/subfolder/tojiki",
                     "source": "tojiki",
                     "docId": null
                   },
@@ -29,40 +44,13 @@
                       {
                         "type": "file",
                         "name": "Koro sarami",
-                        "path": "/en/desktop/how-to-guides/subfolder/subfolder-child/jugi-bla",
+                        "path": "/en/desktop/testDocs/subfolder/subfolder-child/jugi-bla",
                         "source": "jugi-bla",
                         "docId": null
                       }
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "key-concepts",
-            "files": [
-              {
-                "type": "file",
-                "name": "Codebook",
-                "path": "/en/desktop/key-concepts/codebook",
-                "source": "codebook",
-                "docId": null
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "reference",
-            "files": [
-              {
-                "type": "file",
-                "name": "IRB and Security Best Practices",
-                "path": "/en/desktop/reference/irb-best-practices",
-                "source": "irb-best-practices",
-                "docId": "Security Best Practices",
-                "language": "en"
               }
             ]
           }
@@ -125,8 +113,23 @@
         "files": [
           {
             "type": "folder",
-            "name": "как-сделать-руководства",
+            "name": "тестовые-документы",
             "files": [
+              {
+                "type": "file",
+                "name": "Кодовая книга",
+                "path": "/ru/desktop/тестовые-документы/кодовая-книга",
+                "source": "кодовая-книга",
+                "docId": null
+              },
+              {
+                "type": "file",
+                "name": "Лучшие практики по IRB и безопасности",
+                "path": "/ru/desktop/тестовые-документы/лучшие-практики-по-irb-и-безопасности",
+                "source": "лучшие-практики-по-irb-и-безопасности",
+                "docId": "Security Best Practices",
+                "language": "ru"
+              },
               {
                 "type": "folder",
                 "name": "подпапка",
@@ -134,7 +137,7 @@
                   {
                     "type": "file",
                     "name": "Привет таджик",
-                    "path": "/ru/desktop/как-сделать-руководства/подпапка/привет-таджик",
+                    "path": "/ru/desktop/тестовые-документы/подпапка/привет-таджик",
                     "source": "привет-таджик",
                     "docId": null
                   },
@@ -145,40 +148,13 @@
                       {
                         "type": "file",
                         "name": "Какое-то название файла",
-                        "path": "/ru/desktop/как-сделать-руководства/подпапка/подпапка-подчиненная/какое-то-название-файла",
+                        "path": "/ru/desktop/тестовые-документы/подпапка/подпапка-подчиненная/какое-то-название-файла",
                         "source": "какое-то-название-файла",
                         "docId": null
                       }
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "ключевые-концепции",
-            "files": [
-              {
-                "type": "file",
-                "name": "Кодовая книга",
-                "path": "/ru/desktop/ключевые-концепции/кодовая-книга",
-                "source": "кодовая-книга",
-                "docId": null
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "ссылка-на-источник",
-            "files": [
-              {
-                "type": "file",
-                "name": "Лучшие практики по IRB и безопасности",
-                "path": "/ru/desktop/ссылка-на-источник/лучшие-практики-по-irb-и-безопасности",
-                "source": "лучшие-практики-по-irb-и-безопасности",
-                "docId": "Security Best Practices",
-                "language": "ru"
               }
             ]
           }
