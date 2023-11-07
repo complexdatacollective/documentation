@@ -29,6 +29,10 @@ const withNextIntl = require("next-intl/plugin")(
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
+  basePath: "/documentation",
+  images: {
+    unoptimized: true,
+  }
 };
 
 // Merge MDX config with Next.js config
