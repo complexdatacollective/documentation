@@ -4,12 +4,9 @@ import { getHeadings } from '@/lib/tableOfContents';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
-import { styledHeadings } from './_components/CustomHeadings';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
-import TipBox from '@/components/customComponents/TipBox';
-import StandAloneImg from '@/components/customComponents/StandAloneImg';
-import KeyConcept from '@/components/customComponents/KeyConcept';
+import { customComponents } from './_components/customComponents/customComponents';
 
 type PageParams = {
   locale: string;
@@ -75,15 +72,12 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   return (
     <div className="flex items-start gap-1">
-      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg">
+      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <p>Title: {title}</p>
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
-        <MDXRemote
-          components={{ ...styledHeadings, TipBox, StandAloneImg, KeyConcept }}
-          source={content}
-        />
+        <MDXRemote components={customComponents} source={content} />
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (
