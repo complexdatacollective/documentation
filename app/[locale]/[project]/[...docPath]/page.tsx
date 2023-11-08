@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { styledHeadings } from './_components/CustomHeadings';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
+import TipBox from '@/components/customComponents/TipBox';
 
 type PageParams = {
   locale: string;
@@ -77,7 +78,10 @@ const Page = async ({ params }: { params: PageParams }) => {
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
-        <MDXRemote components={{ ...styledHeadings }} source={content} />
+        <MDXRemote
+          components={{ ...styledHeadings, TipBox }}
+          source={content}
+        />
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (
