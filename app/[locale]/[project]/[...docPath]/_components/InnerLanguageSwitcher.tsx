@@ -23,20 +23,25 @@ const InnerLanguageSwitcher = async ({
     currentDocId,
   );
 
+  //remove the current locale-based file from translated docs
+  const filteredDocs = translatedDocs.filter(
+    (doc) => doc.language !== currentLocale,
+  );
+
+  if (!filteredDocs.length) return null;
+
   return (
     <div className="my-1 flex gap-2">
       <span>{t('docAvailableTxt')}</span>
-      {translatedDocs
-        .filter((doc) => doc.language !== currentLocale) //remove the current locale-based file
-        .map((doc) => (
-          <Link
-            className="text-blue-400 transition-colors hover:text-cyan-400"
-            key={doc.language}
-            href={doc.path}
-          >
-            {doc.language}
-          </Link>
-        ))}
+      {filteredDocs.map((doc) => (
+        <Link
+          className="text-blue-400 transition-colors hover:text-cyan-400"
+          key={doc.language}
+          href={doc.path}
+        >
+          {doc.language}
+        </Link>
+      ))}
     </div>
   );
 };

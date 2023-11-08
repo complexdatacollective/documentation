@@ -390,53 +390,6 @@
           },
           {
             "type": "folder",
-            "name": "testDocs",
-            "files": [
-              {
-                "type": "file",
-                "name": "Codebook",
-                "path": "/en/desktop/testDocs/codebook",
-                "source": "codebook",
-                "docId": null
-              },
-              {
-                "type": "file",
-                "name": "IRB and Security Best Practices",
-                "path": "/en/desktop/testDocs/irb-best-practices",
-                "source": "irb-best-practices",
-                "docId": "Security Best Practices",
-                "language": "en"
-              },
-              {
-                "type": "folder",
-                "name": "subfolder",
-                "files": [
-                  {
-                    "type": "file",
-                    "name": "Salom Tojik",
-                    "path": "/en/desktop/testDocs/subfolder/tojiki",
-                    "source": "tojiki",
-                    "docId": null
-                  },
-                  {
-                    "type": "folder",
-                    "name": "subfolder-child",
-                    "files": [
-                      {
-                        "type": "file",
-                        "name": "Koro sarami",
-                        "path": "/en/desktop/testDocs/subfolder/subfolder-child/jugi-bla",
-                        "source": "jugi-bla",
-                        "docId": null
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "folder",
             "name": "tutorials",
             "files": [
               {
