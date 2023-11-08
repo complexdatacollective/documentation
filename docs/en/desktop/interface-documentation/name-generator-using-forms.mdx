@@ -1,7 +1,6 @@
 ---
 title: Name Generator using Forms
 
-
 image: /assets/img/interface-documentation/name-generators/ng-form.png
 type: Name Generator
 creates: Nodes of a single type
@@ -14,17 +13,22 @@ good:
   - Ensure you collect a value for a variable called `name` on your form, so that [node labelling](../../reference/node-labelling) works correctly.
 ---
 
-
 Name Generators are one of the fundamental components of a network interview. They allow your participant to create alters, thereby describing one of the two main entities in your study's networks.
 
 There are four name generator [Interfaces](../_key-concepts/interfaces.md) in Network Canvas that can be added to your study, all of which can be configured within Architect.
 
-![Available Name Generator interfaces in Architect](/assets/img/interface-documentation/name-generators/add-screen.png){:standalone}
+<StandAloneImage
+  src="/documentation/assets/img/interface-documentation/name-generators/add-screen.png"
+  content="Available Name Generator interfaces in Architect"
+/>
 
 Each of these Interfaces is designed for a specific type of alter elicitation, with several associated advantages and disadvantages. Although they have some configuration options that are [shared with all other Network Canvas Interfaces](./shared.md), this article will focus on options specific to the main name generator interface, and a variant of it that uses a 'quick add' mode.
 
-Using roster data in your study? Refer to our documentation on the [small roster name generator](./small-roster-name-generator.md) or [large roster name generator](./large-roster-name-generator.md).
-{: .tip-box}
+<TipBox>
+  Using roster data in your study? Refer to our documentation on the [small
+  roster name generator](./small-roster-name-generator.md) or [large roster name
+  generator](./large-roster-name-generator.md).
+</TipBox>
 
 ## Shared Interface Elements
 
@@ -42,7 +46,10 @@ Both of these name generators can use Side Panels. Side panels are a powerful fe
 
 For example, when multiple prompts within a name generator have potential overlap in a participant's social network, it may be useful to bring nodes previously nominated onto a subsequent screen so that a participant can easily list them again.
 
-![Configuring a side panel](/assets/img/interface-documentation/name-generators/side-panel.png){:standalone}
+<StandAloneImage
+  src="/documentation/assets/img/interface-documentation/name-generators/side-panel.png"
+  content="Configuring a side panel"
+/>
 
 A side panel can also be created using a network data file (e.g. a roster) to allow a participant to select and nominate alters from a predetermined list. It is important to note that the exact same list will appear on subsequent side panels within the name generator unless a rule(s) is created to filter the data to be shown on the panel (see [network filtering](../_key-concepts/network-filtering.md)).
 
@@ -52,4 +59,7 @@ Side panels can be expanded or contracted in the interview by clicking on the he
 
 When using the "Name Generator (using forms)" Interface, the primary action button will trigger a form that participants must complete to create an alter. This form can include one or more fields to capture specific attribute data on each node (see our [key concepts article on forms](../_key-concepts/forms.md) for further information on creating a form). This interface therefore combines the process of generating alters with the ability to do some basic attribute collection, or name interpreting, tasks.
 
-![An example form](/assets/img/interface-documentation/name-generators/ng-form.png){:standalone}
+<StandAloneImage
+  src="/documentation/assets/img/interface-documentation/name-generators/ng-form.png"
+  content="An example form"
+/>

@@ -1,10 +1,8 @@
 ---
 title: Skip Logic
 
-
-definition: Conditionally skip or show stages within the interview, based on the current information in the interview network. 
+definition: Conditionally skip or show stages within the interview, based on the current information in the interview network.
 ---
-
 
 Skip logic is a feature within Interviewer that allows you to conditionally skip or show stages within the interview, based on the current information in the interview network. By skipping or showing certain stages, you are able to direct the path a participant takes through your protocol.
 
@@ -45,7 +43,7 @@ If rules are joined by `AND` statements, and all individual rules evaluate to `t
 
 ![image](/assets/img/key-concepts/skip-logic/must-match.png)
 
-This means that the choice of join operator can have an extremely significant impact on the way that your rules are collectively evaluated. One way of thinking about the difference is that you should use the "all rules" option in situations where there is only *one* scenario where a stage should be shown. You can then add as many rules as you need to ensure that this scenario is as specific as possible.
+This means that the choice of join operator can have an extremely significant impact on the way that your rules are collectively evaluated. One way of thinking about the difference is that you should use the "all rules" option in situations where there is only _one_ scenario where a stage should be shown. You can then add as many rules as you need to ensure that this scenario is as specific as possible.
 
 Alternatively, use the "any rules" option for situations where there are many reasons a stage should be shown. For example you may show an information screen with an embedded intervention video if a participant has demonstrated any one of a number of risk behaviors.
 
@@ -55,8 +53,9 @@ Before we know the final outcome of the skip logic rule, we have to consider one
 
 For example, if you wished to skip a stage based on if a categorical variable with many options is set to all but one possible value, you would typically have to write a rule for each value, and use the `OR` operator. However, if you were to set the skip logic to "show this stage if", you would only need to define a single rule, that included the value that is specifically permissible.
 
-Take extra care to think through the logical repercussions of your join operator when changing this property, as it can be somewhat counter-intuitive. It is very easy to make your rule too specific using the `AND` operator!
-{: .tip-box}
+<TipBox>
+  Take extra care to think through the logical repercussions of your join operator when changing this property, as it can be somewhat counter-intuitive. It is very easy to make your rule too specific using the `AND` operator!
+</TipBox>
 
 ## Extended Example
 
