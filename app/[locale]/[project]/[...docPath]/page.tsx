@@ -8,6 +8,8 @@ import { styledHeadings } from './_components/CustomHeadings';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
 import TipBox from '@/components/customComponents/TipBox';
+import StandAloneImg from '@/components/customComponents/StandAloneImg';
+import KeyConcept from '@/components/customComponents/KeyConcept';
 
 type PageParams = {
   locale: string;
@@ -79,7 +81,7 @@ const Page = async ({ params }: { params: PageParams }) => {
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
         <MDXRemote
-          components={{ ...styledHeadings, TipBox }}
+          components={{ ...styledHeadings, TipBox, StandAloneImg, KeyConcept }}
           source={content}
         />
         <p className="text-sm text-red-400">{lastUpdated}</p>
