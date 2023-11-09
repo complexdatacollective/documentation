@@ -15,7 +15,7 @@ export default function NavigationMenus({
   const decodedPathItems = pathItems.map(decodeURIComponent);
 
   return (
-    <ul className="flex flex-col gap-1">
+    <ul className="flex flex-col gap-1 ">
       {sidebarData.map((item) => {
         if (item.type === 'folder') {
           const folder = item;
