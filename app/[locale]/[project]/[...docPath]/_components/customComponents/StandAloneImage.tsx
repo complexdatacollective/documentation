@@ -14,7 +14,7 @@ const StandAloneImage = ({ src, content, name }: StandAloneImgProps) => {
         height={500}
         src={src}
         alt={name ?? src}
-        style={{ marginBlock: '10px' }}
+        style={{ marginBlock: '5px' }}
       />
       <span className="text-sm italic text-slate-400">{content}</span>
     </div>

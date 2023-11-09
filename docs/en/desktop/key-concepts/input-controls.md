@@ -10,7 +10,7 @@ Below you will find a summary of each available input control, and advice about 
 <div class="variable-definition">
 ## <a name="Checkbox-Group "></a>Checkbox Group
 
-![image](/assets/img/key-concepts/input-controls/CheckboxGroup.png)
+![image](/documentation/assets/img/key-concepts/input-controls/CheckboxGroup.png)
 
 ### <a name="purpose-1">Purpose</a>
 
@@ -36,7 +36,7 @@ Options are displayed vertically, to allow for longer labels and to create a mor
 <div class="variable-definition">
 ## <a name="Date-Picker"></a>Date Picker
 
-![image](/assets/img/key-concepts/input-controls/DatePicker.png)
+![image](/documentation/assets/img/key-concepts/input-controls/DatePicker.png)
 
 ### Purpose
 
@@ -60,7 +60,7 @@ If your interview context is better suited to keyboard text entry rather than th
 <div class="variable-definition">
 ## <a name="Likert-Scale"></a>Likert Scale
 
-![image](/assets/img/key-concepts/input-controls/LikertScale.png)
+![image](/documentation/assets/img/key-concepts/input-controls/LikertScale.png)
 
 ### Purpose
 
@@ -84,7 +84,7 @@ When first loaded, this control is in an "untouched" state, with a semi-transpar
 <div class="variable-definition">
 ## <a name="Number-Input"></a>Number Input
 
-![image](/assets/img/key-concepts/input-controls/NumberInput.png)
+![image](/documentation/assets/img/key-concepts/input-controls/NumberInput.png)
 
 ### Purpose
 
@@ -107,7 +107,7 @@ Please note that because of the way numbers are represented scientifically, the 
 <div class="variable-definition">
 ## <a name="Radio-Group"></a>Radio Group
 
-![image](/assets/img/key-concepts/input-controls/RadioGroup.png)
+![image](/documentation/assets/img/key-concepts/input-controls/RadioGroup.png)
 
 ### Purpose
 
@@ -131,7 +131,7 @@ A radio group is a control that allows participants to select a single choice fr
 <div class="variable-definition">
 ## <a name="Relative-Date-Picker"></a>Relative Date Picker
 
-![image](/assets/img/key-concepts/input-controls/RelativeDatePicker.png)
+![image](/documentation/assets/img/key-concepts/input-controls/RelativeDatePicker.png)
 
 ### Purpose
 
@@ -154,7 +154,7 @@ Unlike the date picker control, the relative date picker does not allow you to s
 <div class="variable-definition">
 ## <a name="Text-Area"></a>Text Area
 
-![image](/assets/img/key-concepts/input-controls/TextArea.png)
+![image](/documentation/assets/img/key-concepts/input-controls/TextArea.png)
 
 ### Purpose
 
@@ -174,7 +174,7 @@ The text area control provides participants with a simple field for data entry o
 <div class="variable-definition">
 ## <a name="Text-Input"></a>Text Input
 
-![image](/assets/img/key-concepts/input-controls/TextInput.png)
+![image](/documentation/assets/img/key-concepts/input-controls/TextInput.png)
 
 ### Purpose
 
@@ -196,7 +196,7 @@ The text input control provides participants with a field for simple data entry 
 <div class="variable-definition">
 ## <a name="Toggle"></a>Toggle
 
-![image](/assets/img/key-concepts/input-controls/Toggle.png)
+![image](/documentation/assets/img/key-concepts/input-controls/Toggle.png)
 
 ### Purpose
 
@@ -217,7 +217,7 @@ The toggle control provides participants a switch that can be toggled on or off,
 <div class="variable-definition">
 ## <a name="Toggle-Button-Group"></a>Toggle Button Group
 
-![image](/assets/img/key-concepts/input-controls/ToggleButtonGroup.png)
+![image](/documentation/assets/img/key-concepts/input-controls/ToggleButtonGroup.png)
 
 ### Purpose
 
@@ -240,7 +240,7 @@ It is provided as an alternative to the checkbox group for scenarios where it ma
 <div class="variable-definition">
 ## <a name="Visual-Analog-Scale"></a>Visual Analog Scale
 
-![image](/assets/img/key-concepts/input-controls/VisualAnalogScale.png)
+![image](/documentation/assets/img/key-concepts/input-controls/VisualAnalogScale.png)
 
 ### Purpose
 

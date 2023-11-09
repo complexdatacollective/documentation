@@ -335,7 +335,8 @@
                 "name": "IRB and Security Best Practices",
                 "path": "/en/desktop/reference/irb-best-practices",
                 "source": "irb-best-practices",
-                "docId": null
+                "docId": "Security Best Practices",
+                "language": "en"
               },
               {
                 "type": "file",

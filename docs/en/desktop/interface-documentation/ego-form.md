@@ -1,7 +1,6 @@
 ---
 title: Ego Form
 
-
 image: /assets/img/interface-documentation/ego-form/egoform-example.png
 type: Ego Interpreter
 creates: Ego attribute data
@@ -9,7 +8,7 @@ uses_prompts: No
 good:
   - Use this Interface as a simple way to collect attribute data on each participant in your study.
   - Consider adding this Interface toward the beginning of your survey to capture data on your participant before asking them to provide data on the individuals in their network.
-bad: 
+bad:
   - Avoid overloading the form with too many fields and/or text-heavy prompts which make the Interface burdensome to complete.
 ---
 
@@ -19,4 +18,4 @@ The Ego Form is an interface that collects data on your participant (ego). When 
 
 The configurable [form](../_key-concepts/forms.md) determines which [variables](../_reference/variable-types.md) will be assigned to the ego section of the network.
 
-![Image](/assets/img/interface-documentation/ego-form/architect-ego-form.png)
+![Image](/documentation/assets/img/interface-documentation/ego-form/architect-ego-form.png)
