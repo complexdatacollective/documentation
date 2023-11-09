@@ -2,6 +2,7 @@
 title: Contributing Code
 wip: false
 ---
+
 ## Contributing Code to Network Canvas
 
 We welcome all code contributions, however small. These could take the form of bug fixes, new features, or improvements to existing functionality. We do not (yet) have a formal developer contribution guide. Please contact us on GitHub should you have specific questions regarding technical matters.
@@ -25,7 +26,7 @@ To submit code for consideration, file a pull request (PR) in the relevant GitHu
 
 ### CODACO 
 
-The Complex Data Collective (CODACO) is a registered nonprofit whose purpose is to design, develop, and promote digital tools that allow researchers to explore complex structural data. See the CODACO By-Laws for specific governance, membership, and regulations: <https://coda.co/docs/codaco-bylaws.pdf>
+The Complex Data Collective (CODACO) is a registered nonprofit whose purpose is to design, develop, and promote digital tools that allow researchers to explore complex structural data. See the CODACO By-Laws for specific governance, membership, and regulations: [https://coda.co/docs/codaco-bylaws.pdf](https://coda.co/docs/codaco-bylaws.pdf)
 
 CODACO is the sole copyright holder of the Network Canvas Software.
 
@@ -33,15 +34,15 @@ CODACO is the sole copyright holder of the Network Canvas Software.
 
 The Network Canvas Software consists of three software applications (Architect, Interviewer, and Server), their associated libraries, and their source code. This software was created by the core Network Canvas project team and their external contracted developers, with support by the National Institute of Health (R01 DA042711).
 
-The Network Canvas project repositories (“main repositories”) are located under the CODACO GitHub organization: <https://github.com/complexdatacollective> 
+The Network Canvas project repositories (“main repositories”) are located under the CODACO GitHub organization: [https://github.com/complexdatacollective](https://github.com/complexdatacollective)
 
 ### Core Network Canvas Project Team
 
 The core Network Canvas project team consists of the following individuals:
 
-* Michelle Birket
-* Gregory Phillips II
-* Patrick Janulis
-* Bernie Hogan
-* Kate Banner
-* Joshua Melville
+- Michelle Birket
+- Gregory Phillips II
+- Patrick Janulis
+- Bernie Hogan
+- Kate Banner
+- Joshua Melville

@@ -30,7 +30,12 @@ Upon opening Architect, you are greeted by the **start screen**. Like the start 
 In this tutorial we will be building a protocol from scratch, so we are going to start by creating a blank protocol. Click the "Create New Protocol" button within the tasks panel. Save the file with a name and location that you will be able to find later.
 
 <KeyConcept title="Key Concept: the Protocol File">
-  Network Canvas protocols are stored in a file with the extension `.netcanvas`. They are just like any other files on your computer, meaning you can move them around, rename them (more about this later), and you can (and should!) back them up. The `.netcanvas` file contains all of the data in your protocol. So if you use roster data, images, or video, these will be embedded within the file.
+  Network Canvas protocols are stored in a file with the extension `.netcanvas`.
+  They are just like any other files on your computer, meaning you can move them
+  around, rename them (more about this later), and you can (and should!) back
+  them up. The `.netcanvas` file contains all of the data in your protocol. So
+  if you use roster data, images, or video, these will be embedded within the
+  file.
 </KeyConcept>
 
 ## The protocol overview screen
@@ -93,8 +98,12 @@ First, within the timeline view, we click the add a stage button. From the inter
 
 Before we can continue, we must tell Architect which type of node this interface will create. Since this is our first name generator, we have no node types defined yet. Click the "Create New Node Type" button to begin the process of creating one.
 
-<KeyConcept title="Key Concept: Node and Edge &quot;Types&quot;">
-  Part of the ontological flexibility of the Network Canvas suite is the ability to model unlimited numbers of node and edge types. These types are top level categories that differentiate nodes and edges from one-another. Common node types might include "person", "place", or "organization", but these categories are entirely up to you to decide upon.
+<KeyConcept title='Key Concept: Node and Edge "Types"'>
+  Part of the ontological flexibility of the Network Canvas suite is the ability
+  to model unlimited numbers of node and edge types. These types are top level
+  categories that differentiate nodes and edges from one-another. Common node
+  types might include "person", "place", or "organization", but these categories
+  are entirely up to you to decide upon.
 </KeyConcept>
 
 Our name generator will ask about people, so we will name our node type "Person". We can select a color to differentiate this node type from others, though in this case we will leave the default coral color selected.
@@ -118,7 +127,8 @@ Most stages use the concept of "prompts" to allow you to define questions to put
 You can have multiple prompts on a single stage, or a single prompt per stage - the choice is yours. You may wish to think about grouping prompts by theme, and then having one stage for each theme. For example, a "Name Generator (family)" stage could contain prompts about family alters, and "Name Generator (colleagues)" could contain prompts about professional alters.
 
 <KeyConcept title="Key Concept: Prompts">
-  Prompts can contain formatting such as bold or italicized text to create emphasis and rhythm. To create this formatting, use markdown syntax.
+  Prompts can contain formatting such as bold or italicized text to create
+  emphasis and rhythm. To create this formatting, use markdown syntax.
 </KeyConcept>
 
 Click the "Create New" button in the prompt section, to open the new prompt edit form.
@@ -139,6 +149,7 @@ Clicking it will open a window with the current stage loaded, and show the inter
 If the window becomes too large, you can scale it so that you can fit it within your workspace.
 
 It is important to note that although you can enter data in preview mode - for example by creating nodes - the data does not persist after you close the window!
+
 </KeyConcept>
 
 Click the pink "Preview" button in the bottom left hand corner of the stage editor, and the preview window will open.
@@ -162,7 +173,9 @@ Next, we need to choose a data source for this side panel. We have two options: 
 You can optionally preview the interface at this point, checking that the prompts and the form look and function as you expected. When you are satisfied, click continue to add your stage.
 
 <TipBox>
-  At any point during this tutorial, free free to click the &quot;Save Changes&quot; button in the bottom bar when on the timeline view, or select &quot;File -> Save&quot; from the menu.
+  At any point during this tutorial, free free to click the &quot;Save
+  Changes&quot; button in the bottom bar when on the timeline view, or select
+  &quot;File -> Save&quot; from the menu.
 </TipBox>
 
 ## Name Generator using Forms
@@ -189,6 +202,7 @@ For the first field, we want to know the name of the clinic the participant is n
 When you want to create a new variable, click "Select Variable," type the name of the new variable, and select "Create new variable" or press Enter.
 
 Otherwise, click an existing variable from the list.
+
 </TipBox>
 
 Finally, we choose the input control that will be shown to collect this variable.
@@ -197,6 +211,7 @@ Finally, we choose the input control that will be shown to collect this variable
   Architect and Interviewer implement many different types of input control (text, number, checkbox group, toggle, radio button group, toggle button group, date picker, likert scale, visual analog scale).
 
 This is because the most appropriate interface for assigning a variable depends very much on the specific nature of the variable, and not just on its data type. For example, when collecting an ordinal variable that represents a likert scale, you might prefer a range slider OR a group of radio buttons.
+
 </KeyConcept>
 
 Because we are asking for the name of the clinic - a simple text variable - a text input is the most appropriate option.
@@ -247,7 +262,9 @@ We can also narrow down the options that appear to a participant when they searc
 ![Image](../../assets/img/architect-guide/roster-search.png)
 
 <TipBox>
-  Refer to our Interface Documentation for more in depth instruction, including useful Do's and Don'ts of working with [roster data](../_interface-documentation/small-roster-name-generator.md).
+  Refer to our Interface Documentation for more in depth instruction, including
+  useful Do's and Don'ts of working with [roster
+  data](../_interface-documentation/small-roster-name-generator.md).
 </TipBox>
 
 Last, we implement a prompt for the stage, following the same process we did in the previous stages. We enter the prompt that includes instructions for how to nominate a node from the roster, "Please select any members of your degree class that you spend time with **other than when studying**. Tap a card to select, and press the **down arrow** when you are finished."
@@ -332,8 +349,9 @@ We finish by clicking "Save and Close" to close the prompt editor, then "Save an
 
 Now we'll configure another Sociogram, but this time we'll bring in an image asset to serve as the background. Follow all the previous steps, but now choose an image as the background type instead of using the concentric circles. If you have an image file saved to your resource library you can browse for it, otherwise you can add an image file saved elsewhere on your device. In this case, we designed a quadrant image where we will ask the participant to drag their alters based on the context of the relationship.
 
-<TipBox danger={true}>
-  You should think carefully about how the choices you make regarding the background will impact the way your participants position their nodes.
+<TipBox danger>
+  You should think carefully about how the choices you make regarding the
+  background will impact the way your participants position their nodes.
 </TipBox>
 
 As before, we will enter a prompt and not assign a task for the stage. The prompt text is, "Please position the people you have named in the boxes according to which group you feel they most belong to." We save the stage and move on to the next.
@@ -402,12 +420,13 @@ We will now complete the exact same steps for the second prompt, which reads, "P
 
 We have now finished configuring this sociogram stage.
 
-<TipBox danger={true}>
+<TipBox danger>
   When previewing a stage using an interface type that does not create nodes, you may notice that no nodes are available to test the stage's functionality.
 
 To address this, the preview mode allows you to create nodes from any earlier stages in your interview that are capable of this (primarily name generators or roster interfaces).
 
 Simply navigate to a stage that creates nodes from within preview mode, create some nodes suitable for your sociogram stage, and then navigate to the sociogram stage - your nodes will appear, and you will be able to test edge creation, attribute toggling, and positioning.
+
 </TipBox>
 
 ## Creating an Ordinal Bin
@@ -420,6 +439,7 @@ We now wish to create an Ordinal Bin interface so that we can quickly and effici
 Buckets are where nodes are found initially, before they have been placed, or dragged. Bins are where nodes are placed are dragged _to_. This is where nodes end up.
 
 Both bins and buckets can have the sort order of the nodes within them defined. You can use this to (for example) make the bucket show nodes with a certain attribute, such as closeness, first. This may help with a task such as positioning nodes on a sociogram.
+
 </KeyConcept>
 
 As with previous interfaces, begin with naming the stage ("Contact Frequency"), and selecting our node type ("Person").
@@ -432,40 +452,32 @@ Create a variable named "communication_freq" with the following possible options
 
 <table>
   <tr>
-   <td><strong>Label</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+    <td>
+      <strong>Label</strong>
+    </td>
+    <td>
+      <strong>Value</strong>
+    </td>
   </tr>
   <tr>
-   <td>Last 24 hours
-   </td>
-   <td>5
-   </td>
+    <td>Last 24 hours</td>
+    <td>5</td>
   </tr>
   <tr>
-   <td>Last week
-   </td>
-   <td>4
-   </td>
+    <td>Last week</td>
+    <td>4</td>
   </tr>
   <tr>
-   <td>Last six months
-   </td>
-   <td>3
-   </td>
+    <td>Last six months</td>
+    <td>3</td>
   </tr>
   <tr>
-   <td>Last two years
-   </td>
-   <td>2
-   </td>
+    <td>Last two years</td>
+    <td>2</td>
   </tr>
   <tr>
-<td>Over two years ago
-   </td>
-   <td>-1
-   </td>
+    <td>Over two years ago</td>
+    <td>-1</td>
   </tr>
 </table>
 

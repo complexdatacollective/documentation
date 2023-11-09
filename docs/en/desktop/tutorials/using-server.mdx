@@ -101,7 +101,9 @@ Server is organized around the concept of 'workspaces', where each workspace is 
 <ImageFloatLeft
   name="Workspaces"
   src="/documentation/assets/uploads/screen-shot-2021-04-29-at-5.03.54-pm.png"
-/>Your workspaces are shown in the purple column on the left hand side of the app, with a large plus button always visible that can be used to create a new workspace.
+/>
+Your workspaces are shown in the purple column on the left hand side of the app,
+with a large plus button always visible that can be used to create a new workspace.
 
 To create a new workspace, locate a `.netcanvas` protocol file. For the purposes of this demonstration, we can use the sample protocol file that has been discussed in the tutorials on Interviewer and Architect (which can be downloaded [here](https://github.com/complexdatacollective/Documentation/blob/master/protocols/Sample%20Protocol%20v2.netcanvas)).
 
@@ -139,7 +141,9 @@ Getting data from Interviewer into Server requires "[pairing](../_key-concepts/p
 To pair a device with Server, make sure you have both Interviewer and Server programs open and running, and you have configured your network as [described above](#networking-configuration).
 
 <TipBox>
-  For testing purposes, and to follow along with this tutorial, you may wish to run Interviewer and Server on the same computer, which will avoid the need to configure networking.
+  For testing purposes, and to follow along with this tutorial, you may wish to
+  run Interviewer and Server on the same computer, which will avoid the need to
+  configure networking.
 </TipBox>
 
 ### Using automatic Server discovery
@@ -149,7 +153,9 @@ Your device running Interviewer needs to know the IP address of the computer run
 This feature uses a technology called multicast DNS (also known as Bonjour or Zeroconf), which is also used for Apple's AirPlay feature, and in Google's Chromecast devices. Multicast DNS typically only works when devices are on the same LAN, but is enabled by default in both Server and Interviewer as a 'best case' option.
 
 <TipBox>
-  Click the networking status indicator in the top right of Server to see information about the status of the automatic discovery feature, as well as other useful networking information.
+  Click the networking status indicator in the top right of Server to see
+  information about the status of the automatic discovery feature, as well as
+  other useful networking information.
 </TipBox>
 
 With Interviewer open, scroll down to the 'Server Status' panel at the bottom of the start screen. Interviewer will automatically search for any Servers available on the same network. If Interviewer detects a nearby computer running Server, it will appear as a card on the panel displaying the name of the computer and its IP address.
@@ -178,7 +184,9 @@ In the manual connection dialog, you must enter in the IP address and port numbe
 />
 
 <TipBox>
-  Please note that the connection information listed here may not reflect the publicly routable address for Server if you have configured NAT or port forwarding through a gateway.
+  Please note that the connection information listed here may not reflect the
+  publicly routable address for Server if you have configured NAT or port
+  forwarding through a gateway.
 </TipBox>
 
 ### The pairing flow
@@ -200,7 +208,8 @@ To accept this request, click the "pair with device". As soon as you accept the 
 At the same time, a new dialog will open in Interviewer with space to enter this code. To complete pairing, enter the code provided by Server into the empty box, then click the green "pair" button.
 
 <TipBox>
-  You can copy and paste the pairing code from within Server. This may make entering it less error-prone.
+  You can copy and paste the pairing code from within Server. This may make
+  entering it less error-prone.
 </TipBox>
 
 Once confirmed, the Server status section in Interviewer will update to show the connection status with Server, and a new option to import from Server will appear in the protocols section. Additionally, data export to Server will be enabled.
@@ -272,8 +281,11 @@ When exporting CSV data is enabled in step 1, an additional step appears that al
 
 By default the export does not include an adjacency matrix, since this format will result in an extremely large file with relatively little data. It is included for compatibility reasons, should you need it.
 
-<TipBox danger={true}>
-  It is **very** easy to create unmanageably large files by combining the "merge sessions by protocol" and "adjacency matrix" export options. A study containing 2000 cases will produce a single 13gb CSV file when using these options together! Ensure that you require both options before enabling them.
+<TipBox danger>
+  It is **very** easy to create unmanageably large files by combining the "merge
+  sessions by protocol" and "adjacency matrix" export options. A study
+  containing 2000 cases will produce a single 13gb CSV file when using these
+  options together! Ensure that you require both options before enabling them.
 </TipBox>
 
 ### Concluding the export

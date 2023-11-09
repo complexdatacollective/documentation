@@ -109,5 +109,9 @@ export function getDoc({
         ? (matterResult.data.toc as boolean)
         : null,
     docId: matterResult.data.docId ? (matterResult.data.docId as string) : null,
+    wip:
+      matterResult.data.wip !== undefined
+        ? (matterResult.data.wip as boolean)
+        : null,
   };
 }

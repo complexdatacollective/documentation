@@ -2,6 +2,7 @@
 title: Choosing a Hardware Device for Interviewer
 wip: false
 ---
+
 Choosing a device for running Interviewer is an important step in optimizing the quality of the data that you collect, as well as the overall workflow of running a Network Canvas study.
 
 ## Key Concerns
@@ -25,7 +26,7 @@ The third is that **hardware performance is directly correlated with user experi
 👎 Tend to use very wide aspect ratio displays, which are not ideal for Interviewer.  
 👎 Not generally capable of running other research software.  
 👎 Can be difficult to import protocols and manage data.  
-👎 Keyboard must be purchased separately.  
+👎 Keyboard must be purchased separately.
 
 ### Chromebook
 
@@ -35,7 +36,7 @@ The third is that **hardware performance is directly correlated with user experi
 ✅ Usually use the latest Android version.  
 👎 Some models perform poorly when running Android apps.  
 👎 Not all models support running Android apps.  
-👎 Not generally capable of running other research software.  
+👎 Not generally capable of running other research software.
 
 ### iPad
 
@@ -43,16 +44,16 @@ The third is that **hardware performance is directly correlated with user experi
 ✅ Potentially more acceptable in certain settings.  
 ⛔️ **No longer generally available due to situation with Apple App Store Review.**  
 👎 Can be difficult to import protocols and manage data.  
-👎 Expensive! Keyboard must be purchased separately.  
+👎 Expensive! Keyboard must be purchased separately.
 
 ### Laptop
 
-✅ Familiar environment for researchers and and participants.  
+✅ Familiar environment for researchers and and participants.
 ✅ Simple to manage protocols and interview data.  
 ✅ Able to run other general purpose software if required.  
 ✅ Easy to purchase through IT procurement processes.  
 👎 Can be less portable and have poorer battery life.  
-👎 Higher quality displays are more expensive.  
+👎 Higher quality displays are more expensive.
 
 ## Overall Recommendation
 

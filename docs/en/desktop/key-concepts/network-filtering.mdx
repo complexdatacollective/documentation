@@ -37,7 +37,7 @@ Similar to skip logic rules, filtering rules have two types that can be targeted
 
 Unlike skip logic rules (which are aggregated into an overall boolean `true` or `false` value), filter rules are applied to each node and edge in the network, and are not aggregated. Instead, the nodes that remain are those that satisfy the rule constraints.
 
-<TipBox danger={true}>
+<TipBox danger>
   It is important to remember that filtering retains the validity of the network
   model: the returned network will not contain orphaned nodes when using an edge
   query, or partially disconnected edges, since these are not phenomenologically
@@ -65,7 +65,7 @@ To achieve this using network filtering, we implemented the following edge and n
 
 Applying these rules within this stage determines that only HIV+ nodes who have a sex relationship will be shown. All nodes that do not have a sex relationship will be filtered out - even if they have attribute `HIV_pos = true`.
 
-<TipBox danger={true}>
+<TipBox danger>
   If your filter query (the sum of all defined rules within the stage) includes
   an edge rule, you will also filter alters. For example, if your rule is set to
   filter the existence of an edge type, such as 'sex', any nodes that would

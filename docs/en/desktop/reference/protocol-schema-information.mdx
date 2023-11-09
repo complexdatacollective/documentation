@@ -11,10 +11,11 @@ Interviewer and Architect (from version 4.2.0 onward) implement a feature that t
 
 Although every effort is made to maintain compatibility with new schema versions, any features implemented that require a schema update will be unavailable to you until you migrate your protocol. We _strongly_ encourage you to update your protocol files wherever possible, so that you are able to use the newest Network Canvas features.
 
-<TipBox danger={true}>
+<TipBox danger>
   We urge iPadOS and Android users to follow the advice set out in the \\\\[configuring devices prior to starting data collection](../_how-to/configuring-devices.md) article, and disable automatic app updates so that they are not caught out by breaking changes that result from new protocol schema versions.
 
 This is essential if users wish to continue using a particular version of an app to ensure it remains compatible with their existing protocols (rollback to prior versions is not possible on these platforms!).
+
 </TipBox>
 
 ## What is a protocol schema?
@@ -73,12 +74,13 @@ Migrating a protocol happens within Architect, and is automatic. The process wor
 3. Architect will inform you that the protocol file can be upgraded, which happens by creating a copy (so that your original file is preserved). If you choose to continue, you will be prompted for a location to save your upgraded protocol.
 4. Architect will automatically append "(schema version X)" to the filename, which may help you to keep track of the different versions of your protocol, and to differentiate them within Server and Interviewer.
 
-<TipBox danger={true}>
+<TipBox danger>
   Schema changes may represent changes to the underlying network data model and, therefore, protocols migrated from one schema version to another must be treated as different workspaces within Server.
 
 Users that migrate their protocols to a new schema version will need to create a merging script to handle combining the two data sources from the two workspaces once exported.
 
 Although this process introduces an extra step in a user workflow, it promotes better quality data and greater user control.
+
 </TipBox>
 
 ## Compatibility Table

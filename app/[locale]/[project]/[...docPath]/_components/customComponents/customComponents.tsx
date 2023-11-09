@@ -6,6 +6,7 @@ import ImageFullWith from './ImageFullWith';
 import KeyConcept from './KeyConcept';
 import StandAloneImage from './StandAloneImage';
 import TipBox from './TipBox';
+import { CheckSquare, XOctagon } from 'lucide-react';
 
 export const customComponents = {
   ...styledHeadings,
@@ -16,4 +17,6 @@ export const customComponents = {
   KeyConcept,
   StandAloneImage,
   TipBox,
+  GoodPractice: () => <CheckSquare className="inline text-green-500" />,
+  BadPractice: () => <XOctagon className="inline text-red-500" />,
 };

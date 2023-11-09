@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import { Terminal, Lightbulb } from 'lucide-react';
+import { Terminal, Lightbulb, ShieldAlert } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 type TipBoxProps = {
@@ -15,7 +15,11 @@ const TipBox = ({ children, danger }: TipBoxProps) => {
     >
       <Terminal className="h-4 w-4" />
       <AlertTitle>
-        <Lightbulb className={`${danger ? 'text-red-400' : 'text-blue-500'}`} />
+        {danger ? (
+          <ShieldAlert className="text-red-400" />
+        ) : (
+          <Lightbulb className="text-blue-500" />
+        )}
       </AlertTitle>
       <AlertDescription>{children}</AlertDescription>
     </Alert>

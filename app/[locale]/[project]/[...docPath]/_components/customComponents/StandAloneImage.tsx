@@ -10,8 +10,8 @@ const StandAloneImage = ({ src, content, name }: StandAloneImgProps) => {
   return (
     <div className="m-0 flex w-full flex-col items-center p-0">
       <Image
-        width={450}
-        height={450}
+        width={500}
+        height={500}
         src={src}
         alt={name ?? src}
         style={{ marginBlock: '10px' }}

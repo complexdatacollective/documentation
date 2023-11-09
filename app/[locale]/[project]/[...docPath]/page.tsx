@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
 import { customComponents } from './_components/customComponents/customComponents';
+import WorkInProgress from './_components/customComponents/WorkInProgress';
 
 type PageParams = {
   locale: string;
@@ -67,7 +68,7 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   if (!doc || doc.content === null) notFound();
 
-  const { title, content, lastUpdated, toc, docId } = doc;
+  const { title, content, lastUpdated, toc, docId, wip } = doc;
   const headings = toc ? await getHeadings(content) : null;
 
   return (
@@ -77,7 +78,12 @@ const Page = async ({ params }: { params: PageParams }) => {
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
-        <MDXRemote components={customComponents} source={content} />
+        {wip ? (
+          <WorkInProgress />
+        ) : (
+          <MDXRemote components={customComponents} source={content} />
+        )}
+
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (
