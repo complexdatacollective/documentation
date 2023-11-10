@@ -15,7 +15,7 @@ export default function NavigationMenus({
   const decodedPathItems = pathItems.map(decodeURIComponent);
 
   return (
-    <ul>
+    <ul className="flex flex-col gap-1 ">
       {sidebarData.map((item) => {
         if (item.type === 'folder') {
           const folder = item;
@@ -45,7 +45,7 @@ export default function NavigationMenus({
                 decodedPathItems.includes(file.source)
                   ? 'text-violet-500'
                   : 'text-slate-500'
-              } transition-colors dark:hover:text-white`}
+              } transition-colors hover:text-violet-500 dark:hover:text-white`}
             >
               <Link className="text-sm" href={file.path}>
                 {file.name}

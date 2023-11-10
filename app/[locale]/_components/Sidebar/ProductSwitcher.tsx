@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useRouter } from '@/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { type Dispatch, type SetStateAction } from 'react';
 
 type ProductSwitcherProps = {
@@ -23,13 +23,14 @@ export default function ProductSwitcher({
 }: ProductSwitcherProps) {
   const router = useRouter();
   const t = useTranslations('ProductSwitcher');
+  const locale = useLocale();
 
   return (
     <Select
       value={product}
       onValueChange={(val) => {
         setProduct(val);
-        router.push(`/${val}`);
+        router.push(`/${locale}/${val}`);
       }}
     >
       <SelectTrigger className="h-16 w-full text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 lg:text-base">

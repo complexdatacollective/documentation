@@ -116,3 +116,12 @@
     scroll-margin-top: 80px;
   }
 }
+
+/* custom component styles */
+.mainHeading {
+  font-size: 42px !important;
+}
+.btn p {
+  margin: 0;
+}
+/* custom component styles */

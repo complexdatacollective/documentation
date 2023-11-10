@@ -4,9 +4,10 @@ import { getHeadings } from '@/lib/tableOfContents';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
-import { styledHeadings } from './_components/CustomHeadings';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
+import { customComponents } from './_components/customComponents/customComponents';
+import WorkInProgress from './_components/customComponents/WorkInProgress';
 
 type PageParams = {
   locale: string;
@@ -67,17 +68,22 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   if (!doc || doc.content === null) notFound();
 
-  const { title, content, lastUpdated, toc, docId } = doc;
+  const { title, content, lastUpdated, toc, docId, wip } = doc;
   const headings = toc ? await getHeadings(content) : null;
 
   return (
     <div className="flex items-start gap-1">
-      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg">
-        <p>Title: {title}</p>
+      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
+        <h1>{title}</h1>
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
-        <MDXRemote components={{ ...styledHeadings }} source={content} />
+        {wip ? (
+          <WorkInProgress />
+        ) : (
+          <MDXRemote components={customComponents} source={content} />
+        )}
+
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (
