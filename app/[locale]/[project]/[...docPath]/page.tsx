@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Separator } from '@/components/ui/separator';
 import { getAllMarkdownDocs, getDoc, processPath } from '@/lib/docs';
 import { getHeadings } from '@/lib/tableOfContents';
@@ -55,7 +57,7 @@ export async function generateStaticParams({
 }
 
 // The Page Component
-const Page = async ({ params }: { params: PageParams }) => {
+const Page = ({ params }: { params: PageParams }) => {
   const { locale, project, docPath } = params;
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
@@ -66,14 +68,15 @@ const Page = async ({ params }: { params: PageParams }) => {
     pathSegment: docPath,
   });
 
-  if (!doc || doc.content === null) notFound();
+  // if (!doc || doc.content === null) notFound();
 
-  const { title, content, lastUpdated, toc, docId, wip } = doc;
-  const headings = toc ? await getHeadings(content) : null;
+  // const { title, content, lastUpdated, toc, docId, wip } = doc;
+  // const headings = toc ? await getHeadings(content) : null;
 
   return (
     <div className="flex items-start gap-1">
-      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
+      {doc ? <h1>{doc.content}</h1> : <h1>No DOC</h1>}
+      {/* <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
@@ -91,7 +94,7 @@ const Page = async ({ params }: { params: PageParams }) => {
           <TableOfContents nodes={headings} />
           <Separator />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
