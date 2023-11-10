@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <div>Custom 404 Page</div>;
+  return <div className="text-red-400">Custom 404 Page</div>;
 }
