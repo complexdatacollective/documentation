@@ -75,7 +75,7 @@ const Page = ({ params }: { params: PageParams }) => {
 
   return (
     <div className="flex items-start gap-1">
-      {doc ? <h1>{doc.content}</h1> : <h1>No DOC</h1>}
+      {doc ? <h1>{doc?.content}</h1> : <h1>No DOC</h1>}
       {/* <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
         {docId && (
