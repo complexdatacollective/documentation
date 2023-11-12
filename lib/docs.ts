@@ -113,5 +113,16 @@ export function getDoc({
       matterResult.data.wip !== undefined
         ? (matterResult.data.wip as boolean)
         : null,
+    summaryData: {
+      summary: matterResult.data.summary
+        ? (matterResult.data.summary as string)
+        : null,
+      prerequisites: matterResult.data.prerequisites
+        ? (matterResult.data.prerequisites as string)
+        : null,
+      completion_time: matterResult.data.completion_time
+        ? (matterResult.data.completion_time as string)
+        : null,
+    },
   };
 }

@@ -8,6 +8,7 @@ import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
 import { customComponents } from './_components/customComponents/customComponents';
 import WorkInProgress from './_components/customComponents/WorkInProgress';
+import SummaryCard from './_components/customComponents/SummaryCard';
 
 type PageParams = {
   locale: string;
@@ -68,13 +69,14 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   if (!doc || doc.content === null) notFound();
 
-  const { title, content, lastUpdated, toc, docId, wip } = doc;
+  const { title, content, lastUpdated, toc, docId, wip, summaryData } = doc;
   const headings = toc ? await getHeadings(content) : null;
 
   return (
     <div className="flex items-start gap-1">
       <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
+        <SummaryCard data={summaryData} />
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
