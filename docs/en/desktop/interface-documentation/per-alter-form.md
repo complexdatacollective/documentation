@@ -1,7 +1,7 @@
 ---
 title: Per Alter Form
 
-image: /assets/img/interface-documentation/per-alter-form/example.png
+image: /documentation/assets/img/interface-documentation/per-alter-form/example.png
 type: Name Interpreter
 creates: Attribute data on a single node type
 uses_prompts: No

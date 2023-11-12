@@ -9,6 +9,8 @@ import TableOfContents from './_components/TableOfContents';
 import { customComponents } from './_components/customComponents/customComponents';
 import WorkInProgress from './_components/customComponents/WorkInProgress';
 import SummaryCard from './_components/customComponents/SummaryCard';
+import ComponentInfo from './_components/customComponents/ComponentInfo';
+import Practices from './_components/customComponents/Practices';
 
 type PageParams = {
   locale: string;
@@ -69,13 +71,24 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   if (!doc || doc.content === null) notFound();
 
-  const { title, content, lastUpdated, toc, docId, wip, summaryData } = doc;
+  const {
+    title,
+    content,
+    lastUpdated,
+    toc,
+    docId,
+    wip,
+    summaryData,
+    componentInfo,
+    practices,
+  } = doc;
   const headings = toc ? await getHeadings(content) : null;
 
   return (
     <div className="flex items-start gap-1">
       <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
+        <ComponentInfo data={componentInfo} />
         <SummaryCard data={summaryData} />
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
@@ -86,6 +99,7 @@ const Page = async ({ params }: { params: PageParams }) => {
           <MDXRemote components={customComponents} source={content} />
         )}
 
+        <Practices data={practices} />
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (

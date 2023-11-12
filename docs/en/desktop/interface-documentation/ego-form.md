@@ -1,7 +1,7 @@
 ---
 title: Ego Form
 
-image: /assets/img/interface-documentation/ego-form/egoform-example.png
+image: /documentation/assets/img/interface-documentation/ego-form/egoform-example.png
 type: Ego Interpreter
 creates: Ego attribute data
 uses_prompts: No

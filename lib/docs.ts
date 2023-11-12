@@ -124,5 +124,24 @@ export function getDoc({
         ? (matterResult.data.completion_time as string)
         : null,
     },
+    // Todo: rename the object later
+    componentInfo: {
+      image: matterResult.data.image
+        ? (matterResult.data.image as string)
+        : null,
+      type: matterResult.data.type ? (matterResult.data.type as string) : null,
+      creates: matterResult.data.creates
+        ? (matterResult.data.creates as string)
+        : null,
+      uses_prompts: matterResult.data.uses_prompts
+        ? (matterResult.data.uses_prompts as string)
+        : null,
+    },
+    practices: {
+      good: matterResult.data.good
+        ? (matterResult.data.good as string[])
+        : null,
+      bad: matterResult.data.bad ? (matterResult.data.bad as string[]) : null,
+    },
   };
 }
