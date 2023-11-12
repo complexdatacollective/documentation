@@ -14,6 +14,7 @@ prerequisites: >-
 completion_time: 30 minutes
 title: Working with Roster Data
 wip: false
+toc: true
 ---
 
 ## What is a roster?

@@ -75,8 +75,6 @@ export function getDoc({
     decodeURIComponent(decodeURIComponent(segment)),
   );
 
-  console.log('Working, decodedPathSegment:', decodedPathSegment);
-
   const path = join(
     process.cwd(),
     env.NEXT_PUBLIC_DOCS_PATH,

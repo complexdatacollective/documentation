@@ -2,7 +2,6 @@
 title: IRB and Security Best Practices
 docId: 'Security Best Practices'
 language: 'en'
-toc: true
 ---
 
 We recognize that data security is a primary concern for most researchers. Network Canvas was born in the context of sensitive public health research with marginalized populations, and we have used our experience conducting studies in this space to guide our security paradigm.
