@@ -29,8 +29,8 @@ const withNextIntl = require('next-intl/plugin')(
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/documentation',
-  assetPrefix: '/documentation',
+  // basePath: '/documentation',
+  // assetPrefix: '/documentation',
   images: {
     unoptimized: true,
   },
