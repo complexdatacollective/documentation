@@ -95,53 +95,43 @@ export function getDoc({
   }
 
   const markdownFile = fs.readFileSync(file, 'utf-8');
-  const matterResult = matter(markdownFile);
+  const { data: matterData } = matter(markdownFile);
+
+  const getSummaryData = () => {
+    const { summary, prerequisites, completion_time } = matterData;
+
+    if (summary && prerequisites && completion_time) {
+      return {
+        summary: summary as string,
+        prerequisites: prerequisites as string,
+        completion_time: completion_time as string,
+      };
+    }
+
+    return null;
+  };
 
   return {
     // Add other elements of the frontmatter here as needed.
-    title: matterResult.data.title as string,
-    lastUpdated: matterResult.data.date
-      ? (matterResult.data.date as string)
-      : null,
-    content: matterResult.content,
-    toc:
-      matterResult.data.toc !== undefined
-        ? (matterResult.data.toc as boolean)
-        : null,
-    docId: matterResult.data.docId ? (matterResult.data.docId as string) : null,
-    wip:
-      matterResult.data.wip !== undefined
-        ? (matterResult.data.wip as boolean)
-        : null,
-    summaryData: {
-      summary: matterResult.data.summary
-        ? (matterResult.data.summary as string)
-        : null,
-      prerequisites: matterResult.data.prerequisites
-        ? (matterResult.data.prerequisites as string)
-        : null,
-      completion_time: matterResult.data.completion_time
-        ? (matterResult.data.completion_time as string)
-        : null,
-    },
+    title: matterData.title as string,
+    lastUpdated: matterData.date ? (matterData.date as string) : null,
+    content: matterData.content,
+    toc: matterData.toc !== undefined ? (matterData.toc as boolean) : null,
+    docId: matterData.docId ? (matterData.docId as string) : null,
+    wip: matterData.wip !== undefined ? (matterData.wip as boolean) : null,
+    summaryData: getSummaryData(),
     // Todo: rename the object later
     componentInfo: {
-      image: matterResult.data.image
-        ? (matterResult.data.image as string)
-        : null,
-      type: matterResult.data.type ? (matterResult.data.type as string) : null,
-      creates: matterResult.data.creates
-        ? (matterResult.data.creates as string)
-        : null,
-      uses_prompts: matterResult.data.uses_prompts
-        ? (matterResult.data.uses_prompts as string)
+      image: matterData.image ? (matterData.image as string) : null,
+      type: matterData.type ? (matterData.type as string) : null,
+      creates: matterData.creates ? (matterData.creates as string) : null,
+      uses_prompts: matterData.uses_prompts
+        ? (matterData.uses_prompts as string)
         : null,
     },
     practices: {
-      good: matterResult.data.good
-        ? (matterResult.data.good as string[])
-        : null,
-      bad: matterResult.data.bad ? (matterResult.data.bad as string[]) : null,
+      good: matterData.good ? (matterData.good as string[]) : null,
+      bad: matterData.bad ? (matterData.bad as string[]) : null,
     },
   };
 }

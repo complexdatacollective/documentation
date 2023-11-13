@@ -4,16 +4,13 @@ import { Clock } from 'lucide-react';
 
 type SummaryCardProps = {
   data: {
-    summary: string | null;
-    prerequisites: string | null;
-    completion_time: string | null;
+    summary: string;
+    prerequisites: string;
+    completion_time: string;
   };
 };
 
 const SummaryCard = ({ data }: SummaryCardProps) => {
-  if (!data.summary || !data.completion_time || !data.prerequisites)
-    return null;
-
   return (
     <Card className="bg-slate-200 text-black dark:bg-slate-600 dark:text-white">
       <CardContent className="p-4">
