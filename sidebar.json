@@ -495,96 +495,12 @@
         "name": "desktop",
         "files": [
           {
-            "type": "folder",
-            "name": "тестовые-документы",
-            "files": [
-              {
-                "type": "file",
-                "name": "Кодовая книга",
-                "path": "/ru/desktop/тестовые-документы/кодовая-книга",
-                "source": "кодовая-книга",
-                "docId": null
-              },
-              {
-                "type": "file",
-                "name": "Лучшие практики по IRB и безопасности",
-                "path": "/ru/desktop/тестовые-документы/лучшие-практики-по-irb-и-безопасности",
-                "source": "лучшие-практики-по-irb-и-безопасности",
-                "docId": "Security Best Practices",
-                "language": "ru"
-              },
-              {
-                "type": "folder",
-                "name": "подпапка",
-                "files": [
-                  {
-                    "type": "file",
-                    "name": "Привет таджик",
-                    "path": "/ru/desktop/тестовые-документы/подпапка/привет-таджик",
-                    "source": "привет-таджик",
-                    "docId": null
-                  },
-                  {
-                    "type": "folder",
-                    "name": "подпапка-подчиненная",
-                    "files": [
-                      {
-                        "type": "file",
-                        "name": "Какое-то название файла",
-                        "path": "/ru/desktop/тестовые-документы/подпапка/подпапка-подчиненная/какое-то-название-файла",
-                        "source": "какое-то-название-файла",
-                        "docId": null
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "fresco",
-        "files": [
-          {
-            "type": "folder",
-            "name": "введение",
-            "files": [
-              {
-                "type": "file",
-                "name": "Fresco Введение",
-                "path": "/ru/fresco/введение/fresco-введение",
-                "source": "fresco-введение",
-                "docId": null
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "третья-папка",
-            "files": [
-              {
-                "type": "file",
-                "name": "ТЕСТ",
-                "path": "/ru/fresco/третья-папка/тест",
-                "source": "тест",
-                "docId": null
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "установка",
-            "files": [
-              {
-                "type": "file",
-                "name": "Руководство по установке фрески",
-                "path": "/ru/fresco/установка/установке",
-                "source": "установке",
-                "docId": null
-              }
-            ]
+            "type": "file",
+            "name": "Лучшие практики по IRB и безопасности",
+            "path": "/ru/desktop/irb-russian",
+            "source": "irb-russian",
+            "docId": "Security Best Practices",
+            "language": "ru"
           }
         ]
       }
