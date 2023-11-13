@@ -1,7 +1,7 @@
 ---
 title: Dyad Census
 
-image: /documentation/assets/img/interface-documentation/dyad-census/dyad-example.png
+image: /assets/img/interface-documentation/dyad-census/dyad-example.png
 type: Edge Generator
 creates: Edges of one or more types
 uses_prompts: Yes

@@ -1,7 +1,7 @@
 ---
 title: Ego Form
 
-image: /documentation/assets/img/interface-documentation/ego-form/egoform-example.png
+image: /assets/img/interface-documentation/ego-form/egoform-example.png
 type: Ego Interpreter
 creates: Ego attribute data
 uses_prompts: No
@@ -18,4 +18,4 @@ The Ego Form is an interface that collects data on your participant (ego). When 
 
 The configurable [form](../_key-concepts/forms.md) determines which [variables](../_reference/variable-types.md) will be assigned to the ego section of the network.
 
-![Image](/documentation/assets/img/interface-documentation/ego-form/architect-ego-form.png)
+![Image](/assets/img/interface-documentation/ego-form/architect-ego-form.png)

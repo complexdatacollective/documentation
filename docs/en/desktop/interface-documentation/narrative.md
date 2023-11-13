@@ -1,7 +1,7 @@
 ---
 title: Narrative
 
-image: /documentation/assets/img/interface-documentation/narrative/narrative-example.png
+image: /assets/img/interface-documentation/narrative/narrative-example.png
 type: Visualisation
 creates: Does not create data
 uses_prompts: No

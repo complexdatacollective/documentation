@@ -75,7 +75,7 @@ Note: We expect the first column to be the name of the roster item with a column
 
 Once you are satisfied with your roster, you can add it to a Network Canvas protocol from within Architect. You can add it through the Resource Library, which is available by pressing the button at the top of any protocol you are editing.
 
-![Resource library button](/documentation/assets/img/roster-tutorial/resource-button.png 'The resource library button from within a protocol in Architect')
+![Resource library button](/assets/img/roster-tutorial/resource-button.png 'The resource library button from within a protocol in Architect')
 
 You can also add it when you are creating a roster name generator. Below we walk through the steps of adding it to a name generator and we will add the roster as we go along. We will use a simple roster which includes five members of the cartoon television show, "The Simpsons", but you should be able to follow by analogy for a roster of your own making. The example CSV is available [here](/assets/simpsons-roster.csv).
 
@@ -83,25 +83,25 @@ You can also add it when you are creating a roster name generator. Below we walk
 
 To use a roster, you should select the interface "Name Generator for Roster Data". Give the stage a name (such as `roster_01`) and then create or select a node type. In the example, we have created a node type called "person" and so we will choose this. Then the program asks for "Data Source for Roster". If you have already uploaded the CSV to the Resource Library it will be available to select. Otherwise, you can upload it now.
 
-![Name Generator Roster Interface](/documentation/assets/img/roster-tutorial/roster-interface-selection.png 'Name Generator Roster Interface showing node select section')
+![Name Generator Roster Interface](/assets/img/roster-tutorial/roster-interface-selection.png 'Name Generator Roster Interface showing node select section')
 
 Before you select the roster it is useful to inspect it so see that it has formatted correctly. In the upper right corner of a roster resource is a small eye icon. Clicking on that will show the CSV that has been uploaded.
 
-![Resource preview button](/documentation/assets/img/roster-tutorial/preview-roster-button.jpg 'Resource selection screen showing the preview button for a resource')
+![Resource preview button](/assets/img/roster-tutorial/preview-roster-button.jpg 'Resource selection screen showing the preview button for a resource')
 
 With the `simpsons-roster` you can observe that there is an empty cell for occupation for Maggie. This shows the data was correctly formatted and the columns are all properly aligned.
 
-![Resource preview](/documentation/assets/img/roster-tutorial/example-roster-preview.png 'Example roster visible within the preview screen')
+![Resource preview](/assets/img/roster-tutorial/example-roster-preview.png 'Example roster visible within the preview screen')
 
 ### Formatting the display of the roster
 
 Once you have selected a roster the next three items allow you to customise the look of the roster item in interviewer. Roster items are displayed as cards rather than nodes. When a participant clicks and drags on the card they can drag it into the drop zone. This is obvious because the background will change color when the card is above it. Dropping the card in the drop zone turns it into a node.
 
-![Roster interface in Interviewer](/documentation/assets/img/roster-tutorial/roster-interview-example.png 'Example of a roster interface within Interviewer')
+![Roster interface in Interviewer](/assets/img/roster-tutorial/roster-interview-example.png 'Example of a roster interface within Interviewer')
 
 By default, the cards will display the name of the roster item. However, you can add additional details on the card by turning on 'card display options'. This will then allow you to select from the additonal columns of the CSV to be shown below the name. The left hand drop down allows you to choose the column from the CSV and the right hand item allows you to give that variable a different label. So in the `simpsons-roster` example, while the CSV had a column called `gender` (in lower case) on the card we will write `Gender` to be displayed.
 
-![Card display options](/documentation/assets/img/roster-tutorial/roster-card-options.png 'Card display options panel from within Architect')
+![Card display options](/assets/img/roster-tutorial/roster-card-options.png 'Card display options panel from within Architect')
 
 Since a roster might have a large number of people to scan, you can also enable the cards to be sorted by some value. So if we add occupation, then in the interview the participant can sort the roster by occupation.
 
@@ -128,7 +128,7 @@ Since you can only turn a roster item into a node once that means that if people
 
 With a Name Generator (quick add), we can nominate new nodes with the new node button in the lower right. But on the left hand side we can have a side panel. In fact we can have two - one for people already nominated who are now in the alter pool and one for the remaining roster items who have not yet been nominated. Below is an example of such a screen with some of the Simpsons already nominated (in the alter pool) and some still in roster.
 
-![Side panels in Name Generator](/documentation/assets/img/roster-tutorial/quick-add-roster-side-panel.png 'Name Generator Interface with side panel for roster and nodes already mentioned')
+![Side panels in Name Generator](/assets/img/roster-tutorial/quick-add-roster-side-panel.png 'Name Generator Interface with side panel for roster and nodes already mentioned')
 
 We recommend that you add all the nodes you can to the alter pool _before_ adding additional details so that you can add these details to _all_ the nominated nodes rather than zigzagging through the protocol. This is because all stages draw from the same alter pool if they use that type of node. Imagine the following scenario: the participant adds nodes on stage 3, adds some detail on stage 4 such as how close ego is to alter, and then adds more nodes on stage 5. These newly added nodes will be available if you go back to stage 4. Also note that the roster list does not change once it is in Interviewer. So all the data that you add about a node from a roster will be available when you export your case, but it will not be associated with that roster item in subsequent interview cases.
 

@@ -1,7 +1,7 @@
 ---
 layout: interface-documentation
 
-image: /documentation/assets/uploads/stage-tiestrengthcensus.png
+image: /assets/uploads/stage-tiestrengthcensus.png
 title: Tie-Strength Census
 type: Edge Generator/Edge Interpreter
 creates: Edges with weight stored on an ordinal variable

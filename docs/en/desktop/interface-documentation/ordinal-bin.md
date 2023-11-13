@@ -1,7 +1,7 @@
 ---
 title: Ordinal Bin
 
-image: /documentation/assets/img/interface-documentation/ordinal-bin/example.png
+image: /assets/img/interface-documentation/ordinal-bin/example.png
 type: Name Interpreter
 creates: Ordinal attribute data on a single node type
 uses_prompts: Yes
@@ -18,8 +18,8 @@ The Ordinal Bin is a name interpreter Interface that captures ordinal data on th
 
 A single node type is selectable per screen. This screen supports [filtering](../_key-concepts/network-filtering.md) those nodes by their attributes.
 
-![Image](/documentation/assets/img/interface-documentation/ordinal-bin/architect_1.png)
+![Image](/assets/img/interface-documentation/ordinal-bin/architect_1.png)
 
 An Ordinal Bin screen can include multiple [prompts](../_key-concepts/prompts.md), each of which relates to a single [ordinal variable](../_reference/variable-types.md#ordinal).
 
-![Image](/documentation/assets/img/interface-documentation/ordinal-bin/architect_2.png)
+![Image](/assets/img/interface-documentation/ordinal-bin/architect_2.png)
