@@ -67,10 +67,6 @@ jobs:
           NEXT_PUBLIC_ALGOLIA_API_KEY: ${{ secrets.NEXT_PUBLIC_ALGOLIA_API_KEY }}
           NEXT_PUBLIC_MENDABLE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_MENDABLE_ANON_KEY }}
 
-      - name: Github pages artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./out
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Deploy
