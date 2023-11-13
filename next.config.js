@@ -1,12 +1,12 @@
-const rehypePrettyCode = require("rehype-pretty-code");
+const rehypePrettyCode = require('rehype-pretty-code');
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
   // Rehype theme options
-  theme: "one-dark-pro",
+  theme: 'one-dark-pro',
 };
 
-const withMDX = require("@next/mdx")({
+const withMDX = require('@next/mdx')({
   // Optionally provide remark and rehype plugins
   extension: /\.mdx?$/,
   options: {
@@ -20,19 +20,19 @@ const withMDX = require("@next/mdx")({
   },
 });
 
-const withNextIntl = require("next-intl/plugin")(
+const withNextIntl = require('next-intl/plugin')(
   // This is the default (also the `src` folder is supported out of the box)
-  "./i18n.ts"
+  './i18n.ts',
 );
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
-  basePath: "/documentation",
+  output: 'export',
+  // basePath: "/documentation",
   images: {
     unoptimized: true,
-  }
+  },
 };
 
 // Merge MDX config with Next.js config
