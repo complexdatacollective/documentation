@@ -21,7 +21,7 @@ const LanguageSwitcher = ({ width }: LanguageSwitcherProps) => {
   return (
     <Select
       onValueChange={(val) => {
-        router.push(`/${val}/desktop`); // temporarily pushing to desktop docs
+        router.push('/desktop', { locale: val }); // temporarily pushing to desktop docs
       }}
     >
       <SelectTrigger

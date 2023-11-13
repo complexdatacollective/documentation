@@ -30,7 +30,7 @@ export default function ProductSwitcher({
       value={product}
       onValueChange={(val) => {
         setProduct(val);
-        router.push(`/${locale}/${val}`);
+        router.push(`/${val}`, { locale });
       }}
     >
       <SelectTrigger className="h-16 w-full text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 lg:text-base">

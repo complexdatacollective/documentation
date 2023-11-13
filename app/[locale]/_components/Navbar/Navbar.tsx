@@ -4,8 +4,8 @@ import logo from '@/public/assets/img/logo.svg';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import SearchCommand from './Search/SearchCommand';
-import LanguageSwitcher from './languageSwitcher';
-import { ThemeToggle } from './themeToggle';
+import { ThemeToggle } from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const t = useTranslations('Navbar');
