@@ -1,7 +1,7 @@
 ---
 title: Ordinal Bin
 
-image: /assets/img/interface-documentation/ordinal-bin/example.png
+image: /documentation/assets/img/interface-documentation/ordinal-bin/example.png
 type: Name Interpreter
 creates: Ordinal attribute data on a single node type
 uses_prompts: Yes

@@ -1,7 +1,7 @@
 ---
 title: Sociogram
 
-image: /assets/img/interface-documentation/sociogram/sociogram-edges.png
+image: /documentation/assets/img/interface-documentation/sociogram/sociogram-edges.png
 type: Name Interpreter and Edge Generator
 creates: Edges of multiple types, and attribute data on a single node type
 uses_prompts: Yes

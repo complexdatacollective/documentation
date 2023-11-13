@@ -1,9 +1,7 @@
 ---
-
 title: Narrative
 
-
-image: /assets/img/interface-documentation/narrative/narrative-example.png
+image: /documentation/assets/img/interface-documentation/narrative/narrative-example.png
 type: Visualisation
 creates: Does not create data
 uses_prompts: No
@@ -20,4 +18,4 @@ There are two sociogram Interfaces in Network Canvas - one for data collection a
 
 ## The Narrative Interface
 
-On the "Narrative" Interface, alter edges, group and individual attribute variables can be displayed to elicit qualitative data from the participant about their network. Configured presets can be toggled on and off to reveal colored convex hulls representing group variables, highlighted nodes representing attribute data, and different edge types in the network. No data is collected on this Interface. 
+On the "Narrative" Interface, alter edges, group and individual attribute variables can be displayed to elicit qualitative data from the participant about their network. Configured presets can be toggled on and off to reveal colored convex hulls representing group variables, highlighted nodes representing attribute data, and different edge types in the network. No data is collected on this Interface.
