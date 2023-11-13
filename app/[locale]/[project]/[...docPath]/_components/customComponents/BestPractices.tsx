@@ -2,16 +2,14 @@ import { CheckSquare, XOctagon } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CustomParagraph from './CustomParagraph';
 
-type PracticesProps = {
+type BestPracticesProps = {
   data: {
-    good: string[] | null;
-    bad: string[] | null;
+    good: string[];
+    bad: string[];
   };
 };
 
-const Practices = ({ data }: PracticesProps) => {
-  if (!data.good || !data.bad) return null;
-
+const BestPractices = ({ data }: BestPracticesProps) => {
   return (
     <div>
       <div>
@@ -44,4 +42,4 @@ const Practices = ({ data }: PracticesProps) => {
   );
 };
 
-export default Practices;
+export default BestPractices;

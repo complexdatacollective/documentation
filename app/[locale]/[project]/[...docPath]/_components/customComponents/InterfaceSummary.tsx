@@ -1,21 +1,16 @@
-// Todo: Rename the component appropriately later
-
 import Image from 'next/image';
 import React from 'react';
 
-type ComponentInfoProps = {
+type InterfaceSummaryProps = {
   data: {
-    image: string | null;
-    type: string | null;
-    creates: string | null;
-    uses_prompts: string | null;
+    image: string;
+    type: string;
+    creates: string;
+    uses_prompts: string;
   };
 };
 
-const ComponentInfo = ({ data }: ComponentInfoProps) => {
-  if (!data.image || !data.creates || !data.type || !data.uses_prompts)
-    return null;
-
+const InterfaceSummary = ({ data }: InterfaceSummaryProps) => {
   return (
     <div className="flex items-center gap-4">
       <Image
@@ -51,4 +46,4 @@ const ComponentInfo = ({ data }: ComponentInfoProps) => {
   );
 };
 
-export default ComponentInfo;
+export default InterfaceSummary;

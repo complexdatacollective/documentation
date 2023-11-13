@@ -6,11 +6,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 import TableOfContents from './_components/TableOfContents';
-import { customComponents } from './_components/customComponents/customComponents';
-import WorkInProgress from './_components/customComponents/WorkInProgress';
+import BestPractices from './_components/customComponents/BestPractices';
+import InterfaceSummary from './_components/customComponents/InterfaceSummary';
 import SummaryCard from './_components/customComponents/SummaryCard';
-import ComponentInfo from './_components/customComponents/ComponentInfo';
-import Practices from './_components/customComponents/Practices';
+import WorkInProgress from './_components/customComponents/WorkInProgress';
+import { customComponents } from './_components/customComponents/customComponents';
 
 type PageParams = {
   locale: string;
@@ -71,7 +71,7 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   if (!doc || doc.content === null) notFound();
 
-  // Frontmatter data
+  // Frontmatter data of markdown files
   const {
     title,
     content,
@@ -80,26 +80,23 @@ const Page = async ({ params }: { params: PageParams }) => {
     docId,
     wip,
     summaryData,
-    componentInfo,
-    practices,
+    interfaceSummary,
+    bestPractices,
   } = doc;
   const headings = toc ? await getHeadings(content) : null;
-
-  // InterfaceSummary
-  // BestPractices
 
   return (
     <div className="flex items-start gap-1">
       <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
-        <ComponentInfo data={componentInfo} />
+        {interfaceSummary && <InterfaceSummary data={interfaceSummary} />}
         {summaryData && <SummaryCard data={summaryData} />}
         {docId && (
           <InnerLanguageSwitcher currentLocale={locale} currentDocId={docId} />
         )}
         {wip && <WorkInProgress />}
         <MDXRemote components={customComponents} source={content} />
-        <Practices data={practices} />
+        {bestPractices && <BestPractices data={bestPractices} />}
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
       {headings && (

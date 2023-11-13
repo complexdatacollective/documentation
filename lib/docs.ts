@@ -95,7 +95,8 @@ export function getDoc({
   }
 
   const markdownFile = fs.readFileSync(file, 'utf-8');
-  const { data: matterData } = matter(markdownFile);
+  const matterResult = matter(markdownFile);
+  const { data: matterData } = matterResult;
 
   const getSummaryData = () => {
     const { summary, prerequisites, completion_time } = matterData;
@@ -111,27 +112,44 @@ export function getDoc({
     return null;
   };
 
+  const getInterfaceSummary = () => {
+    const { image, type, creates, uses_prompts } = matterData;
+
+    if (image && type && creates && uses_prompts) {
+      return {
+        image: image as string,
+        type: type as string,
+        creates: creates as string,
+        uses_prompts: uses_prompts as string,
+      };
+    }
+
+    return null;
+  };
+
+  const getBestPractices = () => {
+    const { good, bad } = matterData;
+
+    if (good && bad) {
+      return {
+        good: good as string[],
+        bad: bad as string[],
+      };
+    }
+
+    return null;
+  };
+
   return {
     // Add other elements of the frontmatter here as needed.
     title: matterData.title as string,
     lastUpdated: matterData.date ? (matterData.date as string) : null,
-    content: matterData.content,
+    content: matterResult.content,
     toc: matterData.toc !== undefined ? (matterData.toc as boolean) : null,
     docId: matterData.docId ? (matterData.docId as string) : null,
     wip: matterData.wip !== undefined ? (matterData.wip as boolean) : null,
     summaryData: getSummaryData(),
-    // Todo: rename the object later
-    componentInfo: {
-      image: matterData.image ? (matterData.image as string) : null,
-      type: matterData.type ? (matterData.type as string) : null,
-      creates: matterData.creates ? (matterData.creates as string) : null,
-      uses_prompts: matterData.uses_prompts
-        ? (matterData.uses_prompts as string)
-        : null,
-    },
-    practices: {
-      good: matterData.good ? (matterData.good as string[]) : null,
-      bad: matterData.bad ? (matterData.bad as string[]) : null,
-    },
+    interfaceSummary: getInterfaceSummary(),
+    bestPractices: getBestPractices(),
   };
 }
