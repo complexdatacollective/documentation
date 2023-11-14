@@ -1,4 +1,4 @@
-import { type DocFile, type Folder } from '@/types';
+import { SidebarData, type DocFile, type Folder } from '@/types';
 
 // Converts text to title Case eg: network-canvas => Network Canvas
 export function convertToTitleCase(str: string) {
@@ -60,16 +60,16 @@ export function getDocsFromSidebarData(
 // filter sidebar data based on product and locale
 export function filterSidebarData(
   product: string,
-  sidebarData: (Folder | DocFile)[],
+  sidebarData: SidebarData,
   locale: string,
 ) {
-  const localeBasedSidebarData = sidebarData.filter(
-    (item) => item.type === 'folder' && item.name === locale,
-  )[0] as Folder;
+  const localeBasedSidebarData = sidebarData.filter((item) => item[locale])[0][
+    locale
+  ];
 
-  const productBasedSidebarData = localeBasedSidebarData.files.filter(
-    (item) => item.type === 'folder' && item.name === product,
-  )[0] as Folder;
+  const productBasedSidebarData = localeBasedSidebarData.filter(
+    (item) => item.name === product,
+  )[0];
 
   return productBasedSidebarData;
 }
