@@ -1,7 +1,7 @@
 import { convertToTitleCase } from '@/lib/helper_functions';
 import { type DocFile, type Folder } from '@/types';
-import Link from 'next/link';
 import Menu from './Menu';
+import { Link } from '@/navigation';
 
 export interface NavigationMenusProps {
   sidebarData: (Folder | DocFile)[];
