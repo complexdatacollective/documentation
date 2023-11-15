@@ -10,7 +10,8 @@
             "type": "file",
             "name": "English Home",
             "language": "en",
-            "path": "/desktop/home.en",
+            "path": "/desktop/home",
+            "source": "home",
             "docId": null
           },
           {
@@ -23,6 +24,7 @@
                 "name": "Choosing a Hardware Device for Interviewer",
                 "language": "en",
                 "path": "/desktop/how-to/choosing-hardware",
+                "source": "choosing-hardware",
                 "docId": null
               }
             ]
@@ -36,7 +38,8 @@
                 "type": "file",
                 "name": "IRB and Security Best Practices",
                 "language": "en",
-                "path": "/desktop/reference/irb-best-practices.en",
+                "path": "/desktop/reference/irb-best-practices",
+                "source": "irb-best-practices",
                 "docId": "Security Best Practices"
               }
             ]
@@ -53,6 +56,7 @@
             "name": "Fresco Introduction",
             "language": "en",
             "path": "/fresco/introduction",
+            "source": "introduction",
             "docId": null
           },
           {
@@ -65,6 +69,7 @@
                 "name": "Fresco Installation guide",
                 "language": "en",
                 "path": "/fresco/installation/installation",
+                "source": "installation",
                 "docId": null
               }
             ]
@@ -84,14 +89,9 @@
             "type": "file",
             "name": "Russian Home",
             "language": "ru",
-            "path": "/desktop/home.ru",
+            "path": "/desktop/home",
+            "source": "home",
             "docId": null
-          },
-          {
-            "type": "folder",
-            "name": "Как руководить",
-            "language": "ru",
-            "files": []
           },
           {
             "type": "folder",
@@ -102,23 +102,11 @@
                 "type": "file",
                 "name": "Лучшие практики по IRB и безопасности",
                 "language": "ru",
-                "path": "/desktop/reference/irb-best-practices.ru",
+                "path": "/desktop/reference/irb-best-practices",
+                "source": "irb-best-practices",
                 "docId": "Security Best Practices"
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "fresco",
-        "language": "ru",
-        "files": [
-          {
-            "type": "folder",
-            "name": "Папка с руководством по установке",
-            "language": "ru",
-            "files": []
           }
         ]
       }

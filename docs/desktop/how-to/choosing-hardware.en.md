@@ -2,7 +2,6 @@
 title: Choosing a Hardware Device for Interviewer
 wip: false
 toc: true
-language: 'en'
 ---
 
 Choosing a device for running Interviewer is an important step in optimizing the quality of the data that you collect, as well as the overall workflow of running a Network Canvas study.
