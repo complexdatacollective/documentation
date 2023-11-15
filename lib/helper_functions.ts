@@ -57,19 +57,44 @@ export function getDocsFromSidebarData(
   return docFiles;
 }
 
+export const getLocaleBasedSidebarData = (
+  sidebarData: SidebarData,
+  locale: string,
+) => {
+  const data = sidebarData.filter((item) => item[locale])[0][locale];
+  return data;
+};
+
 // filter sidebar data based on product and locale
 export function filterSidebarData(
   product: string,
   sidebarData: SidebarData,
   locale: string,
 ) {
-  const localeBasedSidebarData = sidebarData.filter((item) => item[locale])[0][
-    locale
-  ];
+  const localeBasedSidebarData = getLocaleBasedSidebarData(sidebarData, locale);
 
   const productBasedSidebarData = localeBasedSidebarData.filter(
     (item) => item.name === product,
   )[0];
 
   return productBasedSidebarData;
+}
+
+// Check if the translated file exists
+export function isPathExist(
+  localeBasedSidebarData: Folder,
+  docPath: string,
+  isExist = false,
+) {
+  for (const item of localeBasedSidebarData.files) {
+    if (item.type === 'file') {
+      isExist = docPath === item.path;
+    } else {
+      isExist = isPathExist(item, docPath, isExist);
+    }
+
+    if (isExist) break;
+  }
+
+  return isExist;
 }

@@ -61,7 +61,6 @@ export function getDoc({
   pathSegment: string[];
 }) {
   const pathSegmentWithLocale = pathSegment.join('/') + '.' + locale;
-
   const path = join(relativePathToDocs, project, pathSegmentWithLocale);
 
   // Check if the file exists.
