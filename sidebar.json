@@ -5,6 +5,7 @@
         "type": "folder",
         "name": "desktop",
         "language": "en",
+        "source": "desktop",
         "files": [
           {
             "type": "file",
@@ -80,6 +81,7 @@
             "type": "folder",
             "name": "How-to guides",
             "language": "en",
+            "source": "how-to",
             "files": [
               {
                 "type": "file",
@@ -122,6 +124,7 @@
             "type": "folder",
             "name": "Interface documentation",
             "language": "en",
+            "source": "interface-documentation",
             "files": [
               {
                 "type": "file",
@@ -241,6 +244,7 @@
             "type": "folder",
             "name": "Key concepts",
             "language": "en",
+            "source": "key-concepts",
             "files": [
               {
                 "type": "file",
@@ -332,6 +336,7 @@
             "type": "folder",
             "name": "Technical reference",
             "language": "en",
+            "source": "reference",
             "files": [
               {
                 "type": "file",
@@ -395,6 +400,7 @@
             "type": "folder",
             "name": "Tutorials",
             "language": "en",
+            "source": "tutorials",
             "files": [
               {
                 "type": "file",
@@ -446,11 +452,13 @@
         "type": "folder",
         "name": "fresco",
         "language": "en",
+        "source": "fresco",
         "files": [
           {
             "type": "folder",
             "name": "Installation guide",
             "language": "en",
+            "source": "installation",
             "files": [
               {
                 "type": "file",
@@ -465,6 +473,7 @@
             "type": "folder",
             "name": "Introduction",
             "language": "en",
+            "source": "introduction",
             "files": [
               {
                 "type": "file",
@@ -479,6 +488,7 @@
             "type": "folder",
             "name": "Third folder",
             "language": "en",
+            "source": "third-folder",
             "files": [
               {
                 "type": "file",
@@ -499,11 +509,13 @@
         "type": "folder",
         "name": "desktop",
         "language": "ru",
+        "source": "desktop",
         "files": [
           {
             "type": "folder",
             "name": "Практические руководства",
             "language": "ru",
+            "source": "how-to",
             "files": [
               {
                 "type": "file",
@@ -518,6 +530,7 @@
             "type": "folder",
             "name": "Техническая справка",
             "language": "ru",
+            "source": "reference",
             "files": [
               {
                 "type": "file",
@@ -534,11 +547,13 @@
         "type": "folder",
         "name": "fresco",
         "language": "ru",
+        "source": "fresco",
         "files": [
           {
             "type": "folder",
             "name": "Инструкция по установке",
             "language": "ru",
+            "source": "installation",
             "files": [
               {
                 "type": "file",
@@ -553,6 +568,7 @@
             "type": "folder",
             "name": "Третья папка",
             "language": "ru",
+            "source": "third-folder",
             "files": [
               {
                 "type": "file",
