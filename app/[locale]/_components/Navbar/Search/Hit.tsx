@@ -1,7 +1,6 @@
 'use client';
 
 import { CommandItem } from '@/components/ui/command';
-import { formatPathPattern } from '@/lib/helper_functions';
 import { type Hit as AlgoliaHit } from 'instantsearch.js';
 import { FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -20,10 +19,9 @@ type HitProps = {
 export default function Hit({ hit }: HitProps) {
   const router = useRouter();
   const { setOpen } = useContext(DialogContext);
-  const path = '/' + formatPathPattern(hit.filePath);
 
   const handleSelect = () => {
-    router.push(path);
+    router.push(hit.filePath);
     setOpen(false);
   };
 

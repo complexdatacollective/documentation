@@ -6,14 +6,6 @@ const sidebarData: SidebarData = JSON.parse(
   JSON.stringify(data),
 ) as SidebarData;
 
-// Removes "/docs" and ".md/mdx" from path
-export function formatPathPattern(pathPattern: string): string {
-  let formattedPath = pathPattern.replace('docs/', '');
-  formattedPath = formattedPath.replace(/\.mdx?$/, '');
-
-  return formattedPath;
-}
-
 // Converts text to URL eg: Network Canvas => network-canvas
 export function convertToUrlText(text: string): string {
   const lowercaseText = text.toLowerCase();

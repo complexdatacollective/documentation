@@ -276,13 +276,6 @@
               },
               {
                 "type": "file",
-                "name": "Input Controls",
-                "language": "en",
-                "path": "/desktop/key-concepts/input-controls",
-                "source": "input-controls"
-              },
-              {
-                "type": "file",
                 "name": "Interfaces",
                 "language": "en",
                 "path": "/desktop/key-concepts/interfaces",
@@ -368,13 +361,6 @@
               },
               {
                 "type": "file",
-                "name": "Protocol Schema Information",
-                "language": "en",
-                "path": "/desktop/reference/protocol-schema-information",
-                "source": "protocol-schema-information"
-              },
-              {
-                "type": "file",
                 "name": "Overview of Security Model",
                 "language": "en",
                 "path": "/desktop/reference/security-model",
@@ -393,56 +379,6 @@
                 "language": "en",
                 "path": "/desktop/reference/variable-types",
                 "source": "variable-types"
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "Tutorials",
-            "language": "en",
-            "source": "tutorials",
-            "files": [
-              {
-                "type": "file",
-                "name": "Building a protocol using Architect",
-                "language": "en",
-                "path": "/desktop/tutorials/building-a-protocol",
-                "source": "building-a-protocol"
-              },
-              {
-                "type": "file",
-                "name": "Using Interviewer",
-                "language": "en",
-                "path": "/desktop/tutorials/using-interviewer",
-                "source": "using-interviewer"
-              },
-              {
-                "type": "file",
-                "name": "Using Server to manage a study",
-                "language": "en",
-                "path": "/desktop/tutorials/using-server",
-                "source": "using-server"
-              },
-              {
-                "type": "file",
-                "name": "Protocol and Data Workflows without Server",
-                "language": "en",
-                "path": "/desktop/tutorials/workflows-without-server",
-                "source": "workflows-without-server"
-              },
-              {
-                "type": "file",
-                "name": "Working with Network Canvas data in R",
-                "language": "en",
-                "path": "/desktop/tutorials/working-with-data",
-                "source": "working-with-data"
-              },
-              {
-                "type": "file",
-                "name": "Working with Roster Data",
-                "language": "en",
-                "path": "/desktop/tutorials/working-with-rosters",
-                "source": "working-with-rosters"
               }
             ]
           }
