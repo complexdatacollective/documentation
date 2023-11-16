@@ -1,20 +1,10 @@
-import { SidebarData, type DocFile, type Folder } from '@/types';
 import { locales } from '@/locales.mjs';
 import data from '@/public/sidebar.json';
+import { SidebarData, type Folder } from '@/types';
 
 const sidebarData: SidebarData = JSON.parse(
   JSON.stringify(data),
 ) as SidebarData;
-
-// Converts text to title Case eg: network-canvas => Network Canvas
-export function convertToTitleCase(str: string) {
-  let words = str.replace(/^_/, '').split('-');
-  let capitalizedWords = words.map(function (word) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
-
-  return capitalizedWords.join(' ');
-}
 
 // Removes "/docs" and ".md/mdx" from path
 export function formatPathPattern(pathPattern: string): string {

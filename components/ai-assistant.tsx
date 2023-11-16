@@ -1,12 +1,12 @@
 'use client';
 
+import { env } from '@/env.mjs';
 import logo from '@/public/assets/img/logo.svg';
 import { MendableFloatingButton } from '@mendable/search';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { env } from '@/env.mjs';
 
 const icon = (
   <div className="flex flex-col items-center">
@@ -24,9 +24,6 @@ const AIAssistant = () => {
     setMounted(true);
   }, []);
 
-  // Todo: We should make our own UI for the AI assistant so that we can translate the UI
-  // this is a temporary ai assistant translations,
-  // current Mendable Floating Button component can't be customized to support other languages.
   return (
     mounted && (
       <MendableFloatingButton
