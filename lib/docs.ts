@@ -12,13 +12,16 @@ export type DocRouteParams = {
 
 // Process docPaths to remove CWD, docs subdirectory, file extensions, and split into segments
 export const processPath = (docPath: string) => {
-  return docPath
+  const processedPath = docPath
     .replace(process.cwd() + sep, '') // Remove CWD
     .replace('docs' + sep, '') // Remove docs subdirectory
     .replace('.mdx', '')
-    .replace('.md', '') // Remove file extensions
-    .split(sep) // Split into segments based on the platform directory separator
-    .map(encodeURIComponent); // encode unicode characters
+    .replace('.md', ''); // Remove file extensions
+
+  const locale = processedPath.split('.')[1]; // get locale from file path
+  // Remove file locale and split into segments based on the platform directory separator
+  const processedPathList = processedPath.replace(/\.\w+$/, '').split(sep);
+  return [...processedPathList, locale];
 };
 
 export const relativePathToDocs = join(
@@ -42,18 +45,7 @@ export const getAllMarkdownDocs = async () => {
 
 // Get all project names
 export const getAllProjects = function () {
-  const docsDirectory = join(process.cwd(), env.NEXT_PUBLIC_DOCS_PATH);
-
-  const locales = fs
-    .readdirSync(docsDirectory, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory());
-
-  const projects = locales.map((locale) => {
-    const projects = fs
-      .readdirSync(join(docsDirectory, locale.name), { withFileTypes: true })
-      .filter((dirent) => dirent.isDirectory());
-    return projects.map((project) => project.name);
-  });
+  const projects = fs.readdirSync(relativePathToDocs);
 
   // Make projects unique
   return [...new Set(projects.flat())];
@@ -68,20 +60,8 @@ export function getDoc({
   project: string;
   pathSegment: string[];
 }) {
-  // This is a hack to get around a possible NextJS bug where the pathSegment
-  // is double encoded when running pnpm run build but single encoded when
-  // running pnpm run dev.
-  const decodedPathSegment = pathSegment.map((segment) =>
-    decodeURIComponent(decodeURIComponent(segment)),
-  );
-
-  const path = join(
-    process.cwd(),
-    env.NEXT_PUBLIC_DOCS_PATH,
-    locale,
-    project,
-    ...decodedPathSegment,
-  );
+  const pathSegmentWithLocale = pathSegment.join('/') + '.' + locale;
+  const path = join(relativePathToDocs, project, pathSegmentWithLocale);
 
   // Check if the file exists.
   let file;
@@ -146,7 +126,6 @@ export function getDoc({
     lastUpdated: matterData.date ? (matterData.date as string) : null,
     content: matterResult.content,
     toc: matterData.toc !== undefined ? (matterData.toc as boolean) : null,
-    docId: matterData.docId ? (matterData.docId as string) : null,
     wip: matterData.wip !== undefined ? (matterData.wip as boolean) : null,
     summaryData: getSummaryData(),
     interfaceSummary: getInterfaceSummary(),

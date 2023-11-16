@@ -1,7 +1,7 @@
 import '@/app/[locale]/globals.css';
 import { ThemeProvider } from '@/components/Providers/theme-provider';
 import AIAssistant from '@/components/ai-assistant';
-import { locales } from '@/navigation';
+import { locales } from '@/locales.mjs';
 import data from '@/public/sidebar.json';
 import { type Messages, type SidebarData } from '@/types';
 import type { Metadata } from 'next';

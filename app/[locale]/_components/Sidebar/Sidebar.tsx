@@ -1,12 +1,12 @@
 'use client';
 
-import NavigationMenus from '@/app/[locale]/_components/Sidebar/NavigationMenus';
 import { filterSidebarData } from '@/lib/helper_functions';
 import { usePathname } from '@/navigation';
 import { type SidebarData } from '@/types';
 import { useEffect, useMemo, useState } from 'react';
 import ProductSwitcher from './ProductSwitcher';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea } from '@radix-ui/react-scroll-area';
+import NavigationMenus from './NavigationMenus';
 
 type SidebarProps = {
   data: SidebarData;

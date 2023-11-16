@@ -1,45 +1,36 @@
-import { getTranslatedFilesDataByDocId } from '@/lib/helper_functions';
-import data from '@/public/sidebar.json';
-import { type SidebarData } from '@/types';
+import { getAvailableLocales } from '@/lib/helper_functions';
 import { getTranslator } from 'next-intl/server';
 import Link from 'next/link';
 
 type InnerLanguageSwitcherProps = {
-  currentDocId: string;
+  filePath: string;
   currentLocale: string;
 };
 
 const InnerLanguageSwitcher = async ({
-  currentDocId,
+  filePath,
   currentLocale,
 }: InnerLanguageSwitcherProps) => {
   const t = await getTranslator(currentLocale, 'DocPage');
-  const sidebarData: SidebarData = JSON.parse(
-    JSON.stringify(data),
-  ) as SidebarData;
+  const availableLocales = getAvailableLocales(filePath);
 
-  const translatedDocs = getTranslatedFilesDataByDocId(
-    sidebarData,
-    currentDocId,
+  // remove the current locale from availableLocales
+  const supportedLanguages = availableLocales.filter(
+    (locale) => locale !== currentLocale,
   );
 
-  //remove the current locale-based file from translated docs
-  const filteredDocs = translatedDocs.filter(
-    (doc) => doc.language !== currentLocale,
-  );
-
-  if (!filteredDocs.length) return null;
+  if (!supportedLanguages.length) return null;
 
   return (
     <div className="my-1 flex gap-2">
       <span>{t('docAvailableTxt')}</span>
-      {filteredDocs.map((doc) => (
+      {supportedLanguages.map((lang) => (
         <Link
-          className="text-blue-400 transition-colors hover:text-cyan-400"
-          key={doc.language}
-          href={doc.path}
+          className="mx-1 text-blue-400 transition-colors hover:text-cyan-400"
+          key={lang}
+          href={`/${lang}/${filePath}`}
         >
-          {doc.language}
+          {lang}
         </Link>
       ))}
     </div>
