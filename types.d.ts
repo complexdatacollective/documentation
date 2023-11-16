@@ -11,7 +11,6 @@ export interface DocFile {
   language: string;
   path: string;
   source: string;
-  docId: string | null; //Todo: we may remove docId
 }
 
 type LanguageData = {

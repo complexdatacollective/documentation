@@ -126,7 +126,6 @@ export function getDoc({
     lastUpdated: matterData.date ? (matterData.date as string) : null,
     content: matterResult.content,
     toc: matterData.toc !== undefined ? (matterData.toc as boolean) : null,
-    docId: matterData.docId ? (matterData.docId as string) : null,
     wip: matterData.wip !== undefined ? (matterData.wip as boolean) : null,
     summaryData: getSummaryData(),
     interfaceSummary: getInterfaceSummary(),

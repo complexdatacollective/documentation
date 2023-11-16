@@ -1,6 +1,5 @@
 ---
 title: Лучшие практики по IRB и безопасности
-docId: 'Security Best Practices'
 toc: true
 ---
 
