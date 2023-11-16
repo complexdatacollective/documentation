@@ -1,4 +1,10 @@
 import { SidebarData, type DocFile, type Folder } from '@/types';
+import { locales } from '@/locales.mjs';
+import data from '@/public/sidebar.json';
+
+const sidebarData: SidebarData = JSON.parse(
+  JSON.stringify(data),
+) as SidebarData;
 
 // Converts text to title Case eg: network-canvas => Network Canvas
 export function convertToTitleCase(str: string) {
@@ -27,42 +33,11 @@ export function convertToUrlText(text: string): string {
   return cleanedText;
 }
 
-// Gets translated docs data from sidebar json based on specific docId
-export function getTranslatedFilesDataByDocId(
-  sidebarData: Array<DocFile | Folder>,
-  currentDocId: string,
-) {
-  const allDocFiles = getDocsFromSidebarData(sidebarData);
-  const translatedFiles = allDocFiles.filter(
-    (file) => file.docId === currentDocId,
-  );
-
-  return translatedFiles;
-}
-
-// Todo: This function can be re-written with array.reduce method try that later
-// Extracts all documents from sidebar data
-export function getDocsFromSidebarData(
-  siData: Array<DocFile | Folder>,
-  docFiles: Array<DocFile> = [],
-) {
-  siData.forEach((item) => {
-    if (item.type === 'folder') {
-      docFiles = getDocsFromSidebarData(item.files, docFiles);
-    } else {
-      docFiles.push(item);
-    }
-  });
-
-  return docFiles;
-}
-
 export const getLocaleBasedSidebarData = (
-  sidebarData: SidebarData,
+  data: SidebarData,
   locale: string,
 ) => {
-  const data = sidebarData.filter((item) => item[locale])[0][locale];
-  return data;
+  return data.filter((item) => item[locale])[0][locale];
 };
 
 // filter sidebar data based on product and locale
@@ -80,13 +55,9 @@ export function filterSidebarData(
   return productBasedSidebarData;
 }
 
-// Check if the translated file exists
-export function isPathExist(
-  localeBasedSidebarData: Folder,
-  docPath: string,
-  isExist = false,
-) {
-  for (const item of localeBasedSidebarData.files) {
+// Check if the file path for the translated doc exists
+export function isPathExist(data: Folder, docPath: string, isExist = false) {
+  for (const item of data.files) {
     if (item.type === 'file') {
       isExist = docPath === item.path;
     } else {
@@ -97,4 +68,19 @@ export function isPathExist(
   }
 
   return isExist;
+}
+
+// get available locales for the document
+export function getAvailableLocales(filePath: string) {
+  const availableLocales = locales.filter((locale) => {
+    const localeBasedSidebarData = getLocaleBasedSidebarData(
+      sidebarData,
+      locale,
+    );
+    const result = isPathExist(localeBasedSidebarData[0], filePath);
+
+    return result;
+  });
+
+  return availableLocales;
 }

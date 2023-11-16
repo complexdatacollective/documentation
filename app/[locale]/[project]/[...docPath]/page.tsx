@@ -10,6 +10,7 @@ import InterfaceSummary from './_components/customComponents/InterfaceSummary';
 import SummaryCard from './_components/customComponents/SummaryCard';
 import WorkInProgress from './_components/customComponents/WorkInProgress';
 import { customComponents } from './_components/customComponents/customComponents';
+import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
 
 type PageParams = {
   locale: string;
@@ -63,6 +64,7 @@ export async function generateStaticParams({
 // The Page Component
 const Page = async ({ params }: { params: PageParams }) => {
   const { locale, project, docPath } = params;
+  const filePath = `/${project}/` + docPath.join('/');
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
 
@@ -91,6 +93,7 @@ const Page = async ({ params }: { params: PageParams }) => {
     <div className="flex items-start gap-1">
       <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
         <h1>{title}</h1>
+        <InnerLanguageSwitcher currentLocale={locale} filePath={filePath} />
         {interfaceSummary && <InterfaceSummary data={interfaceSummary} />}
         {summaryData && <SummaryCard data={summaryData} />}
         {wip && <WorkInProgress />}
