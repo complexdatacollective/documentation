@@ -1,4 +1,3 @@
-import { convertToTitleCase } from '@/lib/helper_functions';
 import { type DocFile, type Folder } from '@/types';
 import Menu from './Menu';
 import { Link } from '@/navigation';
@@ -17,13 +16,14 @@ export default function NavigationMenus({
       {sidebarData.map((item) => {
         if (item.type === 'folder') {
           const folder = item;
-          const activeMenu = pathItems.find((pt) => pt === folder.name); //find active menu from path items
+          const activeMenu = pathItems.find((pt) => pt === folder.source); //find active menu from path items
           // render menu (folder)
           return (
             <Menu
-              value={activeMenu && convertToTitleCase(activeMenu)}
+              value={activeMenu}
+              itemValue={folder.source}
               key={folder.name}
-              title={convertToTitleCase(folder.name)}
+              title={folder.name}
             >
               <ul>
                 <NavigationMenus

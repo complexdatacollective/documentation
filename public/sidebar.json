@@ -5,6 +5,7 @@
         "type": "folder",
         "name": "desktop",
         "language": "en",
+        "source": "desktop",
         "files": [
           {
             "type": "file",
@@ -80,6 +81,7 @@
             "type": "folder",
             "name": "How-to guides",
             "language": "en",
+            "source": "how-to",
             "files": [
               {
                 "type": "file",
@@ -122,6 +124,7 @@
             "type": "folder",
             "name": "Interface documentation",
             "language": "en",
+            "source": "interface-documentation",
             "files": [
               {
                 "type": "file",
@@ -241,6 +244,7 @@
             "type": "folder",
             "name": "Key concepts",
             "language": "en",
+            "source": "key-concepts",
             "files": [
               {
                 "type": "file",
@@ -269,6 +273,13 @@
                 "language": "en",
                 "path": "/desktop/key-concepts/forms",
                 "source": "forms"
+              },
+              {
+                "type": "file",
+                "name": "Input Controls",
+                "language": "en",
+                "path": "/desktop/key-concepts/input-controls",
+                "source": "input-controls"
               },
               {
                 "type": "file",
@@ -325,6 +336,7 @@
             "type": "folder",
             "name": "Technical reference",
             "language": "en",
+            "source": "reference",
             "files": [
               {
                 "type": "file",
@@ -383,6 +395,56 @@
                 "source": "variable-types"
               }
             ]
+          },
+          {
+            "type": "folder",
+            "name": "Tutorials",
+            "language": "en",
+            "source": "tutorials",
+            "files": [
+              {
+                "type": "file",
+                "name": "Building a protocol using Architect",
+                "language": "en",
+                "path": "/desktop/tutorials/building-a-protocol",
+                "source": "building-a-protocol"
+              },
+              {
+                "type": "file",
+                "name": "Using Interviewer",
+                "language": "en",
+                "path": "/desktop/tutorials/using-interviewer",
+                "source": "using-interviewer"
+              },
+              {
+                "type": "file",
+                "name": "Using Server to manage a study",
+                "language": "en",
+                "path": "/desktop/tutorials/using-server",
+                "source": "using-server"
+              },
+              {
+                "type": "file",
+                "name": "Protocol and Data Workflows without Server",
+                "language": "en",
+                "path": "/desktop/tutorials/workflows-without-server",
+                "source": "workflows-without-server"
+              },
+              {
+                "type": "file",
+                "name": "Working with Network Canvas data in R",
+                "language": "en",
+                "path": "/desktop/tutorials/working-with-data",
+                "source": "working-with-data"
+              },
+              {
+                "type": "file",
+                "name": "Working with Roster Data",
+                "language": "en",
+                "path": "/desktop/tutorials/working-with-rosters",
+                "source": "working-with-rosters"
+              }
+            ]
           }
         ]
       },
@@ -390,11 +452,13 @@
         "type": "folder",
         "name": "fresco",
         "language": "en",
+        "source": "fresco",
         "files": [
           {
             "type": "folder",
             "name": "Installation guide",
             "language": "en",
+            "source": "installation",
             "files": [
               {
                 "type": "file",
@@ -409,6 +473,7 @@
             "type": "folder",
             "name": "Introduction",
             "language": "en",
+            "source": "introduction",
             "files": [
               {
                 "type": "file",
@@ -423,6 +488,7 @@
             "type": "folder",
             "name": "Third folder",
             "language": "en",
+            "source": "third-folder",
             "files": [
               {
                 "type": "file",
@@ -443,11 +509,13 @@
         "type": "folder",
         "name": "desktop",
         "language": "ru",
+        "source": "desktop",
         "files": [
           {
             "type": "folder",
             "name": "Практические руководства",
             "language": "ru",
+            "source": "how-to",
             "files": [
               {
                 "type": "file",
@@ -462,6 +530,7 @@
             "type": "folder",
             "name": "Техническая справка",
             "language": "ru",
+            "source": "reference",
             "files": [
               {
                 "type": "file",
@@ -478,11 +547,13 @@
         "type": "folder",
         "name": "fresco",
         "language": "ru",
+        "source": "fresco",
         "files": [
           {
             "type": "folder",
             "name": "Инструкция по установке",
             "language": "ru",
+            "source": "installation",
             "files": [
               {
                 "type": "file",
@@ -497,6 +568,7 @@
             "type": "folder",
             "name": "Третья папка",
             "language": "ru",
+            "source": "third-folder",
             "files": [
               {
                 "type": "file",

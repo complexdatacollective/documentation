@@ -2,6 +2,7 @@ export interface Folder {
   type: 'folder';
   name: string;
   language: string;
+  source: string;
   files: Array<DocFile | Folder>;
 }
 
