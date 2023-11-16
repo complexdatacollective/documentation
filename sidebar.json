@@ -1,439 +1,442 @@
 [
   {
-    "type": "folder",
-    "name": "en",
-    "files": [
+    "en": [
       {
         "type": "folder",
         "name": "desktop",
+        "language": "en",
         "files": [
           {
             "type": "file",
             "name": "404 - Not found",
-            "path": "/en/desktop/404",
-            "source": "404",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/404",
+            "source": "404"
           },
           {
             "type": "file",
             "name": "Citing the Software",
-            "path": "/en/desktop/citing-the-software",
-            "source": "citing-the-software",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/citing-the-software",
+            "source": "citing-the-software"
           },
           {
             "type": "file",
             "name": "Contributing Code",
-            "path": "/en/desktop/contributing-code",
-            "source": "contributing-code",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/contributing-code",
+            "source": "contributing-code"
           },
           {
             "type": "file",
             "name": "Frequently Asked Questions",
-            "path": "/en/desktop/faq",
-            "source": "faq",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/faq",
+            "source": "faq"
           },
           {
             "type": "file",
             "name": "February 2022 Project Update",
-            "path": "/en/desktop/february-2022-project-update",
-            "source": "february-2022-project-update",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/february-2022-project-update",
+            "source": "february-2022-project-update"
           },
           {
             "type": "file",
             "name": "Home",
-            "path": "/en/desktop/index",
-            "source": "index",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/index",
+            "source": "index"
           },
           {
             "type": "file",
             "name": "Installation Guide",
-            "path": "/en/desktop/installation-guide",
-            "source": "installation-guide",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/installation-guide",
+            "source": "installation-guide"
           },
           {
             "type": "file",
             "name": "Project Overview",
-            "path": "/en/desktop/project-overview",
-            "source": "project-overview",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/project-overview",
+            "source": "project-overview"
           },
           {
             "type": "file",
             "name": "Protocol Gallery",
-            "path": "/en/desktop/protocol-gallery",
-            "source": "protocol-gallery",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/protocol-gallery",
+            "source": "protocol-gallery"
           },
           {
             "type": "file",
             "name": "Requests for Collaboration",
-            "path": "/en/desktop/requests-for-collaboration",
-            "source": "requests-for-collaboration",
-            "docId": null
+            "language": "en",
+            "path": "/desktop/requests-for-collaboration",
+            "source": "requests-for-collaboration"
           },
           {
             "type": "folder",
-            "name": "how-to",
+            "name": "How-to guides",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Choosing a Hardware Device for Interviewer",
-                "path": "/en/desktop/how-to/choosing-hardware",
-                "source": "choosing-hardware",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/how-to/choosing-hardware",
+                "source": "choosing-hardware"
               },
               {
                 "type": "file",
                 "name": "Configuring Devices Prior To Starting Data Collection",
-                "path": "/en/desktop/how-to/configuring-devices",
-                "source": "configuring-devices",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/how-to/configuring-devices",
+                "source": "configuring-devices"
               },
               {
                 "type": "file",
                 "name": "Importing Roster Data",
-                "path": "/en/desktop/how-to/importing-roster-data",
-                "source": "importing-roster-data",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/how-to/importing-roster-data",
+                "source": "importing-roster-data"
               },
               {
                 "type": "file",
                 "name": "Pairing Interviewer Devices with Server",
-                "path": "/en/desktop/how-to/pairing",
-                "source": "pairing",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/how-to/pairing",
+                "source": "pairing"
               },
               {
                 "type": "file",
                 "name": "Updating from Beta to the Stable Release",
-                "path": "/en/desktop/how-to/updating-from-beta",
-                "source": "updating-from-beta",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/how-to/updating-from-beta",
+                "source": "updating-from-beta"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "interface-documentation",
+            "name": "Interface documentation",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Categorical Bin",
-                "path": "/en/desktop/interface-documentation/categorical-bin",
-                "source": "categorical-bin",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/categorical-bin",
+                "source": "categorical-bin"
               },
               {
                 "type": "file",
                 "name": "Dyad Census",
-                "path": "/en/desktop/interface-documentation/dyad-census",
-                "source": "dyad-census",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/dyad-census",
+                "source": "dyad-census"
               },
               {
                 "type": "file",
                 "name": "Ego Form",
-                "path": "/en/desktop/interface-documentation/ego-form",
-                "source": "ego-form",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/ego-form",
+                "source": "ego-form"
               },
               {
                 "type": "file",
                 "name": "Information",
-                "path": "/en/desktop/interface-documentation/information",
-                "source": "information",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/information",
+                "source": "information"
               },
               {
                 "type": "file",
                 "name": "Large Roster Name Generator",
-                "path": "/en/desktop/interface-documentation/large-roster-name-generator",
-                "source": "large-roster-name-generator",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/large-roster-name-generator",
+                "source": "large-roster-name-generator"
               },
               {
                 "type": "file",
                 "name": "Name Generator for Roster Data",
-                "path": "/en/desktop/interface-documentation/name-generator-roster",
-                "source": "name-generator-roster",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/name-generator-roster",
+                "source": "name-generator-roster"
               },
               {
                 "type": "file",
                 "name": "Name Generator using Forms",
-                "path": "/en/desktop/interface-documentation/name-generator-using-forms",
-                "source": "name-generator-using-forms",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/name-generator-using-forms",
+                "source": "name-generator-using-forms"
               },
               {
                 "type": "file",
                 "name": "Name Generators using Quick Add",
-                "path": "/en/desktop/interface-documentation/name-generator-using-quick-add",
-                "source": "name-generator-using-quick-add",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/name-generator-using-quick-add",
+                "source": "name-generator-using-quick-add"
               },
               {
                 "type": "file",
                 "name": "Narrative",
-                "path": "/en/desktop/interface-documentation/narrative",
-                "source": "narrative",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/narrative",
+                "source": "narrative"
               },
               {
                 "type": "file",
                 "name": "Ordinal Bin",
-                "path": "/en/desktop/interface-documentation/ordinal-bin",
-                "source": "ordinal-bin",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/ordinal-bin",
+                "source": "ordinal-bin"
               },
               {
                 "type": "file",
                 "name": "Per Alter Edge Form",
-                "path": "/en/desktop/interface-documentation/per-alter-edge-form",
-                "source": "per-alter-edge-form",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/per-alter-edge-form",
+                "source": "per-alter-edge-form"
               },
               {
                 "type": "file",
                 "name": "Per Alter Form",
-                "path": "/en/desktop/interface-documentation/per-alter-form",
-                "source": "per-alter-form",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/per-alter-form",
+                "source": "per-alter-form"
               },
               {
                 "type": "file",
                 "name": "Shared Interface Options",
-                "path": "/en/desktop/interface-documentation/shared",
-                "source": "shared",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/shared",
+                "source": "shared"
               },
               {
                 "type": "file",
                 "name": "Small Roster Name Generator",
-                "path": "/en/desktop/interface-documentation/small-roster-name-generator",
-                "source": "small-roster-name-generator",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/small-roster-name-generator",
+                "source": "small-roster-name-generator"
               },
               {
                 "type": "file",
                 "name": "Sociogram",
-                "path": "/en/desktop/interface-documentation/sociogram",
-                "source": "sociogram",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/sociogram",
+                "source": "sociogram"
               },
               {
                 "type": "file",
                 "name": "Tie-Strength Census",
-                "path": "/en/desktop/interface-documentation/tie-strength-census",
-                "source": "tie-strength-census",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/interface-documentation/tie-strength-census",
+                "source": "tie-strength-census"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "key-concepts",
+            "name": "Key concepts",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Additional Variables",
-                "path": "/en/desktop/key-concepts/additional-variables",
-                "source": "additional-variables",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/additional-variables",
+                "source": "additional-variables"
               },
               {
                 "type": "file",
                 "name": "Codebook",
-                "path": "/en/desktop/key-concepts/codebook",
-                "source": "codebook",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/codebook",
+                "source": "codebook"
               },
               {
                 "type": "file",
                 "name": "Field Validation",
-                "path": "/en/desktop/key-concepts/field-validation",
-                "source": "field-validation",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/field-validation",
+                "source": "field-validation"
               },
               {
                 "type": "file",
                 "name": "Forms",
-                "path": "/en/desktop/key-concepts/forms",
-                "source": "forms",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/forms",
+                "source": "forms"
               },
               {
                 "type": "file",
                 "name": "Input Controls",
-                "path": "/en/desktop/key-concepts/input-controls",
-                "source": "input-controls",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/input-controls",
+                "source": "input-controls"
               },
               {
                 "type": "file",
                 "name": "Interfaces",
-                "path": "/en/desktop/key-concepts/interfaces",
-                "source": "interfaces",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/interfaces",
+                "source": "interfaces"
               },
               {
                 "type": "file",
                 "name": "Network Filtering",
-                "path": "/en/desktop/key-concepts/network-filtering",
-                "source": "network-filtering",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/network-filtering",
+                "source": "network-filtering"
               },
               {
                 "type": "file",
                 "name": "Preview Mode",
-                "path": "/en/desktop/key-concepts/preview-mode",
-                "source": "preview-mode",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/preview-mode",
+                "source": "preview-mode"
               },
               {
                 "type": "file",
                 "name": "Prompts",
-                "path": "/en/desktop/key-concepts/prompts",
-                "source": "prompts",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/prompts",
+                "source": "prompts"
               },
               {
                 "type": "file",
                 "name": "Resources",
-                "path": "/en/desktop/key-concepts/resources",
-                "source": "resources",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/resources",
+                "source": "resources"
               },
               {
                 "type": "file",
                 "name": "Skip Logic",
-                "path": "/en/desktop/key-concepts/skip-logic",
-                "source": "skip-logic",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/skip-logic",
+                "source": "skip-logic"
               },
               {
                 "type": "file",
                 "name": "The Protocol File",
-                "path": "/en/desktop/key-concepts/the-protocol-file",
-                "source": "the-protocol-file",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/key-concepts/the-protocol-file",
+                "source": "the-protocol-file"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "reference",
+            "name": "Technical reference",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "IRB and Security Best Practices",
-                "path": "/en/desktop/reference/irb-best-practices",
-                "source": "irb-best-practices",
-                "docId": "Security Best Practices",
-                "language": "en"
+                "language": "en",
+                "path": "/desktop/reference/irb-best-practices",
+                "source": "irb-best-practices"
               },
               {
                 "type": "file",
                 "name": "Network Canvas GraphML Format",
-                "path": "/en/desktop/reference/network-canvas-graphml",
-                "source": "network-canvas-graphml",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/network-canvas-graphml",
+                "source": "network-canvas-graphml"
               },
               {
                 "type": "file",
                 "name": "Node Labelling",
-                "path": "/en/desktop/reference/node-labelling",
-                "source": "node-labelling",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/node-labelling",
+                "source": "node-labelling"
+              },
+              {
+                "type": "file",
+                "name": "Protocol File Format",
+                "language": "en",
+                "path": "/desktop/reference/protocol-file-format",
+                "source": "protocol-file-format"
               },
               {
                 "type": "file",
                 "name": "Protocol Schema Information",
-                "path": "/en/desktop/reference/protocol-file-format",
-                "source": "protocol-file-format",
-                "docId": null
-              },
-              {
-                "type": "file",
-                "name": "Protocol Schema Information",
-                "path": "/en/desktop/reference/protocol-schema-information",
-                "source": "protocol-schema-information",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/protocol-schema-information",
+                "source": "protocol-schema-information"
               },
               {
                 "type": "file",
                 "name": "Overview of Security Model",
-                "path": "/en/desktop/reference/security-model",
-                "source": "security-model",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/security-model",
+                "source": "security-model"
               },
               {
                 "type": "file",
                 "name": "Project Testing Strategy",
-                "path": "/en/desktop/reference/testing-strategy",
-                "source": "testing-strategy",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/testing-strategy",
+                "source": "testing-strategy"
               },
               {
                 "type": "file",
                 "name": "Variable Types",
-                "path": "/en/desktop/reference/variable-types",
-                "source": "variable-types",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/reference/variable-types",
+                "source": "variable-types"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "tutorials",
+            "name": "Tutorials",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Building a protocol using Architect",
-                "path": "/en/desktop/tutorials/building-a-protocol",
-                "source": "building-a-protocol",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/building-a-protocol",
+                "source": "building-a-protocol"
               },
               {
                 "type": "file",
                 "name": "Using Interviewer",
-                "path": "/en/desktop/tutorials/using-interviewer",
-                "source": "using-interviewer",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/using-interviewer",
+                "source": "using-interviewer"
               },
               {
                 "type": "file",
                 "name": "Using Server to manage a study",
-                "path": "/en/desktop/tutorials/using-server",
-                "source": "using-server",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/using-server",
+                "source": "using-server"
               },
               {
                 "type": "file",
                 "name": "Protocol and Data Workflows without Server",
-                "path": "/en/desktop/tutorials/workflows-without-server",
-                "source": "workflows-without-server",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/workflows-without-server",
+                "source": "workflows-without-server"
               },
               {
                 "type": "file",
                 "name": "Working with Network Canvas data in R",
-                "path": "/en/desktop/tutorials/working-with-data",
-                "source": "working-with-data",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/working-with-data",
+                "source": "working-with-data"
               },
               {
                 "type": "file",
                 "name": "Working with Roster Data",
-                "path": "/en/desktop/tutorials/working-with-rosters",
-                "source": "working-with-rosters",
-                "docId": null
+                "language": "en",
+                "path": "/desktop/tutorials/working-with-rosters",
+                "source": "working-with-rosters"
               }
             ]
           }
@@ -442,43 +445,47 @@
       {
         "type": "folder",
         "name": "fresco",
+        "language": "en",
         "files": [
           {
             "type": "folder",
-            "name": "installation",
+            "name": "Installation guide",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Fresco Installation guide",
-                "path": "/en/fresco/installation/installation",
-                "source": "installation",
-                "docId": null
+                "language": "en",
+                "path": "/fresco/installation/installation",
+                "source": "installation"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "introduction",
+            "name": "Introduction",
+            "language": "en",
             "files": [
               {
                 "type": "file",
                 "name": "Fresco Introduction",
-                "path": "/en/fresco/introduction/introduction",
-                "source": "introduction",
-                "docId": null
+                "language": "en",
+                "path": "/fresco/introduction/introduction",
+                "source": "introduction"
               }
             ]
           },
           {
             "type": "folder",
-            "name": "third-folder",
+            "name": "Third folder",
+            "language": "en",
             "files": [
               {
                 "type": "file",
-                "name": "TEST",
-                "path": "/en/fresco/third-folder/test",
-                "source": "test",
-                "docId": null
+                "name": "TEST Document",
+                "language": "en",
+                "path": "/fresco/third-folder/test",
+                "source": "test"
               }
             ]
           }
@@ -487,20 +494,74 @@
     ]
   },
   {
-    "type": "folder",
-    "name": "ru",
-    "files": [
+    "ru": [
       {
         "type": "folder",
         "name": "desktop",
+        "language": "ru",
         "files": [
           {
-            "type": "file",
-            "name": "Лучшие практики по IRB и безопасности",
-            "path": "/ru/desktop/irb-russian",
-            "source": "irb-russian",
-            "docId": "Security Best Practices",
-            "language": "ru"
+            "type": "folder",
+            "name": "Практические руководства",
+            "language": "ru",
+            "files": [
+              {
+                "type": "file",
+                "name": "Выбор оборудования для Interviewer",
+                "language": "ru",
+                "path": "/desktop/how-to/choosing-hardware",
+                "source": "choosing-hardware"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Техническая справка",
+            "language": "ru",
+            "files": [
+              {
+                "type": "file",
+                "name": "Практики безопасности IRB и безопасность",
+                "language": "ru",
+                "path": "/desktop/reference/irb-best-practices",
+                "source": "irb-best-practices"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "fresco",
+        "language": "ru",
+        "files": [
+          {
+            "type": "folder",
+            "name": "Инструкция по установке",
+            "language": "ru",
+            "files": [
+              {
+                "type": "file",
+                "name": "Руководство по установке Fresco",
+                "language": "ru",
+                "path": "/fresco/installation/installation",
+                "source": "installation"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Третья папка",
+            "language": "ru",
+            "files": [
+              {
+                "type": "file",
+                "name": "ТЕСТОВЫЙ документ",
+                "language": "ru",
+                "path": "/fresco/third-folder/test",
+                "source": "test"
+              }
+            ]
           }
         ]
       }
