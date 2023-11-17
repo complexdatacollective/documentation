@@ -1,23 +1,42 @@
+'use client';
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 type MenuProps = {
   title: string;
   itemValue: string;
-  value: string | undefined;
+  activeMenu: string | undefined;
   children: ReactNode;
 };
 
-export default function Menu({ title, children, itemValue, value }: MenuProps) {
+export default function Menu({
+  title,
+  children,
+  itemValue,
+  activeMenu,
+}: MenuProps) {
+  const [value, setValue] = useState<string>();
+
+  useEffect(() => {
+    setValue(activeMenu);
+  }, [activeMenu]);
+
   return (
-    <Accordion value={value} type="single" collapsible className="w-full">
+    <Accordion
+      value={value}
+      type="single"
+      collapsible
+      className="w-full"
+      onValueChange={setValue}
+    >
       <AccordionItem value={itemValue}>
-        <AccordionTrigger className="text-base text-red-400">
+        <AccordionTrigger className="text-xs text-red-400">
           {title}
         </AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>

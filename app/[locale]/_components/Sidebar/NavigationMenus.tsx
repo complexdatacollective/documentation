@@ -1,6 +1,6 @@
 import { type DocFile, type Folder } from '@/types';
 import Menu from './Menu';
-import { Link } from '@/navigation';
+import NavigationLink from './NavigationLink';
 
 export interface NavigationMenusProps {
   sidebarData: (Folder | DocFile)[];
@@ -20,10 +20,10 @@ export default function NavigationMenus({
           // render menu (folder)
           return (
             <Menu
-              value={activeMenu}
+              activeMenu={activeMenu}
               itemValue={folder.source}
               key={folder.name}
-              title={folder.name}
+              title={folder.name.toLocaleUpperCase()}
             >
               <ul>
                 <NavigationMenus
@@ -37,17 +37,12 @@ export default function NavigationMenus({
           const file = item;
           // render menu item (file)
           return (
-            <li
-              key={file.name}
-              className={`${
-                pathItems.includes(file.source)
-                  ? 'text-violet-500'
-                  : 'text-slate-500'
-              } transition-colors hover:text-violet-500 dark:hover:text-white`}
-            >
-              <Link className="text-sm" href={file.path}>
-                {file.name}
-              </Link>
+            <li key={file.name}>
+              <NavigationLink
+                highlighted={pathItems.includes(file.source)}
+                fileName={file.name}
+                filePath={file.path}
+              />
             </li>
           );
         }
