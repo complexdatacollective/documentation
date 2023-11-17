@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { getAvailableLocales } from '@/lib/helper_functions';
 import { getTranslator } from 'next-intl/server';
 import Link from 'next/link';
@@ -26,13 +25,14 @@ const InnerLanguageSwitcher = async ({
     <div className="my-1 flex gap-2">
       <span>{t('docAvailableTxt')}</span>
       {supportedLanguages.map((lang) => (
-        <Link
-          className="mx-1 text-blue-400 transition-colors hover:text-cyan-400"
-          key={lang}
-          href={`/${lang}/${filePath}`}
-        >
-          {lang}
-        </Link>
+        <div key={lang}>
+          <Link
+            className="mx-1 text-blue-400 transition-colors hover:text-cyan-400"
+            href={`/${lang}${filePath}`}
+          >
+            {lang}
+          </Link>
+        </div>
       ))}
     </div>
   );

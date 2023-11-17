@@ -30,7 +30,13 @@ const LanguageSwitcher = ({ width }: LanguageSwitcherProps) => {
       sidebarData,
       value,
     );
-    const result = isPathExist(localeBasedSidebarData[0], pathName);
+    let result;
+
+    for (const folder of localeBasedSidebarData) {
+      result = isPathExist(folder, pathName);
+      if (result) break;
+    }
+
     router.push(result ? pathName : '/', { locale: value });
   }
 
