@@ -1,4 +1,3 @@
-import { convertToUrlText } from '@/lib/helper_functions';
 import { Link2 } from 'lucide-react';
 import { type DetailedHTMLProps, type HTMLAttributes } from 'react';
 import CustomLink from './CustomLink';
@@ -11,14 +10,15 @@ export const styledHeadings = {
       HTMLHeadingElement
     >,
   ) => (
-    <h2 id={convertToUrlText(props.children?.toString() ?? '')}>
-      <CustomLink
-        className="text-green-400"
-        id={`${convertToUrlText(props.children?.toString() ?? '')}`}
-      >
-        {props.children}
-        <Link2 className="hidden text-violet-500 group-hover:block" />
-      </CustomLink>
+    <h2 id={props.id}>
+      {props.id ? (
+        <CustomLink className="text-green-400" id={props.id}>
+          {props.children}
+          <Link2 className="hidden text-violet-500 group-hover:block" />
+        </CustomLink>
+      ) : (
+        props.children
+      )}
     </h2>
   ),
   h3: (
@@ -27,11 +27,15 @@ export const styledHeadings = {
       HTMLHeadingElement
     >,
   ) => (
-    <h3 id={convertToUrlText(props.children?.toString() ?? '')}>
-      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? '')}`}>
-        {props.children}
-        <Link2 className="hidden text-violet-500 group-hover:block" />
-      </CustomLink>
+    <h3 id={props.id}>
+      {props.id ? (
+        <CustomLink id={props.id}>
+          {props.children}
+          <Link2 className="hidden text-violet-500 group-hover:block" />
+        </CustomLink>
+      ) : (
+        props.children
+      )}
     </h3>
   ),
   h4: (
@@ -40,11 +44,15 @@ export const styledHeadings = {
       HTMLHeadingElement
     >,
   ) => (
-    <h4 id={convertToUrlText(props.children?.toString() ?? '')}>
-      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? '')}`}>
-        {props.children}
-        <Link2 className="hidden text-violet-500 group-hover:block" />
-      </CustomLink>
+    <h4 id={props.id}>
+      {props.id ? (
+        <CustomLink id={props.id}>
+          {props.children}
+          <Link2 className="hidden text-violet-500 group-hover:block" />
+        </CustomLink>
+      ) : (
+        props.children
+      )}
     </h4>
   ),
   h5: (
@@ -53,11 +61,15 @@ export const styledHeadings = {
       HTMLHeadingElement
     >,
   ) => (
-    <h5 id={convertToUrlText(props.children?.toString() ?? '')}>
-      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? '')}`}>
-        {props.children}
-        <Link2 className="hidden text-violet-500 group-hover:block" />
-      </CustomLink>
+    <h5 id={props.id}>
+      {props.id ? (
+        <CustomLink id={props.id}>
+          {props.children}
+          <Link2 className="hidden text-violet-500 group-hover:block" />
+        </CustomLink>
+      ) : (
+        props.children
+      )}
     </h5>
   ),
   h6: (
@@ -66,11 +78,15 @@ export const styledHeadings = {
       HTMLHeadingElement
     >,
   ) => (
-    <h6 id={convertToUrlText(props.children?.toString() ?? '')}>
-      <CustomLink id={`${convertToUrlText(props.children?.toString() ?? '')}`}>
-        {props.children}
-        <Link2 className="hidden text-violet-500 group-hover:block" />
-      </CustomLink>
+    <h6 id={props.id}>
+      {props.id ? (
+        <CustomLink id={props.id}>
+          {props.children}
+          <Link2 className="hidden text-violet-500 group-hover:block" />
+        </CustomLink>
+      ) : (
+        props.children
+      )}
     </h6>
   ),
 };

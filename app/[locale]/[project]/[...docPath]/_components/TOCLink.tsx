@@ -25,10 +25,8 @@ const TOCLink = ({ node }: { node: HeadingNode }) => {
       href={`#${node.data.id}`}
       className={`block ${
         node.depth === 2 ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'
-      } py-1 hover:text-black ${
-        highlighted
-          ? 'text-violet-500'
-          : 'text-slate-400 transition-colors dark:hover:text-white'
+      } py-1 transition-colors hover:text-black dark:hover:text-white ${
+        highlighted ? 'text-violet-500' : 'text-slate-400'
       }`}
     >
       {node.value}

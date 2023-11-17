@@ -11,6 +11,7 @@ import SummaryCard from './_components/customComponents/SummaryCard';
 import WorkInProgress from './_components/customComponents/WorkInProgress';
 import { customComponents } from './_components/customComponents/customComponents';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
+import rehypeSlug from 'rehype-slug';
 
 type PageParams = {
   locale: string;
@@ -97,7 +98,15 @@ const Page = async ({ params }: { params: PageParams }) => {
         {interfaceSummary && <InterfaceSummary data={interfaceSummary} />}
         {summaryData && <SummaryCard data={summaryData} />}
         {wip && <WorkInProgress />}
-        <MDXRemote components={customComponents} source={content} />
+        <MDXRemote
+          options={{
+            mdxOptions: {
+              rehypePlugins: [rehypeSlug],
+            },
+          }}
+          components={customComponents}
+          source={content}
+        />
         {bestPractices && <BestPractices data={bestPractices} />}
         <p className="text-sm text-red-400">{lastUpdated}</p>
       </article>
