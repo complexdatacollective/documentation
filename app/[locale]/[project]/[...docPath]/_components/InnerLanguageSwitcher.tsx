@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getAvailableLocales } from '@/lib/helper_functions';
 import { getTranslator } from 'next-intl/server';
 import Link from 'next/link';

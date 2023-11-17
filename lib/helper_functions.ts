@@ -45,7 +45,6 @@ export function isPathExist(data: Folder, docPath: string, isExist = false) {
     } else {
       isExist = isPathExist(item, docPath, isExist);
     }
-
     if (isExist) break;
   }
 
@@ -59,7 +58,12 @@ export function getAvailableLocales(filePath: string) {
       sidebarData,
       locale,
     );
-    const result = isPathExist(localeBasedSidebarData[0], filePath);
+    let result;
+
+    for (const folder of localeBasedSidebarData) {
+      result = isPathExist(folder, filePath);
+      if (result) break;
+    }
 
     return result;
   });
