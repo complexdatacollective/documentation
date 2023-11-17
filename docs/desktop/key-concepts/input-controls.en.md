@@ -2,7 +2,7 @@
 title: Input Controls
 toc: true
 
-definition: A flexible way to assign values to variables in [forms](../forms). By separating the visible control from the variable type, you can choose the best possible interview experience for your participant.
+definition: A flexible way to assign values to variables in [forms](/en/desktop/key-concepts/forms). By separating the visible control from the variable type, you can choose the best possible interview experience for your participant.
 ---
 
 Below you will find a summary of each available input control, and advice about when to use them.
@@ -214,7 +214,7 @@ The toggle control provides participants a switch that can be toggled on or off,
 <GoodPractice />
 
 - Use a toggle to easily collect simple true/false variable values, and specifically to indicate the presence of an attribute.
-- Consider using multiple toggles to indicate attributes that can then be used as part of [network filtering](../network-filtering) or [skip logic](../skip-logic).
+- Consider using multiple toggles to indicate attributes that can then be used as part of [network filtering](/en/desktop/key-concepts/network-filtering) or [skip logic](/en/desktop/key-concepts/skip-logic).
 
 ### Things to avoid
 

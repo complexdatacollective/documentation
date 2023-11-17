@@ -1,6 +1,6 @@
 import { Link2 } from 'lucide-react';
 import { type DetailedHTMLProps, type HTMLAttributes } from 'react';
-import CustomLink from './CustomLink';
+import HeaderLink from './HeaderLink';
 
 // TEMPORARY custom styled heading components
 export const styledHeadings = {
@@ -12,10 +12,10 @@ export const styledHeadings = {
   ) => (
     <h2 id={props.id}>
       {props.id ? (
-        <CustomLink className="text-green-400" id={props.id}>
+        <HeaderLink className="text-green-400" id={props.id}>
           {props.children}
           <Link2 className="hidden text-violet-500 group-hover:block" />
-        </CustomLink>
+        </HeaderLink>
       ) : (
         props.children
       )}
@@ -29,10 +29,10 @@ export const styledHeadings = {
   ) => (
     <h3 id={props.id}>
       {props.id ? (
-        <CustomLink id={props.id}>
+        <HeaderLink id={props.id}>
           {props.children}
           <Link2 className="hidden text-violet-500 group-hover:block" />
-        </CustomLink>
+        </HeaderLink>
       ) : (
         props.children
       )}
@@ -46,10 +46,10 @@ export const styledHeadings = {
   ) => (
     <h4 id={props.id}>
       {props.id ? (
-        <CustomLink id={props.id}>
+        <HeaderLink id={props.id}>
           {props.children}
           <Link2 className="hidden text-violet-500 group-hover:block" />
-        </CustomLink>
+        </HeaderLink>
       ) : (
         props.children
       )}
@@ -63,10 +63,10 @@ export const styledHeadings = {
   ) => (
     <h5 id={props.id}>
       {props.id ? (
-        <CustomLink id={props.id}>
+        <HeaderLink id={props.id}>
           {props.children}
           <Link2 className="hidden text-violet-500 group-hover:block" />
-        </CustomLink>
+        </HeaderLink>
       ) : (
         props.children
       )}
@@ -80,10 +80,10 @@ export const styledHeadings = {
   ) => (
     <h6 id={props.id}>
       {props.id ? (
-        <CustomLink id={props.id}>
+        <HeaderLink id={props.id}>
           {props.children}
           <Link2 className="hidden text-violet-500 group-hover:block" />
-        </CustomLink>
+        </HeaderLink>
       ) : (
         props.children
       )}

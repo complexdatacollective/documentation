@@ -1,13 +1,13 @@
 import { Link } from '@/navigation';
 import React from 'react';
 
-type CustomLinkProps = {
+type HeaderLinkProps = {
   id: string;
   children: React.ReactNode;
   className?: string;
 };
 
-const CustomLink = ({ id, children, className }: CustomLinkProps) => {
+const HeaderLink = ({ id, children, className }: HeaderLinkProps) => {
   return (
     <Link
       className={`group flex items-center gap-1.5 no-underline transition-all hover:text-blue-400 ${className} `}
@@ -18,4 +18,4 @@ const CustomLink = ({ id, children, className }: CustomLinkProps) => {
   );
 };
 
-export default CustomLink;
+export default HeaderLink;

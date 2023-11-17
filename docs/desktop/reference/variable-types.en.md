@@ -10,7 +10,7 @@ Represents dichotomous categories with only two possible values (e.g. true/false
 
 **Compatible Input Controls:**
 
-- [Toggle](../_key-concepts/input-controls.md#Toggle)
+- [Toggle](/en/desktop/key-concepts/input-controls#toggle)
 
 **Validation Options:** Required
 
@@ -22,8 +22,8 @@ These variables represent nominal categories or characteristics that have no int
 
 **Compatible Input Controls:**
 
-- [Toggle Button Group](../_key-concepts/input-controls.md#Toggle-Button-Group)
-- [Checkbox Group](../_key-concepts/input-controls.md#checkbox-group)
+- [Toggle Button Group](/en/desktop/key-concepts/input-controls#toggle-button-group)
+- [Checkbox Group](/en/desktop/key-concepts/input-controls#checkbox-group)
 
 **Validation Options:** MinSelected, MaxSelected, Required
 
@@ -35,8 +35,8 @@ These variables represent a point in time (typically a date).
 
 **Compatible Input Controls:**
 
-- [Date Picker](../_key-concepts/input-controls.md#Date-Picker)
-- [Relative Date Picker](../_key-concepts/input-controls.md#Relative-Date-Picker)
+- [Date Picker](/en/desktop/key-concepts/input-controls#date-picker)
+- [Relative Date Picker](/en/desktop/key-concepts/input-controls#relative-date-picker)
 
 **Validation Options:** Required
 
@@ -46,7 +46,7 @@ These variables represent a point in time (typically a date).
 ## Layout
 These variables store the x, y coordinates of nodes on the Sociogram normalized to a range of `[0, 1]`.
 
-This variable type has no validation options or input controls, because it cannot be used on a [form](../_key-concepts/forms.md).
+This variable type has no validation options or input controls, because it cannot be used on a [form](/en/desktop/key-concepts/forms).
 
 </div>
 
@@ -56,7 +56,7 @@ These variables represent integer values (e.g. age, height, etc.).
 
 **Compatible Input Controls:**
 
-- [Number Input](../_key-concepts/input-controls.md#Number-Input)
+- [Number Input](/en/desktop/key-concepts/input-controls#number-input)
 
 **Validation Options:** MaxValue, MinValue, Required
 
@@ -68,8 +68,8 @@ These variables represent categories that are ordered hierarchically (e.g. frequ
 
 **Compatible Input Controls:**
 
-- [Likert Scale](../_key-concepts/input-controls.md#Likert-Scale)
-- [Radio Group](../_key-concepts/input-controls.md#Radio-Group)
+- [Likert Scale](/en/desktop/key-concepts/input-controls#likert-scale)
+- [Radio Group](/en/desktop/key-concepts/input-controls#radio-group)
 
 **Validation Options:** Required
 
@@ -81,7 +81,7 @@ These variables represent a normalized value within a scale `[0.1]` (e.g. percei
 
 **Compatible Input Controls:**
 
-- [Visual Analog Scale](../_key-concepts/input-controls.md#Visual-Analog-Scale)
+- [Visual Analog Scale](/en/desktop/key-concepts/input-controls#visual-analog-scale)
 
 **Validation Options:** Required
 
@@ -93,8 +93,8 @@ These variables represent text data (e.g. names, qualitative responses, etc.).
 
 **Compatible Input Controls:**
 
-- [Text Input](../_key-concepts/input-controls.md#Text-Input)
-- [Text Area](../_key-concepts/input-controls.md#Text-Area)
+- [Text Input](/en/desktop/key-concepts/input-controls#text-input)
+- [Text Area](/en/desktop/key-concepts/input-controls#text-area)
 
 **Validation Options:** MinLength, MaxLength, Required
 

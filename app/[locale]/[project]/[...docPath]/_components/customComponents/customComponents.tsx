@@ -1,5 +1,6 @@
 import ButtonPrimary from './ButtonPrimary';
 import ButtonSecondary from './ButtonSecondary';
+import CustomAnchor from './CustomAnchor';
 import { styledHeadings } from './CustomHeadings';
 import ImageFloatLeft from './ImageFloatLeft';
 import ImageFullWith from './ImageFullWith';
@@ -19,4 +20,5 @@ export const customComponents = {
   TipBox,
   GoodPractice: () => <CheckSquare className="inline text-green-500" />,
   BadPractice: () => <XOctagon className="inline text-red-500" />,
+  a: CustomAnchor,
 };
