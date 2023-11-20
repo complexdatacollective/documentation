@@ -46,8 +46,8 @@
             "type": "file",
             "name": "Home",
             "language": "en",
-            "path": "/desktop/index",
-            "source": "index"
+            "path": "/desktop",
+            "source": "desktop"
           },
           {
             "type": "file",
@@ -455,6 +455,13 @@
         "source": "fresco",
         "files": [
           {
+            "type": "file",
+            "name": "Home",
+            "language": "en",
+            "path": "/fresco",
+            "source": "fresco"
+          },
+          {
             "type": "folder",
             "name": "Installation guide",
             "language": "en",
@@ -471,16 +478,16 @@
           },
           {
             "type": "folder",
-            "name": "Introduction",
+            "name": "Some Notes",
             "language": "en",
-            "source": "introduction",
+            "source": "some-notes",
             "files": [
               {
                 "type": "file",
                 "name": "Fresco Introduction",
                 "language": "en",
-                "path": "/fresco/introduction/introduction",
-                "source": "introduction"
+                "path": "/fresco/some-notes/notes",
+                "source": "notes"
               }
             ]
           },
