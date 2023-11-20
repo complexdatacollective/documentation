@@ -1,4 +1,4 @@
-0:["F0UA481cCg2flvm5beV2G",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[null,"$L2"]]]]
+0:["MVTRl4N7nt8d01sct_Cuc",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[null,"$L2"]]]]
 3:I[825,[],""]
 4:I[4348,[],""]
 1:[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"text-red-400","children":"Custom 404 Page"}],"notFoundStyles":[],"initialChildNode":["$L5","$L6",null],"childPropSegment":"__PAGE__","styles":null}],null]
