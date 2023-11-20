@@ -35,11 +35,13 @@ export default function NavigationMenus({
           );
         } else {
           const file = item;
+          const isDocumetInView = '/' + pathItems.join('/') === file.path;
           // render menu item (file)
+
           return (
             <li key={file.name}>
               <NavigationLink
-                highlighted={pathItems.includes(file.source)}
+                highlighted={isDocumetInView}
                 fileName={file.name}
                 filePath={file.path}
               />
