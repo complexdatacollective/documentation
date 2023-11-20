@@ -9,19 +9,19 @@ toc: true
 
 Our team welcomes opportunities for formal collaboration with external partners. These collaborations typically entail, but are not limited to, one or more of the following:
 
-### _Software Development_
+### Software Development
 
 **Development of new functionality within the Network Canvas software.** Such collaborations may include the technical design and implementation of a new feature or entirely new interface, or simply a minor modification of the existing software to accommodate the needs of a particular study.
 
-### _Research Consultancy_
+### Research Consultancy
 
 **Consultation on the design and implementation of Network Canvas within a study.** Such collaborations might entail attending regular project meetings where expert advice or technical assistance is provided to a research group as they design their network data protocol or design their network study. Occasionally our role goes beyond advice, and members of our team might develop a Network Canvas protocol for a research group, participate in the training of the interview team, contribute to data analysis or publications resulting from the research project.
 
-### _Customized Training_
+### Customized Training
 
 **Bespoke hands-on training in Network Canvas for a research group or organization.** Such collaborations might include the preparation and delivery of a workshop designed around the needs of a particular research group or study within a specific institution or organization. Outside of contracted training collaborations, our team conducts yearly workshops at the annual Sunbelt Conference for the International Network of Social Network Analysis (INSNA) and regularly updates our online user [documentation](https://documentation.networkcanvas.com/) and tutorial [videos](https://www.youtube.com/channel/UC3uFCh2HlR8iqiYhRNomUqQ) to facilitate easy uptake of the tool.
 
-### _Technical Support_
+### Technical Support
 
 **Dedicated technical support for Network Canvas implementations.** Such collaborations typically entail the ongoing involvement of our team in providing technical assistance to a research group during a portion or the entirety of their study, which utilizes Network Canvas. We may field questions related to implementation roadblocks of a technical nature and help address emergent issues that arise during data collection and management. Outside of a formal collaboration, our team is available to answer limited questions via email within the scope of our grant.
 

@@ -75,6 +75,8 @@ const Page = async ({ params }: { params: PageParams }) => {
     pathSegment: docPath,
   });
 
+  // ask on discord about the 404 issue
+
   if (!doc || doc?.content === null) notFound();
 
   // Frontmatter data of markdown files

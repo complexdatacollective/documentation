@@ -5,19 +5,20 @@ last_modified_at: 2021-02-10
 wip: false
 toc: true
 ---
+
 ## Which applications do I need?
 
 Each application of the Network Canvas Suite can be downloaded and installed individually. You do not need to install all applications to use the software.
 
-* Install **Interviewer** on any device you will use to interview participants. It runs your Network Canvas protocols and collects data in the field.
-* Install **Architect** on a desktop computer that you will to use to design your Network Canvas interview protocol.
-* (Optionally) Install **Server** if you wish to use it as a central data storage system, or as a means to deploy interview protocols to your devices. See "do I need Server" (below) for further information.
+- Install **Interviewer** on any device you will use to interview participants. It runs your Network Canvas protocols and collects data in the field.
+- Install **Architect** on a desktop computer that you will to use to design your Network Canvas interview protocol.
+- (Optionally) Install **Server** if you wish to use it as a central data storage system, or as a means to deploy interview protocols to your devices. See "do I need Server" (below) for further information.
 
 ### Do I need Server?
 
 Server has been designed specifically for scenarios where a dedicated team member will be responsible for managing data. This team member should be prepared to work with their IT department, or else have good knowledge of computer networking principles, in order to configure Server to send and receive data securely.
 
-Smaller studies, or extremely large studies, may benefit from working directly with data exported from Interviewer. For more information, see our tutorial on [offline data management workflows](/tutorials/offline-data-management-workflow).
+Smaller studies, or extremely large studies, may benefit from working directly with data exported from Interviewer. For more information, see our tutorial on [offline data management workflows](./tutorials/offline-data-management-workflow).
 
 ## System Requirements
 

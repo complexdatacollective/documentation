@@ -5,6 +5,7 @@ has_children: false
 toc: true
 nav_order: 5
 ---
+
 ## What is Network Canvas?
 
 Network Canvas is a suite of three applications designed to assist researchers in the collection of social network data. These applications are: Architect for building interview protocols, Interviewer for use in the field to collect data, and Server for managing data.
@@ -39,7 +40,7 @@ The intellectual property and copyright associated with the software is controll
 
 Our tools are designed to be used by all social network researchers, regardless of technical expertise. Our goal is to make the software usable for anyone who has everyday computing knowledge, such as would be required to use a laptop or iPad.
 
-The Network Canvas suite provides an end-to-end workflow, taking you from designing your interview to collating and exporting the data in a format that you are used to working with. Our central aim is to simplify this process, and lower the technical barriers to conducting personal networks research. 
+The Network Canvas suite provides an end-to-end workflow, taking you from designing your interview to collating and exporting the data in a format that you are used to working with. Our central aim is to simplify this process, and lower the technical barriers to conducting personal networks research.
 
 Finally, we intend to run demonstrations and training sessions at many network analysis conferences in the near future. In addition, our website will be a hub for training material, including videos and documentation. We hope you find these useful. If not, please let us know and we will try to improve as best we can!
 
@@ -47,22 +48,22 @@ Finally, we intend to run demonstrations and training sessions at many network a
 
 Network Canvas has technologies built in to allow research with mixed/low written literacy groups, and we welcome feedback about ways we can adapt the software to new research populations and make it more accessible.
 
-Unfortunately we do not have specific support for screen readers, or right-to-left languages at present. 
+Unfortunately we do not have specific support for screen readers, or right-to-left languages at present.
 
 ## Which hardware do I need to run the different components of the Network Canvas suite?
 
 The Network Canvas suite consists of three applications, with each component running on a variety of platforms:
 
-* Architect and Server are desktop apps, and will run on Windows, macOS, and Linux operating systems.
-* Network Canvas is a hybrid desktop/mobile app, and will run on Windows, Mac, iOS and Android. It will work best with a touch screen device, but will also function well with a conventional computer that uses a keyboard and mouse. Specific functionality may vary by operating system.
+- Architect and Server are desktop apps, and will run on Windows, macOS, and Linux operating systems.
+- Network Canvas is a hybrid desktop/mobile app, and will run on Windows, Mac, iOS and Android. It will work best with a touch screen device, but will also function well with a conventional computer that uses a keyboard and mouse. Specific functionality may vary by operating system.
 
-Our development test devices have included a Samsung Chromebook Plus, iPad Pros (both 9.7" and 12.1", and the Google Pixel C tablet. We have also completed Network Canvas studies using 27 inch “all in one” touchscreen computers with positive results. 
+Our development test devices have included a Samsung Chromebook Plus, iPad Pros (both 9.7" and 12.1", and the Google Pixel C tablet. We have also completed Network Canvas studies using 27 inch “all in one” touchscreen computers with positive results.
 
-Although Network Canvas has not been tested on all possible hardware configurations, we anticipate that most mid to high-end laptop computers and tablets will be capable of running the software well. Please see our article on [choosing hardware for a study](_how-to/choosing-hardware.md) for more information. If you are planning data collection and have specific questions, please create a post on our [user community](https://community.networkcanvas.com).
+Although Network Canvas has not been tested on all possible hardware configurations, we anticipate that most mid to high-end laptop computers and tablets will be capable of running the software well. Please see our article on [choosing hardware for a study](./how-to/choosing-hardware) for more information. If you are planning data collection and have specific questions, please create a post on our [user community](https://community.networkcanvas.com).
 
 ## How do I cite the Network Canvas suite of tools in a paper or grant application?
 
-Please see our page on [citing the software](./citing-the-software.md). 
+Please see our page on [citing the software](./citing-the-software).
 
 ## Does the software support feature X?
 
@@ -74,8 +75,8 @@ The software has been built to allow it to be extended and improved by anyone wi
 
 Our software was conceived in the context of research of a highly sensitive nature, so we understand that for many researchers security is of the utmost importance.
 
-We do not transmit, collect or retain any data from or about your study. The data you collect in the field is yours, and is only ever stored on your devices. This provides a baseline level of security, but also means that a large part of the responsibility for securing devices and data falls on the researcher. Please review our articles on [configuring devices prior to starting data collection](_how-to/configuring-devices.md), and [IRB and security best practices](_reference/irb-best-practices.md) to ensure that you are aware of the most common weaknesses. You should also consult with your institutional IT or security experts.
+We do not transmit, collect or retain any data from or about your study. The data you collect in the field is yours, and is only ever stored on your devices. This provides a baseline level of security, but also means that a large part of the responsibility for securing devices and data falls on the researcher. Please review our articles on [configuring devices prior to starting data collection](./how-to/configuring-devices), and [IRB and security best practices](_reference/irb-best-practices) to ensure that you are aware of the most common weaknesses. You should also consult with your institutional IT or security experts.
 
-If you wish to utilize our remote transfer functionality, we use standard encryption techniques implemented by well respected third party libraries to ensure that your data cannot be intercepted as it is sent remotely back to your laboratory or department computer. This transfer can take place on a local network within your institution for added security, or you can implement an entirely [offline workflow](_tutorials/offline-data-management-workflow.md) that does not require data to be transmitted. Further details of the security model we implement can be [found here](_reference/security-model.md).
+If you wish to utilize our remote transfer functionality, we use standard encryption techniques implemented by well respected third party libraries to ensure that your data cannot be intercepted as it is sent remotely back to your laboratory or department computer. This transfer can take place on a local network within your institution for added security, or you can implement an entirely [offline workflow](./tutorials/offline-data-management-workflow) that does not require data to be transmitted. Further details of the security model we implement can be [found here](_reference/security-model).
 
 If you have specific security requirements, please contact us to discuss how we can make our software suite compliant with your needs.

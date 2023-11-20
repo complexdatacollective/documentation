@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Clock } from 'lucide-react';
+import CustomAnchor from './CustomAnchor';
 
 type SummaryCardProps = {
   data: {
@@ -16,11 +17,14 @@ const SummaryCard = ({ data }: SummaryCardProps) => {
       <CardContent className="p-4">
         <div className="text-sm">
           <span className="font-bold">SUMMARY:</span>
-          <MDXRemote source={data.summary} />
+          <MDXRemote components={{ a: CustomAnchor }} source={data.summary} />
         </div>
         <div className="text-sm">
           <span className="font-bold">PREREQUISITES:</span>
-          <MDXRemote source={data.prerequisites} />
+          <MDXRemote
+            components={{ a: CustomAnchor }}
+            source={data.prerequisites}
+          />
         </div>
         <div className="text-sm">
           <span className="block font-bold">DURATION:</span>
