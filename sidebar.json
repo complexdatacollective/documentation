@@ -9,13 +9,6 @@
         "files": [
           {
             "type": "file",
-            "name": "404 - Not found",
-            "language": "en",
-            "path": "/desktop/404",
-            "source": "404"
-          },
-          {
-            "type": "file",
             "name": "Citing the Software",
             "language": "en",
             "path": "/desktop/citing-the-software",
