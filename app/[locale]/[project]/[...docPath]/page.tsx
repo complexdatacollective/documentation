@@ -5,12 +5,12 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import TableOfContents from './_components/TableOfContents';
-import BestPractices from './_components/customComponents/BestPractices';
-import InterfaceSummary from './_components/customComponents/InterfaceSummary';
-import SummaryCard from './_components/customComponents/SummaryCard';
-import WorkInProgress from './_components/customComponents/WorkInProgress';
-import { customComponents } from './_components/customComponents/customComponents';
-import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
+import BestPractices from '../_components/customComponents/BestPractices';
+import InterfaceSummary from '../_components/customComponents/InterfaceSummary';
+import SummaryCard from '../_components/customComponents/SummaryCard';
+import WorkInProgress from '../_components/customComponents/WorkInProgress';
+import { customComponents } from '../_components/customComponents/customComponents';
+import InnerLanguageSwitcher from '../_components/InnerLanguageSwitcher';
 import { options } from '@/lib/mdxOptions';
 
 type PageParams = {
@@ -43,14 +43,14 @@ export async function generateStaticParams({
   const { locale, project } = params;
   const docs = await getAllMarkdownDocs();
 
-  // Remove project name from docs
+  // Removes project name from docs
   const filteredDocs = docs.map(processPath).filter((processedPathList) => {
     const docProject = processedPathList[0]; // get docProject
     const docLocale = processedPathList[processedPathList.length - 1]; // get docLocale;
 
     return locale === docLocale && project === docProject;
   });
-  // remove the locale and project from filteredDocs
+  // removes the locale and project from filteredDocs
   const docsWithoutLocaleAndProject = filteredDocs.map((doc) =>
     doc.slice(1, -1),
   );
@@ -74,8 +74,6 @@ const Page = async ({ params }: { params: PageParams }) => {
     project,
     pathSegment: docPath,
   });
-
-  // ask on discord about the 404 issue
 
   if (!doc || doc?.content === null) notFound();
 

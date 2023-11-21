@@ -14,7 +14,7 @@ const InnerLanguageSwitcher = async ({
   const t = await getTranslator(currentLocale, 'DocPage');
   const availableLocales = getAvailableLocales(filePath);
 
-  // remove the current locale from availableLocales
+  // removes the current locale from availableLocales
   const supportedLanguages = availableLocales.filter(
     (locale) => locale !== currentLocale,
   );

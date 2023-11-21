@@ -37,7 +37,6 @@ export default function NavigationMenus({
           const file = item;
           const isDocumetInView = '/' + pathItems.join('/') === file.path;
           // render menu item (file)
-
           return (
             <li key={file.name}>
               <NavigationLink

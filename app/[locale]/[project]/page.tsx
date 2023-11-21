@@ -3,17 +3,14 @@ import { options } from '@/lib/mdxOptions';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
-import InnerLanguageSwitcher from './[...docPath]/_components/InnerLanguageSwitcher';
-import { customComponents } from './[...docPath]/_components/customComponents/customComponents';
-
-// Todo: consider moving the InnerLanguageSwitcher and customComponents
-// Todo: to _component in [project] segment
+import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
+import { customComponents } from './_components/customComponents/customComponents';
 
 type PageProps = { params: { locale: string; project: string } };
 
 export default function Page({ params }: PageProps) {
   const { locale, project } = params;
-  const filePath = `/${project}/index`;
+  const filePath = `/${project}/index`; // 'index' markdown is the home page for a project
 
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(params.locale);
