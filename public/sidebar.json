@@ -9,6 +9,41 @@
         "files": [
           {
             "type": "file",
+            "name": "Home",
+            "language": "en",
+            "path": "/desktop",
+            "source": "desktop"
+          },
+          {
+            "type": "file",
+            "name": "Project Overview",
+            "language": "en",
+            "path": "/desktop/project-overview",
+            "source": "project-overview"
+          },
+          {
+            "type": "file",
+            "name": "Installation Guide",
+            "language": "en",
+            "path": "/desktop/installation-guide",
+            "source": "installation-guide"
+          },
+          {
+            "type": "file",
+            "name": "Protocol Gallery",
+            "language": "en",
+            "path": "/desktop/protocol-gallery",
+            "source": "protocol-gallery"
+          },
+          {
+            "type": "file",
+            "name": "Frequently Asked Questions",
+            "language": "en",
+            "path": "/desktop/faq",
+            "source": "faq"
+          },
+          {
+            "type": "file",
             "name": "Citing the Software",
             "language": "en",
             "path": "/desktop/citing-the-software",
@@ -23,45 +58,10 @@
           },
           {
             "type": "file",
-            "name": "Frequently Asked Questions",
-            "language": "en",
-            "path": "/desktop/faq",
-            "source": "faq"
-          },
-          {
-            "type": "file",
             "name": "February 2022 Project Update",
             "language": "en",
             "path": "/desktop/february-2022-project-update",
             "source": "february-2022-project-update"
-          },
-          {
-            "type": "file",
-            "name": "Home",
-            "language": "en",
-            "path": "/desktop",
-            "source": "desktop"
-          },
-          {
-            "type": "file",
-            "name": "Installation Guide",
-            "language": "en",
-            "path": "/desktop/installation-guide",
-            "source": "installation-guide"
-          },
-          {
-            "type": "file",
-            "name": "Project Overview",
-            "language": "en",
-            "path": "/desktop/project-overview",
-            "source": "project-overview"
-          },
-          {
-            "type": "file",
-            "name": "Protocol Gallery",
-            "language": "en",
-            "path": "/desktop/protocol-gallery",
-            "source": "protocol-gallery"
           },
           {
             "type": "file",
@@ -397,17 +397,17 @@
             "files": [
               {
                 "type": "file",
-                "name": "Building a protocol using Architect",
-                "language": "en",
-                "path": "/desktop/tutorials/building-a-protocol",
-                "source": "building-a-protocol"
-              },
-              {
-                "type": "file",
                 "name": "Using Interviewer",
                 "language": "en",
                 "path": "/desktop/tutorials/using-interviewer",
                 "source": "using-interviewer"
+              },
+              {
+                "type": "file",
+                "name": "Building a protocol using Architect",
+                "language": "en",
+                "path": "/desktop/tutorials/building-a-protocol",
+                "source": "building-a-protocol"
               },
               {
                 "type": "file",
