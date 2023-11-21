@@ -11,7 +11,7 @@ import SummaryCard from './_components/customComponents/SummaryCard';
 import WorkInProgress from './_components/customComponents/WorkInProgress';
 import { customComponents } from './_components/customComponents/customComponents';
 import InnerLanguageSwitcher from './_components/InnerLanguageSwitcher';
-import rehypeSlug from 'rehype-slug';
+import { options } from '@/lib/mdxOptions';
 
 type PageParams = {
   locale: string;
@@ -101,11 +101,7 @@ const Page = async ({ params }: { params: PageParams }) => {
         {summaryData && <SummaryCard data={summaryData} />}
         {wip && <WorkInProgress />}
         <MDXRemote
-          options={{
-            mdxOptions: {
-              rehypePlugins: [rehypeSlug],
-            },
-          }}
+          options={options}
           components={customComponents}
           source={content}
         />

@@ -1,8 +1,8 @@
 import { getDoc } from '@/lib/docs';
+import { options } from '@/lib/mdxOptions';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
-import rehypeSlug from 'rehype-slug';
 import InnerLanguageSwitcher from './[...docPath]/_components/InnerLanguageSwitcher';
 import { customComponents } from './[...docPath]/_components/customComponents/customComponents';
 
@@ -34,11 +34,7 @@ export default function Page({ params }: PageProps) {
       <h1>{title}</h1>
       <InnerLanguageSwitcher currentLocale={locale} filePath={filePath} />
       <MDXRemote
-        options={{
-          mdxOptions: {
-            rehypePlugins: [rehypeSlug],
-          },
-        }}
+        options={options}
         components={customComponents}
         source={content}
       />
