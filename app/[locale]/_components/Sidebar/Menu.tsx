@@ -36,9 +36,7 @@ export default function Menu({
       onValueChange={setValue}
     >
       <AccordionItem value={itemValue}>
-        <AccordionTrigger className="text-xs text-red-400">
-          {title}
-        </AccordionTrigger>
+        <AccordionTrigger className="text-xs">{title}</AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>

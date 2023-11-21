@@ -12,9 +12,11 @@ export const styledHeadings = {
   h2: (props: HeadingProps) => (
     <h2 id={props.id}>
       {props.id ? (
-        <HeaderLink className="text-green-400" id={props.id}>
+        <HeaderLink id={props.id}>
           {props.children}
-          <Link2 className="hidden text-violet-500 group-hover:block" />
+          <div className="hidden group-hover:block">
+            <Link2 />
+          </div>
         </HeaderLink>
       ) : (
         props.children
@@ -26,7 +28,9 @@ export const styledHeadings = {
       {props.id ? (
         <HeaderLink id={props.id}>
           {props.children}
-          <Link2 className="hidden text-violet-500 group-hover:block" />
+          <div className="hidden group-hover:block">
+            <Link2 />
+          </div>
         </HeaderLink>
       ) : (
         props.children
@@ -38,7 +42,9 @@ export const styledHeadings = {
       {props.id ? (
         <HeaderLink id={props.id}>
           {props.children}
-          <Link2 className="hidden text-violet-500 group-hover:block" />
+          <div className="hidden group-hover:block">
+            <Link2 />
+          </div>
         </HeaderLink>
       ) : (
         props.children
@@ -50,7 +56,9 @@ export const styledHeadings = {
       {props.id ? (
         <HeaderLink id={props.id}>
           {props.children}
-          <Link2 className="hidden text-violet-500 group-hover:block" />
+          <div className="hidden group-hover:block">
+            <Link2 />
+          </div>
         </HeaderLink>
       ) : (
         props.children
@@ -62,7 +70,9 @@ export const styledHeadings = {
       {props.id ? (
         <HeaderLink id={props.id}>
           {props.children}
-          <Link2 className="hidden text-violet-500 group-hover:block" />
+          <div className="hidden group-hover:block">
+            <Link2 />
+          </div>
         </HeaderLink>
       ) : (
         props.children

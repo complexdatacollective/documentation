@@ -21,7 +21,7 @@ const Navbar = () => {
             src={logo as string}
             alt="Logo"
           />
-          <span className="text-green-400">Network Canvas</span>
+          <span className="text-white">Network Canvas</span>
         </Link>
         <div className="flex items-center gap-3">
           <SearchCommand />

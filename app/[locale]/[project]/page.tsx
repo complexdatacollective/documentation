@@ -27,7 +27,7 @@ export default function Page({ params }: PageProps) {
   const { title, content, lastUpdated } = doc;
 
   return (
-    <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
+    <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base prose-blockquote:border-blue-500">
       <h1>{title}</h1>
       <InnerLanguageSwitcher currentLocale={locale} filePath={filePath} />
       <MDXRemote

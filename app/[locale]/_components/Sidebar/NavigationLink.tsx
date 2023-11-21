@@ -30,8 +30,8 @@ const NavigationLink = ({
     <Link
       ref={ref}
       className={`${
-        highlighted ? 'text-violet-500' : 'text-slate-500'
-      } text-sm transition-colors hover:text-violet-500 dark:hover:text-white`}
+        highlighted ? 'text-black dark:text-white' : 'text-slate-500'
+      } text-sm transition-colors hover:text-black dark:hover:text-white`}
       href={filePath}
     >
       {fileName}

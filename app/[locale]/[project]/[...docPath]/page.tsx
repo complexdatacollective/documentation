@@ -92,7 +92,7 @@ const Page = async ({ params }: { params: PageParams }) => {
 
   return (
     <div className="flex items-start gap-1">
-      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base lg:prose-lg prose-blockquote:border-blue-500">
+      <article className="prose prose-sm prose-slate mx-5 dark:prose-invert md:prose-base prose-blockquote:border-blue-500">
         <h1>{title}</h1>
         <InnerLanguageSwitcher currentLocale={locale} filePath={filePath} />
         {interfaceSummary && <InterfaceSummary data={interfaceSummary} />}
