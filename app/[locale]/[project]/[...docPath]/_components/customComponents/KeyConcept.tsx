@@ -13,7 +13,7 @@ const KeyConcept = ({ children, title }: KeyConceptProps) => {
         {title}
       </span>
       <CardContent>
-        <span className="block text-sm leading-5 text-white">{children}</span>
+        <div className="text-sm leading-5 text-white">{children}</div>
       </CardContent>
     </Card>
   );

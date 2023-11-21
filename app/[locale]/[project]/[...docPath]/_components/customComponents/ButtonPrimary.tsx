@@ -13,7 +13,7 @@ function ButtonPrimary({ children, href }: ButtonPrimaryProps) {
       style={{ textDecoration: 'none' }}
       href={href}
     >
-      <p>{children}</p>
+      <span>{children}</span>
     </Link>
   );
 }
