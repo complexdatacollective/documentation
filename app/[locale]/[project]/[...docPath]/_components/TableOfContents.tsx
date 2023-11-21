@@ -14,7 +14,7 @@ const TableOfContents = ({ nodes }: TableOfContentsProps) => {
         nodes.length > 10 && 'h-[750px]'
       } min-w-[300px] overflow-y-auto`}
     >
-      <h3 className="text-md uppercase text-slate-400">Table of contents</h3>
+      <h3 className="text-sm uppercase text-slate-400">Table of contents</h3>
       {renderNodes(nodes)}
     </div>
   );
