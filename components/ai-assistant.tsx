@@ -31,7 +31,7 @@ const AIAssistant = () => {
         style={{ accentColor: '#123456', darkMode: theme !== 'light' }}
         anon_key={env.NEXT_PUBLIC_MENDABLE_ANON_KEY}
         dialogPlaceholder={t('dialogPlaceholder')}
-        messageSettings={{ prettySources: true, openSourcesInNewTab: true }}
+        messageSettings={{ prettySources: true, openSourcesInNewTab: false }}
         hintQuestions={[t('q1'), t('q2')]}
         popupText={t('popupText')}
         welcomeMessage={t('welcomeMessage')}
