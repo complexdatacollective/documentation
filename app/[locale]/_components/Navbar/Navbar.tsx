@@ -1,11 +1,10 @@
-import { Button } from '@/components/ui/button';
 import { Link } from '@/navigation';
 import logo from '@/public/assets/img/logo.svg';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import SearchCommand from './Search/SearchCommand';
-import { ThemeToggle } from './themeToggle';
 import LanguageSwitcher from './languageSwitcher';
+import { ThemeToggle } from './themeToggle';
 
 const Navbar = () => {
   const t = useTranslations('Navbar');
@@ -27,7 +26,13 @@ const Navbar = () => {
           <SearchCommand />
           <LanguageSwitcher width="w-fit" />
           <ThemeToggle />
-          <Button>{t('communityBtn')}</Button>
+          <Link
+            className="btn inline-block rounded-md bg-white p-2 text-center transition-colors hover:bg-stone-100 dark:bg-slate-700 dark:hover:bg-slate-600"
+            href={'https://community.networkcanvas.com'}
+            target="_blank"
+          >
+            {t('communityBtn')}
+          </Link>
         </div>
       </div>
     </div>
