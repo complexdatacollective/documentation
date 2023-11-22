@@ -1,7 +1,9 @@
-0:["sw5t6X7uAZdptxEwksuTv",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[null,"$L2"]]]]
-3:I[825,[],""]
-4:I[4348,[],""]
-1:[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"className":"text-red-400","children":"Custom 404 Page"}],"notFoundStyles":[],"initialChildNode":["$L5","$L6",null],"childPropSegment":"__PAGE__","styles":null}],null]
-2:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","meta","2",{"name":"next-size-adjust"}]]
-6:E{"digest":"NEXT_REDIRECT;replace;/en/desktop;false"}
-5:null
+1:HL["/_next/static/css/bf2f94be48dd7ed8.css","style",{"crossOrigin":""}]
+0:["ZXyutpFb6V_sVm2s1l6RD",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bf2f94be48dd7ed8.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[825,[],""]
+5:I[4348,[],""]
+6:I[2073,["73","static/chunks/73-5befd669a6807cff.js","160","static/chunks/app/not-found-7da41dfafa4bae47.js"],""]
+2:[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"children":["$","body",null,{"children":["$","div",null,{"className":"prose prose-sm prose-slate mx-auto my-10 md:prose-base","children":[["$","h1",null,{"children":"404 - Not found"}],["$","div",null,{"className":"h-[2px] w-full bg-black"}],["$","h2",null,{"children":"The requested page could not be found."}],["$","p",null,{"children":"This is probably because the page has been moved or deleted. We apologize for any inconvenience this has caused."}],["$","p",null,{"children":"Please try the following:"}],["$","ul",null,{"children":[["$","li",null,{"children":["Use the ",["$","b",null,{"children":"Return Home"}]," button (at the bottom of this page) to try to locate to the home page."]}],["$","li",null,{"children":"Check your address bar for spelling mistakes or typos."}],["$","li",null,{"children":"Contact the project team if you believe you are seeing this page in error, including details of the page you were trying to reach."}]]}],["$","$L6",null,{"className":"btn rounded-md bg-slate-100 p-4 text-center text-violet-600 hover:bg-slate-200","style":{"textDecoration":"none"},"href":"/","children":"Return Home"}]]}]}]}],"notFoundStyles":[],"initialChildNode":["$L7","$L8",null],"childPropSegment":"__PAGE__","styles":null}],null]
+3:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","meta","2",{"name":"next-size-adjust"}]]
+8:E{"digest":"NEXT_REDIRECT;replace;/en/desktop;false"}
+7:null
