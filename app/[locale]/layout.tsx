@@ -1,4 +1,3 @@
-import '@/app/[locale]/globals.css';
 import { ThemeProvider } from '@/components/Providers/theme-provider';
 import AIAssistant from '@/components/ai-assistant';
 import { locales } from '@/locales.mjs';
@@ -62,7 +61,7 @@ export default async function MainLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale}>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
