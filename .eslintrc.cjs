@@ -24,7 +24,12 @@ const config = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  ignorePatterns: ['node_modules', 'lib', 'next.config.js'],
+  ignorePatterns: [
+    'node_modules',
+    'lib',
+    'next.config.js',
+    'next-sitemap.config.js',
+  ],
   rules: {
     'no-process-env': 'error',
     'no-console': 'error',
