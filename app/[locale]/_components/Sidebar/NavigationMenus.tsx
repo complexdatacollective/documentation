@@ -18,11 +18,15 @@ export default function NavigationMenus({
         if (item.type === 'folder') {
           const folder = item;
           const activeMenu = pathItems.find((pt) => pt === folder.source); //find active menu from path items
+          const isFolderPageInView =
+            `/${pathItems.join('/')}` === folder.homePage;
+
           // render menu (folder)
           return (
             <li key={folder.name}>
               {folder.isCollapsible ? (
                 <Menu
+                  highlighted={isFolderPageInView}
                   activeMenu={activeMenu}
                   itemValue={folder.source}
                   title={folder.name.toLocaleUpperCase()}
@@ -35,6 +39,7 @@ export default function NavigationMenus({
                 </Menu>
               ) : (
                 <NavigationTitle
+                  highlighted={isFolderPageInView}
                   title={folder.name.toLocaleUpperCase()}
                   titleURL={folder.homePage}
                 >
@@ -48,12 +53,13 @@ export default function NavigationMenus({
           );
         } else {
           const file = item;
-          const isDocumetInView = '/' + pathItems.join('/') === file.path;
+          const isDocumentInView = `/${pathItems.join('/')}` === file.path;
           // render menu item (file)
+
           return (
             <li className="ml-2" key={file.name}>
               <NavigationLink
-                highlighted={isDocumetInView}
+                highlighted={isDocumentInView}
                 fileName={file.name}
                 filePath={file.path}
               />

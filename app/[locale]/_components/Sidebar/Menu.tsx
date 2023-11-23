@@ -14,6 +14,7 @@ type MenuProps = {
   titleURL: string | null;
   itemValue: string;
   activeMenu: string | undefined;
+  highlighted: boolean;
   children: ReactNode;
 };
 
@@ -23,6 +24,7 @@ export default function Menu({
   children,
   itemValue,
   activeMenu,
+  highlighted,
 }: MenuProps) {
   const [value, setValue] = useState<string>();
 
@@ -40,7 +42,16 @@ export default function Menu({
     >
       <AccordionItem value={itemValue}>
         <AccordionTrigger className="text-xs">
-          {titleURL ? <Link href={titleURL}>{title}</Link> : title}
+          {titleURL ? (
+            <Link
+              className={`${highlighted && 'text-blue-600'} transition-colors`}
+              href={titleURL}
+            >
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
         </AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>

@@ -5,19 +5,23 @@ type NavigationTitleProps = {
   children: ReactNode;
   title: string;
   titleURL: string | null;
+  highlighted: boolean;
 };
 
 const NavigationTitle = ({
   children,
   title,
   titleURL,
+  highlighted,
 }: NavigationTitleProps) => {
   return (
     <div>
       {titleURL ? (
         <Link
+          className={`${
+            highlighted && 'text-blue-600'
+          } text-xs font-bold transition-colors`}
           href={titleURL}
-          className="font-bolder text-base text-green-400 no-underline"
         >
           {title}
         </Link>
