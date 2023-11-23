@@ -11,7 +11,7 @@
         "files": [
           {
             "type": "folder",
-            "name": "Getting Started",
+            "name": "Desktop Getting Started",
             "language": "en",
             "source": "getting-started",
             "homePage": "/desktop",
@@ -59,7 +59,7 @@
             "name": "How-to guides",
             "language": "en",
             "source": "how-to",
-            "homePage": null,
+            "homePage": "/desktop/how-to",
             "isCollapsible": true,
             "files": [
               {
@@ -544,7 +544,7 @@
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
-            "homePage": null,
+            "homePage": "/desktop/how-to",
             "isCollapsible": true,
             "files": [
               {
