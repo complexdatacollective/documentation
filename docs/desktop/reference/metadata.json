@@ -1,4 +1,6 @@
 {
   "en": "Technical reference",
-  "ru": "Техническая справка"
+  "ru": "Техническая справка",
+  "homePage": null,
+  "isCollapsible": true
 }

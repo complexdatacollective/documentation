@@ -6,10 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Link } from '@/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
 
 type MenuProps = {
   title: string;
+  titleURL: string | null;
   itemValue: string;
   activeMenu: string | undefined;
   children: ReactNode;
@@ -17,6 +19,7 @@ type MenuProps = {
 
 export default function Menu({
   title,
+  titleURL,
   children,
   itemValue,
   activeMenu,
@@ -36,7 +39,9 @@ export default function Menu({
       onValueChange={setValue}
     >
       <AccordionItem value={itemValue}>
-        <AccordionTrigger className="text-xs">{title}</AccordionTrigger>
+        <AccordionTrigger className="text-xs">
+          {titleURL ? <Link href={titleURL}>{title}</Link> : title}
+        </AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>

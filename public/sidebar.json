@@ -6,75 +6,61 @@
         "name": "desktop",
         "language": "en",
         "source": "desktop",
+        "homePage": null,
+        "isCollapsible": false,
         "files": [
           {
-            "type": "file",
-            "name": "Home",
+            "type": "folder",
+            "name": "Getting Started",
             "language": "en",
-            "path": "/desktop",
-            "source": "desktop"
-          },
-          {
-            "type": "file",
-            "name": "Project Overview",
-            "language": "en",
-            "path": "/desktop/project-overview",
-            "source": "project-overview"
-          },
-          {
-            "type": "file",
-            "name": "Installation Guide",
-            "language": "en",
-            "path": "/desktop/installation-guide",
-            "source": "installation-guide"
-          },
-          {
-            "type": "file",
-            "name": "Protocol Gallery",
-            "language": "en",
-            "path": "/desktop/protocol-gallery",
-            "source": "protocol-gallery"
-          },
-          {
-            "type": "file",
-            "name": "Frequently Asked Questions",
-            "language": "en",
-            "path": "/desktop/faq",
-            "source": "faq"
-          },
-          {
-            "type": "file",
-            "name": "Citing the Software",
-            "language": "en",
-            "path": "/desktop/citing-the-software",
-            "source": "citing-the-software"
-          },
-          {
-            "type": "file",
-            "name": "Contributing Code",
-            "language": "en",
-            "path": "/desktop/contributing-code",
-            "source": "contributing-code"
-          },
-          {
-            "type": "file",
-            "name": "February 2022 Project Update",
-            "language": "en",
-            "path": "/desktop/february-2022-project-update",
-            "source": "february-2022-project-update"
-          },
-          {
-            "type": "file",
-            "name": "Requests for Collaboration",
-            "language": "en",
-            "path": "/desktop/requests-for-collaboration",
-            "source": "requests-for-collaboration"
+            "source": "getting-started",
+            "homePage": "/desktop",
+            "isCollapsible": false,
+            "files": [
+              {
+                "type": "file",
+                "name": "Project Overview",
+                "language": "en",
+                "path": "/desktop/getting-started/project-overview",
+                "source": "project-overview"
+              },
+              {
+                "type": "file",
+                "name": "Installation Guide",
+                "language": "en",
+                "path": "/desktop/getting-started/installation-guide",
+                "source": "installation-guide"
+              },
+              {
+                "type": "file",
+                "name": "Protocol Gallery",
+                "language": "en",
+                "path": "/desktop/getting-started/protocol-gallery",
+                "source": "protocol-gallery"
+              },
+              {
+                "type": "file",
+                "name": "Frequently Asked Questions",
+                "language": "en",
+                "path": "/desktop/getting-started/faq",
+                "source": "faq"
+              },
+              {
+                "type": "file",
+                "name": "Citing the Software",
+                "language": "en",
+                "path": "/desktop/getting-started/citing-the-software",
+                "source": "citing-the-software"
+              }
+            ]
           },
           {
             "type": "folder",
             "name": "How-to guides",
             "language": "en",
             "source": "how-to",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -118,6 +104,8 @@
             "name": "Interface documentation",
             "language": "en",
             "source": "interface-documentation",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -238,6 +226,8 @@
             "name": "Key concepts",
             "language": "en",
             "source": "key-concepts",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -327,9 +317,42 @@
           },
           {
             "type": "folder",
+            "name": "Others",
+            "language": "en",
+            "source": "others",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": [
+              {
+                "type": "file",
+                "name": "Contributing Code",
+                "language": "en",
+                "path": "/desktop/others/contributing-code",
+                "source": "contributing-code"
+              },
+              {
+                "type": "file",
+                "name": "February 2022 Project Update",
+                "language": "en",
+                "path": "/desktop/others/february-2022-project-update",
+                "source": "february-2022-project-update"
+              },
+              {
+                "type": "file",
+                "name": "Requests for Collaboration",
+                "language": "en",
+                "path": "/desktop/others/requests-for-collaboration",
+                "source": "requests-for-collaboration"
+              }
+            ]
+          },
+          {
+            "type": "folder",
             "name": "Technical reference",
             "language": "en",
             "source": "reference",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -394,6 +417,8 @@
             "name": "Tutorials",
             "language": "en",
             "source": "tutorials",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -446,25 +471,22 @@
         "name": "fresco",
         "language": "en",
         "source": "fresco",
+        "homePage": null,
+        "isCollapsible": false,
         "files": [
           {
-            "type": "file",
-            "name": "Home",
-            "language": "en",
-            "path": "/fresco",
-            "source": "fresco"
-          },
-          {
             "type": "folder",
-            "name": "Installation guide",
+            "name": "Getting Started",
             "language": "en",
-            "source": "installation",
+            "source": "getting-started",
+            "homePage": "/fresco",
+            "isCollapsible": false,
             "files": [
               {
                 "type": "file",
                 "name": "Fresco Installation guide",
                 "language": "en",
-                "path": "/fresco/installation/installation",
+                "path": "/fresco/getting-started/installation",
                 "source": "installation"
               }
             ]
@@ -474,6 +496,8 @@
             "name": "Some Notes",
             "language": "en",
             "source": "some-notes",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -489,6 +513,8 @@
             "name": "Third folder",
             "language": "en",
             "source": "third-folder",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -510,12 +536,16 @@
         "name": "desktop",
         "language": "ru",
         "source": "desktop",
+        "homePage": null,
+        "isCollapsible": false,
         "files": [
           {
             "type": "folder",
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -531,6 +561,8 @@
             "name": "Техническая справка",
             "language": "ru",
             "source": "reference",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",
@@ -548,18 +580,22 @@
         "name": "fresco",
         "language": "ru",
         "source": "fresco",
+        "homePage": null,
+        "isCollapsible": false,
         "files": [
           {
             "type": "folder",
-            "name": "Инструкция по установке",
+            "name": "Начиная",
             "language": "ru",
-            "source": "installation",
+            "source": "getting-started",
+            "homePage": "/fresco",
+            "isCollapsible": false,
             "files": [
               {
                 "type": "file",
                 "name": "Руководство по установке Fresco",
                 "language": "ru",
-                "path": "/fresco/installation/installation",
+                "path": "/fresco/getting-started/installation",
                 "source": "installation"
               }
             ]
@@ -569,6 +605,8 @@
             "name": "Третья папка",
             "language": "ru",
             "source": "third-folder",
+            "homePage": null,
+            "isCollapsible": true,
             "files": [
               {
                 "type": "file",

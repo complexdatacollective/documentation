@@ -1,4 +1,6 @@
 {
   "en": "Tutorials",
-  "ru": "Учебники"
+  "ru": "Учебники",
+  "homePage": null,
+  "isCollapsible": true
 }

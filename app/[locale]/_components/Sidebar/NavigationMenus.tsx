@@ -1,6 +1,7 @@
 import { type DocFile, type Folder } from '@/types';
 import Menu from './Menu';
 import NavigationLink from './NavigationLink';
+import NavigationTitle from './NavigationTitle';
 
 export interface NavigationMenusProps {
   sidebarData: (Folder | DocFile)[];
@@ -19,26 +20,38 @@ export default function NavigationMenus({
           const activeMenu = pathItems.find((pt) => pt === folder.source); //find active menu from path items
           // render menu (folder)
           return (
-            <Menu
-              activeMenu={activeMenu}
-              itemValue={folder.source}
-              key={folder.name}
-              title={folder.name.toLocaleUpperCase()}
-            >
-              <ul>
-                <NavigationMenus
-                  pathItems={pathItems}
-                  sidebarData={folder.files}
-                />
-              </ul>
-            </Menu>
+            <li key={folder.name}>
+              {folder.isCollapsible ? (
+                <Menu
+                  activeMenu={activeMenu}
+                  itemValue={folder.source}
+                  title={folder.name.toLocaleUpperCase()}
+                  titleURL={folder.homePage}
+                >
+                  <NavigationMenus
+                    pathItems={pathItems}
+                    sidebarData={folder.files}
+                  />
+                </Menu>
+              ) : (
+                <NavigationTitle
+                  title={folder.name.toLocaleUpperCase()}
+                  titleURL={folder.homePage}
+                >
+                  <NavigationMenus
+                    pathItems={pathItems}
+                    sidebarData={folder.files}
+                  />
+                </NavigationTitle>
+              )}
+            </li>
           );
         } else {
           const file = item;
           const isDocumetInView = '/' + pathItems.join('/') === file.path;
           // render menu item (file)
           return (
-            <li key={file.name}>
+            <li className="ml-2" key={file.name}>
               <NavigationLink
                 highlighted={isDocumetInView}
                 fileName={file.name}

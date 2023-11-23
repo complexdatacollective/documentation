@@ -1,4 +1,6 @@
 {
   "en": "Third folder",
-  "ru": "Третья папка"
+  "ru": "Третья папка",
+  "homePage": null,
+  "isCollapsible": true
 }

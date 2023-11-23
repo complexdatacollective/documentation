@@ -1,4 +1,6 @@
 {
   "en": "Some Notes",
-  "ru": "Некоторые примечания"
+  "ru": "Некоторые примечания",
+  "homePage": null,
+  "isCollapsible": true
 }

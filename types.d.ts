@@ -3,6 +3,8 @@ export interface Folder {
   name: string;
   language: string;
   source: string;
+  homePage: string | null;
+  isCollapsible: boolean;
   files: Array<DocFile | Folder>;
 }
 

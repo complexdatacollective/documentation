@@ -15,6 +15,7 @@ export const processPath = (docPath: string) => {
   const processedPath = docPath
     .replace(process.cwd() + sep, '') // Remove CWD
     .replace('docs' + sep, '') // Remove docs subdirectory
+    .replace(sep + 'index', '') // Remove home page path
     .replace('.mdx', '')
     .replace('.md', ''); // Remove file extensions
 
@@ -60,18 +61,29 @@ export function getDoc({
   project: string;
   pathSegment: string[];
 }) {
-  const pathSegmentWithLocale = pathSegment.join('/') + '.' + locale;
-  const path = join(relativePathToDocs, project, pathSegmentWithLocale);
-
-  // Check if the file exists.
   let file;
+  const homePageForPathSegment =
+    [...pathSegment, 'index'].join('/') + `.${locale}.mdx`;
+  const pathToHomePage = join(
+    relativePathToDocs,
+    project,
+    homePageForPathSegment,
+  );
 
-  if (fs.existsSync(path + '.md')) {
-    file = path + '.md';
-  } else if (fs.existsSync(path + '.mdx')) {
-    file = path + '.mdx';
+  if (fs.existsSync(pathToHomePage)) {
+    file = pathToHomePage;
   } else {
-    return null;
+    const pathSegmentWithLocale = pathSegment.join('/') + `.${locale}`;
+    const path = join(relativePathToDocs, project, pathSegmentWithLocale);
+
+    // Check if the file exists.
+    if (fs.existsSync(path + '.md')) {
+      file = path + '.md';
+    } else if (fs.existsSync(path + '.mdx')) {
+      file = path + '.mdx';
+    } else {
+      return null;
+    }
   }
 
   const markdownFile = fs.readFileSync(file, 'utf-8');
