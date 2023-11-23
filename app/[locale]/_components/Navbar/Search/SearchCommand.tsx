@@ -14,9 +14,12 @@ import { Hits, InstantSearch } from 'react-instantsearch';
 import CustomSearchBox from './CustomSearchBox';
 import EmptyQueryBoundary from './EmptyQueryBoundary';
 import Hit from './Hit';
+import algoliaLogo from '@/public/algolia-logo.svg';
 import NoResultsBoundary from './NoResultsBoundary';
 import { DialogContextProvider } from './Provider/DialogContext';
 import { env } from '@/env.mjs';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function SearchCommand() {
   const [open, setOpen] = useState(false);
@@ -63,6 +66,23 @@ export default function SearchCommand() {
                 <Hits hitComponent={Hit} />
               </EmptyQueryBoundary>
             </CommandGroup>
+          </CommandList>
+          <CommandList>
+            <CommandSeparator />
+            <Link
+              href={'https://algolia.com'}
+              target="_blank"
+              className="mx-3 my-2 flex items-center justify-end gap-1"
+            >
+              <span className="text-[14px]">Search by</span>
+              <Image
+                width="70"
+                height="70"
+                priority
+                src={algoliaLogo as string}
+                alt="LogoAlgolia"
+              />
+            </Link>
           </CommandList>
         </CommandDialog>
       </InstantSearch>
