@@ -11,7 +11,7 @@
         "files": [
           {
             "type": "folder",
-            "name": "Desktop Getting Started",
+            "name": "Getting Started",
             "language": "en",
             "source": "getting-started",
             "homePage": "/desktop",
@@ -541,6 +541,15 @@
         "files": [
           {
             "type": "folder",
+            "name": "Начиная",
+            "language": "ru",
+            "source": "getting-started",
+            "homePage": "/desktop",
+            "isCollapsible": false,
+            "files": []
+          },
+          {
+            "type": "folder",
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
@@ -558,6 +567,33 @@
           },
           {
             "type": "folder",
+            "name": "Документация интерфейса",
+            "language": "ru",
+            "source": "interface-documentation",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": []
+          },
+          {
+            "type": "folder",
+            "name": "Ключевые идеи",
+            "language": "ru",
+            "source": "key-concepts",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": []
+          },
+          {
+            "type": "folder",
+            "name": "Другие",
+            "language": "ru",
+            "source": "others",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": []
+          },
+          {
+            "type": "folder",
             "name": "Техническая справка",
             "language": "ru",
             "source": "reference",
@@ -572,6 +608,15 @@
                 "source": "irb-best-practices"
               }
             ]
+          },
+          {
+            "type": "folder",
+            "name": "Учебники",
+            "language": "ru",
+            "source": "tutorials",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": []
           }
         ]
       },
@@ -599,6 +644,15 @@
                 "source": "installation"
               }
             ]
+          },
+          {
+            "type": "folder",
+            "name": "Некоторые примечания",
+            "language": "ru",
+            "source": "some-notes",
+            "homePage": null,
+            "isCollapsible": true,
+            "files": []
           },
           {
             "type": "folder",
