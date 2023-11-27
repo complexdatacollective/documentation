@@ -22,6 +22,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Network Canvas Docs',
   description: 'All Network Canvas Docs',
+  icons: {
+    icon: '/nc.png',
+  },
 };
 
 export function generateStaticParams() {

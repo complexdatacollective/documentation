@@ -10,7 +10,7 @@ type PageProps = { params: { locale: string; project: string } };
 
 export default function Page({ params }: PageProps) {
   const { locale, project } = params;
-  const filePath = `/${project}/getting-started/index`; // TODO: write smt instructive here
+  const filePath = `/${project}`; // TODO: write smt instructive here
 
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(params.locale);

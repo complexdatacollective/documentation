@@ -1,19 +1,19 @@
 import { type ReactNode } from 'react';
 import { Link } from '@/navigation';
 
-type NavigationTitleProps = {
+type OpenMenuProps = {
   children: ReactNode;
   title: string;
   titleURL: string | null;
   highlighted: boolean;
 };
 
-const NavigationTitle = ({
+const OpenMenu = ({
   children,
   title,
   titleURL,
   highlighted,
-}: NavigationTitleProps) => {
+}: OpenMenuProps) => {
   return (
     <div>
       {titleURL ? (
@@ -33,4 +33,4 @@ const NavigationTitle = ({
   );
 };
 
-export default NavigationTitle;
+export default OpenMenu;

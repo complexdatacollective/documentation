@@ -1,6 +1,6 @@
 {
   "en": "Tutorials",
   "ru": "Учебники",
-  "homePage": null,
-  "isCollapsible": true
+  "homepage": "/desktop/tutorials",
+  "isExpanded": false
 }

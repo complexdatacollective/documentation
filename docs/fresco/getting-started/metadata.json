@@ -1,6 +1,6 @@
 {
   "en": "Getting Started",
   "ru": "Начиная",
-  "homePage": "/fresco",
-  "isCollapsible": false
+  "homepage": "/fresco",
+  "isExpanded": false
 }

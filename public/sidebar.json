@@ -6,16 +6,16 @@
         "name": "desktop",
         "language": "en",
         "source": "desktop",
-        "homePage": null,
-        "isCollapsible": false,
+        "homepage": null,
+        "isExpanded": false,
         "files": [
           {
             "type": "folder",
             "name": "Getting Started",
             "language": "en",
             "source": "getting-started",
-            "homePage": "/desktop",
-            "isCollapsible": false,
+            "homepage": "/desktop",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
@@ -59,8 +59,8 @@
             "name": "How-to guides",
             "language": "en",
             "source": "how-to",
-            "homePage": "/desktop/how-to",
-            "isCollapsible": true,
+            "homepage": "/desktop/how-to",
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -104,8 +104,8 @@
             "name": "Interface documentation",
             "language": "en",
             "source": "interface-documentation",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -226,8 +226,8 @@
             "name": "Key concepts",
             "language": "en",
             "source": "key-concepts",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -320,8 +320,8 @@
             "name": "Others",
             "language": "en",
             "source": "others",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -351,8 +351,8 @@
             "name": "Technical reference",
             "language": "en",
             "source": "reference",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -417,8 +417,8 @@
             "name": "Tutorials",
             "language": "en",
             "source": "tutorials",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": "/desktop/tutorials",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
@@ -461,6 +461,23 @@
                 "language": "en",
                 "path": "/desktop/tutorials/working-with-rosters",
                 "source": "working-with-rosters"
+              },
+              {
+                "type": "folder",
+                "name": "TEST",
+                "language": "en",
+                "source": "some-folder",
+                "homepage": null,
+                "isExpanded": true,
+                "files": [
+                  {
+                    "type": "file",
+                    "name": "Just testing",
+                    "language": "en",
+                    "path": "/desktop/tutorials/some-folder/hello",
+                    "source": "hello"
+                  }
+                ]
               }
             ]
           }
@@ -471,16 +488,16 @@
         "name": "fresco",
         "language": "en",
         "source": "fresco",
-        "homePage": null,
-        "isCollapsible": false,
+        "homepage": null,
+        "isExpanded": false,
         "files": [
           {
             "type": "folder",
             "name": "Getting Started",
             "language": "en",
             "source": "getting-started",
-            "homePage": "/fresco",
-            "isCollapsible": false,
+            "homepage": "/fresco",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
@@ -496,8 +513,8 @@
             "name": "Some Notes",
             "language": "en",
             "source": "some-notes",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -513,8 +530,8 @@
             "name": "Third folder",
             "language": "en",
             "source": "third-folder",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -536,16 +553,16 @@
         "name": "desktop",
         "language": "ru",
         "source": "desktop",
-        "homePage": null,
-        "isCollapsible": false,
+        "homepage": null,
+        "isExpanded": false,
         "files": [
           {
             "type": "folder",
             "name": "Начиная",
             "language": "ru",
             "source": "getting-started",
-            "homePage": "/desktop",
-            "isCollapsible": false,
+            "homepage": "/desktop",
+            "isExpanded": false,
             "files": []
           },
           {
@@ -553,8 +570,8 @@
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
-            "homePage": "/desktop/how-to",
-            "isCollapsible": true,
+            "homepage": "/desktop/how-to",
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -570,8 +587,8 @@
             "name": "Документация интерфейса",
             "language": "ru",
             "source": "interface-documentation",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": []
           },
           {
@@ -579,8 +596,8 @@
             "name": "Ключевые идеи",
             "language": "ru",
             "source": "key-concepts",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": []
           },
           {
@@ -588,8 +605,8 @@
             "name": "Другие",
             "language": "ru",
             "source": "others",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": []
           },
           {
@@ -597,8 +614,8 @@
             "name": "Техническая справка",
             "language": "ru",
             "source": "reference",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -614,9 +631,19 @@
             "name": "Учебники",
             "language": "ru",
             "source": "tutorials",
-            "homePage": null,
-            "isCollapsible": true,
-            "files": []
+            "homepage": "/desktop/tutorials",
+            "isExpanded": false,
+            "files": [
+              {
+                "type": "folder",
+                "name": "TEST russian",
+                "language": "ru",
+                "source": "some-folder",
+                "homepage": null,
+                "isExpanded": true,
+                "files": []
+              }
+            ]
           }
         ]
       },
@@ -625,16 +652,16 @@
         "name": "fresco",
         "language": "ru",
         "source": "fresco",
-        "homePage": null,
-        "isCollapsible": false,
+        "homepage": null,
+        "isExpanded": false,
         "files": [
           {
             "type": "folder",
             "name": "Начиная",
             "language": "ru",
             "source": "getting-started",
-            "homePage": "/fresco",
-            "isCollapsible": false,
+            "homepage": "/fresco",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
@@ -650,8 +677,8 @@
             "name": "Некоторые примечания",
             "language": "ru",
             "source": "some-notes",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": []
           },
           {
@@ -659,8 +686,8 @@
             "name": "Третья папка",
             "language": "ru",
             "source": "third-folder",
-            "homePage": null,
-            "isCollapsible": true,
+            "homepage": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",

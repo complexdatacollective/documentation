@@ -43,8 +43,12 @@ export function isPathExist(data: Folder, docPath: string, isExist = false) {
     if (item.type === 'file') {
       isExist = docPath === item.path;
     } else {
-      isExist = isPathExist(item, docPath, isExist);
+      isExist = docPath === item.homepage;
+      if (!isExist) {
+        isExist = isPathExist(item, docPath, isExist);
+      }
     }
+
     if (isExist) break;
   }
 

@@ -1,6 +1,6 @@
 {
   "en": "How-to guides",
   "ru": "Практические руководства",
-  "homePage": "/desktop/how-to",
-  "isCollapsible": true
+  "homepage": "/desktop/how-to",
+  "isExpanded": true
 }

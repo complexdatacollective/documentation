@@ -1,7 +1,7 @@
 import { type DocFile, type Folder } from '@/types';
 import Menu from './Menu';
 import NavigationLink from './NavigationLink';
-import NavigationTitle from './NavigationTitle';
+import OpenMenu from './OpenMenu';
 
 export interface NavigationMenusProps {
   sidebarData: (Folder | DocFile)[];
@@ -13,24 +13,24 @@ export default function NavigationMenus({
   pathItems,
 }: NavigationMenusProps): JSX.Element {
   return (
-    <ul className="flex flex-col gap-1 ">
+    <ul className="ml-2 flex flex-col gap-1">
       {sidebarData.map((item) => {
         if (item.type === 'folder') {
           const folder = item;
           const activeMenu = pathItems.find((pt) => pt === folder.source); //find active menu from path items
           const isFolderPageInView =
-            `/${pathItems.join('/')}` === folder.homePage;
+            `/${pathItems.join('/')}` === folder.homepage;
 
           // render menu (folder)
           return (
             <li key={folder.name}>
-              {folder.isCollapsible ? (
+              {folder.isExpanded ? (
                 <Menu
                   highlighted={isFolderPageInView}
                   activeMenu={activeMenu}
                   itemValue={folder.source}
                   title={folder.name.toLocaleUpperCase()}
-                  titleURL={folder.homePage}
+                  titleURL={folder.homepage}
                 >
                   <NavigationMenus
                     pathItems={pathItems}
@@ -38,26 +38,26 @@ export default function NavigationMenus({
                   />
                 </Menu>
               ) : (
-                <NavigationTitle
+                <OpenMenu
                   highlighted={isFolderPageInView}
                   title={folder.name.toLocaleUpperCase()}
-                  titleURL={folder.homePage}
+                  titleURL={folder.homepage}
                 >
                   <NavigationMenus
                     pathItems={pathItems}
                     sidebarData={folder.files}
                   />
-                </NavigationTitle>
+                </OpenMenu>
               )}
             </li>
           );
         } else {
           const file = item;
           const isDocumentInView = `/${pathItems.join('/')}` === file.path;
-          // render menu item (file)
 
+          // render menu item (file)
           return (
-            <li className="ml-2" key={file.name}>
+            <li key={file.name}>
               <NavigationLink
                 highlighted={isDocumentInView}
                 fileName={file.name}

@@ -62,16 +62,16 @@ export function getDoc({
   pathSegment: string[];
 }) {
   let file;
-  const homePageForPathSegment =
+  const homepageForPathSegment =
     [...pathSegment, 'index'].join('/') + `.${locale}.mdx`;
-  const pathToHomePage = join(
+  const pathToHomepage = join(
     relativePathToDocs,
     project,
-    homePageForPathSegment,
+    homepageForPathSegment,
   );
 
-  if (fs.existsSync(pathToHomePage)) {
-    file = pathToHomePage;
+  if (fs.existsSync(pathToHomepage)) {
+    file = pathToHomepage;
   } else {
     const pathSegmentWithLocale = pathSegment.join('/') + `.${locale}`;
     const path = join(relativePathToDocs, project, pathSegmentWithLocale);

@@ -1,6 +1,5 @@
 {
   "en": "Getting Started",
   "ru": "Начиная",
-  "homePage": "/desktop",
-  "isCollapsible": false
+  "homepage": "/desktop"
 }
