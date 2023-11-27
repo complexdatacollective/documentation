@@ -26,7 +26,7 @@ const OpenMenu = ({
           {title}
         </Link>
       ) : (
-        title
+        <p className="text-xs">{title}</p>
       )}
       <div>{children}</div>
     </div>

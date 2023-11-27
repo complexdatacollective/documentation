@@ -570,7 +570,7 @@
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
-            "homepage": "/desktop/how-to",
+            "homepage": null,
             "isExpanded": true,
             "files": [
               {
@@ -581,33 +581,6 @@
                 "source": "choosing-hardware"
               }
             ]
-          },
-          {
-            "type": "folder",
-            "name": "Документация интерфейса",
-            "language": "ru",
-            "source": "interface-documentation",
-            "homepage": null,
-            "isExpanded": true,
-            "files": []
-          },
-          {
-            "type": "folder",
-            "name": "Ключевые идеи",
-            "language": "ru",
-            "source": "key-concepts",
-            "homepage": null,
-            "isExpanded": true,
-            "files": []
-          },
-          {
-            "type": "folder",
-            "name": "Другие",
-            "language": "ru",
-            "source": "others",
-            "homepage": null,
-            "isExpanded": true,
-            "files": []
           },
           {
             "type": "folder",
@@ -631,7 +604,7 @@
             "name": "Учебники",
             "language": "ru",
             "source": "tutorials",
-            "homepage": "/desktop/tutorials",
+            "homepage": null,
             "isExpanded": false,
             "files": [
               {
@@ -641,7 +614,15 @@
                 "source": "some-folder",
                 "homepage": null,
                 "isExpanded": true,
-                "files": []
+                "files": [
+                  {
+                    "type": "file",
+                    "name": "Just testing russian",
+                    "language": "ru",
+                    "path": "/desktop/tutorials/some-folder/hello",
+                    "source": "hello"
+                  }
+                ]
               }
             ]
           }
@@ -671,15 +652,6 @@
                 "source": "installation"
               }
             ]
-          },
-          {
-            "type": "folder",
-            "name": "Некоторые примечания",
-            "language": "ru",
-            "source": "some-notes",
-            "homepage": null,
-            "isExpanded": true,
-            "files": []
           },
           {
             "type": "folder",

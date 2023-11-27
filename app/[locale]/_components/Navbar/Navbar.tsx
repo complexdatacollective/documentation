@@ -27,7 +27,7 @@ const Navbar = () => {
           <LanguageSwitcher width="w-fit" />
           <ThemeToggle />
           <Link
-            className="btn inline-block rounded-md bg-white p-2 text-center transition-colors hover:bg-stone-100 dark:bg-slate-700 dark:hover:bg-slate-600"
+            className="btn inline-block rounded-md bg-white p-2 text-center text-sm transition-colors hover:bg-stone-100 dark:bg-slate-700 dark:hover:bg-slate-600"
             href={'https://community.networkcanvas.com'}
             target="_blank"
           >

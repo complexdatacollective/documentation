@@ -2,5 +2,6 @@
   "en": "Getting Started",
   "ru": "Начиная",
   "homepage": "/fresco",
-  "isExpanded": false
+  "isExpanded": false,
+  "homepageLocales": ["en", "ru"]
 }

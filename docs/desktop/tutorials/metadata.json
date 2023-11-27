@@ -2,5 +2,5 @@
   "en": "Tutorials",
   "ru": "Учебники",
   "homepage": "/desktop/tutorials",
-  "isExpanded": false
+  "homepageLocales": ["en"]
 }

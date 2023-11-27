@@ -1,5 +1,6 @@
 {
   "en": "Getting Started",
   "ru": "Начиная",
-  "homepage": "/desktop"
+  "homepage": "/desktop",
+  "homepageLocales": ["en", "ru"]
 }
