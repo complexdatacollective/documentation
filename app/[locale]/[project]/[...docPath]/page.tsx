@@ -43,7 +43,6 @@ export async function generateStaticParams({
   const { locale, project } = params;
   const docs = await getAllMarkdownDocs();
 
-  // Removes project name from docs
   const filteredDocs = docs.map(processPath).filter((processedPathList) => {
     const docProject = processedPathList[0]; // get docProject
     const docLocale = processedPathList[processedPathList.length - 1]; // get docLocale;
@@ -54,8 +53,12 @@ export async function generateStaticParams({
   const docsWithoutLocaleAndProject = filteredDocs.map((doc) =>
     doc.slice(1, -1),
   );
+  // remove empty docPaths
+  const filteredDocPaths = docsWithoutLocaleAndProject.filter(
+    (docPath) => docPath.length,
+  );
 
-  return docsWithoutLocaleAndProject.map((docPath) => ({
+  return filteredDocPaths.map((docPath) => ({
     locale,
     project,
     docPath,

@@ -16,7 +16,7 @@ export const processPath = (docPath: string) => {
   const processedPath = docPath
     .replace(process.cwd() + sep, '') // Remove CWD
     .replace('docs' + sep, '') // Remove docs subdirectory
-    .replace(sep + 'index', '') // Remove home page path
+    .replace(sep + 'index', '') // Remove folder page path
     .replace('.mdx', '')
     .replace('.md', ''); // Remove file extensions
 

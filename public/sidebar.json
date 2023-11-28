@@ -51,6 +51,27 @@
                 "language": "en",
                 "path": "/desktop/getting-started/citing-the-software",
                 "source": "citing-the-software"
+              },
+              {
+                "type": "file",
+                "name": "Contributing Code",
+                "language": "en",
+                "path": "/desktop/getting-started/contributing-code",
+                "source": "contributing-code"
+              },
+              {
+                "type": "file",
+                "name": "February 2022 Project Update",
+                "language": "en",
+                "path": "/desktop/getting-started/february-2022-project-update",
+                "source": "february-2022-project-update"
+              },
+              {
+                "type": "file",
+                "name": "Requests for Collaboration",
+                "language": "en",
+                "path": "/desktop/getting-started/requests-for-collaboration",
+                "source": "requests-for-collaboration"
               }
             ]
           },
@@ -317,37 +338,6 @@
           },
           {
             "type": "folder",
-            "name": "Others",
-            "language": "en",
-            "source": "others",
-            "folderPagePath": null,
-            "isExpanded": true,
-            "files": [
-              {
-                "type": "file",
-                "name": "Contributing Code",
-                "language": "en",
-                "path": "/desktop/others/contributing-code",
-                "source": "contributing-code"
-              },
-              {
-                "type": "file",
-                "name": "February 2022 Project Update",
-                "language": "en",
-                "path": "/desktop/others/february-2022-project-update",
-                "source": "february-2022-project-update"
-              },
-              {
-                "type": "file",
-                "name": "Requests for Collaboration",
-                "language": "en",
-                "path": "/desktop/others/requests-for-collaboration",
-                "source": "requests-for-collaboration"
-              }
-            ]
-          },
-          {
-            "type": "folder",
             "name": "Technical reference",
             "language": "en",
             "source": "reference",
@@ -461,23 +451,6 @@
                 "language": "en",
                 "path": "/desktop/tutorials/working-with-rosters",
                 "source": "working-with-rosters"
-              },
-              {
-                "type": "folder",
-                "name": "TEST",
-                "language": "en",
-                "source": "some-folder",
-                "folderPagePath": null,
-                "isExpanded": true,
-                "files": [
-                  {
-                    "type": "file",
-                    "name": "Just testing",
-                    "language": "en",
-                    "path": "/desktop/tutorials/some-folder/hello",
-                    "source": "hello"
-                  }
-                ]
               }
             ]
           }
@@ -596,33 +569,6 @@
                 "language": "ru",
                 "path": "/desktop/reference/irb-best-practices",
                 "source": "irb-best-practices"
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "Учебники",
-            "language": "ru",
-            "source": "tutorials",
-            "folderPagePath": null,
-            "isExpanded": false,
-            "files": [
-              {
-                "type": "folder",
-                "name": "TEST russian",
-                "language": "ru",
-                "source": "some-folder",
-                "folderPagePath": null,
-                "isExpanded": true,
-                "files": [
-                  {
-                    "type": "file",
-                    "name": "Just testing russian",
-                    "language": "ru",
-                    "path": "/desktop/tutorials/some-folder/hello",
-                    "source": "hello"
-                  }
-                ]
               }
             ]
           }
