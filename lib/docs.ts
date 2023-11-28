@@ -1,8 +1,8 @@
+import { env } from '@/env.mjs';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { readdir } from 'node:fs/promises';
 import { join, sep } from 'path';
-import { env } from '@/env.mjs';
 import { isFolderPageAvailableForLocale } from './universal_helper_functions.mjs';
 
 export type DocRouteParams = {

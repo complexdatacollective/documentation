@@ -68,7 +68,7 @@ export async function generateStaticParams({
 // The Page Component
 const Page = async ({ params }: { params: PageParams }) => {
   const { locale, project, docPath } = params;
-  const filePath = `/${project}/` + docPath.join('/');
+  const filePath = `/${project}/` + docPath.join('/'); //file path for InnerLanguage switcher
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(locale);
 

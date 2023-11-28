@@ -1,6 +1,6 @@
-import React, { type ReactNode } from 'react';
-import { Terminal, Lightbulb, ShieldAlert } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Lightbulb, ShieldAlert, Terminal } from 'lucide-react';
+import { type ReactNode } from 'react';
 
 type TipBoxProps = {
   children: ReactNode;
