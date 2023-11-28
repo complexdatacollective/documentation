@@ -1,4 +1,7 @@
 {
-  "en": "Interface documentation",
-  "ru": "Документация интерфейса"
+  "localeLabels": {
+    "en": "Interface documentation",
+    "ru": "Документация интерфейса"
+  },
+  "isExpanded": true
 }

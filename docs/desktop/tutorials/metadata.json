@@ -1,4 +1,7 @@
 {
-  "en": "Tutorials",
-  "ru": "Учебники"
+  "localeLabels": {
+    "en": "Tutorials",
+    "ru": "Учебники"
+  },
+  "folderPagePath": "/desktop/tutorials"
 }

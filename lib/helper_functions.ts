@@ -37,14 +37,18 @@ export function filterSidebarData(
   return productBasedSidebarData;
 }
 
-// Check if the file path for the translated doc exists
+// Check if the file path for the translated doc exists in sidebar.json
 export function isPathExist(data: Folder, docPath: string, isExist = false) {
   for (const item of data.files) {
     if (item.type === 'file') {
       isExist = docPath === item.path;
     } else {
-      isExist = isPathExist(item, docPath, isExist);
+      isExist = docPath === item.folderPagePath;
+      if (!isExist) {
+        isExist = isPathExist(item, docPath, isExist);
+      }
     }
+
     if (isExist) break;
   }
 

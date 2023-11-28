@@ -1,4 +1,7 @@
 {
-  "en": "Third folder",
-  "ru": "Третья папка"
+  "localeLabels": {
+    "en": "Third folder",
+    "ru": "Третья папка"
+  },
+  "isExpanded": true
 }

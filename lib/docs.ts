@@ -1,8 +1,9 @@
+import { env } from '@/env.mjs';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { readdir } from 'node:fs/promises';
 import { join, sep } from 'path';
-import { env } from '@/env.mjs';
+import { isFolderPageAvailableForLocale } from './universal_helper_functions.mjs';
 
 export type DocRouteParams = {
   params: {
@@ -15,6 +16,7 @@ export const processPath = (docPath: string) => {
   const processedPath = docPath
     .replace(process.cwd() + sep, '') // Remove CWD
     .replace('docs' + sep, '') // Remove docs subdirectory
+    .replace(sep + 'index', '') // Remove folder page path
     .replace('.mdx', '')
     .replace('.md', ''); // Remove file extensions
 
@@ -60,11 +62,20 @@ export function getDoc({
   project: string;
   pathSegment: string[];
 }) {
-  const pathSegmentWithLocale = pathSegment.join('/') + '.' + locale;
-  const path = join(relativePathToDocs, project, pathSegmentWithLocale);
+  let pathSegmentWithLocale = pathSegment.join('/') + `.${locale}`;
+  const result = isFolderPageAvailableForLocale(
+    [project, ...pathSegment].join('/'),
+    locale,
+  );
 
   // Check if the file exists.
   let file;
+
+  if (result) {
+    pathSegmentWithLocale = pathSegment.join('/') + `/index.${locale}`;
+  }
+
+  const path = join(relativePathToDocs, project, pathSegmentWithLocale);
 
   if (fs.existsSync(path + '.md')) {
     file = path + '.md';

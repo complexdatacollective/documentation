@@ -1,8 +1,8 @@
-import { Node } from 'unist';
-import { VFile } from 'vfile';
 import { toString } from 'mdast-util-to-string';
 import { remark } from 'remark';
+import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
+import { VFile } from 'vfile';
 import { convertToUrlText } from './helper_functions';
 
 export type HeadingNode = {

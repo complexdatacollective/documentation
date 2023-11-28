@@ -17,11 +17,12 @@ import Sidebar from './_components/Sidebar/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// export const dynamicParams = false;
-
 export const metadata: Metadata = {
   title: 'Network Canvas Docs',
   description: 'All Network Canvas Docs',
+  icons: {
+    icon: '/nc.png',
+  },
 };
 
 export function generateStaticParams() {

@@ -6,20 +6,25 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Link } from '@/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
 
 type MenuProps = {
   title: string;
+  titleURL: string | null;
   itemValue: string;
   activeMenu: string | undefined;
+  highlighted: boolean;
   children: ReactNode;
 };
 
 export default function Menu({
   title,
+  titleURL,
   children,
   itemValue,
   activeMenu,
+  highlighted,
 }: MenuProps) {
   const [value, setValue] = useState<string>();
 
@@ -36,7 +41,18 @@ export default function Menu({
       onValueChange={setValue}
     >
       <AccordionItem value={itemValue}>
-        <AccordionTrigger className="text-xs">{title}</AccordionTrigger>
+        <AccordionTrigger className="text-xs">
+          {titleURL ? (
+            <Link
+              className={`${highlighted && 'text-blue-600'} transition-colors`}
+              href={titleURL}
+            >
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
+        </AccordionTrigger>
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>

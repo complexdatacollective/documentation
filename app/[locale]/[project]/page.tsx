@@ -10,7 +10,7 @@ type PageProps = { params: { locale: string; project: string } };
 
 export default function Page({ params }: PageProps) {
   const { locale, project } = params;
-  const filePath = `/${project}/index`; // 'index' markdown is the home page for a project
+  const filePath = `/${project}`; //file path for InnerLanguage switcher
 
   // setting setRequestLocale to support next-intl for static rendering
   unstable_setRequestLocale(params.locale);
@@ -18,7 +18,7 @@ export default function Page({ params }: PageProps) {
   const doc = getDoc({
     locale,
     project,
-    pathSegment: ['index'],
+    pathSegment: ['index'], // pointing to home page for the project
   });
 
   if (!doc || doc?.content === null) notFound();

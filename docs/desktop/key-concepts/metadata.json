@@ -1,4 +1,7 @@
 {
-  "en": "Key concepts",
-  "ru": "Ключевые идеи"
+  "localeLabels": {
+    "en": "Key concepts",
+    "ru": "Ключевые идеи"
+  },
+  "isExpanded": true
 }

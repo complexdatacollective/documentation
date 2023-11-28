@@ -6,75 +6,82 @@
         "name": "desktop",
         "language": "en",
         "source": "desktop",
+        "folderPagePath": null,
+        "isExpanded": false,
         "files": [
           {
-            "type": "file",
-            "name": "Home",
+            "type": "folder",
+            "name": "Getting Started",
             "language": "en",
-            "path": "/desktop",
-            "source": "desktop"
-          },
-          {
-            "type": "file",
-            "name": "Project Overview",
-            "language": "en",
-            "path": "/desktop/project-overview",
-            "source": "project-overview"
-          },
-          {
-            "type": "file",
-            "name": "Installation Guide",
-            "language": "en",
-            "path": "/desktop/installation-guide",
-            "source": "installation-guide"
-          },
-          {
-            "type": "file",
-            "name": "Protocol Gallery",
-            "language": "en",
-            "path": "/desktop/protocol-gallery",
-            "source": "protocol-gallery"
-          },
-          {
-            "type": "file",
-            "name": "Frequently Asked Questions",
-            "language": "en",
-            "path": "/desktop/faq",
-            "source": "faq"
-          },
-          {
-            "type": "file",
-            "name": "Citing the Software",
-            "language": "en",
-            "path": "/desktop/citing-the-software",
-            "source": "citing-the-software"
-          },
-          {
-            "type": "file",
-            "name": "Contributing Code",
-            "language": "en",
-            "path": "/desktop/contributing-code",
-            "source": "contributing-code"
-          },
-          {
-            "type": "file",
-            "name": "February 2022 Project Update",
-            "language": "en",
-            "path": "/desktop/february-2022-project-update",
-            "source": "february-2022-project-update"
-          },
-          {
-            "type": "file",
-            "name": "Requests for Collaboration",
-            "language": "en",
-            "path": "/desktop/requests-for-collaboration",
-            "source": "requests-for-collaboration"
+            "source": "getting-started",
+            "folderPagePath": "/desktop",
+            "isExpanded": false,
+            "files": [
+              {
+                "type": "file",
+                "name": "Project Overview",
+                "language": "en",
+                "path": "/desktop/getting-started/project-overview",
+                "source": "project-overview"
+              },
+              {
+                "type": "file",
+                "name": "Installation Guide",
+                "language": "en",
+                "path": "/desktop/getting-started/installation-guide",
+                "source": "installation-guide"
+              },
+              {
+                "type": "file",
+                "name": "Protocol Gallery",
+                "language": "en",
+                "path": "/desktop/getting-started/protocol-gallery",
+                "source": "protocol-gallery"
+              },
+              {
+                "type": "file",
+                "name": "Frequently Asked Questions",
+                "language": "en",
+                "path": "/desktop/getting-started/faq",
+                "source": "faq"
+              },
+              {
+                "type": "file",
+                "name": "Citing the Software",
+                "language": "en",
+                "path": "/desktop/getting-started/citing-the-software",
+                "source": "citing-the-software"
+              },
+              {
+                "type": "file",
+                "name": "Contributing Code",
+                "language": "en",
+                "path": "/desktop/getting-started/contributing-code",
+                "source": "contributing-code"
+              },
+              {
+                "type": "file",
+                "name": "February 2022 Project Update",
+                "language": "en",
+                "path": "/desktop/getting-started/february-2022-project-update",
+                "source": "february-2022-project-update"
+              },
+              {
+                "type": "file",
+                "name": "Requests for Collaboration",
+                "language": "en",
+                "path": "/desktop/getting-started/requests-for-collaboration",
+                "source": "requests-for-collaboration"
+              }
+            ]
           },
           {
             "type": "folder",
             "name": "How-to guides",
             "language": "en",
             "source": "how-to",
+            "folderPagePath": "/desktop/how-to",
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -118,6 +125,8 @@
             "name": "Interface documentation",
             "language": "en",
             "source": "interface-documentation",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -238,6 +247,8 @@
             "name": "Key concepts",
             "language": "en",
             "source": "key-concepts",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -330,6 +341,8 @@
             "name": "Technical reference",
             "language": "en",
             "source": "reference",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -394,6 +407,8 @@
             "name": "Tutorials",
             "language": "en",
             "source": "tutorials",
+            "folderPagePath": "/desktop/tutorials",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
@@ -446,25 +461,22 @@
         "name": "fresco",
         "language": "en",
         "source": "fresco",
+        "folderPagePath": null,
+        "isExpanded": false,
         "files": [
           {
-            "type": "file",
-            "name": "Home",
-            "language": "en",
-            "path": "/fresco",
-            "source": "fresco"
-          },
-          {
             "type": "folder",
-            "name": "Installation guide",
+            "name": "Getting Started",
             "language": "en",
-            "source": "installation",
+            "source": "getting-started",
+            "folderPagePath": "/fresco",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
                 "name": "Fresco Installation guide",
                 "language": "en",
-                "path": "/fresco/installation/installation",
+                "path": "/fresco/getting-started/installation",
                 "source": "installation"
               }
             ]
@@ -474,6 +486,8 @@
             "name": "Some Notes",
             "language": "en",
             "source": "some-notes",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -489,6 +503,8 @@
             "name": "Third folder",
             "language": "en",
             "source": "third-folder",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -510,12 +526,25 @@
         "name": "desktop",
         "language": "ru",
         "source": "desktop",
+        "folderPagePath": null,
+        "isExpanded": false,
         "files": [
+          {
+            "type": "folder",
+            "name": "Начиная",
+            "language": "ru",
+            "source": "getting-started",
+            "folderPagePath": "/desktop",
+            "isExpanded": false,
+            "files": []
+          },
           {
             "type": "folder",
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -531,6 +560,8 @@
             "name": "Техническая справка",
             "language": "ru",
             "source": "reference",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",
@@ -548,18 +579,22 @@
         "name": "fresco",
         "language": "ru",
         "source": "fresco",
+        "folderPagePath": null,
+        "isExpanded": false,
         "files": [
           {
             "type": "folder",
-            "name": "Инструкция по установке",
+            "name": "Начиная",
             "language": "ru",
-            "source": "installation",
+            "source": "getting-started",
+            "folderPagePath": "/fresco",
+            "isExpanded": false,
             "files": [
               {
                 "type": "file",
                 "name": "Руководство по установке Fresco",
                 "language": "ru",
-                "path": "/fresco/installation/installation",
+                "path": "/fresco/getting-started/installation",
                 "source": "installation"
               }
             ]
@@ -569,6 +604,8 @@
             "name": "Третья папка",
             "language": "ru",
             "source": "third-folder",
+            "folderPagePath": null,
+            "isExpanded": true,
             "files": [
               {
                 "type": "file",

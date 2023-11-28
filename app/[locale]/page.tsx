@@ -6,6 +6,9 @@ const Page = ({ params: { locale } }: { params: { locale: string } }) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('Home');
 
+  // TODO: We have to show some document or content here
+  // TODO: or we should redirect to /desktop by default
+
   return (
     <main>
       <h2>
