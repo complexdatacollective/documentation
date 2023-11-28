@@ -6,7 +6,7 @@
         "name": "desktop",
         "language": "en",
         "source": "desktop",
-        "homepage": null,
+        "folderPagePath": null,
         "isExpanded": false,
         "files": [
           {
@@ -14,7 +14,7 @@
             "name": "Getting Started",
             "language": "en",
             "source": "getting-started",
-            "homepage": "/desktop",
+            "folderPagePath": "/desktop",
             "isExpanded": false,
             "files": [
               {
@@ -59,7 +59,7 @@
             "name": "How-to guides",
             "language": "en",
             "source": "how-to",
-            "homepage": "/desktop/how-to",
+            "folderPagePath": "/desktop/how-to",
             "isExpanded": true,
             "files": [
               {
@@ -104,7 +104,7 @@
             "name": "Interface documentation",
             "language": "en",
             "source": "interface-documentation",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -226,7 +226,7 @@
             "name": "Key concepts",
             "language": "en",
             "source": "key-concepts",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -320,7 +320,7 @@
             "name": "Others",
             "language": "en",
             "source": "others",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -351,7 +351,7 @@
             "name": "Technical reference",
             "language": "en",
             "source": "reference",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -417,7 +417,7 @@
             "name": "Tutorials",
             "language": "en",
             "source": "tutorials",
-            "homepage": "/desktop/tutorials",
+            "folderPagePath": "/desktop/tutorials",
             "isExpanded": false,
             "files": [
               {
@@ -467,7 +467,7 @@
                 "name": "TEST",
                 "language": "en",
                 "source": "some-folder",
-                "homepage": null,
+                "folderPagePath": null,
                 "isExpanded": true,
                 "files": [
                   {
@@ -488,7 +488,7 @@
         "name": "fresco",
         "language": "en",
         "source": "fresco",
-        "homepage": null,
+        "folderPagePath": null,
         "isExpanded": false,
         "files": [
           {
@@ -496,7 +496,7 @@
             "name": "Getting Started",
             "language": "en",
             "source": "getting-started",
-            "homepage": "/fresco",
+            "folderPagePath": "/fresco",
             "isExpanded": false,
             "files": [
               {
@@ -513,7 +513,7 @@
             "name": "Some Notes",
             "language": "en",
             "source": "some-notes",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -530,7 +530,7 @@
             "name": "Third folder",
             "language": "en",
             "source": "third-folder",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -553,7 +553,7 @@
         "name": "desktop",
         "language": "ru",
         "source": "desktop",
-        "homepage": null,
+        "folderPagePath": null,
         "isExpanded": false,
         "files": [
           {
@@ -561,7 +561,7 @@
             "name": "Начиная",
             "language": "ru",
             "source": "getting-started",
-            "homepage": "/desktop",
+            "folderPagePath": "/desktop",
             "isExpanded": false,
             "files": []
           },
@@ -570,7 +570,7 @@
             "name": "Практические руководства",
             "language": "ru",
             "source": "how-to",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -587,7 +587,7 @@
             "name": "Техническая справка",
             "language": "ru",
             "source": "reference",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {
@@ -604,7 +604,7 @@
             "name": "Учебники",
             "language": "ru",
             "source": "tutorials",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": false,
             "files": [
               {
@@ -612,7 +612,7 @@
                 "name": "TEST russian",
                 "language": "ru",
                 "source": "some-folder",
-                "homepage": null,
+                "folderPagePath": null,
                 "isExpanded": true,
                 "files": [
                   {
@@ -633,7 +633,7 @@
         "name": "fresco",
         "language": "ru",
         "source": "fresco",
-        "homepage": null,
+        "folderPagePath": null,
         "isExpanded": false,
         "files": [
           {
@@ -641,7 +641,7 @@
             "name": "Начиная",
             "language": "ru",
             "source": "getting-started",
-            "homepage": "/fresco",
+            "folderPagePath": "/fresco",
             "isExpanded": false,
             "files": [
               {
@@ -658,7 +658,7 @@
             "name": "Третья папка",
             "language": "ru",
             "source": "third-folder",
-            "homepage": null,
+            "folderPagePath": null,
             "isExpanded": true,
             "files": [
               {

@@ -18,7 +18,7 @@ export default function Page({ params }: PageProps) {
   const doc = getDoc({
     locale,
     project,
-    pathSegment: ['getting-started'], // TODO: write smt instructive here
+    pathSegment: ['index'], // TODO: write smt instructive here
   });
 
   if (!doc || doc?.content === null) notFound();

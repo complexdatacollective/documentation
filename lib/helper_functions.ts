@@ -43,7 +43,7 @@ export function isPathExist(data: Folder, docPath: string, isExist = false) {
     if (item.type === 'file') {
       isExist = docPath === item.path;
     } else {
-      isExist = docPath === item.homepage;
+      isExist = docPath === item.folderPagePath;
       if (!isExist) {
         isExist = isPathExist(item, docPath, isExist);
       }

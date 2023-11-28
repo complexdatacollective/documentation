@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import { readdir } from 'node:fs/promises';
 import { join, sep } from 'path';
 import { env } from '@/env.mjs';
+import { isFolderPageAvailableForLocale } from './universal_helper_functions.mjs';
 
 export type DocRouteParams = {
   params: {
@@ -61,29 +62,27 @@ export function getDoc({
   project: string;
   pathSegment: string[];
 }) {
-  let file;
-  const homepageForPathSegment =
-    [...pathSegment, 'index'].join('/') + `.${locale}.mdx`;
-  const pathToHomepage = join(
-    relativePathToDocs,
-    project,
-    homepageForPathSegment,
+  let pathSegmentWithLocale = pathSegment.join('/') + `.${locale}`;
+  const result = isFolderPageAvailableForLocale(
+    [project, ...pathSegment].join('/'),
+    locale,
   );
 
-  if (fs.existsSync(pathToHomepage)) {
-    file = pathToHomepage;
-  } else {
-    const pathSegmentWithLocale = pathSegment.join('/') + `.${locale}`;
-    const path = join(relativePathToDocs, project, pathSegmentWithLocale);
+  // Check if the file exists.
+  let file;
 
-    // Check if the file exists.
-    if (fs.existsSync(path + '.md')) {
-      file = path + '.md';
-    } else if (fs.existsSync(path + '.mdx')) {
-      file = path + '.mdx';
-    } else {
-      return null;
-    }
+  if (result) {
+    pathSegmentWithLocale = pathSegment.join('/') + `/index.${locale}`;
+  }
+
+  const path = join(relativePathToDocs, project, pathSegmentWithLocale);
+
+  if (fs.existsSync(path + '.md')) {
+    file = path + '.md';
+  } else if (fs.existsSync(path + '.mdx')) {
+    file = path + '.mdx';
+  } else {
+    return null;
   }
 
   const markdownFile = fs.readFileSync(file, 'utf-8');

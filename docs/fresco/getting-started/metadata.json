@@ -1,7 +1,7 @@
 {
-  "en": "Getting Started",
-  "ru": "Начиная",
-  "homepage": "/fresco",
-  "isExpanded": false,
-  "homepageLocales": ["en", "ru"]
+  "localeLabels": {
+    "en": "Getting Started",
+    "ru": "Начиная"
+  },
+  "folderPagePath": "/fresco"
 }

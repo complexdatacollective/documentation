@@ -19,7 +19,7 @@ export default function NavigationMenus({
           const folder = item;
           const activeMenu = pathItems.find((pt) => pt === folder.source); //find active menu from path items
           const isFolderPageInView =
-            `/${pathItems.join('/')}` === folder.homepage;
+            `/${pathItems.join('/')}` === folder.folderPagePath;
 
           // render menu (folder)
           return (
@@ -30,7 +30,7 @@ export default function NavigationMenus({
                   activeMenu={activeMenu}
                   itemValue={folder.source}
                   title={folder.name.toLocaleUpperCase()}
-                  titleURL={folder.homepage}
+                  titleURL={folder.folderPagePath}
                 >
                   <NavigationMenus
                     pathItems={pathItems}
@@ -41,7 +41,7 @@ export default function NavigationMenus({
                 <OpenMenu
                   highlighted={isFolderPageInView}
                   title={folder.name.toLocaleUpperCase()}
-                  titleURL={folder.homepage}
+                  titleURL={folder.folderPagePath}
                 >
                   <NavigationMenus
                     pathItems={pathItems}

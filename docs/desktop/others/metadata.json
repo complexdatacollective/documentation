@@ -1,5 +1,7 @@
 {
-  "en": "Others",
-  "ru": "Другие",
+  "localeLabels": {
+    "en": "Others",
+    "ru": "Другие"
+  },
   "isExpanded": true
 }

@@ -1,6 +1,7 @@
 {
-  "en": "Tutorials",
-  "ru": "Учебники",
-  "homepage": "/desktop/tutorials",
-  "homepageLocales": ["en"]
+  "localeLabels": {
+    "en": "Tutorials",
+    "ru": "Учебники"
+  },
+  "folderPagePath": "/desktop/tutorials"
 }

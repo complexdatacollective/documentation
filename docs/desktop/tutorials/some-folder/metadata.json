@@ -1,5 +1,7 @@
 {
-  "en": "TEST",
-  "ru": "TEST russian",
+  "localeLabels": {
+    "en": "TEST",
+    "ru": "TEST russian"
+  },
   "isExpanded": true
 }

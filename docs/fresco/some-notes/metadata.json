@@ -1,5 +1,7 @@
 {
-  "en": "Some Notes",
-  "ru": "Некоторые примечания",
+  "localeLabels": {
+    "en": "Some Notes",
+    "ru": "Некоторые примечания"
+  },
   "isExpanded": true
 }

@@ -3,7 +3,7 @@ export interface Folder {
   name: string;
   language: string;
   source: string;
-  homepage: string | null;
+  folderPagePath: string | null;
   isExpanded: boolean;
   files: Array<DocFile | Folder>;
 }

@@ -1,7 +1,8 @@
 {
-  "en": "How-to guides",
-  "ru": "Практические руководства",
-  "homepage": "/desktop/how-to",
-  "isExpanded": true,
-  "homepageLocales": ["en"]
+  "localeLabels": {
+    "en": "How-to guides",
+    "ru": "Практические руководства"
+  },
+  "folderPagePath": "/desktop/how-to",
+  "isExpanded": true
 }

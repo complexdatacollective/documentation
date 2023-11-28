@@ -1,6 +1,7 @@
 {
-  "en": "Getting Started",
-  "ru": "Начиная",
-  "homepage": "/desktop",
-  "homepageLocales": ["en", "ru"]
+  "localeLabels": {
+    "en": "Getting Started",
+    "ru": "Начиная"
+  },
+  "folderPagePath": "/desktop"
 }
