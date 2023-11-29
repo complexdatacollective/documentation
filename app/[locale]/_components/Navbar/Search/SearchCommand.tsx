@@ -8,9 +8,9 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 import { algolia_client } from '@/lib/algolia-client.mjs';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import { Hits, InstantSearch } from 'react-instantsearch';
+import { Hits, InstantSearch, Configure } from 'react-instantsearch';
 import CustomSearchBox from './CustomSearchBox';
 import EmptyQueryBoundary from './EmptyQueryBoundary';
 import Hit from './Hit';
@@ -22,6 +22,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function SearchCommand() {
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const t = useTranslations('SearchCommand');
 
@@ -44,6 +45,7 @@ export default function SearchCommand() {
         indexName={env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
         insights={true}
       >
+        <Configure filters={`lang:${locale}`} />
         <Button
           className="flex min-w-[250px] items-center justify-between gap-1 px-2 text-left"
           variant={'secondary'}
