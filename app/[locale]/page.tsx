@@ -10,11 +10,11 @@ const Page = ({ params: { locale } }: { params: { locale: string } }) => {
   // TODO: or we should redirect to /desktop by default
 
   return (
-    <main>
+    <div>
       <h2>
         {t('title')} {locale}
       </h2>
-    </main>
+    </div>
   );
 };
 
