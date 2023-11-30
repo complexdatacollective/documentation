@@ -1,16 +1,22 @@
 'use client';
 
 import { DocSearch } from '@docsearch/react';
-
 import '@docsearch/css';
+import { env } from '@/env.mjs';
+import { useLocale } from 'next-intl';
 
 const DocSearchComponent = () => {
+  const locale = useLocale();
+
   return (
     <DocSearch
-      appId="QJYMR8V9ES"
-      indexName="networkcanvas"
-      apiKey="4e09bb1a4232929e2475f2809e256eb7"
+      appId={env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID}
+      indexName={env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
+      apiKey={env.NEXT_PUBLIC_ALGOLIA_API_KEY}
       insights={true}
+      searchParameters={{
+        filters: `lang:${locale}`,
+      }}
     />
   );
 };
