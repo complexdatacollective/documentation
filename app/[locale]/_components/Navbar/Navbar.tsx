@@ -2,7 +2,7 @@ import { Link } from '@/navigation';
 import logo from '@/public/assets/img/logo.svg';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import SearchCommand from './Search/SearchCommand';
+import DocSearchComponent from './Search/DocSearchComponent';
 import LanguageSwitcher from './languageSwitcher';
 import { ThemeToggle } from './themeToggle';
 
@@ -23,7 +23,7 @@ const Navbar = () => {
           <span className="text-white">Network Canvas</span>
         </Link>
         <div className="flex items-center gap-3">
-          <SearchCommand />
+          <DocSearchComponent />
           <LanguageSwitcher width="w-fit" />
           <ThemeToggle />
           <Link

@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   icons: {
     icon: '/nc.png',
   },
+  other: {
+    'docsearch:language': 'en',
+    'docsearch:version': '1.0.0',
+  },
 };
 
 export function generateStaticParams() {
@@ -79,7 +83,9 @@ export default async function MainLayout({
             <Navbar />
             <div className="container mt-8 grid grid-cols-5 items-start gap-5">
               {sidebarData && <Sidebar data={sidebarData} locale={locale} />}
-              <div className="col-span-4 px-2">{children}</div>
+              <main className="DocSearch-content col-span-4 px-2">
+                {children}
+              </main>
               <AIAssistant />
             </div>
           </NextIntlClientProvider>
