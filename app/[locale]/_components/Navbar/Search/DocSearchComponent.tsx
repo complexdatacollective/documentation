@@ -9,7 +9,7 @@ const DocSearchComponent = () => {
     <DocSearch
       appId="QJYMR8V9ES"
       indexName="networkcanvas"
-      apiKey="4e09bb1a4232929e2475f2809e256eb7"
+      apiKey="91c1f75606963a5bc5f682af4b9c25e1"
       insights={true}
     />
   );

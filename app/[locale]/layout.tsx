@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   other: {
     'docsearch:language': 'en',
-    'docsearch:version': '1.0.0',
+    'docsearch:version': '1.0.1',
   },
 };
 
