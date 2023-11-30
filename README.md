@@ -47,6 +47,6 @@ Choose between dark and light modes to suit your preferences and reduce eye stra
 
 ## Get Started
 
-Explore the Network Canvas documentation to unlock the full potential of social network data collection. Whether you're a new user or an experienced researcher, this documentation is here to support you.
+Explore the Network Canvas documentation to unlock the full potential of social network data collection. Whether you're a new user or an experienced researcher, this documentation is here to support you
 
 Thank you for choosing Network Canvas!
